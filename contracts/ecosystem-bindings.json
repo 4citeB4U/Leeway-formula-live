@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "formulaAuthority": "4citeB4U/Leeway-formula-live",
+  "consumers": [
+    {
+      "name": "LeeWay Live",
+      "repository": "4citeB4U/Leeway-live",
+      "role": "live interaction/model experiments"
+    },
+    {
+      "name": "LeeWay Device Bridge",
+      "repository": "4citeB4U/LEEWAY-DEVICE-BRIDGE",
+      "role": "device and phone bridge"
+    },
+    {
+      "name": "LeeWay Runtime Fabric",
+      "repository": "4citeB4U/Leeway-Runtime-Fabric",
+      "role": "runtime execution fabric"
+    },
+    {
+      "name": "LeeWay Agent Skills",
+      "repository": "4citeB4U/LeeWay-Agent-Skills",
+      "role": "skills/governance/client discovery"
+    },
+    {
+      "name": "LeeWay Ecosystem",
+      "repository": "4citeB4U/leeway-ecosystemv2.14",
+      "role": "canonical ecosystem integration"
+    }
+  ],
+  "bindingRule": "Consumers discover Formula through LEEWAY_FORMULA_BASE_URL or an authorized runtime binding and must not embed divergent Formula engines.",
+  "verificationRule": "Each consumer requires its own execution receipt before being marked VERIFIED_BOUND."
+}
