@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "LEEWAY-FORMULA-LIVE-CENTRALIZATION-GATE-1-20260922",
+  "status": "PASS_FORMULA_LIVE_PUBLISHED_LAUNCHER_EXECUTED_AGAINST_CANONICAL_RUNTIME",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "runtimeBase": "http://127.0.0.1:4001",
+  "implementationSha256": "6502791BBA909D7481DB3A204F3CBF67B1DC06A4B76A73C797D709408341D63E",
+  "publishedPowerShellSha256": "0587998BAD642E51BD54EEE9016887A1F180F058D39A2C626A48E3550B532292",
+  "health": "LEEWAY_FORMULA_V1_PASS",
+  "goldenVectorPass": true,
+  "specValid": true,
+  "adapterRegistryPass": true,
+  "execution": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "bindingId": "LW-F1-H-v1",
+    "adapterId": "raw-base64-v1",
+    "decimalState": [
+      2,
+      3,
+      4,
+      5,
+      8,
+      0
+    ],
+    "base64State": [
+      "C",
+      "D",
+      "E",
+      "F",
+      "I",
+      "A"
+    ],
+    "inputHash": "597c50b3e46a1adadb8284678e71284a618417a53ca26f346dd365ac8e9399b2",
+    "resultHash": "48e525aef599c171dd9964a9cf9e3172b34691259704329a64deb77c759ae1fc",
+    "runtimeReceiptPath": "/app/receipts/leeway-formula/leeway-formula-run-20260922225345-no-trace.json"
+  },
+  "verifiedSurfaces": [
+    "PowerShell published launcher -> live health",
+    "PowerShell published launcher -> live evaluate",
+    "GitHub central authority/consumer contracts"
+  ],
+  "notYetVerified": [
+    "browser UI cross-origin execution",
+    "POSIX/Termux launcher on phone",
+    "LeeWay Live consumer binding",
+    "Device Bridge consumer binding",
+    "Runtime Fabric external repository binding",
+    "Agent Skills consumer migration"
+  ],
+  "learningLedger": "NOT_UPDATED"
+}
