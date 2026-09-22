@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LeeWay Formula Live</title><style>
+body{font-family:system-ui,sans-serif;max-width:920px;margin:40px auto;padding:0 18px;background:#0d1117;color:#e6edf3}
+main{border:1px solid #30363d;border-radius:16px;padding:24px}input,textarea,button{font:inherit}input,textarea{width:100%;box-sizing:border-box;background:#161b22;color:#e6edf3;border:1px solid #30363d;border-radius:8px;padding:10px;margin:6px 0 14px}textarea{min-height:180px}button{padding:10px 16px;margin-right:8px;border:0;border-radius:8px;cursor:pointer}pre{white-space:pre-wrap;background:#161b22;padding:16px;border-radius:10px;overflow:auto}.state{font-weight:700}
+</style></head><body><main><h1>LeeWay Formula Live</h1>
+<p>One Formula authority. This interface calls an authorized Formula service; it does not implement or simulate the Formula in the browser.</p>
+<label>Formula service base URL</label><input id="base" value="http://127.0.0.1:4001">
+<button id="health">Check Formula</button><button id="evaluate">Execute Formula</button>
+<h2>Authorized evaluator request JSON</h2><textarea id="body">{"adapterId":"raw-base64-v1","input":{"matrix":[]}}</textarea>
+<p class="state" id="state">NOT EXECUTED</p><pre id="out">No runtime evidence yet.</pre>
+<script>
+const q=id=>document.getElementById(id), out=q('out'), state=q('state');
+async function call(path,options){state.textContent='EXECUTING';out.textContent='';try{const r=await fetch(q('base').value.replace(/\/$/,'')+path,options);const t=await r.text();out.textContent=t;state.textContent=r.ok?'RUNTIME RESPONSE RECEIVED':'FAILED HTTP '+r.status}catch(e){state.textContent='BLOCKED / UNREACHABLE';out.textContent=String(e)}}
+q('health').onclick=()=>call('/runtime/formula/v1/health');
+q('evaluate').onclick=()=>{let body;try{body=JSON.stringify(JSON.parse(q('body').value))}catch(e){state.textContent='INVALID INPUT';out.textContent=String(e);return}call('/runtime/formula/v1/evaluate',{method:'POST',headers:{'content-type':'application/json'},body})};
+</script></main></body></html>
