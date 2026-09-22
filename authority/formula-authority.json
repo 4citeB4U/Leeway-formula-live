@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "formulaId": "LEEWAY-FORMULA-v1.0",
+  "status": "RECOVERED_IDENTITY_PENDING_HOST_REVERIFICATION",
+  "sourceContract": "4citeB4U/LeeWay-Agent-Skills/config/leeway-formula-evaluator-contract.yaml",
+  "runtime": {
+    "localCompatibilityBase": "http://127.0.0.1:4001",
+    "health": "/runtime/formula/v1/health",
+    "evaluate": "/runtime/formula/v1/evaluate"
+  },
+  "adapterId": "raw-base64-v1",
+  "pinnedSha256": {
+    "engine": "6502791BBA909D7481DB3A204F3CBF67B1DC06A4B76A73C797D709408341D63E",
+    "canonicalInput": "4087FC14A9F1F44EB46D9D6417156176794E2ACC72EE9BF481F21A5D0ABE5236",
+    "rawAdapter": "2C8B477ABAD73A0B8519127B20E500BC857F6D26A2722634F23637D4EEAC6215",
+    "formulaService": "59C74A850CFBACAB4408D73538C824D25687AE0FBD12F07AB5D3622661B7B1EC"
+  },
+  "promotionRule": "Do not publish or replace canonical engine bytes until host artifact is reverified against pinned SHA-256.",
+  "consumerRule": "Consumers call the centralized authority; they do not embed divergent Formula implementations."
+}
