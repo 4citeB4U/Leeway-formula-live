@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "VERIFIED_LIVE_RUNTIME_IDENTITY_RECONVERGED",
+  "verifiedAt": "2026-09-22",
+  "hostAuthority": "D:\\Leeway-Ecosystem v2.1.4",
+  "dataFabric": "D:\\LeeWay\\Formula-Data-Fabric\\production-v1",
+  "runtimeBase": "http://127.0.0.1:4001",
+  "healthStatus": "LEEWAY_FORMULA_V1_PASS",
+  "formulaId": "LEEWAY-FORMULA-v1.0",
+  "bindingId": "LW-F1-H-v1",
+  "formulaObjectId": "LEEWAY_FORMULA_OBJECT::HISTORICAL_PATTERN_16X6::V1",
+  "implementationSha256": "6502791BBA909D7481DB3A204F3CBF67B1DC06A4B76A73C797D709408341D63E",
+  "loaded": true,
+  "goldenVectorPass": true,
+  "specValid": true,
+  "adapterRegistryPass": true,
+  "specHash": "2f4604f143e2f7c3bc2fe315f2faa2c7d9b8b188151a0fab9f6cebea3e155f9b",
+  "specMdHash": "dd9f2f7d23dcc8076d7d3c9e1f194b596bff041e8b25dc003348c8554db7b16d",
+  "evidenceBoundary": "Live health and implementation identity reconverged. This record does not claim every downstream consumer is already bound."
+}
