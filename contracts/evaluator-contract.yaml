@@ -1,0 +1,39 @@
+version: "1.0.0"
+name: "LeeWay Formula Live Evaluator Contract"
+formula_id: "LEEWAY-FORMULA-v1.0"
+states:
+  - UNEXPOSED
+  - DISCOVERED
+  - AVAILABLE
+  - AUTHORIZED
+  - EXECUTED
+  - VERIFIED
+  - BLOCKED
+  - FAILED
+rules:
+  - "A discovered endpoint is not an authorized evaluator."
+  - "An authorized evaluator is not proof of execution."
+  - "Execution is not Veritas acceptance."
+  - "Consumers MUST use the centralized Formula authority instead of embedding divergent Formula implementations."
+  - "No Formula outputs, Q69, C64, scores, rankings, hashes, transitions, runtime results, or receipts may be invented."
+service:
+  health: "/runtime/formula/v1/health"
+  evaluate: "/runtime/formula/v1/evaluate"
+required_identity_before_execution:
+  - implementation_name
+  - implementation_version
+  - authority_source
+  - implementation_hash_or_equivalent_identity_when_supported
+  - adapter_identity_when_adapter_is_used
+  - runtime_target
+required_execution_evidence:
+  - input_state_or_verified_mapping
+  - input_provenance
+  - execution_identity
+  - selected_policy_or_action
+  - runtime_result
+  - timestamp
+required_verification_evidence:
+  - veritas_status
+  - measurements_when_material
+  - receipt_id_or_hash_when_supported
