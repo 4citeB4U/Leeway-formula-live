@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "authorityRepository": "4citeB4U/Leeway-formula-live",
+  "formulaId": "LEEWAY-FORMULA-v1.0",
+  "protocol": "http-json",
+  "discovery": {
+    "environment": [
+      "LEEWAY_FORMULA_BASE_URL"
+    ],
+    "localCompatibilityBase": "http://127.0.0.1:4001"
+  },
+  "endpoints": {
+    "health": {
+      "method": "GET",
+      "path": "/runtime/formula/v1/health"
+    },
+    "evaluate": {
+      "method": "POST",
+      "path": "/runtime/formula/v1/evaluate"
+    }
+  },
+  "stateModel": [
+    "UNEXPOSED",
+    "DISCOVERED",
+    "AVAILABLE",
+    "AUTHORIZED",
+    "EXECUTED",
+    "VERIFIED",
+    "BLOCKED",
+    "FAILED"
+  ],
+  "prohibitions": [
+    "Do not embed a divergent Formula engine in a consumer.",
+    "Do not claim Formula execution from endpoint discovery alone.",
+    "Do not invent Formula outputs or evidence."
+  ],
+  "requiredEvidence": [
+    "formulaImplementation",
+    "formulaVersion",
+    "authoritySource",
+    "adapterIdentity",
+    "runtimeTarget",
+    "runtimeExecutionState",
+    "verificationStatus"
+  ]
+}
