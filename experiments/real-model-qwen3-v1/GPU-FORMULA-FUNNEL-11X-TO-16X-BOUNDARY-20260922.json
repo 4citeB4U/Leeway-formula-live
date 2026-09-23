@@ -1,0 +1,83 @@
+{
+  "experimentId": "LEEWAY-GPU-FORMULA-FUNNEL-11X-TO-16X-BOUNDARY-20260922",
+  "currentLadder": {
+    "defaultVramBytes": 3191582227,
+    "bestGpuResidentVramBytes": 285411901,
+    "currentReductionX": 11.182,
+    "target16xBytes": 199473889,
+    "target32xBytes": 99736945,
+    "target64xBytes": 49868472,
+    "bytesAbove16x": 85938012
+  },
+  "formulaFunnel": {
+    "whatAreWeNotDiscovering": [
+      "Ollama size_vram alone did not show where VRAM was allocated.",
+      "Layer offload granularity may itself impose a floor above the 16x target.",
+      "VRAM reduction can be relocation into host RAM rather than information reduction."
+    ],
+    "discoveries": [
+      "Runtime log physically verifies 1/29 GPU layers at the 11.18x point.",
+      "One-layer CUDA model buffer = 243.44 MiB; CUDA compute buffer = 28.75 MiB.",
+      "CPU-mapped model buffer at one-layer point = 1047.20 MiB.",
+      "The one-layer model buffer alone exceeds the 16x total VRAM target (~199.47 MB).",
+      "Zero GPU layers switches to CPU-only and cannot count as GPU-resident 16x."
+    ],
+    "whatNeedsEnhancement": [
+      "Sub-layer tensor/block paging or streamed matrix segments.",
+      "Golden Formula GPU adapter should govern active tensor working set, transfer timing, and eviction, not only whole-layer residency.",
+      "Account simultaneously for VRAM, host RAM, PCIe transfer, storage/mmap, compute buffers, and latency."
+    ]
+  },
+  "physicalEvidence": {
+    "fullGpu": {
+      "offloadedLayers": "29/29",
+      "cudaModelMiB": 1123.71,
+      "kvMiBDefault": 1792,
+      "computeMiBDefault": 128.02
+    },
+    "ctx256": {
+      "cudaModelMiB": 1123.71,
+      "kvMiB": 28,
+      "computeMiB": 24.13
+    },
+    "gpuLayers20": {
+      "offloaded": "20/29",
+      "cudaModelMiB": 839.22,
+      "cpuMappedMiB": 451.42,
+      "cudaKvMiB": 19,
+      "cpuKvMiB": 9,
+      "cudaComputeMiB": 28.75
+    },
+    "gpuLayers10": {
+      "offloaded": "10/29",
+      "cudaModelMiB": 531.02,
+      "cpuMappedMiB": 759.61,
+      "cudaKvMiB": 9,
+      "cpuKvMiB": 19,
+      "cudaComputeMiB": 28.75
+    },
+    "gpuLayers5": {
+      "offloaded": "5/29",
+      "cudaModelMiB": 375.38,
+      "cpuMappedMiB": 915.26,
+      "cudaKvMiB": 4,
+      "cpuKvMiB": 24,
+      "cudaComputeMiB": 28.75
+    },
+    "gpuLayers1": {
+      "offloaded": "1/29",
+      "cudaModelMiB": 243.44,
+      "cpuMappedMiB": 1047.2,
+      "cpuKvMiB": 28,
+      "cudaComputeMiB": 28.75
+    },
+    "gpuLayers0": {
+      "classification": "CPU_ONLY",
+      "cpuModelMiB": 660.63,
+      "cpuRepackMiB": 630,
+      "cpuKvMiB": 28
+    }
+  },
+  "nextGate": "Implement or expose sub-layer tensor/block streaming/paging in the canonical model runtime, then target <=199,473,889 bytes GPU working set while preserving inference and accounting for relocated resources.",
+  "logSha256": "057A7872DB8149F2B95158BD19407417B6241791B34177FD770BBF880CE3135A"
+}
