@@ -1,0 +1,33 @@
+{
+  "experimentId": "LEEWAY-GOLDEN-FORMULA-GENERATION-TAIL-REPAIR-20260922",
+  "diagnosis": {
+    "originalT3": {
+      "meanClientMs": 3358.03,
+      "meanLoadMs": 113.57,
+      "meanPromptTps": 917.66,
+      "meanGenTps": 18.8,
+      "notableOutlierGenTps": 12.2
+    },
+    "rootFinding": "The original generation regression was dominated by a single low-throughput prompt. Subsequent inspection found three CPU-resident Ollama models concurrently loaded, making CPU/memory contention a credible confounder."
+  },
+  "repair": {
+    "policy": "lossless exclusive target residency; unload sibling Ollama models; keep target resident",
+    "runs": 15,
+    "meanClientMs": 3032.6238733333334,
+    "p95ClientMs": 3854.3804,
+    "meanLoadMs": 106.1850232,
+    "meanPromptTps": 817.5199334752447,
+    "meanGenTps": 21.200047297359774,
+    "minGenTps": 13.876322505682245,
+    "maxGenTps": 27.669183220803603,
+    "receiptSha256": "5DA6FA5722B9EB45770A54BEE633AF3F6150D7665CF997F70636D2E3BCD84D99"
+  },
+  "deltaVsNative": {
+    "clientPct": 4.02,
+    "loadPct": 67.29,
+    "promptTpsPct": 90.06,
+    "genTpsPct": -1.62
+  },
+  "conclusion": "Exclusive residency repaired the mean end-to-end regression and nearly eliminated the mean generation regression while retaining large load/prefill gains. A generation-tail outlier remains, so the next dependency is CPU scheduling/contention control rather than model load/residency.",
+  "nextGate": "Instrument CPU scheduling/utilization per inference and test bounded thread/concurrency policies while preserving exclusive residency."
+}
