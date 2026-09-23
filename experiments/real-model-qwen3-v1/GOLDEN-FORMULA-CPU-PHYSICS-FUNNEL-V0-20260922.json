@@ -1,0 +1,137 @@
+{
+  "experimentId": "LEEWAY-GOLDEN-FORMULA-CPU-PHYSICS-FUNNEL-V0-20260922",
+  "model": {
+    "name": "qwen2.5-coder:1.5b",
+    "lane": "isolated CPU-only Ollama lab",
+    "gpuDeviceRequest": null
+  },
+  "cpu": {
+    "name": "Intel Core Ultra 9 275HX",
+    "cores": 24,
+    "logicalProcessors": 24,
+    "l2KiB": 40960,
+    "l3KiB": 36864
+  },
+  "mathematicalBasis": [
+    "CPU Time = Instruction Count * CPI / Clock Rate",
+    "AMAT = Hit Time + Miss Rate * Miss Penalty",
+    "Amdahl speedup",
+    "parallel overhead observed through queue/context switching",
+    "binary/SIMD/matrix work remains executed by the native CPU runtime; Golden Formula governs policy rather than replacing CPU arithmetic"
+  ],
+  "formulaAdapter": {
+    "dimensions": [
+      "processor utility",
+      "frequency ratio",
+      "privileged utility",
+      "pages/sec pressure",
+      "processor queue pressure",
+      "context-switch pressure"
+    ],
+    "formula": "LEEWAY-FORMULA-v1.0",
+    "engineSha256": "6502791BBA909D7481DB3A204F3CBF67B1DC06A4B76A73C797D709408341D63E"
+  },
+  "policies": [
+    {
+      "threads": 4,
+      "clientMs": 1773.26586666667,
+      "genTps": 39.9501892027792,
+      "minGenTps": 33.9875945279973,
+      "promptTps": 287.301896086225,
+      "pagesPerSec": 38740.2548173996,
+      "contextSwitchesPerSec": 58422.7611967444,
+      "state": [
+        69,
+        0,
+        59,
+        61,
+        7,
+        12
+      ]
+    },
+    {
+      "threads": 6,
+      "clientMs": 1127.08753333333,
+      "genTps": 53.0374393882951,
+      "minGenTps": 43.5995814440181,
+      "promptTps": 398.74955747299,
+      "pagesPerSec": 3201.48291358276,
+      "contextSwitchesPerSec": 53405.9767925057,
+      "state": [
+        69,
+        0,
+        59,
+        1,
+        5,
+        52
+      ]
+    },
+    {
+      "threads": 8,
+      "clientMs": 1042.86063333333,
+      "genTps": 50.7044680538682,
+      "minGenTps": 43.5953047856746,
+      "promptTps": 460.112921728344,
+      "pagesPerSec": 20109.2858168874,
+      "contextSwitchesPerSec": 78557.3684210009,
+      "state": [
+        69,
+        0,
+        66,
+        59,
+        58,
+        42
+      ]
+    },
+    {
+      "threads": 10,
+      "clientMs": 1116.6548,
+      "genTps": 58.1114434583815,
+      "minGenTps": 52.197515398267,
+      "promptTps": 473.323251155567,
+      "pagesPerSec": 24075.7229936899,
+      "contextSwitchesPerSec": 133202.255106948,
+      "state": [
+        0,
+        59,
+        69,
+        8,
+        54,
+        18
+      ]
+    },
+    {
+      "threads": 12,
+      "clientMs": 1344.3236,
+      "genTps": 58.5288368647417,
+      "minGenTps": 42.3280423280423,
+      "promptTps": 492.246866278935,
+      "pagesPerSec": 17269.3029246993,
+      "contextSwitchesPerSec": 128987.892702118,
+      "state": [
+        0,
+        59,
+        69,
+        11,
+        48,
+        26
+      ]
+    }
+  ],
+  "modes": {
+    "efficiency": {
+      "threads": 6,
+      "evidence": "vs 4 threads: 1.573x client speedup, 1.328x generation speedup, 91.74% paging reduction, 8.59% context-switch reduction"
+    },
+    "latency": {
+      "threads": 8,
+      "evidence": "lowest measured client time 1042.86 ms"
+    },
+    "throughput": {
+      "threads": 10,
+      "evidence": "58.11 gen TPS with stronger min generation than 12; 12 gains only 0.42 TPS mean but has worse client/min-gen and similarly extreme context switching"
+    }
+  },
+  "conclusion": "CPU should not inherit GPU policy physics. CPU Golden Formula control should select among efficiency/latency/throughput modes using CPU-native state history. Six threads is the strongest efficiency mode; eight is latency mode; ten is throughput mode in this campaign.",
+  "artifactSha256": "819D7E8E94E99EF98AECB95B8AAC59F9E249565C0D6A3D2D863378574E62A884"
+}
