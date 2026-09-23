@@ -1,0 +1,76 @@
+{
+  "experimentId": "LEEWAY-FOLD6-GEMMA27B-PREFLIGHT-20260923",
+  "phone": {
+    "model": "Samsung Galaxy Z Fold6 SM-F956U",
+    "android": 16,
+    "sdk": 36,
+    "abi": "arm64-v8a",
+    "soc": "QTI SM8650",
+    "ramKiB": 11381264,
+    "storageTotalKiB": 233459932,
+    "freeBeforeKiB": 78680092,
+    "freeAfterKiB": 82098928,
+    "reclaimedKiB": 3418836,
+    "reclaimedGiB": 3.26,
+    "postMemAvailableKiB": 2205676,
+    "postSwapFreeKiB": 4544912,
+    "gpuMemoryModel": "shared system memory / KGSL",
+    "postGpuTotalKiB": 311788,
+    "postKgslShmemKiB": 296492,
+    "gpuIdlePct": 2,
+    "thermalStatus": 0,
+    "postApTempC": 35,
+    "postSkinTempC": 34.4
+  },
+  "storage": {
+    "actuator": "Android package-manager cache trim to 84,000,000,000-byte free target",
+    "scope": "system-designated app cache only; user photos/videos/documents excluded",
+    "preFormulaState": [
+      1,
+      2,
+      14,
+      23,
+      35,
+      69
+    ],
+    "postFormulaState": [
+      2,
+      3,
+      14,
+      24,
+      35,
+      69
+    ],
+    "preReceipt": "/app/receipts/leeway-formula/leeway-formula-run-20260923054234-no-trace.json",
+    "postReceipt": "/app/receipts/leeway-formula/leeway-formula-run-20260923054259-no-trace.json",
+    "preSha256": "8831C7ECB4B9B1E33289ACBF7F718467542730D9B0594E3354626265C9B1329D",
+    "postSha256": "52D2A8831A8619591D7639F16D296418A906D6536AF99BC4160BDB17ADBC22C5"
+  },
+  "runtime": {
+    "llamaCppBuild": "b11118 / 0.4.1-dev / e6ab7c1a4",
+    "target": "Android aarch64 Snapdragon",
+    "phoneRuntimeArchiveSha256": "0cc858c0540aa689dff71d4a36c1c7419de9c121647d28ec28b5c4dd6480d36d",
+    "versionExecution": "PASS",
+    "libraries": [
+      "libggml-htp-v75.so",
+      "libggml-htp-v81.so",
+      "Vulkan support"
+    ]
+  },
+  "targetModel": {
+    "name": "gemma3:27b-it-qat",
+    "parameters": "27.4B",
+    "quantization": "Q4_0",
+    "ollamaModelDigest": "29eb0b9aeda3",
+    "ollamaBlob": "ccc0cddac561",
+    "reportedSize": "18GB",
+    "status": "DOWNLOAD_IN_PROGRESS"
+  },
+  "controlModel": {
+    "name": "gemma3:270m-it-qat",
+    "blobSha256": "29005e200100bf723304e3a030c0365636df5efb45fe7ae3200389d7f042fca3",
+    "bytes": 241410464,
+    "status": "PHONE_DIRECT_DOWNLOAD_IN_PROGRESS"
+  },
+  "evidenceBoundary": "No Gemma inference claim yet. Runtime launches on phone; model bytes are still being acquired. 27B live conversation gate remains pending."
+}
