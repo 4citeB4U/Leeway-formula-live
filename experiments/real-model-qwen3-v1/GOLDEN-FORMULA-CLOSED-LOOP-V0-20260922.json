@@ -1,0 +1,83 @@
+{
+  "experimentId": "LEEWAY-GOLDEN-FORMULA-CLOSED-LOOP-V0-20260922",
+  "artifactSha256": "6AF6A0223E8E855A5F0A1D8DEFBAF781690A10E524FFDA0BEAE4078F4F8FC0B8",
+  "evidenceBoundary": "Golden Formula generates before/after runtime states. V0 policy mapping is calibrated from executed evidence and is not yet a pure mathematical derivation from Formula state.",
+  "cpu": {
+    "policy": "8 threads",
+    "stateBefore": [
+      2,
+      10,
+      1,
+      9,
+      12,
+      8
+    ],
+    "stateAfter": [
+      2,
+      1,
+      8,
+      10,
+      9,
+      11
+    ],
+    "before": {
+      "clientMs": 1563.32,
+      "loadMs": 537.15,
+      "promptTps": 443.11,
+      "genTps": 57.37,
+      "minGenTps": 52.21
+    },
+    "after": {
+      "clientMs": 1592.2,
+      "loadMs": 533.6,
+      "promptTps": 415.9,
+      "genTps": 55.07,
+      "minGenTps": 53.61
+    },
+    "classification": "PARTIAL_STABLE_NOT_IMPROVED",
+    "next": "Use Formula-state-dependent switching among proven 6/8/12 thread policies rather than fixed 8."
+  },
+  "gpu": {
+    "policy": "KEEP_RESIDENT_PREFETCH",
+    "vramBytes": 3191582227,
+    "stateBefore": [
+      4,
+      57,
+      5,
+      55,
+      8,
+      12
+    ],
+    "stateAfter": [
+      60,
+      3,
+      57,
+      5,
+      9,
+      16
+    ],
+    "before": {
+      "clientMs": 1595.75,
+      "loadMs": 1071.99,
+      "promptTps": 310.96,
+      "genTps": 148.4,
+      "minGenTps": 131.74
+    },
+    "after": {
+      "clientMs": 1345.69,
+      "loadMs": 884.59,
+      "promptTps": 427.19,
+      "genTps": 163.04,
+      "minGenTps": 158.27
+    },
+    "improvement": {
+      "clientPct": 15.67,
+      "loadPct": 17.48,
+      "promptPct": 37.38,
+      "genPct": 9.87,
+      "minGenPct": 20.14
+    },
+    "classification": "PASS_ALL_MEASURED_DIRECTIONS"
+  },
+  "nextGate": "Preserve GPU controller; derive and execute CPU dynamic thread selector using Golden state plus 6/8/12 calibration, then repeat both lanes."
+}
