@@ -1,0 +1,47 @@
+{
+  "experimentId": "LEEWAY-REAL-MODEL-QWEN3-V1",
+  "status": "L2_FORMULA_REPRESENTATION_ACTIVE",
+  "model": {
+    "name": "Qwen3",
+    "parameters": "1.1B",
+    "format": "GGUF",
+    "quantization": "Q4_K_M",
+    "bytes": 688065920,
+    "sha256": "81b64d05a23b17b34c475f42b3e72fbde62d4b92cc34541f7a8031d0752deafa"
+  },
+  "nativeBaseline": {
+    "loadSeconds": 1.667,
+    "totalSeconds": 3.767,
+    "promptTokensPerSecond": 487.38,
+    "generationTokensPerSecond": 15.61,
+    "sizeVramBytes": 0
+  },
+  "standardControl": {
+    "method": "ZIP/Deflate via PowerShell Compress-Archive",
+    "compressedBytes": 673409465,
+    "reductionPct": 2.130095,
+    "ratio": 1.021765,
+    "compressMs": 23522.16,
+    "reconstructMs": 11135.43,
+    "reconstructedShaMatch": true
+  },
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "engineSha256": "6502791BBA909D7481DB3A204F3CBF67B1DC06A4B76A73C797D709408341D63E",
+    "liveHealth": "LEEWAY_FORMULA_V1_PASS"
+  },
+  "acceptanceLevels": [
+    "L0_NATIVE_BASELINE",
+    "L1_STANDARD_COMPRESSION_CONTROL",
+    "L2_FORMULA_REPRESENTATION",
+    "L3_EXACT_RECONSTRUCTION",
+    "L4_EXECUTABLE_PRESERVATION",
+    "L5_BEHAVIORAL_PRESERVATION",
+    "L6_RUNTIME_IMPROVEMENT",
+    "L7_WORKING_SET_REDUCTION",
+    "L8_HARDWARE_BOUNDARY_EXPANSION",
+    "L9_MOBILE_EXECUTION",
+    "L10_OFFLINE_MOBILE"
+  ],
+  "evidenceLaw": "Failures and inconclusive outcomes are preserved alongside passes. No higher level is implied by a lower-level pass."
+}
