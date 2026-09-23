@@ -1,0 +1,56 @@
+{
+  "experimentId": "LEEWAY-REAL-MODEL-FORMULA-FUNNEL-DIAG-20260922",
+  "sourceModel": {
+    "internalName": "MiniCPM5 1B",
+    "ollamaAliasObserved": "qwen3:latest",
+    "architecture": "llama",
+    "ggufVersion": 3,
+    "tensors": 219,
+    "blocks": 24,
+    "bytes": 688065920,
+    "sha256": "81B64D05A23B17B34C475F42B3E72FBDE62D4B92CC34541F7A8031D0752DEAFA"
+  },
+  "observations": {
+    "tensorDataOffset": 5135744,
+    "tensorPayloadBytes": 682930176,
+    "tensorTypeCounts": {
+      "0": 49,
+      "12": 145,
+      "14": 25
+    },
+    "tensorTypeBytes": {
+      "0": 301056,
+      "12": 444579840,
+      "14": 238049280
+    },
+    "sampledLargeTensorEntropyBitsPerByte": "~7.79-7.94",
+    "repeated1MiBChunks": {
+      "duplicates": 0,
+      "total": 652
+    },
+    "lowEntropyScope": "primarily tiny ~6 KiB normalization tensors; insufficient mass for large whole-model reduction",
+    "crossLayerXor": "Representative same-shaped adjacent-layer XOR residuals increased entropy to ~7.95-8.00 bits/byte and compressed worse than source."
+  },
+  "funnel": [
+    {
+      "probe": "What are we not discovering?",
+      "answer": "Current Formula passport sees file identity and aggregate measurements, not quantization-block semantics, dequantized tensor geometry, learned low-rank structure, or behavior sensitivity."
+    },
+    {
+      "probe": "What needs to be enhanced?",
+      "answer": "Add tensor/quantization-aware State Reader and distinguish exact-byte archival representation from behavior-preserving compute representation."
+    }
+  ],
+  "rejectedMechanisms": [
+    "whole-file gzip as breakthrough",
+    "exact 1MiB deduplication",
+    "simple adjacent-layer XOR delta"
+  ],
+  "nextHypotheses": [
+    "quantization-block-aware coding",
+    "dequantized low-rank/basis-plus-residual representation",
+    "behavior-preserving requantization/sparsity with measured quality delta",
+    "paged/compute-native representation"
+  ],
+  "evidenceBoundary": "No 16x result is claimed. Diagnostics explain why current lossless byte-level methods plateau near the observed ~2% reduction."
+}
