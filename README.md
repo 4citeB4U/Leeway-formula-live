@@ -1,7 +1,7 @@
 # LeeWay Formula Live
 
 <p align="center">
-  <img src="docs/assets/leeway_formula_atlas.png" alt="LeeWay Formula Atlas — All Formulas, Equations & Geometry, created by Leonard Lee" width="1000">
+  <img src="docs/assets/leeway_formula_atlas.jpg" alt="LeeWay Formula Atlas — All Formulas, Equations & Geometry, created by Leonard Lee" width="1000">
 </p>
 
 <p align="center"><strong>LeeWay Formula Atlas</strong><br>All Formulas, Equations & Geometry · Created by Leonard Lee</p>
