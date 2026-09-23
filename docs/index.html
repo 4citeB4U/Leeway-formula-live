@@ -85,5 +85,56 @@ W_t\in\mathbb Z^{16\times6},\quad \Omega=\{0,\ldots,69\}
 <a class="card" href="../experiments/real-model-qwen3-v1/README.md"><b>Model Experiments</b><span>Raw JSON evidence and measured model-runtime campaigns.</span></a>
 <a class="card" href="../experiments/mobile/FOLD6-PHONE-MEDIA-FORMULA-20260923.json"><b>Fold6 Media Evidence</b><span>Direct mobile image/audio/video scientific record.</span></a>
 </div>
+
+<section id="cpu"><h2>CPU — its own physics</h2>
+<div class="math">\[T_{CPU}=\frac{InstructionCount\times CPI}{ClockRate}\qquad AMAT=HitTime+MissRate\times MissPenalty\]</div>
+<div class="math">\[S_{total}=\frac1{(1-P)+P/S}\]</div>
+<p>LeeWay does not apply GPU residency physics to CPU execution. The CPU adapter observes utility, frequency, privileged work, paging, queue pressure and context switching, then produces a 16×6 Formula history.</p>
+<p><b class="good">Measured:</b> 6 threads was the strongest efficiency mode; 8 threads the lowest-latency point; 10 threads a strong throughput point. Higher thread counts increased scheduling/memory-system overhead.</p>
+<p><b class="fail">Failure retained:</b> 16-thread policy reached unacceptable duration/timeout.</p>
+</section>
+
+<section id="gpu"><h2>GPU / VRAM — performance and capacity ladder</h2>
+<div class="math">\[VRAM_t=W(A_t)+KV_t+Compute_t\]</div>
+<p><b class="good">Measured ladder:</b> 1× → 2.37× → 2.59× → 3.43× → 5.35× → 7.46× → <b>11.18×</b> VRAM working-set reduction.</p>
+<div class="math">\[16\times\Rightarrow199{,}473{,}889\ bytes\quad 32\times\Rightarrow99{,}736{,}945\quad 64\times\Rightarrow49{,}868{,}472\]</div>
+<p><b class="warn">Current blocker:</b> one measured GPU layer alone required about 243.44 MiB of CUDA model buffer before compute overhead, so whole-layer residency cannot reach the 16× budget.</p>
+<p><b>Next:</b> layer → tensor → block → active working set.</p>
+</section>
+
+<section id="pcie"><h2>PCIe / Interconnect</h2>
+<div class="math">\[BW\approx Lanes\times TransferRate\times EncodingEfficiency\]</div>
+<p>Software cannot create physical lanes. LeeWay targets avoidable copies, synchronization, queueing and poor locality so useful work per physical byte can increase.</p>
+<p><b class="warn">Status:</b> telemetry exists, but a dedicated isolated PCIe A/B superiority campaign is still an open proof gate.</p>
+</section>
+
+<section id="usb"><h2>USB / Device I/O</h2>
+<div class="math">\[BytesToTransfer\approx MissingVerifiedState\]</div>
+<p>The Fold6 campaign proved USB/ADB device authority, read/write access, phone-side SHA equality and native Android ARM64 runtime execution. No claim is made that Formula increases USB electrical signaling rate.</p>
+</section>
+
+<section id="storage"><h2>Storage / Media</h2>
+<div class="math">\[SAF=\frac{P_{new}}{L(O)}\qquad SAFA=\frac1{SAF}\qquad SHA256(O')=SHA256(O)\]</div>
+<p>Exact representation and behavioral representation are separated. On real Fold6 media, generic exact compression often had little room; media-domain strategies produced much larger reductions.</p>
+<p><b class="good">Images:</b> tested JPEG XL reductions about 44–74% depending content/quality. <b class="good">Speech:</b> selected Opus 24 kb/s repeatedly reduced tested recordings about 82–89%. <b class="good">Video:</b> strong HEVC/AV1 reductions were measured, but a fixed aggressive policy was rejected because fidelity varied by clip.</p>
+<p><b class="fail">Rejected:</b> raw decoded-RGB temporal delta made the tested JPEG burst roughly 4.5× larger despite exact decoded-pixel reconstruction.</p>
+</section>
+
+<section id="models"><h2>Models / Runtime</h2>
+<div class="math">\[StoredArtifact\ne RuntimeWorkingSet\ne EffectiveExecutionBurden\]</div>
+<p>A real quantized GGUF only improved from about 2.130% to 2.135% under the tested exact compression path. Exact reconstruction passed; the large compression claim failed. That result redirected research toward model-state representation and bounded working sets.</p>
+<p><b class="good">Current GPU capacity evidence:</b> 11.18× VRAM working-set reduction. <b class="warn">Not yet proven:</b> 16× total representation or 27B Gemma live Fold6 conversation.</p>
+</section>
+
+<section id="funnel"><h2>Formula Funnel — LLM and decision engineering</h2>
+<div class="math">\[Continuity\to Context\to Formula\to Capability\to Runtime\to Veritas\to Receipt\to Learning\]</div>
+<p>At multiple states the Funnel asks: <b>What are we not discovering?</b> and <b>What needs to be enhanced?</b> It reduces stale/irrelevant context and prevents candidate model output from being promoted to authority.</p>
+</section>
+
+<section id="proof"><h2>Proof status and challenge discipline</h2>
+<p><b>CANONICAL LEEWAY</b> · <b>PROVEN LEEWAY</b> · <b>CANDIDATE/PROPOSED</b> · <b>EXTERNAL MATHEMATICS</b> · <b>HISTORICAL EVIDENCE</b> · <b>OPEN GAP/BLOCKED</b></p>
+<div class="math">\[SameCanonicalInput+SameFormulaVersion+SameDefinitions\Rightarrow SameCanonicalOutput\]</div>
+<p>Every domain is expected to expose equations, raw measurement, selected policy, physical execution, improvement, regression, failure, receipt and next falsifiable gate.</p>
+</section>
 <footer>LeeWay Formula Live · Creator: Leonard Lee · No claim without inspectable evidence.</footer>
 </div></body></html>
