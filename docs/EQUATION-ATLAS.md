@@ -1,5 +1,10 @@
 # Equation Atlas
 
+**Complete recovered source:** [LeeWay Formula Mathematical Engineering Textbook v2](reference/LeeWay-Formula-Mathematical-Engineering-Textbook-v2.html) — 196 curated mathematical objects plus the source-equation ledger.
+
+**Detailed canonical foundation:** [Q69 + F1 equations](equations/FOUNDATION-Q69-F1.md)
+
+
 The recovered LeeWay Formula Mathematical Engineering Textbook v2 contains **196 curated equation objects** and a larger source-equation ledger. This atlas exposes the families and status boundaries used by the repository.
 
 ## S — State / Encoding
