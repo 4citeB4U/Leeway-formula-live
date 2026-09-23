@@ -1,0 +1,41 @@
+{
+  "experimentId": "LEEWAY-REAL-MODEL-QWEN3-V1-L2-L3",
+  "status": "MIXED_RESULT",
+  "modelSha256": "81B64D05A23B17B34C475F42B3E72FBDE62D4B92CC34541F7A8031D0752DEAFA",
+  "formulaPassportSha256": "360317864B5293C4385DED41AC70F68D03C7CDA3A9670BAB395A1956B33738B5",
+  "formulaExecution": {
+    "decimalState": [
+      49,
+      66,
+      47,
+      5,
+      68,
+      57
+    ],
+    "inputHash": "c668718836b597f7b98c7cffc7d2b55612e87d0d50f590a9ae982dd710095f54",
+    "resultHash": "c292b9735cdb60bb460d6b51225756254f8b5f18e4c0c068adc7b2be1aeba2e9"
+  },
+  "standardControl": {
+    "bytes": 673409465,
+    "reductionPct": 2.130095,
+    "ratio": 1.021765,
+    "reconstructMs": 11135.43
+  },
+  "formulaGovernedM4R2": {
+    "capsuleBytes": 673375313,
+    "reductionPct": 2.135058,
+    "ratio": 1.021816,
+    "packMs": 23159.65,
+    "reconstructMs": 5744.69,
+    "capsuleSha256": "2E799FFDB4AD3B3BE1BE65EABFBB77932D6E44868E355813107ED36B1829F296",
+    "reconstructedShaMatch": true
+  },
+  "conclusions": {
+    "exactRepresentation": "PASS",
+    "exactReconstruction": "PASS",
+    "materialCompressionImprovement": "FAIL",
+    "deltaVsStandardBytes": 34152,
+    "note": "Current Formula-governed M4-R2 gzip policy is only marginally smaller than ZIP control and does not establish a material model-size breakthrough."
+  },
+  "nextGate": "Structure-aware GGUF representation / paged or compute-native experiment; do not relabel gzip as breakthrough."
+}
