@@ -1,0 +1,64 @@
+{
+  "schema": "leeway.scientific-video-evidence.v1",
+  "createdAt": "2026-09-23",
+  "evidenceBoundary": "These are reconstructed evidence videos generated from recorded experiment measurements and repository evidence. They are not literal screen recordings of the original experiment sessions.",
+  "clips": [
+    {
+      "id": "LEEWAY-VIDEO-EVIDENCE-CPU-01",
+      "title": "CPU Physics Funnel",
+      "durationSeconds": 10,
+      "sha256": "63e949a610c365b76ed0f4bc6f5c75b83e4709326a4400ca485cb3964b9c3efe",
+      "sources": [
+        "experiments/real-model-qwen3-v1/GOLDEN-FORMULA-CPU-PHYSICS-FUNNEL-V0-20260922.json"
+      ],
+      "highlights": [
+        "6-thread efficiency mode",
+        "8-thread latency minimum",
+        "10-thread throughput mode",
+        "16-thread timeout/failure preserved"
+      ]
+    },
+    {
+      "id": "LEEWAY-VIDEO-EVIDENCE-GPU-02",
+      "title": "GPU / VRAM Achievement Ladder",
+      "durationSeconds": 10,
+      "sha256": "97dce2c3db46df2fee73c0215ebc62029293a93365a2f393f4f64199690480fc",
+      "sources": [
+        "experiments/real-model-qwen3-v1/GOLDEN-FORMULA-GPU-ACHIEVEMENT-LADDER-20260922.json",
+        "experiments/real-model-qwen3-v1/GPU-FORMULA-FUNNEL-11X-TO-16X-BOUNDARY-20260922.json"
+      ],
+      "highlights": [
+        "3.192 GB baseline",
+        "11.182x verified GPU-resident VRAM reduction",
+        "16x threshold 199,473,889 bytes",
+        "243.44 MiB one-layer physical blocker"
+      ]
+    },
+    {
+      "id": "LEEWAY-VIDEO-EVIDENCE-FOLD6-03",
+      "title": "Galaxy Z Fold6 Storage, Media & Runtime",
+      "durationSeconds": 10,
+      "sha256": "e1da33d6f79927fd6ab637b44e0c0ea433aff260329e5d9f48c611acf9d4db37",
+      "sources": [
+        "experiments/mobile/GALAXY-FOLD6-GEMMA27B-PREFLIGHT-20260923.json",
+        "experiments/mobile/FOLD6-PHONE-MEDIA-FORMULA-20260923.json"
+      ],
+      "highlights": [
+        "3.260 GiB safe cache reclaim",
+        "exact media SHA reconstruction",
+        "JXL/Opus/HEVC measured reductions",
+        "raw RGB temporal delta rejected",
+        "native Android llama.cpp runtime preflight PASS",
+        "27B live inference still pending"
+      ]
+    }
+  ],
+  "productionNotes": {
+    "format": "MP4/H.264",
+    "aspect": "9:16",
+    "resolution": "720x1280",
+    "audio": "none",
+    "purpose": "scientific evidence visualization",
+    "originals": "No experiment source files were modified"
+  }
+}
