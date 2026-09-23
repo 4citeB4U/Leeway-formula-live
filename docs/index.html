@@ -1,17 +1,87 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LeeWay Formula Live</title><style>
-body{font-family:system-ui,sans-serif;max-width:920px;margin:40px auto;padding:0 18px;background:#0d1117;color:#e6edf3}
-main{border:1px solid #30363d;border-radius:16px;padding:24px}input,textarea,button{font:inherit}input,textarea{width:100%;box-sizing:border-box;background:#161b22;color:#e6edf3;border:1px solid #30363d;border-radius:8px;padding:10px;margin:6px 0 14px}textarea{min-height:180px}button{padding:10px 16px;margin-right:8px;border:0;border-radius:8px;cursor:pointer}pre{white-space:pre-wrap;background:#161b22;padding:16px;border-radius:10px;overflow:auto}.state{font-weight:700}
-</style></head><body><main><h1>LeeWay Formula Live</h1>
-<p>One Formula authority. This interface calls an authorized Formula service; it does not implement or simulate the Formula in the browser.</p>
-<label>Formula service base URL</label><input id="base" value="http://127.0.0.1:4001">
-<button id="health">Check Formula</button><button id="evaluate">Execute Formula</button>
-<h2>Authorized evaluator request JSON</h2><textarea id="body">{"adapterId":"raw-base64-v1","input":{"matrix":[]}}</textarea>
-<p class="state" id="state">NOT EXECUTED</p><pre id="out">No runtime evidence yet.</pre>
-<script>
-const q=id=>document.getElementById(id), out=q('out'), state=q('state');
-async function call(path,options){state.textContent='EXECUTING';out.textContent='';try{const r=await fetch(q('base').value.replace(/\/$/,'')+path,options);const t=await r.text();out.textContent=t;state.textContent=r.ok?'RUNTIME RESPONSE RECEIVED':'FAILED HTTP '+r.status}catch(e){state.textContent='BLOCKED / UNREACHABLE';out.textContent=String(e)}}
-q('health').onclick=()=>call('/runtime/formula/v1/health');
-q('evaluate').onclick=()=>{let body;try{body=JSON.stringify(JSON.parse(q('body').value))}catch(e){state.textContent='INVALID INPUT';out.textContent=String(e);return}call('/runtime/formula/v1/evaluate',{method:'POST',headers:{'content-type':'application/json'},body})};
-</script></main></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LeeWay Formula — Scientific Evidence House</title>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--bg:#071018;--panel:#0d1822;--line:#223342;--text:#edf4f8;--muted:#9db0bd;--gold:#e5b85c;--blue:#72b7ff;--green:#76d39b;--red:#ff8f87}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:28px}.hero{padding:54px 0 30px;border-bottom:1px solid var(--line)}
+.kicker{color:var(--gold);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+h1{font-size:clamp(42px,7vw,82px);line-height:.94;margin:12px 0 20px}h2{margin-top:42px}p{color:var(--muted);max-width:900px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:22px 0}
+.card{display:block;padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--text);text-decoration:none}
+.card:hover{border-color:var(--blue)}.card b{display:block;color:var(--blue);margin-bottom:7px}.card span{color:var(--muted);font-size:14px}
+.math{padding:18px;border-left:3px solid var(--gold);background:var(--panel);overflow:auto;margin:16px 0}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.badge{border:1px solid var(--line);padding:6px 9px;border-radius:999px;color:var(--muted);font-size:12px}
+.good{color:var(--green)}.warn{color:var(--gold)}.fail{color:var(--red)}footer{border-top:1px solid var(--line);margin-top:50px;padding:24px 0;color:var(--muted)}
+code{color:#d6ecff}
+</style>
+</head>
+<body><div class="wrap">
+<section class="hero">
+<div class="kicker">Created by Leonard Lee · LeeWay Industries</div>
+<h1>LeeWay Formula</h1>
+<p>A scientific publication house for the mathematics, hardware experiments, model/runtime results, storage/media reconstruction, Formula Funnel decision engineering, failures, receipts and reproducibility evidence behind the LeeWay Formula.</p>
+<div class="badges"><span class="badge">Formula v1.0</span><span class="badge">Golden output: [4,50,63,59,48,69]</span><span class="badge">Evidence-first</span><span class="badge">PASS + FAIL preserved</span></div>
+</section>
+
+<h2>What the Formula does</h2>
+<div class="math">\[
+Evidence\to State\to Formula\to Policy\to Execution\to Measurement\to Veritas\to Receipt\to Learning
+\]</div>
+<p>The decision mathematics is defined independently of an LLM, CPU or GPU. Hardware still evaluates the equations and performs the action; hardware is the execution substrate, not the source of the mathematical rule.</p>
+
+<h2>Golden state language</h2>
+<div class="math">\[
+Q_{69}(\rho)=\operatorname{clamp}(\operatorname{round}(69\rho),0,69)
+\]</div>
+<div class="math">\[
+W_t\in\mathbb Z^{16\times6},\quad \Omega=\{0,\ldots,69\}
+\]</div>
+<div class="math">\[
+[4,50,63,59,48,69]\leftrightarrow[E,y,/,7,w,BF]
+\]</div>
+
+<h2>Scientific map</h2>
+<div class="grid">
+<a class="card" href="SCIENTIFIC-MAP.md"><b>Scientific Map</b><span>Top view → street view → subterranean evidence.</span></a>
+<a class="card" href="01-ORIGIN-AND-THESIS.md"><b>Origin & Creator</b><span>Leonard Lee, motivation, contribution boundaries.</span></a>
+<a class="card" href="02-MATHEMATICS.md"><b>Mathematics</b><span>Q69, Golden kernel, control families, hardware/storage equations.</span></a>
+<a class="card" href="EQUATION-ATLAS.md"><b>Equation Atlas</b><span>Equation families and status-aware map.</span></a>
+<a class="card" href="03-FORMULA-FUNNEL.md"><b>Formula Funnel</b><span>Behavioral + knowledge/epistemic context engineering.</span></a>
+<a class="card" href="EVIDENCE-STATUS.md"><b>Evidence Status</b><span>What is proven, blocked, proposed or still a target.</span></a>
+</div>
+
+<h2>Hardware & execution domains</h2>
+<div class="grid">
+<a class="card" href="domains/CPU.md"><b>CPU</b><span>CPU-time/AMAT/Amdahl physics, paging, context switching, thread modes.</span></a>
+<a class="card" href="domains/GPU-VRAM.md"><b>GPU / VRAM</b><span>Closed-loop performance and 11.18× VRAM working-set ladder.</span></a>
+<a class="card" href="domains/PCIE-INTERCONNECT.md"><b>PCIe / Interconnect</b><span>Physical lane truth vs avoidable transfer/synchronization work.</span></a>
+<a class="card" href="domains/USB-DEVICE-IO.md"><b>USB / Device I/O</b><span>Fold6 ADB path, verified transfers and device-state governance.</span></a>
+<a class="card" href="domains/MODELS-RUNTIME.md"><b>Models / Runtime</b><span>Artifact size vs working set vs execution burden; 16×/32×/64× targets.</span></a>
+<a class="card" href="domains/STORAGE-MEDIA.md"><b>Storage / Media</b><span>Exact reconstruction, images, speech, video and rejected transforms.</span></a>
+<a class="card" href="domains/CONTEXT-DECISION.md"><b>Context / Decisions</b><span>How Formula governance constrains LLM/agent context and action.</span></a>
+</div>
+
+<h2>Current evidence snapshot</h2>
+<ul>
+<li><span class="good">VERIFIED:</span> canonical Golden vector and deterministic Formula authority in live experiments.</li>
+<li><span class="good">VERIFIED:</span> 11.18× GPU VRAM working-set reduction. <span class="warn">16× not yet reached.</span></li>
+<li><span class="good">VERIFIED:</span> CPU operating modes differ materially by paging/context-switch/thread policy.</li>
+<li><span class="good">VERIFIED:</span> Fold6 exact media reconstruction and media-domain reduction experiments.</li>
+<li><span class="fail">REJECTED:</span> raw RGB temporal delta for the tested camera burst; simple cross-layer XOR model residual.</li>
+<li><span class="warn">OPEN:</span> 27B Gemma live local Fold6 conversation; sub-layer GPU tensor residency; dedicated PCIe A/B proof.</li>
+</ul>
+
+<h2>Challenge the work</h2>
+<div class="grid">
+<a class="card" href="FAILURES-AND-REPAIRS.md"><b>Failure Ledger</b><span>Negative results are part of the science.</span></a>
+<a class="card" href="REPRODUCIBILITY.md"><b>Reproducibility</b><span>Re-run Golden authority, A/B campaigns, evidence and receipts.</span></a>
+<a class="card" href="../experiments/real-model-qwen3-v1/README.md"><b>Model Experiments</b><span>Raw JSON evidence and measured model-runtime campaigns.</span></a>
+<a class="card" href="../experiments/mobile/FOLD6-PHONE-MEDIA-FORMULA-20260923.json"><b>Fold6 Media Evidence</b><span>Direct mobile image/audio/video scientific record.</span></a>
+</div>
+<footer>LeeWay Formula Live · Creator: Leonard Lee · No claim without inspectable evidence.</footer>
+</div></body></html>
