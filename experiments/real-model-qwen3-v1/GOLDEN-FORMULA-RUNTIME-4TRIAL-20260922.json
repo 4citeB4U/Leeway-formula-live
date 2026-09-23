@@ -1,0 +1,90 @@
+{
+  "experimentId": "LEEWAY-GOLDEN-FORMULA-MODEL-RUNTIME-4TRIAL-20260922",
+  "authorityScriptSha256": "56132F906D834600C00D797159C3695F7028AFD3A0DB080F720942AFBED00AB3",
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "engineSha256": "6502791BBA909D7481DB3A204F3CBF67B1DC06A4B76A73C797D709408341D63E",
+    "goldenPass": true
+  },
+  "trials": [
+    {
+      "id": "T1_NATIVE_COLD_WARM",
+      "meanClientMs": 3159.49,
+      "meanLoadMs": 324.61,
+      "promptTps": 430.14,
+      "genTps": 21.55,
+      "sha256": "D096B3565B5FF76B555C9D2CBEF692DC2C06761F26B2BFD0CD863F34D970A5D8"
+    },
+    {
+      "id": "T2_GOLDEN_OBSERVE",
+      "state": [
+        3,
+        69,
+        1,
+        4,
+        52,
+        0
+      ],
+      "meanClientMs": 3166.12,
+      "meanLoadMs": 320.07,
+      "promptTps": 426.06,
+      "genTps": 21.86,
+      "deltaVsNative": {
+        "clientPct": -0.21,
+        "loadPct": 1.4,
+        "promptTpsPct": -0.95,
+        "genTpsPct": 1.44
+      },
+      "sha256": "ED2B4E7508EF01B06E5B795EBB787D632B5A036D0E08E21DED19E225AE668C70"
+    },
+    {
+      "id": "T3_GOLDEN_KEEP_RESIDENT",
+      "state": [
+        69,
+        1,
+        4,
+        12,
+        52,
+        0
+      ],
+      "meanClientMs": 3358.03,
+      "meanLoadMs": 113.57,
+      "promptTps": 917.66,
+      "genTps": 18.8,
+      "deltaVsNative": {
+        "clientPct": -6.28,
+        "loadPct": 65.01,
+        "promptTpsPct": 113.34,
+        "genTpsPct": -12.76
+      },
+      "sha256": "B2DBC1531494A74B20EAD560D77D0B9FC749A93AD16E8323D61D33D82E204A07"
+    },
+    {
+      "id": "T4_GOLDEN_EVICT_COLD_ISOLATED",
+      "state": [
+        69,
+        1,
+        4,
+        55,
+        67,
+        5
+      ],
+      "meanClientMs": 3532.82,
+      "meanLoadMs": 1190.53,
+      "promptTps": 420.21,
+      "genTps": 25.9,
+      "deltaVsNative": {
+        "clientPct": -11.82,
+        "loadPct": -266.76,
+        "promptTpsPct": -2.31,
+        "genTpsPct": 20.19
+      },
+      "sha256": "DB73210A99C67FF610093A383D3B70BD80B6C6BC55B2878E656B37FE6806A869",
+      "confounder": "Concurrent qwen2.5vl model residency and lower starting free RAM; do not treat throughput/RAM delta as clean superiority evidence."
+    }
+  ],
+  "behavior": "Observed corresponding response text was identical across all four trials.",
+  "gpu": "CPU-resident test model; GPU memory remained 479 MiB.",
+  "conclusion": "Golden Formula observation adds negligible overhead. Keep-resident lossless policy strongly reduced model load time and increased prompt throughput in this run, but worsened end-to-end and generation throughput. Evict-cold strongly worsened load/client time; its generation gain is confounded. No single policy is globally superior; Formula state must drive workload-specific policy selection.",
+  "next": "Repeat campaign with exclusive Ollama control and multiple repetitions; then map Golden states to policy selection instead of preassigning policy."
+}
