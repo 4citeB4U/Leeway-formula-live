@@ -20,6 +20,8 @@ The Formula is **not an LLM**. The decision mathematics does not originate from 
 - [Origin & Thesis](docs/01-ORIGIN-AND-THESIS.md)
 - [Mathematics](docs/02-MATHEMATICS.md)
 - [Equation Atlas](docs/EQUATION-ATLAS.md)
+- [Complete Mathematical Engineering Textbook v2](docs/reference/LeeWay-Formula-Mathematical-Engineering-Textbook-v2.html)
+- [Canonical Q69 + F1 equation page](docs/equations/FOUNDATION-Q69-F1.md)
 - [Formula Funnel for LLM/context decision engineering](docs/03-FORMULA-FUNNEL.md)
 - [Evidence Status](docs/EVIDENCE-STATUS.md)
 - [Failure & Repair Ledger](docs/FAILURES-AND-REPAIRS.md)
