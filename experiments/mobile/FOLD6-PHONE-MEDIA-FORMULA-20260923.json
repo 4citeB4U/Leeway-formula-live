@@ -1,0 +1,195 @@
+{
+  "experimentId": "LEEWAY-FOLD6-PHONE-MEDIA-FORMULA-20260923",
+  "phone": "Samsung Galaxy Z Fold6 SM-F956U",
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "engineSha256": "6502791BBA909D7481DB3A204F3CBF67B1DC06A4B76A73C797D709408341D63E",
+    "finalState": [
+      69,
+      1,
+      68,
+      65,
+      3,
+      59
+    ],
+    "receipt": "/app/receipts/leeway-formula/leeway-formula-run-20260923061757-no-trace.json",
+    "inputHash": "541ac33bbd0c2b01dbfe169690e92a3552551dd61654ace04f6b09e9ce8895a9",
+    "resultHash": "64d0812348868874bb2cc987d815e1df320890cbdbbd7f4ce918557a5fc8bd4b"
+  },
+  "exactReconstruction": {
+    "cameraJpeg": {
+      "reductionPct": 0,
+      "shaMatch": true
+    },
+    "screenshot": {
+      "reductionPct": 10.3889,
+      "shaMatch": true
+    },
+    "audioM4a": {
+      "reductionPct": 0,
+      "shaMatch": true
+    },
+    "videoMp4": {
+      "reductionPct": 0,
+      "shaMatch": true
+    }
+  },
+  "image": {
+    "burstExactZipReductionPct": 2.8055,
+    "rawRgbTemporalDeltaBestReductionPct": -349.6534,
+    "rawRgbTemporalDeltaDecodedPixelReconstruction": "PASS_ALL_FRAMES_ALL_LEVELS",
+    "rawRgbTemporalDeltaClassification": "REJECTED_FOR_THIS_BURST",
+    "jxl": [
+      {
+        "sample": "camera",
+        "distance": 1,
+        "reductionPct": 44.609,
+        "ssim": 0.978678,
+        "psnrDb": 41.768086
+      },
+      {
+        "sample": "camera",
+        "distance": 2,
+        "reductionPct": 73.55,
+        "ssim": 0.940405,
+        "psnrDb": 36.817834
+      },
+      {
+        "sample": "screenshot",
+        "distance": 1,
+        "reductionPct": 62.199,
+        "ssim": 0.995017,
+        "psnrDb": 38.658594
+      },
+      {
+        "sample": "screenshot",
+        "distance": 2,
+        "reductionPct": 71.657,
+        "ssim": 0.993183,
+        "psnrDb": 38.41187
+      }
+    ]
+  },
+  "audio": {
+    "source": "AAC mono 48kHz ~128kb/s",
+    "opusLadder": [
+      {
+        "kbps": 16,
+        "reductionPct": 88.89,
+        "sdrDb": 14.6604,
+        "psnrDb": 171.208
+      },
+      {
+        "kbps": 24,
+        "reductionPct": 82.247,
+        "sdrDb": 18.5526,
+        "psnrDb": 170.312
+      },
+      {
+        "kbps": 32,
+        "reductionPct": 76.453,
+        "sdrDb": 20.4825,
+        "psnrDb": 169.868
+      },
+      {
+        "kbps": 48,
+        "reductionPct": 65.001,
+        "sdrDb": 22.8372,
+        "psnrDb": 169.325
+      }
+    ],
+    "opus24Validation": [
+      {
+        "reductionPct": 82.206,
+        "sdrDb": 19.0906,
+        "psnrDb": 167.965
+      },
+      {
+        "reductionPct": 89.09,
+        "sdrDb": 16.8722,
+        "psnrDb": 167.826
+      }
+    ],
+    "classification": "PROMISING_BEHAVIORAL_REPRESENTATION_REQUIRES_SEMANTIC_INTELLIGIBILITY_GATE"
+  },
+  "video": {
+    "source": "H.264 2048x1080 25fps ~5.6Mb/s",
+    "ladder": [
+      {
+        "policy": "HEVC CQ28",
+        "reductionPct": 40.086,
+        "ssim": 0.989477,
+        "psnrDb": 46.781733
+      },
+      {
+        "policy": "HEVC CQ32",
+        "reductionPct": 66.273,
+        "ssim": 0.98628,
+        "psnrDb": 44.990967
+      },
+      {
+        "policy": "AV1 CQ32",
+        "reductionPct": 35.006,
+        "ssim": 0.990922,
+        "psnrDb": 47.576692
+      }
+    ],
+    "hevcCq32Validation": [
+      {
+        "reductionPct": 76.629,
+        "ssim": 0.884727,
+        "psnrDb": 23.909906
+      },
+      {
+        "reductionPct": 76.995,
+        "ssim": 0.913116,
+        "psnrDb": 29.214225
+      }
+    ],
+    "classification": "CONTENT_ADAPTIVE_POLICY_REQUIRED_FIXED_CQ_NOT_PROMOTED"
+  },
+  "phoneArtifacts": [
+    {
+      "name": "camera-d1.jxl",
+      "bytes": 2545019,
+      "shaMatch": true
+    },
+    {
+      "name": "screenshot-d1.jxl",
+      "bytes": 252941,
+      "shaMatch": true
+    },
+    {
+      "name": "voice-opus-24.ogg",
+      "bytes": 266470,
+      "shaMatch": true
+    },
+    {
+      "name": "video-hevc-cq32.mp4",
+      "bytes": 4959876,
+      "shaMatch": true
+    }
+  ],
+  "phoneMediaAccounting": {
+    "photosBytes": 2519236608,
+    "videosBytes": 94565720064,
+    "audioBytes": 181080064
+  },
+  "scenarioOnly": {
+    "photoD1MeasuredReductionRangePct": [
+      44.609,
+      62.199
+    ],
+    "audioOpus24MeasuredReductionRangePct": [
+      82.206,
+      89.09
+    ],
+    "videoHevcCq32MeasuredReductionRangePct": [
+      66.273,
+      76.995
+    ],
+    "warning": "Do not apply globally until per-file Formula classification and fidelity acceptance pass."
+  },
+  "originals": "UNCHANGED",
+  "artifactSha256": "2F94A1B9953FF530A467073563412F2D3FF80085910FF3E936ED4C31C18FB5E3"
+}
