@@ -1,0 +1,150 @@
+{
+  "experimentId": "LEEWAY-GOLDEN-FORMULA-GPU-ACHIEVEMENT-LADDER-20260922",
+  "model": {
+    "name": "leeway/opencode-tool-worker:latest",
+    "storedBytes": 1359293124,
+    "parameters": "2.0B",
+    "quantization": "Q4_K_M"
+  },
+  "verifiedPrior": {
+    "closedLoop": {
+      "vramBytes": 3191582227,
+      "clientImprovementPct": 15.67,
+      "loadImprovementPct": 17.48,
+      "promptImprovementPct": 37.38,
+      "generationImprovementPct": 9.87,
+      "minGenerationImprovementPct": 20.14
+    },
+    "classification": "PASS_ALL_MEASURED_DIRECTIONS"
+  },
+  "isolatedGpuLab": {
+    "port": 11436,
+    "productionResidencyZeroBeforeCampaign": true,
+    "physicalGpuIdleMiB": 272
+  },
+  "ladder": [
+    {
+      "mode": "default-warm",
+      "vramBytes": 3191582227,
+      "clientMs": 2031.93,
+      "genTps": 137.37,
+      "formulaState": [
+        69,
+        0,
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "mode": "ctx-1024",
+      "vramBytes": 1347126557,
+      "clientMs": 1237.2,
+      "genTps": 133.17,
+      "vramReductionX": 2.369
+    },
+    {
+      "mode": "ctx-512",
+      "vramBytes": 1287882013,
+      "clientMs": 1385.39,
+      "genTps": 124.82,
+      "vramReductionX": 2.478
+    },
+    {
+      "mode": "ctx-256-balanced",
+      "vramBytes": 1232957602,
+      "clientMs": 1241.74,
+      "genTps": 132.87,
+      "vramReductionX": 2.589,
+      "formulaState": [
+        0,
+        4,
+        5,
+        6,
+        18,
+        7
+      ]
+    },
+    {
+      "mode": "ctx-128",
+      "vramBytes": 1220311776,
+      "clientMs": 1646,
+      "genTps": 148.23,
+      "vramReductionX": 2.615
+    },
+    {
+      "mode": "ctx-64",
+      "vramBytes": 1213978377,
+      "clientMs": 1923.4,
+      "genTps": 117.25,
+      "vramReductionX": 2.629
+    },
+    {
+      "mode": "20-gpu-layers",
+      "vramBytes": 930055454,
+      "clientMs": 3409.4,
+      "genTps": 38.54,
+      "vramReductionX": 3.431
+    },
+    {
+      "mode": "10-gpu-layers",
+      "vramBytes": 596398571,
+      "clientMs": 4099.1,
+      "genTps": 32.64,
+      "vramReductionX": 5.351,
+      "formulaState": [
+        1,
+        2,
+        4,
+        5,
+        13,
+        18
+      ]
+    },
+    {
+      "mode": "5-gpu-layers",
+      "vramBytes": 427955322,
+      "clientMs": 4408.3,
+      "genTps": 30.13,
+      "vramReductionX": 7.458
+    },
+    {
+      "mode": "1-gpu-layer-capacity",
+      "vramBytes": 285411901,
+      "clientMs": 7171.9,
+      "genTps": 20.94,
+      "vramReductionX": 11.182,
+      "formulaState": [
+        69,
+        0,
+        1,
+        3,
+        2,
+        6
+      ]
+    },
+    {
+      "mode": "0-gpu-layers",
+      "vramBytes": 0,
+      "clientMs": 4875.4,
+      "genTps": 17.16,
+      "classification": "CPU_ONLY_NOT_GPU_16X"
+    }
+  ],
+  "targets": {
+    "x16VramThresholdBytes": 199473889,
+    "x32VramThresholdBytes": 99736945,
+    "x64VramThresholdBytes": 49868472
+  },
+  "conclusions": [
+    "Best genuine GPU-resident VRAM reduction observed: 11.182x at one GPU layer.",
+    "16x GPU-resident target not reached; zero GPU layers crosses VRAM threshold only by becoming CPU-only and is not counted.",
+    "Context 128 is a strong efficiency point: ~2.615x lower VRAM with 148.23 gen TPS.",
+    "Context 256 is a balanced point: ~2.589x lower VRAM with 1241.74 ms client and 132.87 gen TPS.",
+    "Aggressive partial offload relocates model weight into system RAM and trades substantial performance for VRAM capacity; it is not total model-weight reduction."
+  ],
+  "nextGate": "To exceed 11.18x while remaining GPU-resident, test representation-level weight reduction / streamed-paged tensor residency rather than merely context or layer offload; account for RAM, PCIe, and reconstruction so relocated weight is not misreported as reduction.",
+  "artifactSha256": "C19A3D1B8BE8F06AC52BC0E58205CF1830EEDAB01BA3F4261ED71016C4C9F6A8",
+  "formulaModesSha256": "67C525B01E8889B285823047D30BC5DA1AABD01DFD572D675EFB36F50B30B7F9"
+}
