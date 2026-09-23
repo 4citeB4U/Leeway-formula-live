@@ -2,6 +2,8 @@
 
 **Complete recovered source:** [LeeWay Formula Mathematical Engineering Textbook v2](reference/LeeWay-Formula-Mathematical-Engineering-Textbook-v2.html) — 196 curated mathematical objects plus the source-equation ledger.
 
+**Equation library:** [all clean equation-family pages](equations/README.md)
+
 **Detailed canonical foundation:** [Q69 + F1 equations](equations/FOUNDATION-Q69-F1.md)
 
 
