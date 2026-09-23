@@ -1,0 +1,123 @@
+{
+  "experimentId": "LEEWAY-GOLDEN-FORMULA-DUAL-CPU-GPU-20260922",
+  "infrastructureRepair": {
+    "defect": "Canonical Ollama Compose had no GPU device reservation; NVIDIA env vars existed but HostConfig.DeviceRequests was null.",
+    "composePath": "D:\\LeeWay\\Ecosystem\\docker-compose.leeway.yml",
+    "preSha256": "C8A684F4184764D97D86B3E9B726A901054A096202E47254619CF71D80AEAB06",
+    "postSha256": "FCCC5744408BCBD3CA768BA3A6861EF80D43CF5C66B2DA938FD240ECC8FC26A2",
+    "backupPreserved": true,
+    "gpuDeviceRequestVerified": true,
+    "originalModelVolumeRestored": "leeway-ecosystemv214_leeway_brain_data"
+  },
+  "rejectedTrials": [
+    "Initial CPU_LANE after GPU enablement was rejected because qwen3 offloaded to VRAM and was therefore not a CPU-only lane.",
+    "A subsequent forced-CPU attempt was rejected because the prior GPU model remained resident.",
+    "CPU 16-thread policy was terminated and recorded as FAILED_TIMEOUT_OR_UNACCEPTABLE_DURATION."
+  ],
+  "cpuLane": {
+    "model": "qwen3:latest",
+    "forcedNumGpu": 0,
+    "sizeVram": 0,
+    "cleanNative": {
+      "clientMs": 3580.1633,
+      "loadMs": 1137.23968633333,
+      "promptTps": 502.639317855343,
+      "genTps": 24.2070132594772
+    },
+    "cleanKeepResident": {
+      "clientMs": 3606.9716,
+      "loadMs": 443.301308666667,
+      "promptTps": 451.105431034816,
+      "genTps": 18.7432451733135,
+      "formulaState": [
+        2,
+        0,
+        3,
+        8,
+        1,
+        11
+      ],
+      "receipt": "/app/receipts/leeway-formula/leeway-formula-run-20260923025800-no-trace.json"
+    },
+    "threadSweep": [
+      {
+        "threads": 6,
+        "status": "PASS",
+        "clientMs": 1538.2244,
+        "loadMs": 447.354257333333,
+        "promptTps": 381.715693683469,
+        "genTps": 53.8034026137845,
+        "minGenTps": 50.9682778217114
+      },
+      {
+        "threads": 8,
+        "status": "PASS",
+        "clientMs": 1393.71093333333,
+        "loadMs": 450.863575666667,
+        "promptTps": 446.863829607508,
+        "genTps": 62.0124599492971,
+        "minGenTps": 59.3671035006082
+      },
+      {
+        "threads": 12,
+        "status": "PASS",
+        "clientMs": 2649.50146666667,
+        "loadMs": 441.928613,
+        "promptTps": 549.951564023498,
+        "genTps": 26.8082156225831,
+        "minGenTps": 22.7092408158862
+      },
+      {
+        "threads": 16,
+        "status": "FAILED_TIMEOUT_OR_UNACCEPTABLE_DURATION"
+      }
+    ],
+    "bestObservedPolicy": "8 threads",
+    "bestVsCleanNative": {
+      "clientImprovementPct": 61.07,
+      "loadImprovementPct": 60.35,
+      "promptTpsChangePct": -11.1,
+      "generationImprovementPct": 156.17
+    }
+  },
+  "gpuLane": {
+    "model": "leeway/opencode-tool-worker:latest",
+    "parameters": "2.0B",
+    "quantization": "Q4_K_M",
+    "sizeVramBytes": 3191582227,
+    "nativeFromDualLane": {
+      "clientMs": 5776.72,
+      "loadMs": 2120.63,
+      "promptTps": 6.01,
+      "genTps": 162.68
+    },
+    "formulaWarmFromDualLane": {
+      "clientMs": 2073.35,
+      "loadMs": 797.77,
+      "promptTps": 205.83,
+      "genTps": 153.58,
+      "formulaState": [
+        61,
+        0,
+        4,
+        5,
+        9,
+        18
+      ],
+      "clientImprovementPct": 64.11,
+      "loadImprovementPct": 62.38,
+      "generationChangePct": -5.59
+    },
+    "repeatedWarm": {
+      "runs": 6,
+      "clientMs": 982.330616666667,
+      "loadMs": 502.949487166667,
+      "promptTps": 980.496612684714,
+      "genTps": 150.400473538283,
+      "minGenTps": 136.002958064338,
+      "maxGenTps": 164.369770344612,
+      "sha256": "F6BD081EE698AC6F8B3A3CF03B76F4B91D1061E939A3F196AD961548BDBFA021"
+    }
+  },
+  "interpretation": "CPU and GPU are now separate proven execution lanes. The 8-thread CPU result is an experimental policy-sweep result discovered through the Formula Funnel; it is not yet a Golden-Formula-selected policy. GPU warm residency materially reduces load/client time while generation remains below native in the current sample. Next gate is to bind Golden Formula states to CPU-thread/GPU-residency policy selection and retest closed-loop."
+}
