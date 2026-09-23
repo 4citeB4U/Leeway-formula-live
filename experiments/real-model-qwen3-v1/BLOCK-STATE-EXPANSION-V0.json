@@ -1,0 +1,58 @@
+{
+  "experimentId": "LEEWAY-BLOCK-STATE-EXPANSION-V0",
+  "status": "MIXED_RESULT",
+  "sourceModel": {
+    "internalName": "MiniCPM5 1B",
+    "sha256": "81B64D05A23B17B34C475F42B3E72FBDE62D4B92CC34541F7A8031D0752DEAFA"
+  },
+  "sourceTensor": {
+    "name": "blk.0.attn_q.weight",
+    "ggmlType": 12,
+    "dims": [
+      1536,
+      2048
+    ]
+  },
+  "sample": {
+    "blocks": 96,
+    "physicalBlockBytes": 256,
+    "nativeBytes": 24576,
+    "meanEntropyBitsPerByte": 7.001908080739212,
+    "uniqueBlockHashes": 96
+  },
+  "adapter": {
+    "status": "EXPERIMENTAL_NOT_CANONICAL",
+    "mapping": [
+      "entropy",
+      "uniqueByteCount",
+      "byteSumMod70",
+      "firstByteMod70",
+      "lastByteMod70",
+      "blockShaPrefixMod70"
+    ],
+    "formulaWindows": 6,
+    "formulaEngine": "LEEWAY-FORMULA-v1.0"
+  },
+  "formulaClassReuse": {
+    "twoFeatureClasses": 14,
+    "reusedBlocks": 91,
+    "largestClassSizes": [
+      21,
+      21,
+      18,
+      9,
+      7,
+      6,
+      5
+    ]
+  },
+  "exactResidualTest": {
+    "basisResidualBytes": 25602,
+    "reductionPct": -4.1748046875,
+    "ratio": 0.9599250058589173,
+    "result": "FAIL_EXACT_STORAGE_REDUCTION"
+  },
+  "interpretation": "Formula-facing coarse state exposes reusable classes, but those classes do not contain enough information to reconstruct exact quantized block bytes. Exact residual remains essentially full-size.",
+  "nextGate": "Recover actual GGML type-12 quantization semantics and test behavior-preserving class/basis substitution or lower-precision representation with numerical/inference error measurements.",
+  "evidenceBoundary": "No 16x storage or behavioral equivalence claim. Canonical Formula engine was used for state evaluation; the block-to-matrix adapter is experimental."
+}
