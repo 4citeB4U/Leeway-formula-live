@@ -2,6 +2,8 @@
 
 The service imports the byte-preserved canonical kernel shipped in this repository. No C, D or E drive is required. Source integrity is checked before loading. Historical E-drive recovery records describe provenance, not a deployment dependency.
 
+The ecosystem-wide [portability contract](https://github.com/4citeB4U/LeeWay-Agent-Skills/blob/main/config/portability-contract.md) governs path, OS, device and model independence. [GitHub runtime verification](https://github.com/4citeB4U/Leeway-formula-live/actions/runs/36383917762) passed on Windows, Linux and macOS for implementation `a0c569c` on 2026-09-28. The tests exercise canonical mathematics, source integrity, location-independent startup, HTTP execution and MCP boundaries. This does not certify mobile/browser adapters or arbitrary model integrations.
+
 ## Native Node host
 
 On Windows, macOS or Linux with Node 22 or newer, clone the authority repository and run from its root:
