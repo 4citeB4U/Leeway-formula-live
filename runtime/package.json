@@ -1,0 +1,8 @@
+{
+  "name": "leeway-formula-transport",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "dependencies": { "@modelcontextprotocol/sdk": "1.28.0" }
+}

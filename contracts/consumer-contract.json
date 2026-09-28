@@ -42,5 +42,9 @@
     "runtimeTarget",
     "runtimeExecutionState",
     "verificationStatus"
-  ]
+  ],
+  "requestSchema": "contracts/evaluate-request.schema.json",
+  "portableClient": "scripts/formula-client.mjs",
+  "deploymentBoundary": "Host source and receipt directories are explicit runtime configuration, never consumer identity. No drive letter is required by consumers.",
+  "llmBoundary": "Generic LLM/tool invocation is supported with authorized measured input. Conversation-to-matrix scoring has no verified mapping in this consumer; golden diagnostics do not evaluate questions."
 }

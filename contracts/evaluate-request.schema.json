@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/4citeB4U/Leeway-formula-live/contracts/evaluate-request.schema.json",
+  "title": "Canonical Formula v1 consumer request",
+  "type": "object",
+  "required": ["adapterId", "input"],
+  "properties": {
+    "adapterId": {"enum": ["raw-base64-v1", "runtime-state-v1"]},
+    "caller": {"type": "string"},
+    "traceId": {"type": "string"},
+    "input": {"type": "object"}
+  },
+  "$defs": {
+    "matrix": {
+      "type": "array", "minItems": 16, "maxItems": 16,
+      "items": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer", "minimum": 0, "maximum": 69}}
+    },
+    "observations": {
+      "type": "array", "minItems": 16, "maxItems": 16,
+      "items": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "number"}}
+    },
+    "ranges": {
+      "description": "Six inclusive measurement ranges. Runtime validation additionally requires finite min < max for every pair.",
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"adapterId": {"const": "raw-base64-v1"}}},
+      "then": {"properties": {"input": {"required": ["matrix"], "properties": {"matrix": {"$ref": "#/$defs/matrix"}}}}}
+    },
+    {
+      "if": {"properties": {"adapterId": {"const": "runtime-state-v1"}}},
+      "then": {"properties": {"input": {
+        "required": ["stateRows"],
+        "properties": {"stateRows": {"$ref": "#/$defs/observations"}, "matrix": {"$ref": "#/$defs/matrix"}, "ranges": {"$ref": "#/$defs/ranges"}},
+        "anyOf": [{"required": ["matrix"]}, {"required": ["ranges"]}]
+      }}}
+    }
+  ]
+}
