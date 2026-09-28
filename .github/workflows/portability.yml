@@ -1,0 +1,20 @@
+name: Formula portable runtime
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  canonical-runtime:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts --prefix runtime
+      - run: node runtime/canonical/leeway-formula/v1/tests/golden-vector-v1.mjs
+      - run: node runtime/canonical/leeway-formula/v1/tests/reproducibility-v1.mjs
+      - run: node tests/run-live-tests.mjs

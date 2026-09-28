@@ -1,0 +1,33 @@
+# Run from any OS with a compatible Docker engine:
+# docker compose -f runtime/compose.yaml up -d
+services:
+  formula:
+    image: node@sha256:d649c27dae7ba0137b3cef5dd75baa422c08dc3d9e3fc0c23dfb172dc3cc6436
+    command: ["node", "/transport/runtime/server.mjs"]
+    restart: unless-stopped
+    read_only: true
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 256m
+    cpus: 1
+    pids_limit: 64
+    environment:
+      HOST: "0.0.0.0"
+      PORT: "4001"
+    ports:
+      - "127.0.0.1:${LEEWAY_FORMULA_PORT:-4001}:4001"
+    volumes:
+      - type: bind
+        source: ..
+        target: /transport
+        read_only: true
+      - type: volume
+        source: formula-receipts
+        target: /transport/runtime/canonical/receipts
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4001/runtime/formula/v1/health').then(async r=>{const h=await r.json();process.exit(r.ok&&h.status==='LEEWAY_FORMULA_V1_PASS'?0:1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+volumes:
+  formula-receipts:

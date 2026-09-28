@@ -1,13 +1,14 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { pathToFileURL, fileURLToPath } from 'node:url';
 import { createHash, randomUUID } from 'node:crypto';
 import { validateRequest } from '../scripts/formula-client.mjs';
 
 // Transport only: import the approved kernel, never reproduce its mathematics.
-const source = process.env.LEEWAY_FORMULA_SOURCE;
-if (!source || !path.isAbsolute(source)) throw new Error('LEEWAY_FORMULA_SOURCE must be an absolute approved v1 directory');
+const source = process.env.LEEWAY_FORMULA_SOURCE
+  ? path.resolve(process.env.LEEWAY_FORMULA_SOURCE)
+  : fileURLToPath(new URL('./canonical/leeway-formula/v1/', import.meta.url));
 const manifest = JSON.parse(fs.readFileSync(new URL('./kernel-integrity.json', import.meta.url)));
 for (const [relative, expected] of Object.entries(manifest.files)) {
   const actual = createHash('sha256').update(fs.readFileSync(path.resolve(source, relative))).digest('hex');

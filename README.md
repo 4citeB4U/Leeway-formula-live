@@ -23,6 +23,7 @@ The Formula is **not an LLM**. The decision mathematics does not originate from 
 
 - [Run the canonical evaluator and connect MCP clients](docs/RUNTIME-RECOVERY.md)
 - [Portable consumers and LLM input boundary](docs/PORTABLE-CONSUMERS.md)
+- [Cross-platform deployment and MCP](docs/CROSS-PLATFORM-DEPLOYMENT.md)
 - [Scientific Map](docs/SCIENTIFIC-MAP.md) — top view → street view → evidence
 - [Origin & Thesis](docs/01-ORIGIN-AND-THESIS.md)
 - [Mathematics](docs/02-MATHEMATICS.md)
