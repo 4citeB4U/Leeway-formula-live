@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "mappingId": "voice-runtime-state-v1",
+  "status": "CANDIDATE_CALIBRATION_REQUIRED",
+  "domain": "speech-audio",
+  "sourceAuthority": "4citeB4U/LeeWay-Voice-Fabric",
+  "evaluatorAdapterId": "runtime-state-v1",
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "first_audio_latency_ms",
+      "unit": "ms",
+      "direction": "lower_is_better"
+    },
+    {
+      "index": 1,
+      "id": "synthesis_realtime_factor",
+      "unit": "ratio",
+      "direction": "lower_is_better"
+    },
+    {
+      "index": 2,
+      "id": "playback_gap_ms",
+      "unit": "ms",
+      "direction": "lower_is_better"
+    },
+    {
+      "index": 3,
+      "id": "interruption_spill_ms",
+      "unit": "ms",
+      "direction": "lower_is_better"
+    },
+    {
+      "index": 4,
+      "id": "queue_pressure",
+      "unit": "ratio_0_1",
+      "direction": "lower_is_better"
+    },
+    {
+      "index": 5,
+      "id": "delivery_integrity",
+      "unit": "ratio_0_1",
+      "direction": "higher_is_better"
+    }
+  ],
+  "observationWindow": {
+    "rows": 16,
+    "rule": "16 consecutive completed or terminated speech segments/sessions under the same adapter/provider profile"
+  },
+  "rangePolicy": "MUST_BE_CALIBRATED_AND_VERSIONED_BEFORE_NUMERIC_TASK_EVALUATION",
+  "requiredEvidence": [
+    "voice/provider identity",
+    "measurement timestamps",
+    "actual playback events when applicable",
+    "stop/interruption events",
+    "queue occupancy",
+    "rendered vs requested text accounting",
+    "calibration dataset/receipt"
+  ],
+  "currentBoundary": "This contract fixes semantic dimensions only. Numeric ranges are intentionally absent until calibrated; therefore task Formula evaluation remains NOT_EXECUTED."
+}
