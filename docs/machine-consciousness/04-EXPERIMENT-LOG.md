@@ -624,3 +624,52 @@ Planned model-training mechanisms:
 - DPO preference optimization.
 
 No new model weights have been trained under this plan yet.
+
+
+## E-050 — Independent six-dimension instrumentation
+
+Status:
+PASS — MC-G5.
+
+Validated implementation:
+feature branch agent-lee-mc5-independent-dimensions, merged to main via PR #1.
+
+Validation host:
+qualified Android workstation.
+
+Regression + MC-5 tests:
+48/48 PASS.
+
+Campaign:
+- scenarios: stationary, changing, noisy, misleading, module-dropout;
+- 128 worlds/scenario;
+- 640 worlds total;
+- 64 cycles/world;
+- 40,960 cognition cycles;
+- 2,560 independently checked 16-cycle windows.
+
+Independent dimensions:
+H = belief entropy;
+PE = precision-weighted prediction error;
+V = free-energy-rate candidate valence;
+IG = belief information gain;
+G = selected-policy expected free energy;
+B = operational global-access ratio from MC-G3 workspace evidence.
+
+Results:
+- all cycles recomputed: PASS;
+- validation failures: 0;
+- non-finite values: 0;
+- window failures: 0;
+- max absolute difference against existing simulator diagnostic values: exactly 0 for all six dimensions;
+- REPLAY provenance rejected;
+- tampered receipt hash rejected;
+- mismatched awareness state rejected;
+- nonconsecutive previous cycle rejected;
+- Formula NOT_EXECUTED.
+
+Campaign digest:
+5fb592a303a8bdf9e405c9e606ca2a1aec0e3761ef8a0b7338fd5ca5414872f2.
+
+Next:
+MC-6 evidence-derived calibration.
