@@ -166,3 +166,36 @@ Decision:
 MC-G4 acceptance is evaluated exactly as written in the master plan: replay must improve at least one predeclared planning/learning measure while false-real-memory count remains zero. The validator may not silently narrow this to combined NLL after execution.
 Boundary:
 A narrow metric win does not authorize a general claim that replay improves overall predictive performance. Combined-NLL regressions remain reportable limitations and must be revisited in MC-G9 ablation/tuning.
+
+
+## D-023 — Adaptive deliberation is state-dependent
+Status: APPROVED AS CANDIDATE CONTROL LAW
+Decision:
+Agent Lee must not use one fixed cognition depth. Low-uncertainty/low-risk states may use a FAST path; uncertainty, prediction error, incomplete global access, self-model inconsistency and risk may purchase additional bounded cognition cycles. Delay for its own sake is prohibited.
+
+## D-024 — Logical workers are distinct from physical executors
+Status: APPROVED / VERIFIED BY BASELINE
+Decision:
+"20 workers" means 20 logical task lanes unless a workload-specific benchmark proves that 20 physical executors are efficient. Formula/scheduler policy selects the physical executor count.
+Evidence:
+CPU-bound 20-thread baseline was slower than one; wait-heavy 20-logical-worker proxy achieved 18.89x speedup.
+
+## D-025 — Memory truth and memory abstraction are separate tiers
+Status: APPROVED AS MEMORY ARCHITECTURE
+Decision:
+Exact source/provenance memory may be structurally compacted only if exact reconstruction is provable. Semantic capsules may be lossy but must preserve immutable source references and may never replace the truth vault.
+
+## D-026 — Training optimization is separate from cognition runtime
+Status: APPROVED
+Decision:
+QLoRA/LoRA-family adaptation and DPO may tune a language component's behavior, but identity, skills, tools, Formula authority, Discovery, memory, receipts and device capability remain external governed system state.
+
+## D-027 — Mathematical qualification precedes skill integration
+Status: APPROVED
+Decision:
+Belief, emotion/valuation, deliberation, replay and self-awareness mathematics must pass independent deterministic tests before they are allowed to alter live Agent Lee language, skills or actions.
+
+## D-028 — Public research must preserve evidence state
+Status: APPROVED
+Decision:
+RapidWebDevelop publication must retain VERIFIED / OBSERVED / INFERRED / PROPOSED / UNVERIFIED / FAILED / BLOCKED / SUPERSEDED labels and source commits. Public presentation may not upgrade a research candidate into a production or consciousness claim.
