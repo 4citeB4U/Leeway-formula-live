@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptType": "AGENT_LEE_SCIENTIFIC_DOCUMENTATION_RELEASE_V0",
+  "observedAt": "2026-10-01",
+  "status": "PASS",
+  "sourceRepository": "4citeB4U/Leeway-formula-live",
+  "sourceCommit": "cb41ef24f23f11a56d3db0f3ab21e4ead3167380",
+  "scope": [
+    "machine-consciousness scientific documentation",
+    "Agent Lee scientific dossier",
+    "failure/repair history",
+    "all-agent reference template",
+    "RapidWebDevelop publication plan",
+    "math-only cognition/emotion/dream/self qualification",
+    "parallelism baseline",
+    "memory compaction prototype",
+    "training-compute research notes"
+  ],
+  "documents": [
+    "docs/machine-consciousness/README.md",
+    "docs/machine-consciousness/00-ORIGIN-CONVERSATION-20261001.md",
+    "docs/machine-consciousness/01-MASTER-PLAN-v0.md",
+    "docs/machine-consciousness/02-RESEARCH-NOTEBOOK-v0.md",
+    "docs/machine-consciousness/03-DECISION-LEDGER.md",
+    "docs/machine-consciousness/04-EXPERIMENT-LOG.md",
+    "docs/machine-consciousness/05-CLAIM-REGISTER.md",
+    "docs/machine-consciousness/06-AGENT-LEE-SCIENTIFIC-DOSSIER-v0.md",
+    "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md",
+    "docs/machine-consciousness/08-LEEWAY-AGENT-REFERENCE-TEMPLATE-v0.md",
+    "docs/machine-consciousness/09-RAPIDWEBDEVELOP-PUBLICATION-PLAN-v0.md",
+    "docs/machine-consciousness/public-research-manifest-v0.json"
+  ],
+  "experimentEvidence": {
+    "math": {
+      "tests": "17/17 PASS",
+      "receipt": "receipts/machine-consciousness/AGENT-LEE-MATH-QUALIFICATION-v0-20261001.json"
+    },
+    "parallelism": {
+      "status": "BASELINE_VERIFIED",
+      "receipt": "receipts/machine-consciousness/AGENT-LEE-PARALLELISM-BASELINE-v0-20261001.json"
+    },
+    "memoryCompaction": {
+      "status": "EXACT_PROTOTYPE_PASS",
+      "receipt": "receipts/machine-consciousness/AGENT-LEE-MEMORY-COMPACTION-v0-20261001.json"
+    }
+  },
+  "byteIntegrity": {
+    "testedArtifactsMatchPublishedBytes": true,
+    "experimentNormalizationCommit": "6ec6c39409b0ee4a123afcfdbe06d13060f6255f",
+    "receiptNormalizationCommit": "77e72a851d32779b5e653861da0d5d885c57fdba"
+  },
+  "personaAuthority": {
+    "repository": "4citeB4U/Agent-Lee-The-Sum-of-All-Systems",
+    "pointerCommit": "fb3bf9163a84a06bb349e6a87e5c0d77a38fecbe",
+    "path": "Docs/canon/agent-lee-scientific-research-authority.md"
+  },
+  "rapidWebDevelop": "PLANNED_NOT_DEPLOYED",
+  "formulaExecution": "NOT_EXECUTED_FOR_MACHINE_CONSCIOUSNESS_DOMAIN",
+  "learningLedger": "NOT_UPDATED_DOCUMENTATION_RELEASE_ONLY",
+  "claimBoundary": "This release documents verified mechanisms, simulations, candidates, failures and limits. It does not establish sentience, subjective experience, or completed live integration of all candidate cognition mechanisms."
+}
