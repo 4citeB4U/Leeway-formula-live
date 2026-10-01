@@ -3,7 +3,7 @@
   "researchId": "agent-lee-scientific-reference-v0",
   "title": "Agent Lee — LeeWay Scientific Reference Architecture",
   "sourceRepository": "4citeB4U/Leeway-formula-live",
-  "sourceCommit": "1b70f8a06201f16ac8b131dbd7ed09e35c3de0a2",
+  "sourceCommit": "7d1ff9eb47fa71ef65968ad973c3fa0c6d8e06d2",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "mutation": false,
@@ -110,5 +110,17 @@
     "BLOCKED",
     "SUPERSEDED"
   ],
-  "publicClaimBoundary": "Operational machine-awareness research and deterministic cognition mechanisms may be documented. No current evidence establishes subjective experience or sentience."
+  "publicClaimBoundary": "Operational machine-awareness research and deterministic cognition mechanisms may be documented. No current evidence establishes subjective experience or sentience.",
+  "documentationReleaseReceipt": "receipts/machine-consciousness/AGENT-LEE-SCIENTIFIC-DOCUMENTATION-RELEASE-v0-20261001.json",
+  "byteIntegrity": {
+    "testedArtifactsMatchPublishedBytes": true,
+    "experimentNormalizationCommit": "6ec6c39409b0ee4a123afcfdbe06d13060f6255f",
+    "receiptNormalizationCommit": "77e72a851d32779b5e653861da0d5d885c57fdba"
+  },
+  "personaAuthority": {
+    "repository": "4citeB4U/Agent-Lee-The-Sum-of-All-Systems",
+    "pointerPath": "Docs/canon/agent-lee-scientific-research-authority.md",
+    "pointerCommit": "fb3bf9163a84a06bb349e6a87e5c0d77a38fecbe"
+  },
+  "releaseState": "SCIENTIFIC_DOCUMENTATION_V0_SEALED"
 }
