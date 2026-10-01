@@ -729,3 +729,51 @@ NOT_EXECUTED.
 
 Next:
 MC-G7 live Formula authority reverification.
+
+
+## E-070 — Live Formula authority reverification
+
+Status:
+PASS — MC-G7.
+
+Host:
+qualified Android workstation / Termux.
+
+Live evaluator:
+http://127.0.0.1:4001
+
+Health:
+- status = LEEWAY_FORMULA_V1_PASS;
+- formula = LEEWAY-FORMULA-v1.0;
+- loaded = true;
+- goldenVectorPass = true;
+- specValid = true;
+- adapterRegistryPass = true;
+- kernelIntegrity = VERIFIED_AT_STARTUP.
+
+Independent deployed-source SHA-256:
+- engine: 6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e;
+- canonical input: 4087fc14a9f1f44eb46d9d6417156176794e2acc72ee9bf481f21a5d0abe5236;
+- runtime-state-v1: 3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0;
+- raw-base64-v1: 2c8b477abad73a0b8519127b20e500bc857f6d26a2722634f23637d4eeac6215;
+- formula service: 59c74a850cfbacab4408d73538c824d25687ae0fbd12f07ab5d3622661b7b1ec;
+- spec: 2f4604f143e2f7c3bc2fe315f2faa2c7d9b8b188151a0fab9f6cebea3e155f9b;
+- spec Markdown: dd9f2f7d23dcc8076d7d3c9e1f194b596bff041e8b25dc003348c8554db7b16d.
+
+Direct Golden self-test:
+PASS.
+Decimal = [4,50,63,59,48,69].
+Base64 = [E,y,/,7,w,BF].
+Golden input hash = 06b284a038ddbd371633b89a3358a3e7eff555c067d702fa54340c5347c69462.
+
+Deployment provenance:
+canonical Git origin; clean deployed working tree; deployed repo commit eb94a2ef141e4099d6405536ae06cfacd093b936.
+
+Important:
+Formula-byte authority is pinned-hash authority. The deployed checkout need not be the latest documentation commit when the canonical Formula bytes and live evaluator identity independently converge.
+
+Cognition Formula execution:
+NOT_EXECUTED.
+
+Next:
+MC-G8 first cognition evaluation.
