@@ -412,3 +412,13 @@ G-013 — Eight hundred held-out 16x6 cognition windows mapped through the pinne
 
 Lesson:
 calibration is a separate authority step. Good coverage can authorize a mapping range without authorizing interpretation of a Formula output.
+
+
+---
+
+# Additional gains retained after MC-G7
+
+G-014 — Live Formula service identity, deployed source hashes, kernel-integrity pins and a direct Golden self-test converged on the same LEEWAY-FORMULA-v1.0 authority.
+
+Lesson:
+service health != source authority, and latest repository commit != Formula identity. Formula authority is established by the canonical bytes/contracts plus verified live behavior and provenance.
