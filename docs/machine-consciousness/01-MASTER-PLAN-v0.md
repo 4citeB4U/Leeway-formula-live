@@ -509,7 +509,8 @@ REVISE
 REJECT
 REMAIN_RESEARCH
 
-No maturity level or Formula output is promoted as a claim of sentience.
+Acceptance MC-G10:
+the promotion decision is evidence-bound, all prior gates have inspectable receipts, unresolved limitations are explicit, and no maturity level or Formula output is promoted as a claim of sentience.
 
 ## Primary experiment matrix
 

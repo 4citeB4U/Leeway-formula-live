@@ -44,7 +44,7 @@ receipts/MACHINE-CONSCIOUSNESS-AWARENESS-CANDIDATE-v0-20261001.json
 
 ## E-001 — Documentation integrity repair
 Date: 2026-10-01
-State: IN_PROGRESS at document creation time
+State: FAIL_THEN_REPAIR_IN_PROGRESS
 
 Observation:
 the first human-readable math Markdown used backslash sequences that were interpreted as control characters by the generation path.
@@ -55,8 +55,17 @@ presentation-layer escaping bug; JSON candidate contract remained valid.
 Repair:
 rewrite mathematical document with renderer-safe plain equations and validate for control characters after commit.
 
+First validation result:
+FAIL — validator required explicit MC-G10 acceptance language and found only the MC-10 phase heading.
+
+Failure boundary:
+documentation completeness only; no cognition runtime or Formula execution occurred.
+
+Repair action:
+add explicit Acceptance MC-G10 criteria and rerun the entire documentation validation.
+
 Acceptance:
-no unexpected C0 control characters; core equation tokens readable.
+no unexpected C0 control characters; core equation tokens readable; all planned gate identifiers MC-G0 through MC-G10 represented where applicable.
 
 ## Planned E-010 — Two-state hand-checkable cognition world
 
