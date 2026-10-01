@@ -216,3 +216,99 @@ C-073
 Classification: VERIFIED
 Claim:
 No Formula cognition execution occurred during MC-G4.
+
+
+## Agent Lee math / parallelism / memory additions
+
+C-070
+Classification: VERIFIED
+Claim:
+The current math-only Agent Lee candidate suite passes 17/17 tests covering belief entropy/stability, self-consistency, information gain, valence direction, global access, EVB replay priority, bounded/calibrated deliberation, mechanical emotion mixture and dream provenance.
+Boundary:
+This does not establish live behavioral integration.
+
+C-071
+Classification: OBSERVED / CANDIDATE CONTROL
+Claim:
+In the current simulated stress campaign, the calibrated deliberation controller allocates more mean cognition cycles to noisy, changing and module-dropout conditions than to stationary conditions.
+Boundary:
+The scenario differences are simulated and the controller is not yet bound to live Agent Lee responses.
+
+C-072
+Classification: VERIFIED
+Claim:
+For the tested CPU-bound cognition kernel, 20 physical worker threads are slower than one worker.
+Evidence:
+213.000573 ms at 1 worker versus 1534.72927 ms at 20 workers for 6,400 cycles with identical repaired output checksum.
+
+C-073
+Classification: VERIFIED
+Claim:
+For the synthetic wait-heavy orchestration proxy, 20 logical workers outperform one.
+Evidence:
+4404.380624 ms at 1 versus 233.197083 ms at 20; 18.886945614152474x speedup; identical output hash.
+
+C-074
+Classification: UNVERIFIED
+Claim:
+20 logical workers will provide the same efficiency gain for QLoRA/DPO training orchestration.
+Reason:
+No QLoRA/DPO training-host benchmark has yet been executed.
+
+C-075
+Classification: VERIFIED
+Claim:
+The memory-compaction prototype reconstructs 1,024 cognition records byte-exactly after structural packing.
+Evidence:
+source and reconstruction SHA-256 both equal 5f509c26b2b14e241af9ee693fc8d0696699aed43271e7f832c6bac587af2839.
+
+C-076
+Classification: VERIFIED
+Claim:
+The exact structural memory pack is 68.06% smaller than raw repetitive JSON representation in the tested corpus.
+
+C-077
+Classification: VERIFIED WITH QUALIFIER
+Claim:
+The packed representation plus Brotli is 6.8% smaller than Brotli applied directly to the raw JSON corpus.
+Qualifier:
+This is substantially smaller than the structural representation reduction and must not be reported as a universal compression breakthrough.
+
+C-078
+Classification: UNVERIFIED
+Claim:
+All live Agent Lee Pocket conversation/personal/notebook memory is automatically Formula-compacted.
+Reason:
+Pocket MemoryStore integration has not yet been implemented/qualified.
+
+C-079
+Classification: OBSERVED
+Claim:
+The live Pocket source currently appends conversations, personal memory and notebook entries into SharedPreferences strings through MemoryStore.
+
+C-080
+Classification: PROPOSED
+Claim:
+QLoRA followed by DPO is an appropriate efficient adaptation path for Agent Lee's small language-model component.
+Basis:
+published QLoRA/DPO literature plus LeeWay's external-skills/identity architecture.
+Status:
+training not yet executed.
+
+C-081
+Classification: FAILED / REPAIRED
+Claim:
+The first raw deliberation-pressure mapping was efficient enough for routine use.
+Evidence:
+stationary world averaged ~7.13/16 cognition cycles.
+Repair:
+calibrate pressure channels against measured candidate ranges.
+
+C-082
+Classification: FAILED / REPAIRED
+Claim:
+The first cross-worker CPU checksum showed workload nondeterminism.
+Reason:
+checksum aggregation was partition-dependent.
+Repair:
+canonical per-world hash ordering produced identical cross-worker checksums.
