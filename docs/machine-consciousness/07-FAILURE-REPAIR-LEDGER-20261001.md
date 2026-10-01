@@ -367,3 +367,36 @@ G-011 — Formula-bridge instrumentation now fails closed on REPLAY provenance, 
 
 Lesson:
 derived cognition metrics become stronger evidence when they can be recomputed from immutable lower-level state instead of trusted as prefilled claims.
+
+
+## F-013 — Publication transport changed trailing-newline bytes
+
+Observation:
+the first GitHub tree publication preserved substantive text but removed the final newline from several text artifacts.
+
+Impact:
+GitHub byte SHA-256 did not match the already-tested phone artifact SHA-256 even though textual diff showed no substantive content change.
+
+Diagnosis:
+artifact-transfer normalization in the publication wrapper.
+
+Repair:
+- compare local tested bytes against origin;
+- identify newline-only diffs;
+- republish exact content with the final byte restored;
+- separately normalize the three receipts;
+- re-run SHA-256 comparison for code, adapters, outputs and receipts.
+
+Intermediate publication repair also encountered:
+GitHub rejected one ref update as non-fast-forward because main advanced between read and write.
+
+Correct response:
+do not force; re-read latest main, rebuild the tree on the new parent, and retry.
+
+Final evidence:
+- experiment/code/data byte normalization commit: 6ec6c39409b0ee4a123afcfdbe06d13060f6255f;
+- receipt byte normalization commit: 77e72a851d32779b5e653861da0d5d885c57fdba;
+- full tested-artifact SHA comparison: PASS.
+
+Lesson:
+textual equivalence != byte identity. Publication transport is part of the evidence chain.
