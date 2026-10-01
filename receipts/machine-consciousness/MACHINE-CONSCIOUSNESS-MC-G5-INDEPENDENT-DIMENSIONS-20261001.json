@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G5-INDEPENDENT-DIMENSIONS-20261001",
+  "status": "PASS",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "sourceBranchHead": "7a43b31bca2b3f34a60d2a8d185037be7e2ab6a9",
+  "mergedImplementationCommit": "017defc96b4a253ec3758698d6b461eff4741857",
+  "validationHost": "qualified Android workstation",
+  "gate": "MC-G5",
+  "tests": {
+    "pass": 48,
+    "fail": 0,
+    "regressionIncluded": true
+  },
+  "artifacts": {
+    "cognitionDimensionsSha256": "0fe298164f3a2b77d1858426f40360a21adfc0d9865179cb5509a571e2ac89b4",
+    "dimensionCampaignSha256": "387c3e2b365ec8f38d0887f51ccf31acf5112866d67d7cdbf1f24af807dcb961",
+    "cognitionDimensionTestsSha256": "751364fe3a802d751b09b7c9ccdc814225113e05846bd021ddd7485a3eece86e",
+    "dimensionVectorSchemaSha256": "c620b6869bde44914cc427fbd9d33c4e1211f0c56e6ce5b2b79fd9d43b700096"
+  },
+  "campaign": {
+    "worlds": 640,
+    "cycles": 40960,
+    "scenarioFamilies": 5,
+    "validationFailures": 0,
+    "nonFinite": 0,
+    "windowFailures": 0,
+    "maxAbsDifference": {
+      "H": 0,
+      "PE": 0,
+      "V": 0,
+      "IG": 0,
+      "G": 0,
+      "B": 0
+    },
+    "digest": "5fb592a303a8bdf9e405c9e606ca2a1aec0e3761ef8a0b7338fd5ca5414872f2"
+  },
+  "negativeTests": [
+    "REPLAY provenance rejected",
+    "tampered cognition receipt hash rejected",
+    "mismatched awareness state rejected",
+    "nonconsecutive previous receipt rejected",
+    "wrong window length rejected"
+  ],
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "executionState": "NOT_EXECUTED",
+    "mutation": false
+  },
+  "limitations": [
+    "dimension semantics remain candidate until MC-G6 calibration and later ablation",
+    "numeric Formula cognition execution remains prohibited",
+    "canonical cognition cycle schema remains recorded debt"
+  ],
+  "nextGate": "MC-G6 evidence-derived calibration"
+}
