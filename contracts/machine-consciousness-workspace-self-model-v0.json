@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractId": "machine-consciousness-workspace-self-model-v0",
+  "status": "DESIGN_CANDIDATE",
+  "formulaExecutionState": "NOT_EXECUTED",
+  "requiredModules": [
+    "perception",
+    "belief",
+    "prediction",
+    "valuation",
+    "policy",
+    "memory",
+    "self-model",
+    "veritas"
+  ],
+  "workspace": {
+    "stateIdentity": "cycleStateHash",
+    "acknowledgementRule": "Only one acknowledgement per required module for the exact cycleStateHash counts.",
+    "globalAccess": "validAcknowledgements / requiredModules",
+    "sealRule": "No acknowledgement accepted after workspace seal."
+  },
+  "selfModel": {
+    "classes": [
+      "VERIFIED_FROM_RUNTIME",
+      "DERIVED",
+      "UNKNOWN"
+    ],
+    "requiredDomains": [
+      "identity",
+      "capabilities",
+      "authority",
+      "resources",
+      "epistemic",
+      "history"
+    ],
+    "accuracy": "verified_correct_claims / verifiable_claims",
+    "law": "No VERIFIED_FROM_RUNTIME claim without a matching runtime evidence function."
+  },
+  "acceptance": [
+    "deterministic workspace",
+    "same-state-hash acknowledgements",
+    "B recomputable",
+    "negative acknowledgement tests",
+    "self-model factual accuracy 1.0",
+    "corrupted self-model detected",
+    "Formula NOT_EXECUTED",
+    "MC-G1/MC-G2 regression tests pass"
+  ],
+  "claimBoundary": "Operational access and factual self-model integrity are engineering properties, not proof of phenomenal consciousness."
+}
