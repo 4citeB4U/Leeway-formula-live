@@ -3,9 +3,9 @@
   "projectId": "leeway-machine-consciousness-v0",
   "authority": "Creator/Human Authority > LeeWay Standards",
   "canonicalRepository": "4citeB4U/Leeway-formula-live",
-  "phase": "MC-7",
-  "masterCheckpoint": "MC-G6_PASS_READY_FOR_MC-7",
-  "gate": "MC-G6_PASS",
+  "phase": "MC-8",
+  "masterCheckpoint": "MC-G7_PASS_READY_FOR_MC-8",
+  "gate": "MC-G7_PASS",
   "identity": "Agent Lee non-LLM machine cognition research runtime",
   "approved": [
     "non-LLM cognition kernel",
@@ -36,20 +36,21 @@
   "blockers": [
     "autonomous learning from ordinary cognition evidence remains unverified; MC-G2 and MC-G4 learning use ORACLE_SUPERVISED_TEST_ONLY feedback",
     "canonical cognition cycle schema from the original master-plan layout remains documentation debt; qualified runtime shapes remain observed authority until repaired",
-    "EVB replay improved noisy-sensor NLL narrowly but regressed combined NLL in every tested scenario; general replay benefit remains unverified and is deferred to MC-G9",
-    "first numeric cognition Formula evaluation remains NOT_EXECUTED pending MC-G7 Formula authority reverification"
+    "EVB replay improved noisy-sensor NLL narrowly but regressed combined NLL in every tested scenario; general replay benefit remains unverified and is deferred to MC-G9"
   ],
-  "nextAction": "MC-7: reverify live Formula authority on an authorized host: canonical engine SHA-256, runtime-state adapter SHA-256, evaluator health identity, and Golden Formula self-test. Do not execute cognition data until MC-G7 passes.",
+  "nextAction": "MC-8: execute the first canonical Formula evaluation on one fresh 16-cycle cognition window using independently recomputed dimensions and the accepted MC-G6 calibration profile; preserve input/result hashes and treat output as EXECUTED/UNVERIFIED until task interpretation passes Veritas.",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
     "runtimeStateAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
     "executionState": "NOT_EXECUTED",
     "mapping": "machine-consciousness-awareness-v0",
-    "calibrationProfile": "contracts/domain-adapters/machine-consciousness-awareness-calibration-v0.json"
+    "calibrationProfile": "contracts/domain-adapters/machine-consciousness-awareness-calibration-v0.json",
+    "authorityState": "VERIFIED",
+    "authorityReceipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G7-FORMULA-AUTHORITY-20261001.json"
   },
-  "evidenceState": "MC_G6_CALIBRATION_VERIFIED",
-  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G6-CALIBRATION-20261001.json",
+  "evidenceState": "MC_G7_FORMULA_AUTHORITY_VERIFIED",
+  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G7-FORMULA-AUTHORITY-20261001.json",
   "learningLedger": "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md",
   "parallelResearchTracks": {
     "mathQualification": {
