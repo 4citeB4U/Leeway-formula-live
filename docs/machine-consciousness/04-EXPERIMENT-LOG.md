@@ -456,3 +456,171 @@ E-040C repaired the validator without changing the measured campaign data.
 
 Next:
 MC-5 independent six-dimension instrumentation.
+
+
+## E-060 — Math-only cognition / emotion / deliberation qualification
+
+Date: 2026-10-01
+State: PASS_AFTER_CALIBRATION_REPAIR
+
+Scope:
+mathematics only; not yet live Agent Lee behavior.
+
+Implemented/tested:
+- entropy;
+- KL/JSD;
+- belief stability;
+- self-model consistency;
+- information gain;
+- free-energy-rate valence sign;
+- global-access acknowledgement ratio;
+- EVB replay priority;
+- bounded deliberation;
+- mixed mechanical emotion;
+- dream source/provenance invariants.
+
+First stress campaign:
+the uncalibrated deliberation controller averaged about 7.13 cognition cycles even in a stationary world.
+
+Classification:
+candidate controller too computationally expensive for routine state.
+
+Repair:
+normalize H, PE, IG, G and B against measured simulator candidate ranges rather than treating raw values as directly comparable pressure.
+
+Calibrated simulated mean cognition cycles:
+- stationary: 4.802734375;
+- misleading: 5.0654296875;
+- changing: 5.17333984375;
+- module-dropout: 5.19580078125;
+- noisy: 5.645263671875.
+
+Final math tests:
+17/17 PASS.
+
+Important staging failure:
+dream-self-math.mjs existed while tests/dream-self.test.mjs was missing after an earlier write step. The test artifact was recreated and the combined suite was rerun.
+
+Formula:
+NOT_EXECUTED.
+
+Receipt:
+receipts/machine-consciousness/AGENT-LEE-MATH-QUALIFICATION-v0-20261001.json
+
+## E-070 — Parallelism funnel baseline
+
+Date: 2026-10-01
+State: PASS_AFTER_EVIDENCE_REPAIR
+
+Goal:
+determine when 20 workers can be more efficient than one.
+
+CPU-bound workload:
+200 worlds x 32 cognition cycles.
+
+Measured elapsed:
+- 1 worker: 213.000573 ms;
+- 2: 355.049896 ms;
+- 4: 501.131614 ms;
+- 8: 719.405989 ms;
+- 12: 1097.813385 ms;
+- 16: 1394.106145 ms;
+- 20: 1534.72927 ms.
+
+Finding:
+20 physical worker threads are strongly inefficient for this small CPU-bound workload.
+
+Wait-heavy orchestration proxy:
+200 tasks, each with 20 ms simulated wait plus deterministic bounded hash work.
+
+Measured:
+- 1 logical worker: 4404.380624 ms;
+- 20 logical workers: 233.197083 ms;
+- speedup: 18.886945614152474x;
+- parallel efficiency: 0.9443472807076236.
+
+Evidence-repair event:
+the first CPU benchmark aggregated hashes by worker chunk, which made the checksum partition-dependent. The benchmark was repaired to hash each world independently and then hash the canonical ordered world-hash list.
+
+Final:
+identical CPU output checksum for 1/2/4/8/12/16/20 worker counts.
+
+Claim boundary:
+this proves a scheduling mechanism and workload distinction; it does not prove QLoRA/DPO training speedup.
+
+Formula:
+NOT_EXECUTED.
+
+Receipt:
+receipts/machine-consciousness/AGENT-LEE-PARALLELISM-BASELINE-v0-20261001.json
+
+## E-080 — Exact cognition-memory compaction prototype
+
+Date: 2026-10-01
+State: PASS_EXACT_PROTOTYPE
+
+Dataset:
+1,024 deterministic cognition-cycle JSON records.
+
+Measured:
+- raw JSONL: 1,167,081 bytes;
+- exact packed representation: 372,727 bytes;
+- structural representation reduction: 68.06%;
+- raw Brotli: 143,528 bytes;
+- packed Brotli: 133,762 bytes;
+- packed-vs-raw-Brotli improvement: 6.8%.
+
+Exact reconstruction:
+PASS.
+
+Source SHA-256:
+5f509c26b2b14e241af9ee693fc8d0696699aed43271e7f832c6bac587af2839
+
+Reconstructed SHA-256:
+5f509c26b2b14e241af9ee693fc8d0696699aed43271e7f832c6bac587af2839
+
+Interpretation:
+structural repetition can be removed from active memory representation while preserving exact source recovery. The extra disk-size gain beyond strong generic Brotli compression is much smaller than the structural reduction.
+
+Live integration:
+NOT YET EXECUTED. Pocket MemoryStore still uses newline-appended SharedPreferences strings.
+
+Formula:
+NOT_EXECUTED.
+
+Receipt:
+receipts/machine-consciousness/AGENT-LEE-MEMORY-COMPACTION-v0-20261001.json
+
+## E-090 — Agent Lee training-curriculum compute routing
+
+Date: 2026-10-01
+State: MEASURED_PREFILTER / WEIGHT_TRAINING_NOT_EXECUTED
+
+Current curated examples:
+56.
+
+Routed to weight adaptation:
+33.
+
+Routed to deterministic/external capability layer:
+23.
+
+Input token proxy:
+2,213.
+
+Token proxy kept out of weight training:
+958.
+
+Estimated weight-training token-burden reduction:
+43.29%.
+
+Boundary:
+this is not a measured FLOP, energy, wall-clock or gradient-step reduction.
+
+Planned model-training mechanisms:
+- teacher/student behavior distillation;
+- domain-adaptive continued pretraining with rehearsal;
+- QLoRA/LoRA-family supervised adaptation;
+- DPO preference optimization.
+
+No new model weights have been trained under this plan yet.
