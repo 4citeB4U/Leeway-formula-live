@@ -3,9 +3,9 @@
   "projectId": "leeway-machine-consciousness-v0",
   "authority": "Creator/Human Authority > LeeWay Standards",
   "canonicalRepository": "4citeB4U/Leeway-formula-live",
-  "phase": "MC-3",
-  "masterCheckpoint": "MC-G2_PASS_READY_FOR_MC-3",
-  "gate": "MC-G2_PASS",
+  "phase": "MC-4",
+  "masterCheckpoint": "MC-G3_PASS_READY_FOR_MC-4",
+  "gate": "MC-G3_PASS",
   "identity": "Agent Lee non-LLM machine cognition research runtime",
   "approved": [
     "non-LLM cognition kernel",
@@ -36,9 +36,10 @@
   "blockers": [
     "six cognition dimensions have only candidate simulator ranges; calibration is not yet accepted",
     "autonomous learning from ordinary cognition evidence remains unverified; MC-G2 used ORACLE_SUPERVISED_TEST_ONLY feedback",
+    "canonical cognition cycle schema from the original master-plan layout remains documentation debt; MC-G1/2 receipts are observed runtime shape authority until repaired",
     "first numeric cognition Formula evaluation remains NOT_EXECUTED pending calibration acceptance"
   ],
-  "nextAction": "MC-3: implement operational global workspace + factual self-model; require same-state-hash acknowledgements and runtime-verifiable self claims.",
+  "nextAction": "MC-4: implement dream/replay engine with immutable SIMULATED/REPLAY provenance and compare no replay, random replay, recency replay and EVB replay.",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
@@ -46,7 +47,7 @@
     "executionState": "NOT_EXECUTED",
     "mapping": "machine-consciousness-awareness-v0"
   },
-  "evidenceState": "MC_G2_SUPERVISED_MEMORY_LEARNING_VERIFIED",
-  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G2-MEMORY-LEARNING-20261001.json",
+  "evidenceState": "MC_G3_OPERATIONAL_WORKSPACE_SELF_MODEL_VERIFIED",
+  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G3-WORKSPACE-SELF-MODEL-20261001.json",
   "learningLedger": "NOT_UPDATED; MC-G2 is supervised simulator mechanics evidence, not autonomous learned world knowledge."
 }

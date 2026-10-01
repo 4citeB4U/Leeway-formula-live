@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G3-WORKSPACE-SELF-MODEL-20261001",
+  "status": "PASS",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "sourceCommit": "570fb4736eca156d96bc8a887f2a0a8e69142027",
+  "gate": "MC-G3",
+  "validationHost": "qualified Android workstation",
+  "tests": {
+    "total": 23,
+    "pass": 23,
+    "fail": 0,
+    "regressionIncluded": true
+  },
+  "campaign": {
+    "scenarioFamilies": [
+      "stationary",
+      "changing",
+      "noisy",
+      "misleading",
+      "module-dropout"
+    ],
+    "worlds": 640,
+    "cycles": 40960,
+    "workspaceVerified": 40960,
+    "selfModelVerified": 40960,
+    "completeWorkspaceCycles": 38784,
+    "dropoutCycles": 2176,
+    "minGlobalAccess": 0.7142857142857143,
+    "maxGlobalAccess": 1,
+    "digest": "9a0ab1ad51ec0fa641886fd8bf38490e2106dd488295f208a1ebb6e5cdacea68"
+  },
+  "artifacts": {
+    "workspaceSelfModelSha256": "be9696edf8617ce470ec25e7905caf537ea3966eb7c426f4dab937fe675fcc81",
+    "testSha256": "5e78a2859dfb5492312b31cff71ef8c30b0aaf7468be556ca131e47c5f48ea84",
+    "workspaceSchemaSha256": "2d5a1b8924b2654b8d0ba2b8a73f93c4963436a8d5563f8dac39ebd071d4b9ea",
+    "selfModelSchemaSha256": "3df26bd61b436a26308a0e107ffdc4ea3ac5bc1ccfbe863a4c9e95cce39f312d"
+  },
+  "negativeTests": [
+    "cross-state acknowledgement rejected",
+    "false ROOT self-authority claim rejected",
+    "module dropout represented as reduced global access"
+  ],
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "executionState": "NOT_EXECUTED",
+    "mutation": false
+  },
+  "limitations": [
+    "operational global access is not proof of phenomenal consciousness",
+    "MC-G2 learning remains ORACLE_SUPERVISED_TEST_ONLY",
+    "six-dimension Formula calibration not accepted",
+    "canonical cycle.schema.json remains recorded documentation debt"
+  ],
+  "nextGate": "MC-G4 dream/replay",
+  "learningLedger": "NOT_UPDATED; MC-G3 verifies mechanics and factual consistency, not learned external knowledge."
+}

@@ -114,3 +114,19 @@ Status: APPROVED FOR MC-G2 TESTING ONLY
 Decision:
 auditWorldState may be used to qualify memory/learning mechanics only when the feedback class is explicitly ORACLE_SUPERVISED_TEST_ONLY.
 It is forbidden as evidence for autonomous-learning claims and must not silently enter production cognition inputs.
+
+
+## D-017 — Workspace identity is state-hash identity
+Status: APPROVED / MC-G3 VERIFIED
+Decision:
+A module counts as globally acknowledging a cognition state only when its acknowledgement references the exact immutable workspace-state SHA-256. Module name alone is insufficient.
+
+## D-018 — Self-model truth is runtime-verifiable
+Status: APPROVED / MC-G3 VERIFIED
+Decision:
+Self-model identity, authority, provenance, module state, workspace hash, memory/model hashes and Formula state must match independently inspectable runtime facts. A false authority claim fails verification.
+
+## D-019 — Incomplete access is represented, not hidden
+Status: APPROVED / MC-G3 VERIFIED
+Decision:
+Module dropout lowers B_t and complete=false. The system may not fabricate acknowledgements to preserve an appearance of full awareness.

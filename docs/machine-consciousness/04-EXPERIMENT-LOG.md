@@ -223,3 +223,48 @@ the current learner uses auditWorldState as ORACLE_SUPERVISED_TEST_ONLY feedback
 
 Next:
 MC-3 global workspace + factual self-model.
+
+
+## Executed E-030 — Operational workspace + factual self-model
+
+Status:
+PASS — MC-G3.
+
+Exact source commit validated:
+570fb4736eca156d96bc8a887f2a0a8e69142027
+
+Validation host:
+qualified Android workstation.
+
+Regression + MC-3 tests:
+23/23 PASS.
+
+MC-3 acceptance evidence:
+- all required module acknowledgements reference the exact same workspace-state SHA-256;
+- cross-state acknowledgement is rejected;
+- module dropout lowers global-access ratio rather than being hidden;
+- factual self-model fields match independently inspected runtime facts;
+- a forged self claim of ROOT authority fails verification;
+- self-model binds current workspace, semantic-model and episodic-memory hashes;
+- source cognition receipts remain unchanged;
+- Formula remains NOT_EXECUTED.
+
+Campaign:
+- 5 scenario families;
+- 640 simulated worlds;
+- 40,960 cognition cycles;
+- workspace verification: 40,960 / 40,960;
+- self-model verification: 40,960 / 40,960;
+- complete workspace cycles: 38,784;
+- intentional dropout cycles: 2,176;
+- observed global-access range: 5/7 through 1;
+- campaign digest: 9a0ab1ad51ec0fa641886fd8bf38490e2106dd488295f208a1ebb6e5cdacea68.
+
+Formula:
+NOT_EXECUTED.
+
+Documentation debt observed:
+the original master plan listed contracts/machine-consciousness/cycle.schema.json, but that canonical cycle schema is not currently present. Existing MC-G1/MC-G2 qualified receipt shapes remain evidence; the missing contract is recorded as debt rather than silently invented retroactively.
+
+Next:
+MC-4 dream/replay engine.

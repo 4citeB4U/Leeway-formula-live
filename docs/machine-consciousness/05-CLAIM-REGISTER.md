@@ -64,6 +64,12 @@ the original math Markdown suffered renderer/generation escaping corruption whil
 Evidence:
 repository content inspection on 2026-10-01.
 
+C-006
+Claim:
+the MC-3 operational workspace can prove same-state-hash global accessibility and the factual self-model can be verified against independent runtime facts.
+Evidence:
+23/23 regression+MC3 tests plus 40,960-cycle / 640-world campaign; receipt MACHINE-CONSCIOUSNESS-MC-G3-WORKSPACE-SELF-MODEL-20261001.
+
 ## PROPOSED
 
 C-020
