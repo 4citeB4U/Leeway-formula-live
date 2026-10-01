@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "0.1.0",
+  "campaignId": "MC-G5-INDEPENDENT-DIMENSIONS-20261001",
+  "validationHost": "qualified Android workstation",
+  "mergedImplementation": "017defc96b4a253ec3758698d6b461eff4741857",
+  "sourceBranchHead": "7a43b31bca2b3f34a60d2a8d185037be7e2ab6a9",
+  "scenarios": [
+    "stationary",
+    "changing",
+    "noisy",
+    "misleading",
+    "module-dropout"
+  ],
+  "worldsPerScenario": 128,
+  "worlds": 640,
+  "cyclesPerWorld": 64,
+  "totalCycles": 40960,
+  "dimensionOrder": [
+    "belief_entropy_nats",
+    "precision_weighted_prediction_error",
+    "valence_free_energy_rate",
+    "belief_information_gain_nats",
+    "selected_policy_expected_free_energy",
+    "global_access_ratio"
+  ],
+  "maxAbsDifference": {
+    "belief_entropy_nats": 0,
+    "precision_weighted_prediction_error": 0,
+    "valence_free_energy_rate": 0,
+    "belief_information_gain_nats": 0,
+    "selected_policy_expected_free_energy": 0,
+    "global_access_ratio": 0
+  },
+  "tolerance": 1e-12,
+  "validationFailures": 0,
+  "nonFinite": 0,
+  "windowFailures": 0,
+  "digest": "5fb592a303a8bdf9e405c9e606ca2a1aec0e3761ef8a0b7338fd5ca5414872f2",
+  "formulaExecutionState": "NOT_EXECUTED",
+  "acceptance": {
+    "allCyclesRecomputed": true,
+    "noValidationFailures": true,
+    "allFinite": true,
+    "allSixMatchEmbeddedDiagnosticWithinTolerance": true,
+    "all16CycleWindowsValid": true,
+    "formulaNotExecuted": true,
+    "pass": true
+  }
+}

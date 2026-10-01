@@ -3,9 +3,9 @@
   "projectId": "leeway-machine-consciousness-v0",
   "authority": "Creator/Human Authority > LeeWay Standards",
   "canonicalRepository": "4citeB4U/Leeway-formula-live",
-  "phase": "MC-5",
-  "masterCheckpoint": "MC-G4_PASS_READY_FOR_MC-5",
-  "gate": "MC-G4_PASS",
+  "phase": "MC-6",
+  "masterCheckpoint": "MC-G5_PASS_READY_FOR_MC-6",
+  "gate": "MC-G5_PASS",
   "identity": "Agent Lee non-LLM machine cognition research runtime",
   "approved": [
     "non-LLM cognition kernel",
@@ -34,13 +34,13 @@
     "claiming sentience from Formula output"
   ],
   "blockers": [
-    "six cognition dimensions have only candidate simulator ranges; calibration is not yet accepted",
+    "six cognition dimensions are independently recomputable, but calibration ranges are not yet accepted",
     "autonomous learning from ordinary cognition evidence remains unverified; MC-G2 and MC-G4 learning use ORACLE_SUPERVISED_TEST_ONLY feedback",
     "canonical cognition cycle schema from the original master-plan layout remains documentation debt; qualified runtime shapes remain observed authority until repaired",
     "EVB replay improved noisy-sensor NLL narrowly but regressed combined NLL in every tested scenario; general replay benefit remains unverified and is deferred to MC-G9",
-    "first numeric cognition Formula evaluation remains NOT_EXECUTED pending calibration acceptance"
+    "first numeric cognition Formula evaluation remains NOT_EXECUTED pending MC-G6 calibration acceptance and MC-G7 Formula authority reverification"
   ],
-  "nextAction": "MC-5: implement six independent cognition-dimension calculators from receipts/workspace evidence, recompute rather than trust embedded metrics, replace synthetic B with operational MC-G3 global access, and run malformed/provenance-negative tests without Formula execution.",
+  "nextAction": "MC-6: calibrate finite versioned ranges for H, PE, V, IG, G and operational B using independently recomputed dimensions, balanced scenario coverage and holdout validation; do not execute the Formula yet.",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
@@ -48,8 +48,8 @@
     "executionState": "NOT_EXECUTED",
     "mapping": "machine-consciousness-awareness-v0"
   },
-  "evidenceState": "MC_G4_DREAM_REPLAY_VERIFIED_BOUNDED",
-  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G4-DREAM-REPLAY-20261001.json",
+  "evidenceState": "MC_G5_INDEPENDENT_DIMENSIONS_VERIFIED",
+  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G5-INDEPENDENT-DIMENSIONS-20261001.json",
   "learningLedger": "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md",
   "parallelResearchTracks": {
     "mathQualification": {

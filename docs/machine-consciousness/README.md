@@ -82,27 +82,28 @@ MC-G1: PASS — deterministic cognition simulator.
 MC-G2: PASS — supervised-test episodic memory + semantic learning.
 MC-G3: PASS — contract-aligned global workspace + factual self-model.
 MC-G4: PASS — bounded dream/replay gate.
+MC-G5: PASS — independent six-dimension instrumentation.
 
-Phase: MC-5 — independent six-dimension instrumentation.
+Phase: MC-6 — calibration qualification.
 
-MC-G4 evidence:
-- 38/38 regression + replay tests PASS after repair;
-- 4 scenario families / 512 worlds;
-- 64 cycles/world, 32 training + 32 held out;
-- false-real-memory count: 0;
-- replay-ledger failures: 0;
-- source-receipt mutation failures: 0;
-- EVB noisy-sensor NLL improvement over NONE: 0.6059004382%;
-- EVB combined-NLL scenario wins: 0;
-- aggregate non-stationary EVB combined NLL regression: 5.5397895371%;
-- final campaign digest: b94338d259554e73cc817735e33a8b36441ddfef330eeb1b9d880a8bd44a84b7.
+MC-G5 evidence:
+- 48/48 regression + instrumentation tests PASS;
+- 5 scenario families / 640 worlds / 40,960 cognition cycles;
+- all 40,960 cycles independently recomputed;
+- validation failures: 0;
+- non-finite dimensions: 0;
+- invalid 16-cycle windows: 0;
+- max absolute difference versus simulator diagnostics: 0 for H, PE, V, IG, G and B;
+- operational B derived from the MC-G3 workspace;
+- REPLAY provenance rejected from the Formula-bridge cognition path;
+- tampered receipt content rejected by SHA-256 verification;
+- Formula NOT_EXECUTED;
+- campaign digest: 5fb592a303a8bdf9e405c9e606ca2a1aec0e3761ef8a0b7338fd5ca5414872f2.
 
 Interpretation:
-MC-G4 passes exactly the master-plan requirement of at least one predeclared learning-measure improvement with zero false-real-memory increase. It does not establish that EVB replay is generally beneficial.
+The six candidate dimensions no longer depend on trusting the simulator's prefilled metrics object. They are independently reproducible from underlying cognition receipts plus verified workspace evidence.
 
-Formula execution remains NOT_EXECUTED.
-
-Next engineering gate: MC-G5 — independently recomputable six-dimension instrumentation with provenance-negative tests and no Formula use.
+Next engineering gate: MC-G6 — finite, versioned, evidence-derived calibration ranges with balanced scenarios and holdout validation. Formula execution remains prohibited until MC-G6 and MC-G7 pass.
 
 ## Active parallel research tracks
 

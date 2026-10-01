@@ -312,3 +312,39 @@ Reason:
 checksum aggregation was partition-dependent.
 Repair:
 canonical per-world hash ordering produced identical cross-worker checksums.
+
+
+## MC-G5 additions
+
+C-090
+Classification: VERIFIED
+Claim:
+All six candidate cognition dimensions H, PE, V, IG, G and operational B can be independently recomputed from underlying cognition receipts/workspace evidence without trusting receipt.metrics.
+Evidence:
+48/48 tests and 40,960-cycle campaign; maximum absolute discrepancy 0 for every dimension.
+
+C-091
+Classification: VERIFIED
+Claim:
+Operational B can be derived from the contract-aligned MC-G3 workspace and reproduces the simulator diagnostic B in the qualified scenario corpus.
+Evidence:
+MC-G5 campaign max absolute B discrepancy 0.
+
+C-092
+Classification: VERIFIED
+Claim:
+REPLAY provenance is rejected from the MC-G5 Formula-bridge cognition-cycle calculator.
+Evidence:
+negative test PASS.
+
+C-093
+Classification: VERIFIED
+Claim:
+Tampered cognition content, mismatched workspace state and nonconsecutive temporal context are rejected before dimension-vector emission.
+Evidence:
+MC-G5 negative tests PASS.
+
+C-094
+Classification: VERIFIED
+Claim:
+No Formula cognition execution occurred during MC-G5.
