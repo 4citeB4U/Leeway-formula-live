@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.invalid/contracts/machine-consciousness/replay-event-v0.schema.json",
+  "title": "LeeWay Machine Consciousness Replay Event v0",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "provenance",
+    "sourceProvenance",
+    "sourceStateHash",
+    "replayMode",
+    "feedbackClass",
+    "learningBasis",
+    "counterfactual",
+    "formulaExecutionState",
+    "eventHash"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "provenance": {
+      "const": "REPLAY"
+    },
+    "sourceProvenance": {
+      "enum": [
+        "SIMULATED",
+        "REAL",
+        "TEST_FIXTURE"
+      ]
+    },
+    "sourceStateHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "replayMode": {
+      "enum": [
+        "RANDOM",
+        "RECENCY",
+        "EVB"
+      ]
+    },
+    "feedbackClass": {
+      "const": "ORACLE_SUPERVISED_TEST_ONLY"
+    },
+    "learningBasis": {
+      "const": "SOURCE_EPISODE_REPLAY_ONLY"
+    },
+    "counterfactual": {
+      "type": "object",
+      "required": [
+        "kind",
+        "admittedAsExternalHistory"
+      ],
+      "properties": {
+        "kind": {
+          "const": "MODEL_COUNTERFACTUAL"
+        },
+        "admittedAsExternalHistory": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "formulaExecutionState": {
+      "const": "NOT_EXECUTED"
+    },
+    "eventHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": true
+}
