@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "agent-lee-training-compute-v0",
+  "status": "CANDIDATE_CALIBRATION_REQUIRED",
+  "domain": "small-model-post-training",
+  "purpose": "Map measured Agent Lee training-step efficiency and quality into runtime-state-v1 so the canonical Formula can govern training scheduling without modifying LEEWAY-FORMULA-v1.0.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "runtimeAdapterId": "runtime-state-v1",
+    "formulaMutation": false
+  },
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "token_load",
+      "unit": "tokens_or_verified_token_count",
+      "direction": "lower_is_less_prefill_training_burden",
+      "role": "actual tokens admitted to the weight-training step after deterministic externalization/deduplication"
+    },
+    {
+      "index": 1,
+      "id": "step_compute_ms",
+      "unit": "milliseconds",
+      "direction": "lower_is_less_compute_cost_for_comparable_step",
+      "role": "measured optimization-step wall time"
+    },
+    {
+      "index": 2,
+      "id": "memory_pressure_ratio",
+      "unit": "ratio_0_1",
+      "direction": "lower_is_more_memory_headroom",
+      "role": "peak training working-set pressure against available memory"
+    },
+    {
+      "index": 3,
+      "id": "queue_wait_ms",
+      "unit": "milliseconds",
+      "direction": "lower_is_less_scheduler_contention",
+      "role": "time waiting for compute/training lane admission"
+    },
+    {
+      "index": 4,
+      "id": "validation_gain",
+      "unit": "normalized_score_delta",
+      "direction": "higher_is_more_verified_behavior_gain",
+      "role": "change in frozen Agent Lee validation score versus previous accepted checkpoint"
+    },
+    {
+      "index": 5,
+      "id": "interference_loss",
+      "unit": "normalized_score_delta",
+      "direction": "lower_is_less_regression",
+      "role": "loss on frozen general-capability/retention tests caused by the training step"
+    }
+  ],
+  "observationWindow": {
+    "rows": 16,
+    "width": 6,
+    "rule": "16 consecutive comparable micro-batches under one base model, adapter method, dataset revision, hyperparameter profile and evaluation suite."
+  },
+  "computeFunnel": [
+    "Externalize skills, tools, Formula facts, device actions and current ecosystem state before weight training.",
+    "Deduplicate and cluster examples before batching.",
+    "Benchmark candidate worker/concurrency counts on the actual training host; do not assume maximum parallelism is efficient.",
+    "Prioritize persona/truth/strategy examples before lower-value repetition.",
+    "Measure validation gain and interference after every bounded training block.",
+    "Stop or reduce compute when marginal verified gain stabilizes, interference rises, memory pressure crosses budget, or queue/thermal pressure dominates.",
+    "Only verified improvements progress to the next training phase."
+  ],
+  "currentEvidence": {
+    "curriculumExamples": 56,
+    "weightAdaptationExamples": 33,
+    "deterministicHarnessExamples": 23,
+    "estimatedInputTokenProxy": 2213,
+    "avoidedWeightTokenProxy": 958,
+    "estimatedWeightTrainingTokenBurdenReductionPct": 43.29,
+    "claimBoundary": "Token-proxy routing reduction only; no FLOP, energy, wall-clock or gradient-step reduction is claimed yet."
+  },
+  "calibration": {
+    "ranges": null,
+    "state": "NOT_CALIBRATED",
+    "rule": "Collect measured training traces for all six dimensions before numeric Formula evaluation."
+  },
+  "formulaExecutionState": "NOT_EXECUTED",
+  "nextGate": "Run bounded training-host micro-benchmarks for distillation, continued pretraining, QLoRA/DoRA and DPO; collect 16x6 traces; calibrate ranges; then request Veritas acceptance."
+}

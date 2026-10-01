@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptType": "AGENT_LEE_TRAINING_COMPUTE_CANDIDATE_V0",
+  "observedAt": "2026-10-01",
+  "status": "PASS_FOR_CANDIDATE_CONTROL_ARTIFACTS",
+  "executed": [
+    "Measured 56-example curriculum routing",
+    "Separated 33 weight-adaptation examples from 23 deterministic/external capability examples",
+    "Measured 958/2213 token-proxy units kept out of weight training",
+    "Created agent-lee-training-compute-v0 six-channel domain-adapter candidate",
+    "Created on-phone Formula training compute policy"
+  ],
+  "evidence": {
+    "totalExamples": 56,
+    "weightExamples": 33,
+    "externalExamples": 23,
+    "inputTokenProxy": 2213,
+    "avoidedWeightTokenProxy": 958,
+    "estimatedWeightTrainingTokenBurdenReductionPct": 43.29
+  },
+  "claimBoundary": "The 43.29% figure is token-proxy burden only. No training FLOPs, energy, elapsed time or gradient-step savings have yet been measured.",
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "mutation": false,
+    "executionState": "NOT_EXECUTED",
+    "reason": "Training adapter is not calibrated and no weight-training host trace exists yet."
+  },
+  "nextGate": "Collect measured 16x6 training micro-batch telemetry on an authorized training host, then run Veritas calibration acceptance."
+}
