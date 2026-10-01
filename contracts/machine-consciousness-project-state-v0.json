@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "0.1.0",
+  "projectId": "leeway-machine-consciousness-v0",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "canonicalRepository": "4citeB4U/Leeway-formula-live",
+  "phase": "MC-0",
+  "masterCheckpoint": "DOCUMENTATION_AND_ARCHITECTURE_FOUNDATION",
+  "gate": "MC-G0",
+  "identity": "Agent Lee non-LLM machine cognition research runtime",
+  "approved": [
+    "non-LLM cognition kernel",
+    "belief as revisable probability distribution",
+    "canonical LEEWAY-FORMULA-v1.0 remains unchanged",
+    "dream/replay always preserves SIMULATED provenance",
+    "operational awareness state is structured rather than one magic score",
+    "self-model contains inspectable machine facts only",
+    "determinism-first simulator",
+    "documentation-first execution"
+  ],
+  "proposed": [
+    "six Formula bridge dimensions H, PE, V, IG, G, B",
+    "JSD belief-stability diagnostic",
+    "global-access acknowledgement ratio",
+    "self-model consistency diagnostic",
+    "EVB replay priority",
+    "C0-C6 engineering maturity ladder",
+    "Node.js ES-module initial implementation"
+  ],
+  "rejected": [
+    "permanent/fixed belief representation",
+    "modifying the frozen Formula kernel for consciousness",
+    "treating Shizuku-like running/configured states as proof analogies inside cognition",
+    "dream events silently entering real-event memory",
+    "claiming sentience from Formula output"
+  ],
+  "blockers": [
+    "six cognition dimensions are not calibrated",
+    "deterministic cognition runtime not yet implemented",
+    "Formula task execution host must be reverified before first numeric cognition evaluation"
+  ],
+  "nextAction": "MC-1A: write cycle schema and deterministic two-state partially observable world specification before runtime code.",
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeStateAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "executionState": "NOT_EXECUTED",
+    "mapping": "machine-consciousness-awareness-v0"
+  },
+  "evidenceState": "CANDIDATE_ARCHITECTURE_DOCUMENTED",
+  "receiptState": "candidate receipt exists; documentation receipt pending post-commit validation",
+  "learningLedger": "NOT_UPDATED; no Veritas-qualified cognition runtime learning yet"
+}

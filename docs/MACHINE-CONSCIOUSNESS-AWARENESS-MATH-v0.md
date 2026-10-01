@@ -1,363 +1,346 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+
+REGION: LEEWAY.FORMULA.MACHINE_CONSCIOUSNESS
+TAG: LEEWAY.FORMULA.MACHINE_CONSCIOUSNESS.AWARENESS_MATH
+
+5WH:
+WHAT = Define the candidate mathematics for probabilistic belief, prediction, valuation, policy, awareness, self-model and replay
+WHY = Provide a readable scientific/engineering bridge into the existing Formula stack without mutating the Formula
+WHO = Leeway Industries / Creator-authorized Agent Lee and research runtimes
+WHERE = docs/MACHINE-CONSCIOUSNESS-AWARENESS-MATH-v0.md
+WHEN = 2026-10-01 onward
+HOW = Evidence-first documentation, deterministic implementation, Veritas qualification and receipts
+
+AGENTS:
+ASSESS
+AUDIT
+DESIGN
+VERIFY
+
+LICENSE:
+MIT
+-->
+
 # LeeWay Machine Consciousness — Awareness Mathematics v0
 
-**Status:** CANDIDATE RESEARCH ARCHITECTURE — NOT CANONICAL FORMULA  
-**Domain adapter:** `machine-consciousness-awareness-v0`  
-**Canonical Formula:** `LEEWAY-FORMULA-v1.0` — unchanged  
-**Canonical engine SHA-256:** `6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e`  
-**Canonical runtime-state adapter SHA-256:** `3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0`
+Status: CANDIDATE RESEARCH ARCHITECTURE — NOT CANONICAL FORMULA
+Domain adapter: machine-consciousness-awareness-v0
+Canonical Formula: LEEWAY-FORMULA-v1.0 — unchanged
+Canonical engine SHA-256: 6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e
+Canonical runtime-state adapter SHA-256: 3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0
+
+Repair note:
+This revision repairs Markdown escaping/control-character corruption in the first generated human-readable version. The candidate mathematics and Formula boundary are not changed by this repair.
 
 ## 1. Design law
 
-The machine-consciousness project is non-LLM cognition. An LLM may interface with it, explain it, or provide language services, but the persistent cognitive state, belief update, prediction, policy, replay and learning loop must exist independently.
+The project is non-LLM cognition. An LLM may interface with it, explain it or provide language services, but persistent cognitive state, belief update, prediction, policy, replay and learning must exist independently.
 
-Belief is not a permanent proposition. It is a revisable probability distribution:
+Belief is a revisable probability distribution:
 
-[
-b_t(s) = P(s_t=s mid o_{1:t}, a_{1:t-1}).
-]
+b_t(s) = P(s_t = s | o_1:t, a_1:t-1)
 
-A belief can be stable without being permanent. One measurable stability proxy is
+A belief can be stable without being permanent.
 
-[
-ho_t = 1 - rac{operatorname{JSD}(b_t,b_{t-1})}{ln 2},
-]
+Candidate stability:
 
-for comparable discrete belief distributions. High (ho_t) means the posterior changed little; new evidence can still move it.
+rho_t = 1 - JSD(b_t, b_t-1) / ln(2)
 
-## 2. The cognition cycle
+High rho_t means the posterior changed little; new evidence can still move it.
 
-The proposed cycle is:
+## 2. Cognition cycle
 
-[
-	ext{event} ightarrow 	ext{observation} ightarrow 	ext{belief}
-ightarrow 	ext{affect} ightarrow 	ext{prediction}
-ightarrow 	ext{policy} ightarrow 	ext{action}
-ightarrow 	ext{result} ightarrow 	ext{model update}.
-]
+event -> observation -> belief -> affect/valuation -> prediction -> policy -> action -> result -> model update -> memory/continuity update
 
-The loop is recursive: the result becomes part of the next event/observation history.
+The result becomes part of the next event/observation history.
 
-### 2.1 Event and transition model — LeeWay synthesis using standard state-space notation
+### 2.1 Hidden state and observation
 
-Let (s_t) be a hidden world/self state, (a_t) an action, and (o_t) an observation.
+s_t is hidden world/self state.
+a_t is action.
+o_t is observation.
 
-[
-s_{t+1} sim P_	heta(s_{t+1}mid s_t,a_t)
-]
+Transition:
+s_t+1 ~ P_theta(s_t+1 | s_t, a_t)
 
-[
-o_t sim P_	heta(o_tmid s_t).
-]
+Observation:
+o_t ~ P_theta(o_t | s_t)
 
-The machine never has direct access to (s_t); it maintains a distribution over plausible states.
+The machine maintains a distribution over plausible states rather than direct access to hidden state.
 
-### 2.2 Interpretation as Bayesian belief update — source family: Bayesian brain
+### 2.2 Bayesian belief update
 
-Prediction before the observation:
+Prior prediction:
 
-[
-ar b_t(s) = sum_{s'} P_	heta(smid s',a_{t-1})b_{t-1}(s').
-]
+b_prior_t(s) = sum over s' of P_theta(s | s', a_t-1) * b_t-1(s')
 
-Posterior after observation:
+Posterior:
 
-[
 b_t(s) =
-rac{P_	heta(o_tmid s)ar b_t(s)}
-{sum_u P_	heta(o_tmid u)ar b_t(u)}.
-]
+P_theta(o_t | s) * b_prior_t(s)
+/
+sum over u of P_theta(o_t | u) * b_prior_t(u)
 
-Uncertainty:
+Belief entropy:
 
-[
-H_t = -sum_s b_t(s)ln b_t(s).
-]
+H_t = - sum_s b_t(s) ln b_t(s)
 
-Realized information gain:
+Information gain:
 
-[
-IG_t = D_{KL}(b_tparallelar b_t).
-]
+IG_t = D_KL(b_t || b_prior_t)
 
-The Bayesian-brain literature treats uncertainty as part of the representation rather than an afterthought.
+### 2.3 Prediction error
 
-### 2.3 Prediction and residual error — source family: predictive coding
+Predicted observation:
+o_hat_t = E[o_t | current model/belief]
 
-From the posterior and a candidate action:
+Residual:
+epsilon_t = o_t - o_hat_t
 
-[
-p(o_{t+1}mid b_t,a_t)
-= sum_{s,s'} P(o_{t+1}mid s')P(s'mid s,a_t)b_t(s).
-]
+Candidate precision-weighted prediction error:
 
-Let (hat o_t) denote the predicted observation. The residual is
+PE_t = transpose(epsilon_t) * Pi_t * epsilon_t
 
-[
-epsilon_t = o_t-hat o_t.
-]
+Pi_t is a calibrated precision model.
 
-A precision-weighted error is
+### 2.4 Variational free energy
 
-[
-PE_t=epsilon_t^	opPi_tepsilon_t,
-]
+For approximate posterior q_t(s):
 
-where (Pi_t) is a calibrated precision matrix. Rao and Ballard's predictive-coding model formalized top-down predictions and bottom-up residual errors; the exact engineering precision model here remains a LeeWay implementation choice requiring calibration.
+F_t = E_q [ ln q_t(s) - ln p_theta(o_t, s) ]
 
-### 2.4 Variational free energy — source family: free-energy principle
+This is a candidate bridge for perception, inference and learning. It is not proof of consciousness.
 
-For approximate posterior (q_t(s)):
+### 2.5 Candidate valence
 
-[
-F_t
-=
-mathbb E_{q_t(s)}
-[ln q_t(s)-ln p_	heta(o_t,s)].
-]
+Following the free-energy-rate proposal:
 
-Minimizing variational free energy makes the approximate posterior better account for observations under the model. This is a candidate mathematical bridge linking perception, inference and learning; it is not by itself proof of consciousness.
+V_t = - (F_t - F_t-1) / Delta_t
 
-### 2.5 Emotion/valence — source proposal + LeeWay boundary
+V_t > 0 means model fit improved under this operationalization.
+V_t < 0 means model fit worsened.
 
-Joffily and Coricelli proposed emotional valence as the negative rate of change of free energy. Candidate implementation:
+This is a control signal, not a human feeling label.
 
-[
-V_t = -rac{F_t-F_{t-1}}{Delta t}.
-]
+### 2.6 Machine interoception
 
-Interpretation:
+Internal observation channels may include:
 
-- (V_t>0): model fit is improving under this formalization;
-- (V_t<0): model fit is worsening;
-- magnitude reflects rate of change, not a human emotion label.
+energy budget;
+thermal pressure;
+compute pressure;
+memory pressure;
+sensor integrity;
+actuator integrity;
+network state;
+authority/permission state;
+resource scarcity.
 
-Seth's interoceptive-inference work motivates a separate internal/body-state observation channel. For a machine, that channel can contain real internal telemetry such as energy, thermal pressure, memory pressure, actuator integrity, sensor health and resource scarcity. These are machine interoceptive signals, not simulated human feelings.
+These are real machine internal conditions.
 
-### 2.6 Prediction, curiosity and choice — source family: active inference
+### 2.7 Policy / expected free energy
 
-For policy (pi), expected free energy can combine pragmatic preference and epistemic/information value. A common policy posterior is
+For policy pi:
 
-[
-q(pi) propto exp[-gamma G(pi)].
-]
+q(pi) proportional to exp( - gamma * G(pi) )
 
-A risk/ambiguity representation is
+A candidate decomposition:
 
-[
-G(pi)
-approx
-D_{KL}[q(omidpi)parallel p^*(o)]
+G(pi) approximately =
+risk relative to preferred outcomes
 +
-mathbb E_{q(smidpi)} H[p(omid s)].
-]
+ambiguity of observations under predicted states
 
-Equivalent decompositions emphasize pragmatic value and expected information gain. The selected policy need not be deterministic; its uncertainty is itself evidence.
+Equivalent active-inference formulations emphasize pragmatic value plus epistemic/information value.
 
-### 2.7 Action and result
+### 2.8 Action and result
 
-An action receives an immutable action ID and state-hash reference:
+Action:
+a_t ~ q(a | b_t, pi_t)
 
-[
-a_t sim q(amid b_t,pi_t).
-]
+Each action carries an immutable action ID and state-hash reference.
 
-The next observation, internal telemetry and task outcome become (o_{t+1}). A result is not considered successful merely because an action executed.
+Result/new observation:
+o_t+1
 
-### 2.8 Learning/model update
+Optional reward/preference signal:
+r_t+1
 
-One generic free-energy learning step is
+Execution is not success; predicted and actual outcomes remain separate.
 
-[
-	heta_{t+1}
-=
-	heta_t-eta_t
-abla_	heta F_t.
-]
+### 2.9 Learning
 
-For reward/value learning, a temporal-difference error may coexist:
+Generic free-energy parameter update:
 
-[
-delta_t
-=
-r_{t+1}+gamma V(b_{t+1})-V(b_t).
-]
+theta_t+1 = theta_t - eta_t * gradient_theta(F_t)
 
-Schultz, Dayan and Montague linked dopaminergic activity to prediction/reward error; this does not imply a machine must copy dopamine. The transferable principle is an explicit prediction-versus-result error signal.
+Optional temporal-difference family:
 
-## 3. Operational awareness state — LeeWay synthesis
+delta_t = r_t+1 + gamma * U(b_t+1) - U(b_t)
 
-Do not reduce awareness to one invented magic number.
+The initial runtime need not use every learning family.
 
-Maintain a structured state:
+## 3. Operational awareness state
 
-[
-mathcal A_t =
-{
-b_t, H_t, PE_t, V_t, IG_t, G_t(pi^*),B_t, chi_t, M_t
+Do not reduce awareness to one invented scalar.
+
+Maintain:
+
+A_t = {
+  b_t,
+  H_t,
+  PE_t,
+  V_t,
+  IG_t,
+  G_t(selected_policy),
+  B_t,
+  self_model_t,
+  memory_provenance_t
 }
-]
 
-where:
+## 4. Global-access evidence
 
-- (b_t): current probabilistic belief;
-- (H_t): belief uncertainty;
-- (PE_t): precision-weighted prediction error;
-- (V_t): free-energy slope / valence candidate;
-- (IG_t): information gained from the observation;
-- (G_t(pi^*)): expected free energy of selected policy;
-- (B_t): global-access/broadcast evidence;
-- (chi_t): self-model state and consistency evidence;
-- (M_t): memory/provenance state.
+Candidate machine workspace metric:
 
-### 3.1 Global-access evidence
+B_t =
+number of required modules acknowledging cognition state hash h_t
+/
+number of required modules
 
-Global Neuronal Workspace research motivates the idea that conscious access is associated with information becoming globally available to multiple processors. For machine engineering, use a verifiable message-level proxy rather than pretending to reproduce human cortex:
+Possible required modules:
+perception, memory, prediction, policy, self-model, Veritas and learning.
 
-[
-B_t=rac{#{	ext{required cognitive modules acknowledging state hash }h_t}}
-{#{	ext{required cognitive modules}}}.
-]
+B_t measures global availability, not phenomenal consciousness.
 
-Required modules can include perception, memory, prediction, policy, self-model, Veritas and learning. The exact required set is a versioned architecture contract.
+## 5. Self-model
 
-(B_t) measures global availability. It does **not** prove phenomenal consciousness.
+Self-model contains inspectable facts:
+identity, version, capabilities, sensors, actuators, authority, resources, uncertainty, goals/preferences, recent actions, known failures and evidence state.
 
-### 3.2 Self-model
+Candidate self-consistency:
 
-The self-model should contain only inspectable machine facts: capabilities, active sensors, current authority, resource state, model versions, uncertainty, goals, prohibitions, recent actions and causal ownership.
+C_self_t =
+1 - JSD(observed_self_distribution, predicted_self_distribution) / ln(2)
 
-A self-model prediction can be compared with the observed self-state using Jensen-Shannon divergence:
+## 6. Formula-stack bridge
 
-[
-C^{self}_t
-=
-1-rac{operatorname{JSD}(b^{self}_t,hat b^{self}_t)}{ln 2}.
-]
+Every completed cognition cycle emits six candidate measured dimensions:
 
-This is a bounded engineering consistency measure, not a philosophical proof of selfhood.
+1. H_t — belief entropy
+2. PE_t — precision-weighted prediction error
+3. V_t — candidate free-energy-rate valence
+4. IG_t — realized information gain
+5. G_t(selected_policy) — selected-policy expected free energy
+6. B_t — global-access ratio
 
-## 4. Formula-stack bridge
+Sixteen compatible cycles produce a 16 x 6 observation window.
+
+The existing runtime-state-v1 adapter maps calibrated finite ranges into the canonical 0..69 matrix.
 
 The Golden Formula remains unchanged.
 
-For every completed cognition cycle, derive six measured dimensions:
+Current state:
 
-1. (H_t) — belief entropy;
-2. (PE_t) — precision-weighted prediction error;
-3. (V_t) — free-energy rate / valence candidate;
-4. (IG_t) — realized information gain;
-5. (G_t(pi^*)) — selected-policy expected free energy;
-6. (B_t) — global-access ratio.
+FORMULA EXECUTION = NOT_EXECUTED
 
-Sixteen consecutive cycles produce the existing `16 x 6` runtime-state window.
+Reason:
+the six cognition dimensions do not yet have qualified calibration ranges and task interpretation has not been Veritas-qualified.
 
-The existing `runtime-state-v1` adapter then maps calibrated ranges into the canonical (0..69) state matrix. The Formula can analyze recurrence, gap, recency, positional stability, temporal dynamics, displacement, Hamiltonian-like energy, co-occurrence and phase **without changing the Formula kernel**.
+## 7. Dream engineering / offline replay
 
-Current status:
+Stored transition:
 
-[
-	ext{FORMULA EXECUTION} = 	ext{NOT EXECUTED}
-]
+e_k = (belief_k, action_k, next_observation_k, result_k, state_hash_k)
 
-because these six cognitive dimensions do not yet have qualified calibration ranges.
+Candidate replay priority:
 
-## 5. Dream engineering / offline replay
+EVB(k) = Gain(k) * Need(k)
 
-A dream is an offline, provenance-marked cognition cycle. It is not an external event.
+Dream cycle:
 
-Store transition records
+select episode
+-> reconstruct original belief/context
+-> simulate alternate prediction/policy
+-> calculate counterfactual outcome/error
+-> compare with observed history
+-> propose model update
+-> Veritas
+-> admit or reject learning
 
-[
-e_k=(b_k,a_k,o_{k+1},r_{k+1},h_k)
-]
+Hard rule:
+dream/replay evidence remains SIMULATED.
 
-with state hash (h_k).
+## 8. Candidate maturity ladder
 
-Mattar and Daw's prioritized replay work motivates selecting memories by expected value of backup:
+C0 Reactive:
+stimulus -> response; no persistent probabilistic belief.
 
-[
-EVB(k)=Gain(k)	imes Need(k).
-]
+C1 Perceptual:
+posterior belief + prediction error.
 
-For LeeWay dream engineering:
+C2 Contextual:
+temporal memory + belief stability + prediction.
 
-1. select high-EVB or high-uncertainty transitions;
-2. reconstruct the original belief/context;
-3. simulate alternative predictions or policies;
-4. calculate counterfactual outcomes and errors;
-5. compare with historical observed results;
-6. propose a model update;
-7. run Veritas;
-8. admit or reject learning;
-9. keep dream evidence permanently marked `SIMULATED`.
+C3 Valuative:
+internal/external preferences + uncertainty-aware valuation.
 
-Dreams may improve models. They may not create fake memories of events that did not occur.
+C4 Deliberative:
+counterfactual policy evaluation + epistemic exploration.
 
-## 6. Candidate awareness-development ladder — LeeWay synthesis
+C5 Operational self-awareness:
+self-model participates in prediction/policy and cognition state is globally available.
 
-This is an engineering maturity ladder, not a scientific consciousness scale:
+C6 Reflective/offline:
+replay/dream cycles revise models while preserving real-vs-simulated provenance.
 
-- **C0 Reactive:** stimulus -> response; no persistent probabilistic belief.
-- **C1 Perceptual:** posterior belief + prediction error.
-- **C2 Contextual:** temporal memory + belief stability + prediction.
-- **C3 Valuative:** internal/external preference signals + uncertainty-aware affective state.
-- **C4 Deliberative:** counterfactual policy evaluation and epistemic exploration.
-- **C5 Self-referential operational awareness:** self-model enters prediction and policy, with global state accessibility.
-- **C6 Reflective/offline:** replay/dream cycles revise models while preserving real-vs-simulated provenance.
+These are engineering maturity levels, not a scientific consciousness scale.
 
-A level is earned by passing behavior/architecture tests; no level establishes subjective sentience.
+## 9. Source separation
 
-## 7. Scientific source separation
-
-### SOURCE / established or published mathematical families
+Published/source mathematical families:
 
 - Bayesian posterior inference and uncertainty.
-- Predictive coding / residual prediction errors.
+- Predictive coding / residual prediction error.
 - Variational free energy and active inference.
 - Expected free energy for policy selection.
 - Reward prediction error / temporal-difference family.
 - Free-energy-rate proposal for emotional valence.
-- Global-workspace global accessibility hypothesis.
+- Global-workspace accessibility hypothesis.
 - Expected-value-of-backup replay prioritization.
 
-### LEEWAY SYNTHESIS
+LeeWay synthesis:
 
-- The exact cognition-state packet.
-- Belief-stability proxy (ho_t).
-- Machine global-access acknowledgement ratio (B_t).
-- Machine self-model consistency (C^{self}_t).
-- The six-dimension mapping into `runtime-state-v1`.
-- The C0-C6 engineering maturity ladder.
-- Dream provenance and Veritas admission rules.
+- cognition-state packet;
+- rho_t belief-stability diagnostic;
+- B_t global-access acknowledgement ratio;
+- C_self_t self-model-consistency diagnostic;
+- six-dimension mapping into runtime-state-v1;
+- C0-C6 engineering maturity ladder;
+- dream provenance and Veritas admission rules.
 
-These LeeWay constructs must be tested before promotion; they must never be cited as if the neuroscience papers proposed them.
+## 10. References
 
-## 8. Research references
+Rao & Ballard (1999), Predictive coding in the visual cortex. doi:10.1038/4580.
+Knill & Pouget (2004), The Bayesian brain. doi:10.1016/j.tins.2004.10.007.
+Schultz, Dayan & Montague (1997), A neural substrate of prediction and reward. doi:10.1126/science.275.5306.1593.
+Friston (2010), The free-energy principle. doi:10.1038/nrn2787.
+Seth (2013), Interoceptive inference, emotion, and the embodied self. doi:10.1016/j.tics.2013.09.007.
+Joffily & Coricelli (2013), Emotional Valence and the Free-Energy Principle. doi:10.1371/journal.pcbi.1003094.
+Friston et al. (2016), Active inference and learning. doi:10.1016/j.neubiorev.2016.06.022.
+Mattar & Daw (2018), Prioritized memory access explains planning and hippocampal replay. doi:10.1038/s41593-018-0232-z.
+Mashour et al. (2020), Conscious Processing and the Global Neuronal Workspace Hypothesis. doi:10.1016/j.neuron.2020.01.026.
+Oizumi, Albantakis & Tononi (2014), IIT 3.0. doi:10.1371/journal.pcbi.1003588. Comparator only.
 
-- Rao, R. P. N. & Ballard, D. H. (1999). Predictive coding in the visual cortex. Nature Neuroscience. doi:10.1038/4580.
-- Knill, D. C. & Pouget, A. (2004). The Bayesian brain: the role of uncertainty in neural coding and computation. Trends in Neurosciences. doi:10.1016/j.tins.2004.10.007.
-- Schultz, W., Dayan, P. & Montague, P. R. (1997). A neural substrate of prediction and reward. Science. doi:10.1126/science.275.5306.1593.
-- Friston, K. (2010). The free-energy principle: a unified brain theory? Nature Reviews Neuroscience. doi:10.1038/nrn2787.
-- Seth, A. K. (2013). Interoceptive inference, emotion, and the embodied self. Trends in Cognitive Sciences. doi:10.1016/j.tics.2013.09.007.
-- Joffily, M. & Coricelli, G. (2013). Emotional Valence and the Free-Energy Principle. PLOS Computational Biology. doi:10.1371/journal.pcbi.1003094.
-- Friston, K. et al. (2016). Active inference and learning. Neuroscience & Biobehavioral Reviews. doi:10.1016/j.neubiorev.2016.06.022.
-- Mattar, M. G. & Daw, N. D. (2018). Prioritized memory access explains planning and hippocampal replay. Nature Neuroscience. doi:10.1038/s41593-018-0232-z.
-- Mashour, G. A. et al. (2020). Conscious Processing and the Global Neuronal Workspace Hypothesis. Neuron. doi:10.1016/j.neuron.2020.01.026.
-- Oizumi, M., Albantakis, L. & Tononi, G. (2014). Integrated Information Theory 3.0. PLOS Computational Biology. doi:10.1371/journal.pcbi.1003588. IIT is retained as a research comparator, not the current LeeWay control kernel.
+## 11. Next qualification
 
-## 9. Next qualification work
-
-Before promotion:
-
-1. implement a deterministic non-LLM cognition-cycle simulator;
-2. define explicit hidden-state, observation, internal-telemetry and preference schemas;
-3. implement the six dimension calculators independently of the Formula;
-4. generate real/simulated labeled traces;
-5. calibrate finite ranges from evidence rather than intuition;
-6. run 16-cycle windows through `runtime-state-v1`;
-7. execute canonical Formula only after source/runtime authority is live and verified;
-8. test prediction quality, recovery, information seeking, replay utility and self-model accuracy;
-9. perform ablations against simpler baselines;
-10. require Veritas + receipt before promotion.
-
-No source mathematics or LeeWay candidate construct is promoted merely because it is elegant.
+Implement deterministic non-LLM cognition-cycle simulator;
+define explicit schemas;
+implement six metric calculators;
+generate labeled traces;
+calibrate finite ranges;
+run 16-cycle windows through runtime-state-v1;
+reverify live Formula authority;
+execute canonical Formula only after calibration;
+run ablations;
+require Veritas + receipt before promotion.
