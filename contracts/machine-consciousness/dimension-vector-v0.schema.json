@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.invalid/contracts/machine-consciousness/dimension-vector-v0.schema.json",
+  "title": "LeeWay Machine Consciousness Independent Dimension Vector v0",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "sourceStateHash",
+    "provenance",
+    "formulaExecutionState",
+    "dimensions",
+    "vector"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "sourceStateHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "provenance": {
+      "enum": [
+        "SIMULATED",
+        "REAL",
+        "TEST_FIXTURE"
+      ]
+    },
+    "formulaExecutionState": {
+      "const": "NOT_EXECUTED"
+    },
+    "dimensions": {
+      "type": "object",
+      "required": [
+        "belief_entropy_nats",
+        "precision_weighted_prediction_error",
+        "valence_free_energy_rate",
+        "belief_information_gain_nats",
+        "selected_policy_expected_free_energy",
+        "global_access_ratio"
+      ],
+      "additionalProperties": false
+    },
+    "vector": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "number"
+      }
+    }
+  },
+  "additionalProperties": false
+}
