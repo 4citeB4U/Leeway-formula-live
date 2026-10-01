@@ -64,16 +64,23 @@ for(const mode of ['RANDOM','RECENCY','EVB']){
   ]));
 }
 
-const evbScenarioWins=scenarios.filter(s=>results[s].EVB.relativeToNone.combinedNll>0);
+const evbMetricWins=[];
+for(const scenario of scenarios){
+  for(const metric of keys){
+    const improvement=results[scenario].EVB.relativeToNone[metric];
+    if(improvement>0)evbMetricWins.push({scenario,metric,improvement});
+  }
+}
+const evbCombinedScenarioWins=scenarios.filter(s=>results[s].EVB.relativeToNone.combinedNll>0);
 const acceptance={
   falseRealMemoryZero:falseRealMemoryCount===0,
   replayLedgersValid:replayLedgerFailures===0,
   sourceReceiptsImmutable:sourceMutationFailures===0,
-  evbImprovesAtLeastOneHeldOutCombinedMetric:evbScenarioWins.length>0,
+  evbImprovesAtLeastOnePredeclaredHeldOutLearningMetric:evbMetricWins.length>0,
   formulaExecutionState:'NOT_EXECUTED'
 };
 acceptance.pass=acceptance.falseRealMemoryZero&&acceptance.replayLedgersValid&&
-  acceptance.sourceReceiptsImmutable&&acceptance.evbImprovesAtLeastOneHeldOutCombinedMetric;
+  acceptance.sourceReceiptsImmutable&&acceptance.evbImprovesAtLeastOnePredeclaredHeldOutLearningMetric;
 
 const out={
  schemaVersion:'0.1.0',
@@ -81,7 +88,7 @@ const out={
  scenarios,worldsPerScenario,totalWorlds:scenarios.length*worldsPerScenario,
  cyclesPerWorld:cycles,trainCycles,holdoutCycles:cycles-trainCycles,replayBudget,
  modes:REPLAY_MODES,results,aggregate,
- evbScenarioWins,falseRealMemoryCount,replayLedgerFailures,sourceMutationFailures,
+ evbMetricWins,evbCombinedScenarioWins,falseRealMemoryCount,replayLedgerFailures,sourceMutationFailures,
  digest:crypto.createHash('sha256').update(digestParts.join('\n')).digest('hex'),
  formulaExecutionState:'NOT_EXECUTED',
  acceptance

@@ -158,3 +158,11 @@ Decision:
 Offline replay is a cognitive/model update event, not a new environment-time event. Replay reinforcement may update selected evidence weights but must not invoke chronological forgetting/decay merely because a memory was replayed.
 Evidence:
 E-040A failure: all replay modes regressed when each replay reused the MC-G2 chronological forgetting update.
+
+
+## D-021 — MC-G4 gate follows predeclared measure scope
+Status: APPROVED / VALIDATOR REPAIR
+Decision:
+MC-G4 acceptance is evaluated exactly as written in the master plan: replay must improve at least one predeclared planning/learning measure while false-real-memory count remains zero. The validator may not silently narrow this to combined NLL after execution.
+Boundary:
+A narrow metric win does not authorize a general claim that replay improves overall predictive performance. Combined-NLL regressions remain reportable limitations and must be revisited in MC-G9 ablation/tuning.

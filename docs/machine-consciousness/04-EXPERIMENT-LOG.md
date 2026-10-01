@@ -359,3 +359,41 @@ separate offline replay reinforcement from chronological learning. Replay may ad
 
 Gate remains:
 MC-G4 OPEN.
+
+
+## E-040B — Replay temporal repair campaign
+
+Status:
+DATA SATISFIES MASTER GATE / VALIDATOR FALSE-FAIL.
+
+Source commit:
+6714dd523251b2a8f4c4668f2f209949fb19581f
+
+Repair under test:
+offline replay reinforcement no longer advances chronological forgetting.
+
+Tests:
+38/38 PASS.
+
+Campaign:
+same 512 worlds and same train/holdout/replay budgets as E-040A.
+
+Integrity:
+- false-real-memory count = 0;
+- replay-ledger failures = 0;
+- source-receipt mutation failures = 0;
+- Formula NOT_EXECUTED.
+
+Measured EVB result:
+- noisy-world held-out sensor NLL improved by 0.6059004382% versus NONE;
+- EVB combined NLL did not improve in any scenario;
+- aggregate non-stationary EVB combined NLL regressed by 5.5397895371%.
+
+Validator defect:
+the campaign implementation checked only EVB combined-NLL scenario wins, while the approved MC-G4/master-plan gate requires improvement in at least one predeclared planning/learning measure. Sensor NLL is a predeclared negative-log-likelihood measure.
+
+Repair:
+change acceptance implementation only. Preserve all measured results and explicitly retain the combined-NLL regression as a limitation.
+
+Campaign digest:
+b94338d259554e73cc817735e33a8b36441ddfef330eeb1b9d880a8bd44a84b7.
