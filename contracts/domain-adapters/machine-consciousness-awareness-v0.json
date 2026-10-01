@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "machine-consciousness-awareness-v0",
+  "status": "CANDIDATE_CALIBRATION_REQUIRED",
+  "domain": "non-LLM-machine-cognition",
+  "purpose": "Map measured cognition-cycle dynamics into the existing LeeWay runtime-state-v1 adapter without modifying LEEWAY-FORMULA-v1.0.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "canonicalEngineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeAdapterId": "runtime-state-v1",
+    "canonicalRuntimeAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "formulaMutation": false
+  },
+  "scientificBasis": [
+    {
+      "concept": "probabilistic belief under uncertainty",
+      "source": "Knill & Pouget (2004), The Bayesian brain, doi:10.1016/j.tins.2004.10.007"
+    },
+    {
+      "concept": "prediction and residual prediction error",
+      "source": "Rao & Ballard (1999), Predictive coding in the visual cortex, doi:10.1038/4580"
+    },
+    {
+      "concept": "variational free energy linking perception, learning and action",
+      "source": "Friston (2010), The free-energy principle, doi:10.1038/nrn2787"
+    },
+    {
+      "concept": "emotion/valence as negative rate of change of free energy",
+      "source": "Joffily & Coricelli (2013), Emotional Valence and the Free-Energy Principle, doi:10.1371/journal.pcbi.1003094"
+    },
+    {
+      "concept": "interoceptive inference and emotion",
+      "source": "Seth (2013), Interoceptive inference, emotion, and the embodied self, doi:10.1016/j.tics.2013.09.007"
+    },
+    {
+      "concept": "belief-based choice minimizing expected free energy",
+      "source": "Friston et al. (2016), Active inference and learning, doi:10.1016/j.neubiorev.2016.06.022"
+    },
+    {
+      "concept": "global accessibility as a conscious-access hypothesis",
+      "source": "Mashour et al. (2020), Conscious Processing and the Global Neuronal Workspace Hypothesis, doi:10.1016/j.neuron.2020.01.026"
+    },
+    {
+      "concept": "prioritized replay by expected value of backup",
+      "source": "Mattar & Daw (2018), Prioritized memory access explains planning and hippocampal replay, doi:10.1038/s41593-018-0232-z"
+    }
+  ],
+  "cognitionCycle": {
+    "sequence": [
+      "environment/event",
+      "observation",
+      "probabilistic interpretation/belief update",
+      "affective valuation",
+      "prediction",
+      "policy/choice",
+      "action",
+      "result/new observation",
+      "model update",
+      "memory/continuity update"
+    ],
+    "beliefDefinition": "b_t(s) = P(s_t=s | o_1:t, a_1:t-1); belief is a revisable probability distribution, not a permanent proposition.",
+    "offlineReplay": "Stored transitions may be replayed or counterfactually simulated; simulated evidence must remain provenance-marked and cannot be promoted to external fact without Veritas."
+  },
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "belief_entropy_nats",
+      "unit": "nats",
+      "direction": "contextual_not_monotonic",
+      "definition": "H(b_t) = -sum_s b_t(s) ln b_t(s)",
+      "role": "uncertainty of current interpreted state"
+    },
+    {
+      "index": 1,
+      "id": "precision_weighted_prediction_error",
+      "unit": "normalized_error_energy",
+      "direction": "lower_means_prediction_fit_is_closer",
+      "definition": "PE_t = epsilon_t^T Pi_t epsilon_t, epsilon_t = o_t - o_hat_t",
+      "role": "mismatch between predicted and observed evidence"
+    },
+    {
+      "index": 2,
+      "id": "valence_free_energy_rate",
+      "unit": "free_energy_change_per_cycle",
+      "direction": "higher_means_model_fit_is_improving_under_this_candidate_interpretation",
+      "definition": "V_t = -(F_t - F_t-1)/Delta_t",
+      "role": "affective/meta-learning signal; candidate operationalization follows Joffily-Coricelli"
+    },
+    {
+      "index": 3,
+      "id": "belief_information_gain_nats",
+      "unit": "nats",
+      "direction": "higher_means_observation_changed_belief_more",
+      "definition": "IG_t = D_KL(b_t || b_t_prior)",
+      "role": "realized Bayesian information gain from the observation"
+    },
+    {
+      "index": 4,
+      "id": "selected_policy_expected_free_energy",
+      "unit": "nats_or_calibrated_model_units",
+      "direction": "lower_is_preferred_within_fixed_model_and_preferences",
+      "definition": "G_t(pi*) for the selected policy; candidate policy posterior q(pi) proportional to exp(-gamma G(pi))",
+      "role": "choice balance between pragmatic preference and epistemic value"
+    },
+    {
+      "index": 5,
+      "id": "global_access_ratio",
+      "unit": "ratio_0_1",
+      "direction": "higher_means_current_state_is_available_to_more_required_cognitive_modules",
+      "definition": "B_t = acknowledged_required_modules / required_modules for one immutable cognition-state hash",
+      "role": "engineering proxy inspired by global-workspace accessibility; not a proof of phenomenal consciousness"
+    }
+  ],
+  "observationWindow": {
+    "rows": 16,
+    "width": 6,
+    "rule": "16 consecutive completed cognition cycles under the same model, sensor, policy, memory, self-model and calibration profile"
+  },
+  "auxiliaryStateNotCompressedIntoSixDimensions": [
+    "belief_stability = 1 - JSD(b_t,b_t-1)/ln(2)",
+    "self-model state and self-model consistency",
+    "action identity and actuator receipt",
+    "result/reward/homeostatic signals",
+    "parameter/model-update magnitude",
+    "memory provenance",
+    "counterfactual/dream provenance",
+    "global state hash and per-module acknowledgements"
+  ],
+  "dreamReplay": {
+    "candidatePriority": "EVB(k) = Gain(k) * Need(k)",
+    "requirement": "Replay is SIMULATED/OFFLINE evidence. It may update internal models only through explicit learning gates and never masquerades as a real external event.",
+    "cycle": [
+      "select high-priority stored transition",
+      "reconstruct prior belief and context",
+      "simulate alternate predictions/policies",
+      "compute counterfactual outcomes",
+      "compare prediction errors/information gain",
+      "propose model update",
+      "Veritas check",
+      "admit or reject learning with provenance"
+    ]
+  },
+  "awarenessBoundary": {
+    "operationalClaim": "This candidate measures and governs awareness-like access, uncertainty, prediction, valuation, policy and learning dynamics.",
+    "prohibitedClaim": "Formula output or this adapter alone does not prove subjective experience, sentience, phenomenal consciousness, or human equivalence.",
+    "researchComparators": [
+      "predictive processing",
+      "Bayesian brain",
+      "active inference",
+      "global neuronal workspace",
+      "integrated information theory as optional comparator, not current control kernel"
+    ]
+  },
+  "calibration": {
+    "ranges": null,
+    "state": "NOT_CALIBRATED",
+    "rule": "No fixed numeric ranges, thresholds or awareness scores are authorized yet. Calibrate on measured non-LLM cognition traces before numeric Formula evaluation."
+  },
+  "veritasAcceptance": [
+    "Each of six dimensions has a deterministic implementation and unit test.",
+    "Each dimension has measured finite calibration ranges with provenance.",
+    "Same trace and same implementation reproduce identical rows.",
+    "Belief and policy distributions normalize correctly.",
+    "Dream/replay events are distinguishable from real events by immutable provenance.",
+    "Global-access acknowledgements reference the same cognition-state hash.",
+    "Formula kernel SHA-256 and runtime-state adapter SHA-256 match canonical pins.",
+    "16x6 mapper passes malformed-input, non-finite, missing-module and provenance-negative tests.",
+    "Ablation tests show each dimension contributes measurable diagnostic information.",
+    "No claim of consciousness is promoted solely from a Formula score."
+  ],
+  "formulaExecutionState": "NOT_EXECUTED",
+  "reason": "Candidate semantic mapping exists, but calibration ranges and outcome validation are not yet qualified."
+}
