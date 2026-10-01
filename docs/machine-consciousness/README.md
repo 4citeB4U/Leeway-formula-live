@@ -103,3 +103,43 @@ MC-G4 passes exactly the master-plan requirement of at least one predeclared lea
 Formula execution remains NOT_EXECUTED.
 
 Next engineering gate: MC-G5 — independently recomputable six-dimension instrumentation with provenance-negative tests and no Formula use.
+
+## Active parallel research tracks
+
+These tracks support the main MC-4 dream/replay phase but do not silently advance its gate.
+
+### Mathematical qualification
+
+- 17/17 math-only tests PASS.
+- Belief entropy/JSD/stability, self-consistency, information gain, valence direction, global access, EVB, mechanical emotion and adaptive deliberation are independently testable.
+- Calibrated simulated deliberation averages: stationary 4.8027 cycles; noisy 5.6453 cycles.
+- Live Agent Lee response generation is not yet bound to this controller.
+
+Receipt:
+receipts/machine-consciousness/AGENT-LEE-MATH-QUALIFICATION-v0-20261001.json
+
+### Parallelism
+
+- CPU-bound small cognition kernel: 20 OS threads are slower than one.
+- wait-heavy synthetic orchestration: 20 logical workers achieved 18.89x speedup versus one.
+- logical worker count and physical executor count are constitutionally separate.
+
+Receipt:
+receipts/machine-consciousness/AGENT-LEE-PARALLELISM-BASELINE-v0-20261001.json
+
+### Memory compaction
+
+- 1,024 cognition records structurally compacted 68.06% with byte-exact reconstruction.
+- improvement over simply Brotli-compressing raw JSON was 6.8%.
+- exact source truth and semantic working memory are separate tiers.
+- live Pocket MemoryStore integration remains pending.
+
+Receipt:
+receipts/machine-consciousness/AGENT-LEE-MEMORY-COMPACTION-v0-20261001.json
+
+### Model-training track
+
+QLoRA / LoRA-family adaptation and DPO remain the planned small-model behavior-training mechanisms. They have not yet been executed on the canonical phone-local model under the new Formula training-compute adapter.
+
+Experiment publication commit:
+071627ff2ef204ea0c19791cdc3e120827defd3e
