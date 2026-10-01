@@ -777,3 +777,70 @@ NOT_EXECUTED.
 
 Next:
 MC-G8 first cognition evaluation.
+
+
+## Executed E-100 — MC-G8 first canonical cognition Formula execution
+
+Date: 2026-10-01
+State: PASS_EXECUTION_GATE / RESULT_EXECUTED_UNVERIFIED
+
+Fresh source:
+- scenario: noisy;
+- seed: 1835216952;
+- worldIndex: 8808;
+- cycles: 16.
+
+Input:
+16 x 6 independently recomputed cognition dimensions using operational workspace/self-model evidence and the accepted MC-G6 calibration profile.
+
+Formula:
+LEEWAY-FORMULA-v1.0 through runtime-state-v1.
+
+Result:
+- decimal state: [69,68,67,65,13,64];
+- base64 state: [BF,BE,BD,BB,N,BA];
+- input hash: 513f612ca2076bad61eab407b884b9898185608d4fd29a64541a446ed9945bbe;
+- result hash: caf9cd55d7608052e1e9cbc3b00d1862ba24ebe5a40b47fab87110bc038d43a8;
+- source-window hash: 9d87693c0362362646db170418a330763bc3f5ff59ae01d98b5d9989e13e289f;
+- Formula receipt SHA-256: 21bdd93ce4680553137dca4c0b65e9a57c8dab28844627394a9acf444fd3451c.
+
+Boundary:
+The Formula executed. The resulting cognition state remains EXECUTED/UNVERIFIED and is not yet given semantic authority over live Agent Lee behavior.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G8-FIRST-FORMULA-EXECUTION-20261001.json
+
+## Executed E-110 — MC-G9 contribution audit tranche 1
+
+Date: 2026-10-01
+State: PASS_TRANCHE_1 / MC-G9 NOT CLOSED
+
+Campaign:
+- 5 scenario families;
+- 128 worlds per scenario;
+- 64 cycles per world;
+- 40,960 independently recomputed rows.
+
+Current causal map:
+- selected-policy expected free energy: direct causal input to base policy selection;
+- dream/replay: indirect causal influence through learned parameters.
+
+Current diagnostic/integrity map:
+- belief entropy;
+- precision-weighted prediction error;
+- free-energy-rate valence;
+- realized information gain;
+- global-access ratio;
+- factual self-model.
+
+Replay limitation retained:
+EVB produced a narrow noisy-sensor NLL improvement but no combined-NLL scenario wins. General replay superiority remains unverified.
+
+Digest:
+5e9a0a51ce177239e2d3516675a1e1764b837b8c982532ead7f7bd37fac6d1a5
+
+Next:
+controlled policy/learning ablations against simpler baselines.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CONTRIBUTION-TRANCHE-1-20261001.json
