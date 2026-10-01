@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "0.1.0",
+  "researchId": "agent-lee-scientific-reference-v0",
+  "title": "Agent Lee — LeeWay Scientific Reference Architecture",
+  "sourceRepository": "4citeB4U/Leeway-formula-live",
+  "sourceCommit": "1b70f8a06201f16ac8b131dbd7ed09e35c3de0a2",
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "mutation": false,
+    "cognitionExecution": "NOT_EXECUTED"
+  },
+  "project": {
+    "primaryPhase": "MC-4",
+    "primaryGate": "MC-G3_PASS_REQUALIFIED",
+    "rapidWebDevelop": "PLANNED_NOT_DEPLOYED"
+  },
+  "documents": [
+    {
+      "path": "docs/machine-consciousness/README.md",
+      "role": "index"
+    },
+    {
+      "path": "docs/machine-consciousness/01-MASTER-PLAN-v0.md",
+      "role": "master-plan"
+    },
+    {
+      "path": "docs/machine-consciousness/02-RESEARCH-NOTEBOOK-v0.md",
+      "role": "scientific-notebook"
+    },
+    {
+      "path": "docs/machine-consciousness/03-DECISION-LEDGER.md",
+      "role": "decision-ledger"
+    },
+    {
+      "path": "docs/machine-consciousness/04-EXPERIMENT-LOG.md",
+      "role": "experiment-log"
+    },
+    {
+      "path": "docs/machine-consciousness/05-CLAIM-REGISTER.md",
+      "role": "claim-register"
+    },
+    {
+      "path": "docs/machine-consciousness/06-AGENT-LEE-SCIENTIFIC-DOSSIER-v0.md",
+      "role": "reference-dossier"
+    },
+    {
+      "path": "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md",
+      "role": "failure-repair-history"
+    },
+    {
+      "path": "docs/machine-consciousness/08-LEEWAY-AGENT-REFERENCE-TEMPLATE-v0.md",
+      "role": "all-agent-template"
+    },
+    {
+      "path": "docs/machine-consciousness/09-RAPIDWEBDEVELOP-PUBLICATION-PLAN-v0.md",
+      "role": "public-publication-plan"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "MC-G1",
+      "status": "VERIFIED",
+      "path": "experiments/machine-consciousness-v0",
+      "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G1-SIMULATOR-20261001.json"
+    },
+    {
+      "id": "MATH-v0",
+      "status": "VERIFIED_MATH_ONLY",
+      "path": "experiments/machine-consciousness-math-v0",
+      "receipt": "receipts/machine-consciousness/AGENT-LEE-MATH-QUALIFICATION-v0-20261001.json",
+      "tests": "17/17"
+    },
+    {
+      "id": "PARALLELISM-v0",
+      "status": "VERIFIED_BASELINE",
+      "path": "experiments/parallelism-funnel-v0",
+      "receipt": "receipts/machine-consciousness/AGENT-LEE-PARALLELISM-BASELINE-v0-20261001.json",
+      "twentyLogicalWorkerProxySpeedup": 18.886945614152474
+    },
+    {
+      "id": "MEMORY-COMPACTION-v0",
+      "status": "VERIFIED_EXACT_PROTOTYPE",
+      "path": "experiments/memory-compaction-v0",
+      "receipt": "receipts/machine-consciousness/AGENT-LEE-MEMORY-COMPACTION-v0-20261001.json",
+      "structuralReductionPct": 68.06,
+      "exactReconstruction": true
+    }
+  ],
+  "training": {
+    "phoneLocalModel": "litert-community/SmolLM2-360M-Instruct",
+    "methods": [
+      "knowledge distillation",
+      "continued pretraining with rehearsal",
+      "QLoRA/LoRA-family SFT",
+      "DPO"
+    ],
+    "weightTrainingState": "NOT_STARTED_UNDER_NEW_PLAN",
+    "curriculumExamples": 56,
+    "weightCandidates": 33,
+    "externalGovernedCandidates": 23,
+    "estimatedWeightTokenBurdenReductionPct": 43.29
+  },
+  "evidenceLabels": [
+    "VERIFIED",
+    "OBSERVED",
+    "INFERRED",
+    "PROPOSED",
+    "UNVERIFIED",
+    "FAILED",
+    "BLOCKED",
+    "SUPERSEDED"
+  ],
+  "publicClaimBoundary": "Operational machine-awareness research and deterministic cognition mechanisms may be documented. No current evidence establishes subjective experience or sentience."
+}
