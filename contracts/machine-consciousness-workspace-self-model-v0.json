@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "0.1.0",
+  "schemaVersion": "0.1.1",
   "contractId": "machine-consciousness-workspace-self-model-v0",
-  "status": "DESIGN_CANDIDATE",
+  "status": "IMPLEMENTATION_CANDIDATE_READY_FOR_REQUALIFICATION",
   "formulaExecutionState": "NOT_EXECUTED",
   "requiredModules": [
     "perception",
@@ -15,7 +15,8 @@
   ],
   "workspace": {
     "stateIdentity": "cycleStateHash",
-    "acknowledgementRule": "Only one acknowledgement per required module for the exact cycleStateHash counts.",
+    "envelopeIntegrity": "workspaceHash",
+    "acknowledgementRule": "Only one acknowledgement per required module for the exact cycleStateHash and workspaceHash counts.",
     "globalAccess": "validAcknowledgements / requiredModules",
     "sealRule": "No acknowledgement accepted after workspace seal."
   },
@@ -33,14 +34,22 @@
       "epistemic",
       "history"
     ],
-    "accuracy": "verified_correct_claims / verifiable_claims",
-    "law": "No VERIFIED_FROM_RUNTIME claim without a matching runtime evidence function."
+    "accuracy": "correct required claim domains / six required claim domains",
+    "law": "No VERIFIED_FROM_RUNTIME claim without matching independently constructed runtime facts."
+  },
+  "awarenessMetrics": {
+    "rule": "Operational global_access_ratio is recomputed from workspace acknowledgements.",
+    "sourceMetricPreservation": "The MC-1 synthetic global_access_ratio is retained separately as source_global_access_ratio for provenance."
   },
   "acceptance": [
     "deterministic workspace",
-    "same-state-hash acknowledgements",
+    "same-cycle-state-hash acknowledgements",
+    "workspace envelope hash verifies",
     "B recomputable",
-    "negative acknowledgement tests",
+    "wrong-state acknowledgement rejected",
+    "duplicate module rejected",
+    "unknown module rejected",
+    "post-seal acknowledgement rejected",
     "self-model factual accuracy 1.0",
     "corrupted self-model detected",
     "Formula NOT_EXECUTED",

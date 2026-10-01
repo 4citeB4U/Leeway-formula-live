@@ -9,8 +9,8 @@
     "scenario",
     "worldIndex",
     "cycle",
-    "cognitionReceiptHash",
-    "workspaceStateHash",
+    "cycleStateHash",
+    "workspaceHash",
     "formulaExecutionState"
   ],
   "properties": {
@@ -36,11 +36,11 @@
       "type": "integer",
       "minimum": 0
     },
-    "cognitionReceiptHash": {
+    "cycleStateHash": {
       "type": "string",
       "pattern": "^[a-f0-9]{64}$"
     },
-    "workspaceStateHash": {
+    "workspaceHash": {
       "type": "string",
       "pattern": "^[a-f0-9]{64}$"
     },

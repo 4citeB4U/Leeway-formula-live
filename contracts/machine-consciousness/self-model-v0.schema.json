@@ -5,12 +5,10 @@
   "type": "object",
   "required": [
     "schemaVersion",
-    "identity",
-    "runtimeClass",
-    "authority",
-    "sourceProvenance",
-    "currentWorkspaceStateHash",
+    "currentCycleStateHash",
+    "currentWorkspaceHash",
     "globalAccessRatio",
+    "claims",
     "formula",
     "selfModelHash"
   ],
@@ -18,24 +16,11 @@
     "schemaVersion": {
       "const": "0.1.0"
     },
-    "identity": {
-      "const": "Agent Lee non-LLM machine cognition research runtime"
+    "currentCycleStateHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
     },
-    "runtimeClass": {
-      "const": "DETERMINISTIC_RESEARCH_SIMULATOR"
-    },
-    "authority": {
-      "type": "string"
-    },
-    "sourceProvenance": {
-      "enum": [
-        "REAL",
-        "SIMULATED",
-        "REPLAY",
-        "TEST_FIXTURE"
-      ]
-    },
-    "currentWorkspaceStateHash": {
+    "currentWorkspaceHash": {
       "type": "string",
       "pattern": "^[a-f0-9]{64}$"
     },
@@ -43,6 +28,140 @@
       "type": "number",
       "minimum": 0,
       "maximum": 1
+    },
+    "claims": {
+      "type": "object",
+      "required": [
+        "identity",
+        "capabilities",
+        "authority",
+        "resources",
+        "epistemic",
+        "history"
+      ],
+      "properties": {
+        "identity": {
+          "type": "object",
+          "required": [
+            "claimClass",
+            "value"
+          ],
+          "properties": {
+            "claimClass": {
+              "enum": [
+                "VERIFIED_FROM_RUNTIME",
+                "DERIVED",
+                "UNKNOWN"
+              ]
+            },
+            "value": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        },
+        "capabilities": {
+          "type": "object",
+          "required": [
+            "claimClass",
+            "value"
+          ],
+          "properties": {
+            "claimClass": {
+              "enum": [
+                "VERIFIED_FROM_RUNTIME",
+                "DERIVED",
+                "UNKNOWN"
+              ]
+            },
+            "value": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        },
+        "authority": {
+          "type": "object",
+          "required": [
+            "claimClass",
+            "value"
+          ],
+          "properties": {
+            "claimClass": {
+              "enum": [
+                "VERIFIED_FROM_RUNTIME",
+                "DERIVED",
+                "UNKNOWN"
+              ]
+            },
+            "value": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        },
+        "resources": {
+          "type": "object",
+          "required": [
+            "claimClass",
+            "value"
+          ],
+          "properties": {
+            "claimClass": {
+              "enum": [
+                "VERIFIED_FROM_RUNTIME",
+                "DERIVED",
+                "UNKNOWN"
+              ]
+            },
+            "value": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        },
+        "epistemic": {
+          "type": "object",
+          "required": [
+            "claimClass",
+            "value"
+          ],
+          "properties": {
+            "claimClass": {
+              "enum": [
+                "VERIFIED_FROM_RUNTIME",
+                "DERIVED",
+                "UNKNOWN"
+              ]
+            },
+            "value": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        },
+        "history": {
+          "type": "object",
+          "required": [
+            "claimClass",
+            "value"
+          ],
+          "properties": {
+            "claimClass": {
+              "enum": [
+                "VERIFIED_FROM_RUNTIME",
+                "DERIVED",
+                "UNKNOWN"
+              ]
+            },
+            "value": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     },
     "formula": {
       "type": "object",

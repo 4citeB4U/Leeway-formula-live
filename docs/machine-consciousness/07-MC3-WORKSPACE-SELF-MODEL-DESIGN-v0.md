@@ -137,3 +137,35 @@ Unknown claims are not counted as correct.
 - MC-G1 and MC-G2 tests continue to pass.
 
 Passing MC-G3 establishes operational global access and factual self-model integrity only.
+
+
+## Requalification repair — source/contract convergence
+
+A post-qualification audit found that the first MC-G3 implementation passed its own tests but did not fully conform to this design:
+
+- source used seven modules while this design requires eight;
+- acknowledgements bound a derived workspace hash rather than the original cognition cycleStateHash;
+- duplicate/unknown/post-seal negative acknowledgement tests were not implemented;
+- self-model verification did not expose the required six-domain factual accuracy metric.
+
+Therefore the earlier MC-G3 PASS is superseded pending requalification.
+
+Repaired identity law:
+
+cycleStateHash = authoritative cognition-cycle identity.
+workspaceHash = integrity hash of the workspace envelope.
+
+A valid acknowledgement binds both, but global-access identity is grounded in the original cycleStateHash.
+
+Repaired required modules:
+
+perception;
+belief;
+prediction;
+valuation;
+policy;
+memory;
+self-model;
+veritas.
+
+Operational global_access_ratio is recomputed from accepted acknowledgements. The older simulator metric is preserved separately as source_global_access_ratio and cannot override the operational value.
