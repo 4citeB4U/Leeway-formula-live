@@ -84,34 +84,30 @@ MC-G3: PASS — contract-aligned global workspace + factual self-model.
 MC-G4: PASS — bounded dream/replay gate.
 MC-G5: PASS — independent six-dimension instrumentation.
 MC-G6: PASS — evidence-derived calibration.
+MC-G7: PASS — live Formula authority reverification.
 
-Phase: MC-7 — live Formula authority reverification.
+Phase: MC-8 — first cognition Formula execution.
 
-Accepted MC-G6 ranges in dimension order [H, PE, V, IG, G, B]:
+MC-G7 evidence:
+- live endpoint: LEEWAY_FORMULA_V1_PASS;
+- formula identity: LEEWAY-FORMULA-v1.0;
+- endpoint loaded=true;
+- goldenVectorPass=true;
+- specValid=true;
+- adapterRegistryPass=true;
+- kernelIntegrity=VERIFIED_AT_STARTUP;
+- deployed Formula engine SHA-256 exactly matches canonical pin;
+- runtime-state-v1 SHA-256 exactly matches canonical pin;
+- canonical input/raw adapter/formula service/spec/spec-markdown hashes all match kernel-integrity pins;
+- direct source-level Golden self-test PASS;
+- computed Golden decimal [4,50,63,59,48,69];
+- computed Golden Base64 [E,y,/,7,w,BF];
+- deployed Git working tree clean and origin points to canonical repository.
 
-- H: [0, 0.6931471805599453]
-- PE: [0.13358962336732744, 3.594753034238593]
-- V: [-1.3511387098817755, 1.209999215547055]
-- IG: [0.019592860275377304, 0.29101704384536403]
-- G: [0.62021659898203, 2.3068168203712855]
-- B: [0, 1]
+Boundary:
+Formula authority is VERIFIED. Machine-consciousness Formula execution is still NOT_EXECUTED until MC-G8.
 
-MC-G6 evidence:
-- 54/54 regression + calibration tests PASS;
-- training: 5 balanced scenario families, 10,240 cycles/scenario, 51,200 rows total;
-- holdout: 2,560 cycles/scenario, 12,800 rows total;
-- holdout overall coverage: 100%;
-- every scenario/dimension holdout coverage: 100%;
-- outside-range holdout values: 0;
-- runtime-state-v1 smoke windows: 800 / 800 valid;
-- adapter-window failures: 0;
-- campaign digest: 182eb3b38a2226bee7a5b92a25bbdb39864a0ed3a698c9564168e4c4a17433f6;
-- Formula execution remained NOT_EXECUTED.
-
-Calibration profile:
-contracts/domain-adapters/machine-consciousness-awareness-calibration-v0.json
-
-Next engineering gate: MC-G7 — reverify canonical Formula source/runtime identity and Golden self-test on an authorized live host. Cognition Formula execution remains prohibited until MC-G7 passes.
+Next engineering gate: MC-G8 — first measured 16x6 cognition Formula evaluation using the MC-G6 calibration profile. The result must remain EXECUTED/UNVERIFIED until its domain interpretation passes Veritas.
 
 ## Active parallel research tracks
 
