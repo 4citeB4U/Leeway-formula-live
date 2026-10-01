@@ -146,6 +146,7 @@ function makeReplayEvent({mode,source,priority,replayIndex,modelSnapshot}){
     priority,
     feedbackClass:'ORACLE_SUPERVISED_TEST_ONLY',
     learningBasis:'SOURCE_EPISODE_REPLAY_ONLY',
+    temporalSemantics:'OFFLINE_REPLAY_DOES_NOT_ADVANCE_ENVIRONMENT_TIME',
     counterfactual,
     formulaExecutionState:'NOT_EXECUTED'
   };
@@ -155,6 +156,32 @@ function makeReplayEvent({mode,source,priority,replayIndex,modelSnapshot}){
 function trainOnline(model,receipts){
   for(const r of receipts)updateSemanticModel(model,r,'ORACLE_SUPERVISED_TEST_ONLY');
   return model;
+}
+
+export function updateSemanticModelFromReplay(model,source,{weight=1}={}){
+  if(!(weight>0))throw new Error('REPLAY_WEIGHT_MUST_BE_POSITIVE');
+  const loss=oracleLoss(semanticSnapshot(model),source);
+
+  // Offline replay does not represent passage of external/environment time.
+  // Therefore it reinforces selected evidence without applying the MC-G2
+  // chronological forgetting factor to every unrelated count.
+  model.sensorCounts[loss.sensorMatched?0:1]+=weight;
+  const action=source.execution.requestedAction;
+  model.transitionCounts[action][loss.beforeIndex][loss.afterIndex]+=weight;
+  model.updates++;
+
+  return {
+    feedbackClass:'ORACLE_SUPERVISED_TEST_ONLY',
+    updateClass:'OFFLINE_REPLAY_REINFORCEMENT',
+    chronologicalForgettingApplied:false,
+    weight,
+    sensorMatched:loss.sensorMatched,
+    transition:{
+      action,
+      before:source.auditWorldState.before,
+      after:source.auditWorldState.after
+    }
+  };
 }
 
 function evaluateHeldOut(snapshot,receipts){
@@ -204,7 +231,7 @@ export function runReplayExperiment(receipts,{
     });
     replayLedger.append(event);
     replayEvents.push(event);
-    updateSemanticModel(model,source,'ORACLE_SUPERVISED_TEST_ONLY');
+    updateSemanticModelFromReplay(model,source);
   }
 
   const finalSnapshot=semanticSnapshot(model);

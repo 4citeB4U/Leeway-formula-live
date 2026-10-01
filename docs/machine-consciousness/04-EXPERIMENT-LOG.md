@@ -318,3 +318,44 @@ NOT_EXECUTED.
 
 Receipt:
 receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G3-REQUALIFIED-20261001.json
+
+
+## E-040A — First dream/replay campaign
+
+Status:
+FAIL — MC-G4 not accepted.
+
+Source commit:
+2a164f954d76feba9e5219dc79193a5f6e1574c2
+
+Unit/regression tests:
+37/37 PASS.
+
+Campaign:
+- 4 scenario families;
+- 512 worlds;
+- 64 cognition cycles/world;
+- first 32 training, last 32 held out;
+- replay budget 12;
+- modes NONE, RANDOM, RECENCY, EVB.
+
+Integrity results:
+- false-real-memory count = 0;
+- replay-ledger failures = 0;
+- source-receipt mutation failures = 0;
+- Formula NOT_EXECUTED.
+
+Predictive result:
+all replay strategies worsened held-out combined NLL relative to NONE. EVB had no scenario win and aggregate combined NLL regressed by 7.2880%.
+
+Campaign digest:
+1129e6805a5ef29bb7d69be8d0e14e5084ad1ea1e7737d62a75e327971950d54
+
+Diagnosis:
+the MC-G2 chronological learning updater applies forgettingFactor to all semantic counts on every update. Reusing it during offline replay incorrectly advances environmental forgetting for each dreamed episode even though no new external time elapsed.
+
+Repair:
+separate offline replay reinforcement from chronological learning. Replay may add weighted evidence for the selected historical episode but MUST NOT apply chronological forgetting to unrelated evidence.
+
+Gate remains:
+MC-G4 OPEN.

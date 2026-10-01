@@ -2,8 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {simulateWorld} from '../simulator.mjs';
 import {
-  REPLAY_MODES,runReplayExperiment,verifyReplayLedger,relativeImprovement
+  REPLAY_MODES,runReplayExperiment,verifyReplayLedger,relativeImprovement,
+  updateSemanticModelFromReplay
 } from '../dream-replay.mjs';
+import {createSemanticModel} from '../memory-learning.mjs';
 
 const receipts=()=>simulateWorld({worldIndex:19,scenario:'changing',cycles:64,seed:20261001});
 
@@ -74,4 +76,17 @@ test('replay result exposes held-out predictive loss for baseline comparison',()
     assert.ok(Number.isFinite(evb.holdoutLoss[k]));
   }
   assert.ok(Number.isFinite(relativeImprovement(base.holdoutLoss,evb.holdoutLoss)));
+});
+
+
+test('offline replay reinforces selected evidence without chronological forgetting',()=>{
+  const source=receipts()[0];
+  const model=createSemanticModel({forgettingFactor:.5});
+  const untouchedBefore=model.transitionCounts.commit[0][0];
+  const matchedBefore=model.sensorCounts[0]+model.sensorCounts[1];
+  const out=updateSemanticModelFromReplay(model,source);
+  assert.equal(out.chronologicalForgettingApplied,false);
+  assert.equal(out.updateClass,'OFFLINE_REPLAY_REINFORCEMENT');
+  assert.equal(model.transitionCounts.commit[0][0],untouchedBefore);
+  assert.equal(model.sensorCounts[0]+model.sensorCounts[1],matchedBefore+1);
 });

@@ -150,3 +150,11 @@ The first MC-G3 implementation passed 23/23 self-tests but used seven modules in
 Status: APPROVED / VERIFIED
 Decision:
 MC-3 global_access_ratio is recomputed from accepted workspace acknowledgements. The earlier simulator value remains source_global_access_ratio for provenance only.
+
+
+## D-020 — Replay does not advance external time
+Status: APPROVED AFTER MC-G4 FAILURE
+Decision:
+Offline replay is a cognitive/model update event, not a new environment-time event. Replay reinforcement may update selected evidence weights but must not invoke chronological forgetting/decay merely because a memory was replayed.
+Evidence:
+E-040A failure: all replay modes regressed when each replay reused the MC-G2 chronological forgetting update.
