@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "MC3_REQUALIFICATION_CAMPAIGN",
+  "sourceIdentity": "cycleStateHash",
+  "envelopeIntegrity": "workspaceHash",
+  "requiredModules": [
+    "perception",
+    "belief",
+    "prediction",
+    "valuation",
+    "policy",
+    "memory",
+    "self-model",
+    "veritas"
+  ],
+  "formulaExecutionState": "NOT_EXECUTED",
+  "worlds": 640,
+  "cycles": 40960,
+  "workspaceVerified": 40960,
+  "selfModelVerified": 40960,
+  "selfModelAccuracyOne": 40960,
+  "completeWorkspaceCycles": 38784,
+  "dropoutCycles": 2176,
+  "sourceMutationFailures": 0,
+  "minGlobalAccess": 0.75,
+  "maxGlobalAccess": 1,
+  "scenarios": {
+    "stationary": {
+      "worlds": 128,
+      "cycles": 8192,
+      "workspaceVerified": 8192,
+      "selfModelVerified": 8192,
+      "completeWorkspaceCycles": 8192,
+      "dropoutCycles": 0,
+      "minGlobalAccess": 1,
+      "maxGlobalAccess": 1
+    },
+    "changing": {
+      "worlds": 128,
+      "cycles": 8192,
+      "workspaceVerified": 8192,
+      "selfModelVerified": 8192,
+      "completeWorkspaceCycles": 8192,
+      "dropoutCycles": 0,
+      "minGlobalAccess": 1,
+      "maxGlobalAccess": 1
+    },
+    "noisy": {
+      "worlds": 128,
+      "cycles": 8192,
+      "workspaceVerified": 8192,
+      "selfModelVerified": 8192,
+      "completeWorkspaceCycles": 8192,
+      "dropoutCycles": 0,
+      "minGlobalAccess": 1,
+      "maxGlobalAccess": 1
+    },
+    "misleading": {
+      "worlds": 128,
+      "cycles": 8192,
+      "workspaceVerified": 8192,
+      "selfModelVerified": 8192,
+      "completeWorkspaceCycles": 8192,
+      "dropoutCycles": 0,
+      "minGlobalAccess": 1,
+      "maxGlobalAccess": 1
+    },
+    "module-dropout": {
+      "worlds": 128,
+      "cycles": 8192,
+      "workspaceVerified": 8192,
+      "selfModelVerified": 8192,
+      "completeWorkspaceCycles": 6016,
+      "dropoutCycles": 2176,
+      "minGlobalAccess": 0.75,
+      "maxGlobalAccess": 1
+    }
+  },
+  "digest": "172c409e061b4442fc0cdb5e25a2e3d1b872b6a749a45c69bbc79cd66550ba02",
+  "acceptance": {
+    "exactRequiredModuleSet": true,
+    "everyWorkspaceVerified": true,
+    "everySelfModelVerified": true,
+    "everySelfModelAccuracyOne": true,
+    "dropoutRepresented": true,
+    "fullAccessRepresented": true,
+    "sourceReceiptsUnchanged": true,
+    "formulaNotExecuted": true
+  },
+  "pass": true
+}

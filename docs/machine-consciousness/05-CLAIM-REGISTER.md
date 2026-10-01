@@ -160,3 +160,30 @@ C-053
 Classification: VERIFIED
 Claim:
 No cognition Formula task execution occurred during MC-G2.
+
+
+## MC-G3 requalification additions
+
+C-060
+Classification: VERIFIED
+Claim:
+The contract-aligned MC-3 workspace uses exactly eight required modules and every accepted acknowledgement binds the original cognition cycleStateHash plus the workspace envelope hash.
+Evidence:
+12/12 repaired MC-3 tests and 40,960-cycle requalification campaign.
+
+C-061
+Classification: VERIFIED
+Claim:
+The repaired factual self-model achieved accuracy 1.0 against independently constructed runtime facts on all 40,960 campaign cycles.
+
+C-062
+Classification: FAILED / SUPERSEDED
+Claim:
+The earlier MC-G3 PASS at source commit 570fb4736eca156d96bc8a887f2a0a8e69142027 was sufficient gate closure.
+Reason:
+Its self-tests did not detect disagreement with the higher MC-3 contract. The receipt is historical but no longer gate authority.
+
+C-063
+Classification: VERIFIED
+Claim:
+No Formula cognition execution occurred during MC-G3 requalification.

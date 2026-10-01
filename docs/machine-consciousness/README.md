@@ -71,12 +71,26 @@ contracts/machine-consciousness-project-state-v0.json
 
 ## Current checkpoint
 
-MC-G0: PASS — documentation foundation verified on the qualified Android workstation.
+MC-G0: PASS — documentation foundation.
+MC-G1: PASS — deterministic cognition simulator.
+MC-G2: PASS — supervised-test episodic memory + semantic learning.
+MC-G3: PASS — REQUALIFIED against the contract-aligned 8-module cycleStateHash workspace.
 
-Phase: MC-1 — deterministic cognition kernel preparation.
+Phase: MC-4 — dream/replay engineering.
 
-Next action: MC-1A — write the cycle schema and deterministic two-state partially observable world specification before runtime code.
+Requalified MC-G3 evidence:
+- MC-1 regression: 7/7 PASS;
+- MC-2 regression: 8/8 PASS;
+- repaired MC-3: 12/12 PASS;
+- 640 worlds / 40,960 cycles;
+- workspace verification: 40,960 / 40,960;
+- self-model verification: 40,960 / 40,960;
+- factual self-model accuracy 1.0: 40,960 / 40,960;
+- operational global-access range: 0.75 to 1.0;
+- source receipt mutation failures: 0.
 
-Current blocker for numeric Formula execution remains unchanged: six cognition dimensions are not calibrated and the live Formula host identity still requires runtime reverification before task execution is claimed.
+The earlier MC-G3 receipt is retained as historical evidence but superseded because its implementation did not match the higher MC-3 contract.
 
-Next engineering gate: MC-G1 — deterministic non-LLM cognition-cycle runtime skeleton with immutable cycle receipts.
+Formula execution remains NOT_EXECUTED.
+
+Next engineering gate: MC-G4 — dream/replay with permanent SIMULATED/REPLAY provenance and comparison against no replay, random replay, recency replay and EVB replay.

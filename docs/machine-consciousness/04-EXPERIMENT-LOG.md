@@ -268,3 +268,53 @@ the original master plan listed contracts/machine-consciousness/cycle.schema.jso
 
 Next:
 MC-4 dream/replay engine.
+
+
+## E-031 — MC-G3 contract-alignment requalification
+
+Date: 2026-10-01
+State: PASS_AFTER_REOPEN_AND_REPAIR
+
+Trigger:
+post-qualification source/contract audit found that the first MC-G3 implementation passed its own tests while violating two higher-authority requirements:
+- source module set had 7 modules instead of the contract's 8;
+- acknowledgements referenced a derived workspace hash instead of the cognition cycleStateHash.
+
+Disposition of earlier receipt:
+SUPERSEDED for gate authority. Retained as historical execution evidence.
+
+Repair:
+- required modules aligned to perception, belief, prediction, valuation, policy, memory, self-model, veritas;
+- cycleStateHash restored as cognition-state identity;
+- workspaceHash retained as envelope integrity;
+- duplicate, unknown, wrong-state and post-seal acknowledgements explicitly rejected;
+- self-model reorganized into six required factual domains;
+- self-model accuracy made explicit and independently recomputable;
+- operational B replaces synthetic simulator B while source value remains preserved.
+
+Qualification harness note:
+first combined regression attempt failed because isolated test fixture world-spec-v0.json was omitted. This was a harness dependency failure. The missing fixture alone was restored and the same source was retested.
+
+Final tests:
+- MC-G1: 7/7 PASS;
+- MC-G2: 8/8 PASS;
+- repaired MC-G3: 12/12 PASS.
+
+Campaign:
+- 5 scenario families;
+- 640 worlds;
+- 40,960 cycles;
+- workspace verified 40,960/40,960;
+- self-model verified 40,960/40,960;
+- self-model accuracy 1.0 on 40,960/40,960;
+- complete cycles 38,784;
+- dropout cycles 2,176;
+- global access range 0.75 to 1.0;
+- source mutation failures 0;
+- digest 172c409e061b4442fc0cdb5e25a2e3d1b872b6a749a45c69bbc79cd66550ba02.
+
+Formula:
+NOT_EXECUTED.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G3-REQUALIFIED-20261001.json

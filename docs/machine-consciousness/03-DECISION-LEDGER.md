@@ -130,3 +130,23 @@ Self-model identity, authority, provenance, module state, workspace hash, memory
 Status: APPROVED / MC-G3 VERIFIED
 Decision:
 Module dropout lowers B_t and complete=false. The system may not fabricate acknowledgements to preserve an appearance of full awareness.
+
+
+## D-020 — MC-G3 state identity correction
+Status: APPROVED / SUPERSEDES D-017 WORDING
+Decision:
+The authoritative cognition identity is the original cycleStateHash. workspaceHash is a separate integrity hash for the workspace envelope. A valid module acknowledgement binds both hashes.
+Reason:
+The MC-3 contract explicitly names cycleStateHash as state identity. The first staged implementation incorrectly substituted a derived workspace hash.
+
+## D-021 — Contract convergence outranks passing self-tests
+Status: APPROVED / VERIFIED BY FAILURE
+Decision:
+A passing test suite does not close a gate when implementation and higher authority contract disagree.
+Evidence:
+The first MC-G3 implementation passed 23/23 self-tests but used seven modules instead of eight and acknowledged the wrong state identity.
+
+## D-022 — Operational B replaces synthetic B at MC-3
+Status: APPROVED / VERIFIED
+Decision:
+MC-3 global_access_ratio is recomputed from accepted workspace acknowledgements. The earlier simulator value remains source_global_access_ratio for provenance only.

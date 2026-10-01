@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G3-REQUALIFIED-20261001",
+  "status": "PASS_AFTER_REOPEN_AND_REPAIR",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "sourceCommits": {
+    "contractRepair": "f275a2278dc86a44cca4b3038b08cff314bb6431",
+    "reproducibleCampaign": "d8ed080422ccb315af243da9f133e029245e895c"
+  },
+  "supersedesForGateAuthority": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G3-WORKSPACE-SELF-MODEL-20261001.json",
+  "supersedeReason": "Earlier implementation passed self-tests but did not conform to higher MC-3 contract: module set and state identity mismatched.",
+  "validationHost": "qualified Android workstation",
+  "tests": {
+    "mc1": "7/7 PASS",
+    "mc2": "8/8 PASS",
+    "mc3Repaired": "12/12 PASS",
+    "harnessFailureObserved": "Initial combined run omitted world-spec-v0.json; fixture restored and same source retested."
+  },
+  "campaign": {
+    "worlds": 640,
+    "cycles": 40960,
+    "requiredModules": [
+      "perception",
+      "belief",
+      "prediction",
+      "valuation",
+      "policy",
+      "memory",
+      "self-model",
+      "veritas"
+    ],
+    "workspaceVerified": 40960,
+    "selfModelVerified": 40960,
+    "selfModelAccuracyOne": 40960,
+    "completeWorkspaceCycles": 38784,
+    "dropoutCycles": 2176,
+    "minGlobalAccess": 0.75,
+    "maxGlobalAccess": 1,
+    "sourceMutationFailures": 0,
+    "digest": "172c409e061b4442fc0cdb5e25a2e3d1b872b6a749a45c69bbc79cd66550ba02",
+    "acceptance": {
+      "exactRequiredModuleSet": true,
+      "everyWorkspaceVerified": true,
+      "everySelfModelVerified": true,
+      "everySelfModelAccuracyOne": true,
+      "dropoutRepresented": true,
+      "fullAccessRepresented": true,
+      "sourceReceiptsUnchanged": true,
+      "formulaNotExecuted": true
+    }
+  },
+  "artifacts": {
+    "workspaceSelfModelSha256": "487757f5de97af134126fe26b325a72c32ef5a67d51ff32b2a1e6dde230fbea8",
+    "workspaceCampaignSha256": "322bd92918372e93c89752cba2b7c67c6abbb45b9e3ef2dd9923e4b409568f2d",
+    "testSha256": "b6e0e795b751f6a01c48cd0f0c265509711e367a1b7cb9904d2f449b869ffb2b",
+    "campaignSummarySha256": "6c74e4528f41dc4a4e9c554dd28a4d38cb2926e3aac221e5f2ff6ab6a3db1c34",
+    "workspaceSchemaSha256": "63579ac023fe1b98eb74a040a97bb4fa84a8de6b551ef3523760c5e76af4171e",
+    "selfModelSchemaSha256": "11c3bcbd88c2637419d1f95c97480b7139ba50b868d22fa9b46654a9ea144ba0",
+    "contractSha256": "c0f0204b8398d07ae7d93e0816bf628f7b045202e5d13f4b92c6425fdabdc0bc"
+  },
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "executionState": "NOT_EXECUTED",
+    "mutation": false
+  },
+  "learningAdmission": [
+    "Passing self-authored tests is insufficient when source disagrees with higher contract.",
+    "cycleStateHash and workspaceHash have distinct roles.",
+    "Operational B must be recomputed from accepted acknowledgements.",
+    "Incomplete access must be represented rather than hidden."
+  ],
+  "nextGate": "MC-G4 dream/replay",
+  "claimBoundary": "Operational access and factual self-model integrity only; no sentience or phenomenal-consciousness claim."
+}
