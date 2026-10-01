@@ -400,3 +400,15 @@ Final evidence:
 
 Lesson:
 textual equivalence != byte identity. Publication transport is part of the evidence chain.
+
+
+---
+
+# Additional gains retained after MC-G6
+
+G-012 — Five balanced scenario families produced 51,200 independently recomputed training rows and 12,800 holdout rows; the accepted six-dimension calibration achieved 100% holdout coverage with no leakage from holdout into fitting.
+
+G-013 — Eight hundred held-out 16x6 cognition windows mapped through the pinned runtime-state-v1 adapter with zero failures while Formula execution remained NOT_EXECUTED.
+
+Lesson:
+calibration is a separate authority step. Good coverage can authorize a mapping range without authorizing interpretation of a Formula output.

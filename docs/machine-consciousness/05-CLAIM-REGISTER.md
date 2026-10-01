@@ -348,3 +348,32 @@ C-094
 Classification: VERIFIED
 Claim:
 No Formula cognition execution occurred during MC-G5.
+
+
+## MC-G6 additions
+
+C-100
+Classification: VERIFIED
+Claim:
+A balanced 51,200-row training corpus produced six finite versioned cognition-dimension calibration ranges without holdout leakage.
+Evidence:
+MC-G6 source, tests and receipt.
+
+C-101
+Classification: VERIFIED
+Claim:
+The accepted ranges covered 100% of 12,800 independently held-out cognition rows, including 100% coverage for every dimension in every tested scenario family.
+Evidence:
+MC-G6 holdout campaign; outside-range count 0.
+
+C-102
+Classification: VERIFIED
+Claim:
+The accepted calibration ranges successfully map 800 held-out 16x6 windows through the canonical runtime-state-v1 adapter with zero adapter failures.
+Boundary:
+This verifies adapter mapping only; it is not Formula cognition execution.
+
+C-103
+Classification: VERIFIED
+Claim:
+No Formula cognition execution occurred during MC-G6.

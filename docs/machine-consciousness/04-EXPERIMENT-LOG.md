@@ -673,3 +673,59 @@ Campaign digest:
 
 Next:
 MC-6 evidence-derived calibration.
+
+
+## E-060 — Balanced cognition-dimension calibration
+
+Status:
+PASS — MC-G6.
+
+Validated source branch:
+agent-lee-mc6-calibration
+head: 4050cf2ff537fe039d48512956ab97cea734e49e
+merged implementation: 182726f232252a795e4c362a4ab4a995272957df
+
+Validation host:
+qualified Android workstation.
+
+Tests:
+54/54 PASS including all prior regression suites.
+
+Predeclared training/holdout design:
+- scenarios: stationary, changing, noisy, misleading, module-dropout;
+- 200 worlds/scenario total;
+- 160 training worlds/scenario;
+- 40 holdout worlds/scenario;
+- 64 cycles/world;
+- 10,240 training cycles/scenario;
+- 51,200 training rows total;
+- 2,560 holdout cycles/scenario;
+- 12,800 holdout rows total;
+- no holdout values used to fit ranges.
+
+Range policy:
+- H: analytic [0, ln(2)];
+- B: analytic [0,1];
+- PE, V, IG, G: training-only min/max plus fixed 5% width margin.
+
+Accepted ranges [H, PE, V, IG, G, B]:
+[[0,0.6931471805599453],[0.13358962336732744,3.594753034238593],[-1.3511387098817755,1.209999215547055],[0.019592860275377304,0.29101704384536403],[0.62021659898203,2.3068168203712855],[0,1]]
+
+Holdout:
+- overall coverage = 1.0;
+- every scenario/dimension coverage = 1.0;
+- outside values = 0.
+
+runtime-state-v1:
+- 800 holdout 16x6 windows mapped;
+- failures = 0;
+- canonical adapter SHA-256 reverified as 3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0.
+
+Campaign digest:
+182eb3b38a2226bee7a5b92a25bbdb39864a0ed3a698c9564168e4c4a17433f6.
+
+Formula:
+NOT_EXECUTED.
+
+Next:
+MC-G7 live Formula authority reverification.
