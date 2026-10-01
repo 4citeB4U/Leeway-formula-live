@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "machine-consciousness-awareness-calibration-v0",
+  "status": "MC_G6_ACCEPTED_CALIBRATION",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "mappingId": "machine-consciousness-awareness-v0",
+  "formulaId": "LEEWAY-FORMULA-v1.0",
+  "evaluatorAdapterId": "runtime-state-v1",
+  "formulaExecutionState": "NOT_EXECUTED",
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "belief_entropy_nats",
+      "range": [
+        0,
+        0.6931471805599453
+      ]
+    },
+    {
+      "index": 1,
+      "id": "precision_weighted_prediction_error",
+      "range": [
+        0.13358962336732744,
+        3.594753034238593
+      ]
+    },
+    {
+      "index": 2,
+      "id": "valence_free_energy_rate",
+      "range": [
+        -1.3511387098817755,
+        1.209999215547055
+      ]
+    },
+    {
+      "index": 3,
+      "id": "belief_information_gain_nats",
+      "range": [
+        0.019592860275377304,
+        0.29101704384536403
+      ]
+    },
+    {
+      "index": 4,
+      "id": "selected_policy_expected_free_energy",
+      "range": [
+        0.62021659898203,
+        2.3068168203712855
+      ]
+    },
+    {
+      "index": 5,
+      "id": "global_access_ratio",
+      "range": [
+        0,
+        1
+      ]
+    }
+  ],
+  "ranges": [
+    [
+      0,
+      0.6931471805599453
+    ],
+    [
+      0.13358962336732744,
+      3.594753034238593
+    ],
+    [
+      -1.3511387098817755,
+      1.209999215547055
+    ],
+    [
+      0.019592860275377304,
+      0.29101704384536403
+    ],
+    [
+      0.62021659898203,
+      2.3068168203712855
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "rangePolicy": {
+    "belief_entropy_nats": "ANALYTIC_BOUND_[0,ln2]",
+    "global_access_ratio": "ANALYTIC_BOUND_[0,1]",
+    "empiricalDimensions": "TRAINING_MINMAX_PLUS_FIXED_5_PERCENT_WIDTH_MARGIN",
+    "holdoutLeakage": false
+  },
+  "training": {
+    "scenarioFamilies": 5,
+    "worldsPerScenario": 160,
+    "cyclesPerScenario": 10240,
+    "totalRows": 51200,
+    "balanced": true
+  },
+  "holdout": {
+    "worldsPerScenario": 40,
+    "cyclesPerScenario": 2560,
+    "totalRows": 12800,
+    "overallCoverage": 1,
+    "everyScenarioEveryDimensionCoverage": 1,
+    "outsideRangeValues": 0
+  },
+  "runtimeStateSmokeTest": {
+    "windows": 800,
+    "failures": 0,
+    "adapterId": "runtime-state-v1"
+  },
+  "provenance": {
+    "sourceBranchHead": "4050cf2ff537fe039d48512956ab97cea734e49e",
+    "mergedImplementationCommit": "182726f232252a795e4c362a4ab4a995272957df",
+    "campaignDigest": "182eb3b38a2226bee7a5b92a25bbdb39864a0ed3a698c9564168e4c4a17433f6",
+    "localCandidateProfileSha256": "48764603233020dd2c93582f829ffb1f95610f18a939d1bd05c60b5a274f5f8b",
+    "localCampaignSummarySha256": "f9da1050cae4f3ee1ad4c3c9dc2f32c2293a39cbdc751567ee6357598c666fc7"
+  },
+  "claimBoundary": "These ranges are qualified for the candidate machine-consciousness runtime-state-v1 mapping. They are not a consciousness scale, sentience measure or executed Formula result."
+}
