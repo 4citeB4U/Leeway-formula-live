@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-AWARENESS-CANDIDATE-v0-20261001",
+  "status": "CANDIDATE_STAGED_VERIFIED_BYTES",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "implementationCommit": "666427b63a263a40aae8e792ab412cc85f2b79ad",
+  "canonicalFormula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "mutation": false,
+    "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeStateAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "sourceIdentityStatus": "RECOVERED_IDENTITY_PENDING_HOST_REVERIFICATION"
+  },
+  "candidateArtifacts": [
+    {
+      "path": "contracts/domain-adapters/machine-consciousness-awareness-v0.json",
+      "sha256": "4f26066623235783eaffeba1745f79d54499351220fd4acf0ec1cb09ea40eec2",
+      "validation": "JSON_PARSE_PASS; mappingId and six-dimension contract verified"
+    },
+    {
+      "path": "docs/MACHINE-CONSCIOUSNESS-AWARENESS-MATH-v0.md",
+      "sha256": "3eb6e7856a4677cc913865fe90d0464b097258d8a3589a348edecd39a8c90c06",
+      "validation": "bytes re-fetched from exact commit and hashed on qualified Android workstation"
+    }
+  ],
+  "scientificSourceFamilies": [
+    "Bayesian probabilistic belief and uncertainty",
+    "predictive coding and residual error",
+    "variational free energy",
+    "free-energy-rate emotional valence proposal",
+    "interoceptive inference",
+    "active inference / expected free energy",
+    "global neuronal workspace accessibility",
+    "expected-value-of-backup replay prioritization"
+  ],
+  "leewaySynthesis": [
+    "belief-stability proxy",
+    "global-access acknowledgement ratio",
+    "machine self-model consistency",
+    "six-dimension machine-consciousness mapping",
+    "C0-C6 engineering maturity ladder",
+    "dream provenance and Veritas admission rules"
+  ],
+  "execution": {
+    "formulaExecutionState": "NOT_EXECUTED",
+    "numericTaskEvaluation": "NOT_EXECUTED",
+    "reason": "Candidate dimensions have not yet been calibrated with finite measured ranges or outcome validation."
+  },
+  "nextGates": [
+    "implement deterministic non-LLM cognition-cycle simulator",
+    "implement six metric calculators",
+    "capture measured traces",
+    "calibrate six finite ranges",
+    "ablation and replay tests",
+    "live Formula authority reverification",
+    "16x6 runtime-state evaluation",
+    "Veritas acceptance",
+    "promotion decision"
+  ],
+  "claimBoundary": "This receipt records candidate research architecture and verified artifact bytes. It does not claim sentience, phenomenal consciousness, calibrated awareness scores, or executed Formula evaluation.",
+  "learningLedger": "NOT_UPDATED; candidate is not yet Veritas-qualified learning."
+}
