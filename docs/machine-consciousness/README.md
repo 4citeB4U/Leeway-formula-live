@@ -83,27 +83,35 @@ MC-G2: PASS — supervised-test episodic memory + semantic learning.
 MC-G3: PASS — contract-aligned global workspace + factual self-model.
 MC-G4: PASS — bounded dream/replay gate.
 MC-G5: PASS — independent six-dimension instrumentation.
+MC-G6: PASS — evidence-derived calibration.
 
-Phase: MC-6 — calibration qualification.
+Phase: MC-7 — live Formula authority reverification.
 
-MC-G5 evidence:
-- 48/48 regression + instrumentation tests PASS;
-- 5 scenario families / 640 worlds / 40,960 cognition cycles;
-- all 40,960 cycles independently recomputed;
-- validation failures: 0;
-- non-finite dimensions: 0;
-- invalid 16-cycle windows: 0;
-- max absolute difference versus simulator diagnostics: 0 for H, PE, V, IG, G and B;
-- operational B derived from the MC-G3 workspace;
-- REPLAY provenance rejected from the Formula-bridge cognition path;
-- tampered receipt content rejected by SHA-256 verification;
-- Formula NOT_EXECUTED;
-- campaign digest: 5fb592a303a8bdf9e405c9e606ca2a1aec0e3761ef8a0b7338fd5ca5414872f2.
+Accepted MC-G6 ranges in dimension order [H, PE, V, IG, G, B]:
 
-Interpretation:
-The six candidate dimensions no longer depend on trusting the simulator's prefilled metrics object. They are independently reproducible from underlying cognition receipts plus verified workspace evidence.
+- H: [0, 0.6931471805599453]
+- PE: [0.13358962336732744, 3.594753034238593]
+- V: [-1.3511387098817755, 1.209999215547055]
+- IG: [0.019592860275377304, 0.29101704384536403]
+- G: [0.62021659898203, 2.3068168203712855]
+- B: [0, 1]
 
-Next engineering gate: MC-G6 — finite, versioned, evidence-derived calibration ranges with balanced scenarios and holdout validation. Formula execution remains prohibited until MC-G6 and MC-G7 pass.
+MC-G6 evidence:
+- 54/54 regression + calibration tests PASS;
+- training: 5 balanced scenario families, 10,240 cycles/scenario, 51,200 rows total;
+- holdout: 2,560 cycles/scenario, 12,800 rows total;
+- holdout overall coverage: 100%;
+- every scenario/dimension holdout coverage: 100%;
+- outside-range holdout values: 0;
+- runtime-state-v1 smoke windows: 800 / 800 valid;
+- adapter-window failures: 0;
+- campaign digest: 182eb3b38a2226bee7a5b92a25bbdb39864a0ed3a698c9564168e4c4a17433f6;
+- Formula execution remained NOT_EXECUTED.
+
+Calibration profile:
+contracts/domain-adapters/machine-consciousness-awareness-calibration-v0.json
+
+Next engineering gate: MC-G7 — reverify canonical Formula source/runtime identity and Golden self-test on an authorized live host. Cognition Formula execution remains prohibited until MC-G7 passes.
 
 ## Active parallel research tracks
 
