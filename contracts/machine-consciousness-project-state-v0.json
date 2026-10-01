@@ -3,9 +3,9 @@
   "projectId": "leeway-machine-consciousness-v0",
   "authority": "Creator/Human Authority > LeeWay Standards",
   "canonicalRepository": "4citeB4U/Leeway-formula-live",
-  "phase": "MC-2",
-  "masterCheckpoint": "MC-G1_PASS_READY_FOR_MC-2",
-  "gate": "MC-G1_PASS",
+  "phase": "MC-3",
+  "masterCheckpoint": "MC-G2_PASS_READY_FOR_MC-3",
+  "gate": "MC-G2_PASS",
   "identity": "Agent Lee non-LLM machine cognition research runtime",
   "approved": [
     "non-LLM cognition kernel",
@@ -35,10 +35,10 @@
   ],
   "blockers": [
     "six cognition dimensions have only candidate simulator ranges; calibration is not yet accepted",
-    "learning engine has not yet been implemented or shown to improve a predeclared metric",
+    "autonomous learning from ordinary cognition evidence remains unverified; MC-G2 used ORACLE_SUPERVISED_TEST_ONLY feedback",
     "first numeric cognition Formula evaluation remains NOT_EXECUTED pending calibration acceptance"
   ],
-  "nextAction": "MC-2: implement memory + learning baseline and compare learning vs no-learning across stationary/changing/noisy/misleading worlds.",
+  "nextAction": "MC-3: implement operational global workspace + factual self-model; require same-state-hash acknowledgements and runtime-verifiable self claims.",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
@@ -46,7 +46,7 @@
     "executionState": "NOT_EXECUTED",
     "mapping": "machine-consciousness-awareness-v0"
   },
-  "evidenceState": "MC_G1_DETERMINISTIC_SIMULATOR_VERIFIED",
-  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G1-SIMULATOR-20261001.json",
-  "learningLedger": "NOT_UPDATED; simulator qualification is infrastructure evidence, not admitted learned knowledge."
+  "evidenceState": "MC_G2_SUPERVISED_MEMORY_LEARNING_VERIFIED",
+  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G2-MEMORY-LEARNING-20261001.json",
+  "learningLedger": "NOT_UPDATED; MC-G2 is supervised simulator mechanics evidence, not autonomous learned world knowledge."
 }

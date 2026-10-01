@@ -107,3 +107,10 @@ IIT may be studied or benchmarked, but it is not the current control kernel.
 Status: PROPOSED
 Decision:
 Use deterministic Node.js ES modules to align with the existing canonical Formula runtime unless a stronger implementation reason emerges before MC-1 coding.
+
+
+## D-016 — Oracle feedback boundary
+Status: APPROVED FOR MC-G2 TESTING ONLY
+Decision:
+auditWorldState may be used to qualify memory/learning mechanics only when the feedback class is explicitly ORACLE_SUPERVISED_TEST_ONLY.
+It is forbidden as evidence for autonomous-learning claims and must not silently enter production cognition inputs.

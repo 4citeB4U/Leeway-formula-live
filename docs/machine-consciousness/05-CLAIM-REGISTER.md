@@ -127,3 +127,30 @@ Claim:
 numeric Formula evaluation of machine-consciousness cycles.
 Blocker:
 no calibrated six-dimension profile; active Formula host identity requires task-time reverification.
+
+
+## MC-G2 additions
+
+C-050
+Classification: VERIFIED
+Claim:
+The MC-2 supervised-test learner can preserve a hash-chained episodic memory and adapt semantic sensor/transition parameters deterministically.
+Evidence:
+15/15 tests PASS and 65,536-cycle campaign on exact commit d965713ae82e8962ceca25708225606138c1ed12.
+
+C-051
+Classification: VERIFIED
+Claim:
+Within ORACLE_SUPERVISED_TEST_ONLY simulation feedback, learning improved noisy-sensor and misleading-window sensor NLL and changing-world transition NLL while preserving source receipts and SIMULATED provenance.
+
+C-052
+Classification: UNVERIFIED
+Claim:
+The cognition runtime can autonomously learn the same environment parameters without oracle audit feedback.
+Reason:
+MC-G2 deliberately uses auditWorldState for supervised test qualification.
+
+C-053
+Classification: VERIFIED
+Claim:
+No cognition Formula task execution occurred during MC-G2.

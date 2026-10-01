@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptType": "MACHINE_CONSCIOUSNESS_MC_G2_MEMORY_LEARNING",
+  "observedAt": "2026-10-01",
+  "status": "PASS",
+  "validatedSourceCommit": "d965713ae82e8962ceca25708225606138c1ed12",
+  "validationHost": "qualified Android workstation",
+  "scope": "experiments/machine-consciousness-v0",
+  "boundary": "ORACLE_SUPERVISED_TEST_ONLY",
+  "tests": {
+    "pass": 15,
+    "fail": 0
+  },
+  "campaign": {
+    "worlds": 1024,
+    "cycles": 65536,
+    "scenarioFamilies": [
+      "stationary",
+      "changing",
+      "noisy",
+      "misleading"
+    ]
+  },
+  "improvements": {
+    "noisySensorNll": 0.1397457802528177,
+    "misleadingWindowSensorNll": 0.15211634084128633,
+    "changingTransitionNll": 0.0155317098480148,
+    "stationaryCombinedNll": -0.03474857164296545
+  },
+  "acceptance": {
+    "noisySensorImprovementAtLeast5Pct": true,
+    "misleadingWindowSensorImprovementAtLeast5Pct": true,
+    "changingTransitionImprovementPositive": true,
+    "stationaryCombinedRegressionAtMost5Pct": true,
+    "memoryChainIntact": true,
+    "provenancePreserved": true,
+    "sourceReceiptsUnchanged": true,
+    "formulaNotExecuted": true
+  },
+  "sourceHashes": {
+    "simulator": "c9b43f27e77eb6f482b8d2d0b8d3d33687a4b7c6063f88fc7768c23688219c04",
+    "memoryLearning": "d880d651020b48e50136813e61dd41972c87063b6a20ca66f7a435f36cc9d474",
+    "learningCampaign": "307a85f449289c68150b68ce91896ea48018fa8b595d19152eb3b7b49f1b255d",
+    "tests": "fdff4bd5150c71bcadb48433f41001b6eeb5077ab38ed2d631a0ed2ab199c034"
+  },
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "executionState": "NOT_EXECUTED",
+    "canonicalMutation": false
+  },
+  "claimBoundary": "PASS proves supervised simulator memory/learning mechanics only. Autonomous learning from ordinary cognition evidence remains UNVERIFIED. No sentience or phenomenal-consciousness claim.",
+  "learningLedger": "NOT_UPDATED"
+}

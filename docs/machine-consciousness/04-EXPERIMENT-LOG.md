@@ -186,3 +186,40 @@ CANDIDATE RANGES MEASURED / NOT ACCEPTED.
 The six awareness dimensions now have measured simulator distributions across stationary, changing, noisy, misleading and module-dropout worlds. These ranges remain candidate evidence pending ablation, malformed-input/provenance-negative testing, broader scenario coverage and explicit Veritas calibration acceptance.
 
 No canonical Formula task result is claimed.
+
+## Executed E-020 — Memory + learning baseline
+
+Status:
+PASS — MC-G2 within ORACLE_SUPERVISED_TEST_ONLY boundary.
+
+Exact source commit validated:
+d965713ae82e8962ceca25708225606138c1ed12
+
+Validation host:
+qualified Android workstation.
+
+Tests:
+15/15 PASS including MC-G1 regression tests.
+
+Campaign:
+- 4 scenario families;
+- 1,024 simulated worlds;
+- 65,536 cognition cycles;
+- Formula NOT_EXECUTED.
+
+Measured relative improvements:
+- noisy sensor NLL: +13.9746%;
+- misleading-window sensor NLL: +15.2116%;
+- changing-world transition NLL: +1.5532%;
+- stationary combined NLL: -3.4749% (regression within declared <=5% control ceiling).
+
+Integrity:
+- episodic memory hash chain intact;
+- SIMULATED provenance preserved;
+- source cognition receipts unchanged.
+
+Critical boundary:
+the current learner uses auditWorldState as ORACLE_SUPERVISED_TEST_ONLY feedback. This proves deterministic memory and adaptive parameter-learning mechanics. It does NOT prove autonomous learning from ordinary cognition evidence.
+
+Next:
+MC-3 global workspace + factual self-model.
