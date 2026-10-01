@@ -3,16 +3,18 @@
   "researchId": "agent-lee-scientific-reference-v0",
   "title": "Agent Lee — LeeWay Scientific Reference Architecture",
   "sourceRepository": "4citeB4U/Leeway-formula-live",
-  "sourceCommit": "7d1ff9eb47fa71ef65968ad973c3fa0c6d8e06d2",
+  "sourceCommit": "0e87db236db799cd9e1f5b557edc33d1a89b1426",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "mutation": false,
-    "cognitionExecution": "NOT_EXECUTED"
+    "cognitionExecution": "EXECUTED_UNVERIFIED"
   },
   "project": {
-    "primaryPhase": "MC-4",
-    "primaryGate": "MC-G3_PASS_REQUALIFIED",
-    "rapidWebDevelop": "PLANNED_NOT_DEPLOYED"
+    "primaryPhase": "MC-9",
+    "primaryGate": "MC-G8_PASS_MC-G9_ACTIVE",
+    "rapidWebDevelop": "PLANNED_NOT_DEPLOYED",
+    "liveIntegration": "SHADOW_PLANNED_NOT_ENABLED",
+    "nextPlan": "docs/machine-consciousness/10-AGENT-LEE-LIVE-INTEGRATION-PLAN-v0.md"
   },
   "documents": [
     {
@@ -84,6 +86,21 @@
       "receipt": "receipts/machine-consciousness/AGENT-LEE-MEMORY-COMPACTION-v0-20261001.json",
       "structuralReductionPct": 68.06,
       "exactReconstruction": true
+    },
+    {
+      "id": "MC-G8",
+      "status": "PASS_EXECUTION_GATE_RESULT_UNVERIFIED",
+      "path": "experiments/machine-consciousness-v0/outputs/mc-g8",
+      "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G8-FIRST-FORMULA-EXECUTION-20261001.json",
+      "inputHash": "513f612ca2076bad61eab407b884b9898185608d4fd29a64541a446ed9945bbe",
+      "resultHash": "caf9cd55d7608052e1e9cbc3b00d1862ba24ebe5a40b47fab87110bc038d43a8"
+    },
+    {
+      "id": "MC-G9-T1",
+      "status": "PASS_TRANCHE_1_GATE_ACTIVE",
+      "path": "experiments/machine-consciousness-v0/outputs/mc-g9-contribution-audit.json",
+      "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CONTRIBUTION-TRANCHE-1-20261001.json",
+      "rows": 40960
     }
   ],
   "training": {
@@ -122,5 +139,5 @@
     "pointerPath": "Docs/canon/agent-lee-scientific-research-authority.md",
     "pointerCommit": "fb3bf9163a84a06bb349e6a87e5c0d77a38fecbe"
   },
-  "releaseState": "SCIENTIFIC_DOCUMENTATION_V0_SEALED"
+  "releaseState": "MC_G8_EXECUTED_MC_G9_ACTIVE"
 }
