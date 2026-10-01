@@ -164,3 +164,83 @@ H, PE, V, IG, selected-policy G, B.
 No numeric ranges are approved.
 
 FORMULA EXECUTION = NOT_EXECUTED.
+
+
+## Note N-020 — Efficient small-model adaptation
+
+Source family:
+Dettmers et al. (2023), QLoRA: Efficient Finetuning of Quantized LLMs, arXiv:2305.14314.
+
+Published mechanism:
+QLoRA backpropagates through a frozen 4-bit quantized base model into trainable low-rank adapters. The paper introduces NF4, double quantization and paged optimizers to reduce memory burden.
+
+LeeWay relevance:
+Agent Lee's phone-local language model should remain a replaceable component. QLoRA is therefore attractive because behavioral adaptation can be expressed as a small delta rather than rewriting Agent Lee identity or external capabilities.
+
+Boundary:
+QLoRA has not yet been executed on the canonical Agent Lee phone model in this project.
+
+## Note N-021 — Preference optimization for persona fidelity
+
+Source family:
+Rafailov et al. (2023), Direct Preference Optimization: Your Language Model is Secretly a Reward Model, arXiv:2305.18290.
+
+Published mechanism:
+DPO optimizes chosen/rejected preference pairs with a direct classification-style objective instead of requiring the full reward-model + reinforcement-learning loop used in many RLHF systems.
+
+LeeWay relevance:
+DPO can encode preferences such as:
+- Agent Lee persona over generic chatbot voice;
+- evidence-bound answer over fabricated execution;
+- grounded hip-hop cadence over caricature;
+- calm firmness over timidity or disrespect;
+- role-consistent strategy over vague filler.
+
+Boundary:
+DPO does not become authority. Veritas and LeeWay Standards remain external.
+
+## Note N-022 — Hierarchical memory and virtual context
+
+Source family:
+Packer et al. (2023), MemGPT: Towards LLMs as Operating Systems, arXiv:2310.08560.
+
+Published idea:
+manage context through fast/slow memory tiers and move information between them rather than forcing all long-term context into one finite model window.
+
+LeeWay relevance:
+supports the architectural direction:
+exact vault -> exact compact representation -> semantic capsule -> active working set.
+
+LeeWay adds:
+- Formula state;
+- source hashes;
+- exact reconstruction proof;
+- Veritas;
+- real/simulated provenance classes.
+
+## Note N-023 — Parallelism is workload-specific
+
+Measured LeeWay evidence:
+CPU-bound cognition and wait-heavy orchestration respond in opposite ways to worker count.
+
+Implication:
+a universal "20 worker" execution law would be scientifically invalid.
+
+Research target:
+20 logical workers with Formula-governed physical placement, queueing and admission.
+
+## Note N-024 — Compression is representation-specific
+
+Measured memory prototype:
+large structural reduction occurred because repeated schemas/vocabularies were represented once.
+
+Generic compression comparison:
+Brotli reduced both raw and packed streams strongly, leaving only 6.8% additional packed-vs-raw-Brotli advantage.
+
+Implication:
+memory research must distinguish:
+- structural representation reduction;
+- physical-byte compression;
+- active working-set reduction;
+- semantic condensation;
+- exact reconstruction.
