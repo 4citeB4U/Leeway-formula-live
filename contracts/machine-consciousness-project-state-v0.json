@@ -50,5 +50,48 @@
   },
   "evidenceState": "MC_G4_DREAM_REPLAY_VERIFIED_BOUNDED",
   "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G4-DREAM-REPLAY-20261001.json",
-  "learningLedger": "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md"
+  "learningLedger": "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md",
+  "parallelResearchTracks": {
+    "mathQualification": {
+      "status": "PASS_MATH_ONLY",
+      "tests": "17/17",
+      "liveBehaviorIntegration": "NOT_EXECUTED",
+      "receipt": "receipts/machine-consciousness/AGENT-LEE-MATH-QUALIFICATION-v0-20261001.json"
+    },
+    "parallelism": {
+      "status": "BASELINE_VERIFIED",
+      "cpuBoundTwentyThreads": "WORSE_THAN_ONE",
+      "waitHeavyTwentyLogicalWorkersSpeedup": 18.886945614152474,
+      "qloraDpoTrainingBenchmark": "NOT_EXECUTED",
+      "receipt": "receipts/machine-consciousness/AGENT-LEE-PARALLELISM-BASELINE-v0-20261001.json"
+    },
+    "memoryCompaction": {
+      "status": "EXACT_PROTOTYPE_PASS",
+      "records": 1024,
+      "structuralReductionPct": 68.06,
+      "exactReconstruction": true,
+      "livePocketIntegration": "NOT_EXECUTED",
+      "receipt": "receipts/machine-consciousness/AGENT-LEE-MEMORY-COMPACTION-v0-20261001.json"
+    },
+    "smallModelTraining": {
+      "status": "STAGED_NOT_WEIGHT_TRAINED",
+      "methods": [
+        "knowledge distillation",
+        "continued pretraining with rehearsal",
+        "QLoRA/LoRA-family SFT",
+        "DPO"
+      ],
+      "formulaTrainingEvaluation": "NOT_EXECUTED"
+    }
+  },
+  "documentation": {
+    "scientificDossier": "docs/machine-consciousness/06-AGENT-LEE-SCIENTIFIC-DOSSIER-v0.md",
+    "failureRepairLedger": "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md",
+    "allAgentTemplate": "docs/machine-consciousness/08-LEEWAY-AGENT-REFERENCE-TEMPLATE-v0.md",
+    "rapidWebDevelopPlan": "docs/machine-consciousness/09-RAPIDWEBDEVELOP-PUBLICATION-PLAN-v0.md",
+    "state": "COORDINATED_ACTIVE"
+  },
+  "publication": {
+    "rapidWebDevelop": "PLANNED_NOT_DEPLOYED"
+  }
 }
