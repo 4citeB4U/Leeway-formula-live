@@ -377,3 +377,28 @@ C-103
 Classification: VERIFIED
 Claim:
 No Formula cognition execution occurred during MC-G6.
+
+
+## MC-G7 additions
+
+C-110
+Classification: VERIFIED
+Claim:
+The authorized Android host exposes a live LEEWAY-FORMULA-v1.0 evaluator reporting LEEWAY_FORMULA_V1_PASS with Golden, spec and adapter-registry checks passing.
+
+C-111
+Classification: VERIFIED
+Claim:
+The deployed Formula engine, canonical-input, runtime-state adapter, raw adapter, Formula service, spec and spec-Markdown bytes match their canonical SHA-256 pins.
+
+C-112
+Classification: VERIFIED
+Claim:
+A direct source-level Golden self-test on the deployed bytes reproduces [4,50,63,59,48,69] and [E,y,/,7,w,BF].
+
+C-113
+Classification: VERIFIED
+Claim:
+MC-G7 establishes Formula authority, not machine-consciousness Formula execution.
+State:
+cognition execution remains NOT_EXECUTED at gate close.

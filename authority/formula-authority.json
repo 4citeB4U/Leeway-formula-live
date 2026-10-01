@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "formulaId": "LEEWAY-FORMULA-v1.0",
-  "status": "RECOVERED_IDENTITY_PENDING_HOST_REVERIFICATION",
+  "status": "LIVE_HOST_REVERIFIED",
   "sourceContract": "4citeB4U/LeeWay-Agent-Skills/config/leeway-formula-evaluator-contract.yaml",
   "runtime": {
     "localCompatibilityBase": "http://127.0.0.1:4001",
@@ -16,5 +16,59 @@
     "formulaService": "59C74A850CFBACAB4408D73538C824D25687AE0FBD12F07AB5D3622661B7B1EC"
   },
   "promotionRule": "Do not publish or replace canonical engine bytes until host artifact is reverified against pinned SHA-256.",
-  "consumerRule": "Consumers call the centralized authority; they do not embed divergent Formula implementations."
+  "consumerRule": "Consumers call the centralized authority; they do not embed divergent Formula implementations.",
+  "reverification": {
+    "state": "VERIFIED",
+    "verifiedAt": "2026-10-01T21:13:25Z",
+    "hostClass": "qualified Android workstation / Termux",
+    "endpoint": "http://127.0.0.1:4001",
+    "deployedRepository": {
+      "origin": "https://github.com/4citeB4U/Leeway-formula-live.git",
+      "commit": "eb94a2ef141e4099d6405536ae06cfacd093b936",
+      "workingTree": "CLEAN",
+      "note": "Deployed checkout commit is not required to equal latest main; canonical Formula authority is established by pinned source bytes plus live health/golden verification."
+    },
+    "liveHealth": {
+      "status": "LEEWAY_FORMULA_V1_PASS",
+      "formula": "LEEWAY-FORMULA-v1.0",
+      "loaded": true,
+      "goldenVectorPass": true,
+      "specValid": true,
+      "adapterRegistryPass": true,
+      "kernelIntegrity": "VERIFIED_AT_STARTUP",
+      "specHash": "2f4604f143e2f7c3bc2fe315f2faa2c7d9b8b188151a0fab9f6cebea3e155f9b",
+      "specMdHash": "dd9f2f7d23dcc8076d7d3c9e1f194b596bff041e8b25dc003348c8554db7b16d"
+    },
+    "sourceSha256": {
+      "engine": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+      "canonicalInput": "4087fc14a9f1f44eb46d9d6417156176794e2acc72ee9bf481f21a5d0abe5236",
+      "runtimeStateAdapter": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+      "rawAdapter": "2c8b477abad73a0b8519127b20e500bc857f6d26a2722634f23637d4eeac6215",
+      "formulaService": "59c74a850cfbacab4408d73538c824d25687ae0fbd12f07ab5d3622661b7b1ec",
+      "spec": "2f4604f143e2f7c3bc2fe315f2faa2c7d9b8b188151a0fab9f6cebea3e155f9b",
+      "specMarkdown": "dd9f2f7d23dcc8076d7d3c9e1f194b596bff041e8b25dc003348c8554db7b16d"
+    },
+    "goldenSelfTest": {
+      "pass": true,
+      "status": "LEEWAY_FORMULA_V1_PASS",
+      "computedDecimal": [
+        4,
+        50,
+        63,
+        59,
+        48,
+        69
+      ],
+      "computedBase64": [
+        "E",
+        "y",
+        "/",
+        "7",
+        "w",
+        "BF"
+      ],
+      "inputHash": "06b284a038ddbd371633b89a3358a3e7eff555c067d702fa54340c5347c69462"
+    },
+    "cognitionExecutionState": "NOT_EXECUTED"
+  }
 }
