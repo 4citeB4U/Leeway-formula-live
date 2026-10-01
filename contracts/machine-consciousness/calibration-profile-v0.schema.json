@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.invalid/contracts/machine-consciousness/calibration-profile-v0.schema.json",
+  "title": "LeeWay Machine Consciousness Calibration Profile v0",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "profileId",
+    "status",
+    "mappingId",
+    "formulaId",
+    "evaluatorAdapterId",
+    "formulaExecutionState",
+    "rangePolicy",
+    "dimensions",
+    "ranges",
+    "training",
+    "holdout"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "profileId": {
+      "const": "machine-consciousness-awareness-calibration-v0"
+    },
+    "status": {
+      "const": "CANDIDATE_HOLDOUT_VALIDATED"
+    },
+    "mappingId": {
+      "const": "machine-consciousness-awareness-v0"
+    },
+    "formulaId": {
+      "const": "LEEWAY-FORMULA-v1.0"
+    },
+    "evaluatorAdapterId": {
+      "const": "runtime-state-v1"
+    },
+    "formulaExecutionState": {
+      "const": "NOT_EXECUTED"
+    },
+    "ranges": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
