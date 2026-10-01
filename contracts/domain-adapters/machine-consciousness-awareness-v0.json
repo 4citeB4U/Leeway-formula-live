@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1.0",
   "mappingId": "machine-consciousness-awareness-v0",
-  "status": "CANDIDATE_CALIBRATION_REQUIRED",
+  "status": "CANDIDATE_CALIBRATED_MC_G6_PASS",
   "domain": "non-LLM-machine-cognition",
   "purpose": "Map measured cognition-cycle dynamics into the existing LeeWay runtime-state-v1 adapter without modifying LEEWAY-FORMULA-v1.0.",
   "formulaAuthority": {
@@ -152,9 +152,75 @@
     ]
   },
   "calibration": {
-    "ranges": null,
-    "state": "NOT_CALIBRATED",
-    "rule": "No fixed numeric ranges, thresholds or awareness scores are authorized yet. Calibrate on measured non-LLM cognition traces before numeric Formula evaluation."
+    "profileId": "machine-consciousness-awareness-calibration-v0",
+    "state": "MC_G6_ACCEPTED_CALIBRATION",
+    "ranges": [
+      [
+        0,
+        0.6931471805599453
+      ],
+      [
+        0.13358962336732744,
+        3.594753034238593
+      ],
+      [
+        -1.3511387098817755,
+        1.209999215547055
+      ],
+      [
+        0.019592860275377304,
+        0.29101704384536403
+      ],
+      [
+        0.62021659898203,
+        2.3068168203712855
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "dimensionOrder": [
+      "belief_entropy_nats",
+      "precision_weighted_prediction_error",
+      "valence_free_energy_rate",
+      "belief_information_gain_nats",
+      "selected_policy_expected_free_energy",
+      "global_access_ratio"
+    ],
+    "rangePolicy": {
+      "belief_entropy_nats": "ANALYTIC_BOUND_[0,ln2]",
+      "global_access_ratio": "ANALYTIC_BOUND_[0,1]",
+      "empiricalDimensions": "TRAINING_MINMAX_PLUS_FIXED_5_PERCENT_WIDTH_MARGIN",
+      "holdoutLeakage": false
+    },
+    "training": {
+      "scenarioFamilies": 5,
+      "worldsPerScenario": 160,
+      "cyclesPerScenario": 10240,
+      "totalRows": 51200,
+      "balanced": true
+    },
+    "holdout": {
+      "worldsPerScenario": 40,
+      "cyclesPerScenario": 2560,
+      "totalRows": 12800,
+      "overallCoverage": 1,
+      "everyScenarioEveryDimensionCoverage": 1,
+      "outsideRangeValues": 0
+    },
+    "runtimeStateSmokeTest": {
+      "windows": 800,
+      "failures": 0,
+      "adapterId": "runtime-state-v1"
+    },
+    "sourceBranchHead": "4050cf2ff537fe039d48512956ab97cea734e49e",
+    "mergedImplementationCommit": "182726f232252a795e4c362a4ab4a995272957df",
+    "campaignDigest": "182eb3b38a2226bee7a5b92a25bbdb39864a0ed3a698c9564168e4c4a17433f6",
+    "candidateProfileSha256": "48764603233020dd2c93582f829ffb1f95610f18a939d1bd05c60b5a274f5f8b",
+    "summarySha256": "f9da1050cae4f3ee1ad4c3c9dc2f32c2293a39cbdc751567ee6357598c666fc7",
+    "formulaExecutionState": "NOT_EXECUTED",
+    "rule": "Calibration authorizes runtime-state mapping ranges only. It does not authorize Formula cognition interpretation before MC-G7 authority reverification and MC-G8 execution/Veritas."
   },
   "veritasAcceptance": [
     "Each of six dimensions has a deterministic implementation and unit test.",
@@ -169,5 +235,5 @@
     "No claim of consciousness is promoted solely from a Formula score."
   ],
   "formulaExecutionState": "NOT_EXECUTED",
-  "reason": "Candidate semantic mapping exists, but calibration ranges and outcome validation are not yet qualified."
+  "reason": "MC-G6 calibration is accepted with perfect holdout coverage; Formula cognition execution remains NOT_EXECUTED pending MC-G7 live authority reverification."
 }
