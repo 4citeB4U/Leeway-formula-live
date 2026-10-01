@@ -1,0 +1,164 @@
+{
+  "schemaVersion": "1.0.0",
+  "gate": "MC-G8",
+  "status": "PASS_EXECUTION_GATE",
+  "runtimeExecutionState": "EXECUTED",
+  "verificationStatus": "UNVERIFIED",
+  "interpretationStatus": "NOT_PROMOTED",
+  "claimBoundary": "Canonical Formula execution occurred on an independently recomputed fresh 16x6 simulated cognition window. The Formula output has not yet been validated as a useful cognition/task interpretation.",
+  "source": {
+    "scenario": "noisy",
+    "seed": 1835216952,
+    "worldIndex": 8808,
+    "cycles": 16,
+    "sourceWindowHash": "9d87693c0362362646db170418a330763bc3f5ff59ae01d98b5d9989e13e289f",
+    "sourceStateHashes": [
+      "4016cd3a41ceb60751c4569bed94a6594b629cb3265991341196d7263dcb5eb5",
+      "1825ccc9c8eb38274ccc3f15b7e3bb425c85570156a5d2f38f70d547c2b53776",
+      "05c37316bef4f490fadf9e993d547f76d0cce3254c687ca1112fe56f7d0bd3c5",
+      "2f06dc5298b9a46cc470318ff6d9ff1be4171674c91dbf264de42f2e9008d04c",
+      "539af0cef3595538c0cbe060d57ba27819a6f6a5dc163d0de888ff5b5f1a0d9d",
+      "d62d78a3b7def360c5c1caf151cfdb42a95a323b3280f6a6f71525d90b835855",
+      "8ba9a95678127fe79de1e342c2af2f981750b4a15a08a83f09c18de13ecde629",
+      "b694b87096b63f55efaa374c455585a736b2104735a63bd27bc56d6edfa0c680",
+      "a29d74fad142afd9abcdf23343b9733192c9e70a198fe5939608e209bf270146",
+      "f41ef37ed470c3f83c3716ad414847e6071a08e79e6db2e88051cef8a2d5690d",
+      "06705d0a460092b54c05e6c95e1df06c034aa2c8406a15d041fb17c5f2a24ac8",
+      "d867dce38fe9f165e0a18f5043a31f134e1248a31f3544d2576d1ee58825e759",
+      "0ab64f694e05678ae03b13c6ad138fc053651fa78d41ce3e7ea79aee68dcddb4",
+      "74caec0d2a821ed0e5f45ce11d557cd25f150ac77b6f97ea006412bca2fed9bc",
+      "10cd5c5b091f58f87b62e49a8506d328ce68febf2cdf2e7675af0a5a1cca9981",
+      "0b3d66a3a63cadf5133fbc2723631886685916544cd65d24bb846e4285469789"
+    ],
+    "dimensionOrder": [
+      "belief_entropy_nats",
+      "precision_weighted_prediction_error",
+      "valence_free_energy_rate",
+      "belief_information_gain_nats",
+      "selected_policy_expected_free_energy",
+      "global_access_ratio"
+    ]
+  },
+  "calibration": {
+    "profileId": "machine-consciousness-awareness-calibration-v0",
+    "status": "MC_G6_ACCEPTED_CALIBRATION",
+    "ranges": [
+      [
+        0,
+        0.6931471805599453
+      ],
+      [
+        0.13358962336732744,
+        3.594753034238593
+      ],
+      [
+        -1.3511387098817755,
+        1.209999215547055
+      ],
+      [
+        0.019592860275377304,
+        0.29101704384536403
+      ],
+      [
+        0.62021659898203,
+        2.3068168203712855
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "calibrationFileSha256": "f1db397640c240d75f3ef7985941b5cec051f616ed5cbfe35aa5cd5b50e5d05a"
+  },
+  "authority": {
+    "health": {
+      "status": "LEEWAY_FORMULA_V1_PASS",
+      "formula": "LEEWAY-FORMULA-v1.0",
+      "loaded": true,
+      "goldenVectorPass": true,
+      "specValid": true,
+      "adapterRegistryPass": true,
+      "expectedDecimal": [
+        4,
+        50,
+        63,
+        59,
+        48,
+        69
+      ],
+      "expectedBase64": [
+        "E",
+        "y",
+        "/",
+        "7",
+        "w",
+        "BF"
+      ],
+      "specHash": "2f4604f143e2f7c3bc2fe315f2faa2c7d9b8b188151a0fab9f6cebea3e155f9b",
+      "specMdHash": "dd9f2f7d23dcc8076d7d3c9e1f194b596bff041e8b25dc003348c8554db7b16d",
+      "timestamp": "2026-10-01T23:42:52.638Z",
+      "hostScope": "formula-only",
+      "kernelIntegrity": "VERIFIED_AT_STARTUP"
+    },
+    "healthStatus": "VERIFIED_AT_EXECUTION"
+  },
+  "request": {
+    "requestHash": "fdf61dd67dbce5282486c049a1514cfabfd22c9fcef77a8725ba65a45066a34d",
+    "requestedTraceId": "MC-G8-FIRST-COGNITION-20261001"
+  },
+  "result": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "adapterId": "runtime-state-v1",
+    "decimalState": [
+      69,
+      68,
+      67,
+      65,
+      13,
+      64
+    ],
+    "base64State": [
+      "BF",
+      "BE",
+      "BD",
+      "BB",
+      "N",
+      "BA"
+    ],
+    "top10": [
+      69,
+      68,
+      67,
+      65,
+      13,
+      64,
+      60,
+      66,
+      61,
+      7
+    ],
+    "inputHash": "513f612ca2076bad61eab407b884b9898185608d4fd29a64541a446ed9945bbe",
+    "resultHash": "caf9cd55d7608052e1e9cbc3b00d1862ba24ebe5a40b47fab87110bc038d43a8",
+    "receiptPath": "/data/data/com.termux/files/home/.leeway/workstation/repos/Leeway-formula-live/runtime/canonical/receipts/leeway-formula/leeway-formula-run-20261001234252-4d5aeac3.json",
+    "evaluatedAt": "2026-10-01T23:42:52.700Z",
+    "hostTraceId": "4d5aeac3-e199-4d10-a3e3-af40dc15dd1d",
+    "requestedTraceId": "MC-G8-FIRST-COGNITION-20261001"
+  },
+  "receiptVerification": {
+    "exists": true,
+    "path": "/data/data/com.termux/files/home/.leeway/workstation/repos/Leeway-formula-live/runtime/canonical/receipts/leeway-formula/leeway-formula-run-20261001234252-4d5aeac3.json",
+    "sha256": "21bdd93ce4680553137dca4c0b65e9a57c8dab28844627394a9acf444fd3451c"
+  },
+  "acceptance": {
+    "exactly16Cycles": true,
+    "exactly6Dimensions": true,
+    "allOperationalAwarenessVerified": true,
+    "allValuesFiniteAndWithinAcceptedRanges": true,
+    "formulaExecuted": true,
+    "inputHashPreserved": true,
+    "resultHashPreserved": true,
+    "formulaReceiptPreserved": true,
+    "resultRemainsExecutedUnverified": true,
+    "pass": true
+  }
+}

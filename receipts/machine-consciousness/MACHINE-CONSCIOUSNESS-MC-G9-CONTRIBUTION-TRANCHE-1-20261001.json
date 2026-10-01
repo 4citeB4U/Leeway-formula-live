@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G9-CONTRIBUTION-TRANCHE-1-20261001",
+  "status": "PASS_TRANCHE_1_NOT_GATE_CLOSURE",
+  "gate": "MC-G9",
+  "validationHost": "qualified Android workstation / Termux",
+  "rows": 40960,
+  "scenarios": [
+    "stationary",
+    "changing",
+    "noisy",
+    "misleading",
+    "module-dropout"
+  ],
+  "worldsPerScenario": 128,
+  "cyclesPerWorld": 64,
+  "digest": "5e9a0a51ce177239e2d3516675a1e1764b837b8c982532ead7f7bd37fac6d1a5",
+  "contribution": {
+    "causalToday": [
+      "selected_policy_expected_free_energy",
+      "dreamReplay (indirect through learned model)"
+    ],
+    "diagnosticToday": [
+      "belief_entropy_nats",
+      "precision_weighted_prediction_error",
+      "valence_free_energy_rate",
+      "belief_information_gain_nats",
+      "global_access_ratio",
+      "selfModel"
+    ]
+  },
+  "replay": {
+    "evbNoisySensorNllImprovement": 0.006059004382021354,
+    "evbCombinedScenarioWins": 0,
+    "falseRealMemoryCount": 0
+  },
+  "formula": {
+    "mc8State": "EXECUTED_UNVERIFIED",
+    "semanticUseInThisAudit": "NONE"
+  },
+  "artifacts": {
+    "harnessSha256": "1e34316bfed7b7941d46aff4ba443eac2c99a6e10dec973dc9795322c70d1883",
+    "outputSha256": "7e3c7b4d4b86939ca7a47ade2338228495b0ae35ca185c8fefa65fbcac29db80"
+  },
+  "claimBoundary": "This tranche maps current causal versus diagnostic roles. It does not close MC-G9. Controlled policy/learning ablations against simpler baselines remain required.",
+  "nextAction": "MC-G9 tranche 2: controlled ablations of policy epistemic term, valuation/deliberation routing, workspace gating and replay/update strategy."
+}

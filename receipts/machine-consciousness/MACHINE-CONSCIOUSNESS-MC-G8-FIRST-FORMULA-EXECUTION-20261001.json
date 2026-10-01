@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G8-FIRST-FORMULA-EXECUTION-20261001",
+  "status": "PASS_EXECUTION_GATE",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "validationHost": "qualified Android workstation / Termux",
+  "gate": "MC-G8",
+  "runtimeExecutionState": "EXECUTED",
+  "verificationStatus": "UNVERIFIED",
+  "interpretationStatus": "NOT_PROMOTED",
+  "sourceWindow": {
+    "scenario": "noisy",
+    "seed": 1835216952,
+    "worldIndex": 8808,
+    "cycles": 16,
+    "dimensions": 6,
+    "sourceWindowHash": "9d87693c0362362646db170418a330763bc3f5ff59ae01d98b5d9989e13e289f"
+  },
+  "calibration": {
+    "profile": "machine-consciousness-awareness-calibration-v0",
+    "status": "MC_G6_ACCEPTED_CALIBRATION"
+  },
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "adapterId": "runtime-state-v1",
+    "inputHash": "513f612ca2076bad61eab407b884b9898185608d4fd29a64541a446ed9945bbe",
+    "resultHash": "caf9cd55d7608052e1e9cbc3b00d1862ba24ebe5a40b47fab87110bc038d43a8",
+    "decimalState": [
+      69,
+      68,
+      67,
+      65,
+      13,
+      64
+    ],
+    "base64State": [
+      "BF",
+      "BE",
+      "BD",
+      "BB",
+      "N",
+      "BA"
+    ],
+    "hostReceiptPath": "/data/data/com.termux/files/home/.leeway/workstation/repos/Leeway-formula-live/runtime/canonical/receipts/leeway-formula/leeway-formula-run-20261001234252-4d5aeac3.json",
+    "hostReceiptSha256": "21bdd93ce4680553137dca4c0b65e9a57c8dab28844627394a9acf444fd3451c"
+  },
+  "artifacts": {
+    "harnessSha256": "6eb06fabdd824724cb82889eb7964313ad4f1f836adac330d17365493c82fa16",
+    "sourceWindowSha256": "0b4a2fad67fa45a487c846f0695a54a1a4e96fcbe6c97a6dd6f0cae5a6a5038e",
+    "requestSha256": "554a1842e0d1dbaf79207b5e949c09a7a3c53353b6bfb39f5700b0dc2be6bb57",
+    "resultSha256": "2d601a91e88877b30971315e4e936f77762fbb0c816703db5e71db8cb0f9ba84",
+    "summarySha256": "49c61f4e747675ded985cf8c20466c388bb20810d19270cef4de68919f580e20"
+  },
+  "acceptance": {
+    "exactly16Cycles": true,
+    "exactly6Dimensions": true,
+    "independentDimensionRecomputation": true,
+    "operationalAwarenessVerified": true,
+    "allValuesFiniteAndWithinAcceptedRanges": true,
+    "canonicalFormulaExecuted": true,
+    "inputResultHashesPreserved": true,
+    "formulaReceiptPreserved": true,
+    "outputRemainsExecutedUnverified": true
+  },
+  "claimBoundary": "MC-G8 proves canonical Formula execution over a qualified fresh cognition window. It does not prove that the resulting state has useful semantic interpretation for live Agent Lee behavior.",
+  "nextGate": "MC-G9 ablation and comparative evaluation",
+  "learningLedger": "NOT_UPDATED; execution gate does not yet establish admitted behavioral learning."
+}

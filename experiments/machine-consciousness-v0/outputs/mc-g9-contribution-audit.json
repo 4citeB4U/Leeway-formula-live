@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "1.0.0",
+  "gate": "MC-G9",
+  "status": "TRANCHE_1_CONTRIBUTION_AUDIT",
+  "rows": 40960,
+  "scenarios": [
+    "stationary",
+    "changing",
+    "noisy",
+    "misleading",
+    "module-dropout"
+  ],
+  "worldsPerScenario": 128,
+  "cyclesPerWorld": 64,
+  "contributionMap": {
+    "belief_entropy_nats": {
+      "currentRole": "DIAGNOSTIC",
+      "causalInBasePolicy": false,
+      "contribution": "Quantifies posterior uncertainty and separates clean from ambiguous/noisy states.",
+      "limitation": "Current base policy does not directly consume realized H."
+    },
+    "precision_weighted_prediction_error": {
+      "currentRole": "DIAGNOSTIC_AND_LEARNING_SIGNAL",
+      "causalInBasePolicy": false,
+      "contribution": "Measures prediction mismatch and supports learning/recovery diagnostics.",
+      "limitation": "Current base action selector does not directly consume realized PE."
+    },
+    "valence_free_energy_rate": {
+      "currentRole": "DIAGNOSTIC_CANDIDATE_VALUATION",
+      "causalInBasePolicy": false,
+      "contribution": "Tracks direction of model-fit change and supports mechanical-emotion state.",
+      "limitation": "Current base policy does not yet use V to choose actions."
+    },
+    "belief_information_gain_nats": {
+      "currentRole": "DIAGNOSTIC_REALIZED_INFORMATION",
+      "causalInBasePolicy": false,
+      "contribution": "Measures realized belief update after observation.",
+      "limitation": "Policy uses expected information value inside candidate G; realized IG is not itself a direct policy input."
+    },
+    "selected_policy_expected_free_energy": {
+      "currentRole": "CAUSAL_POLICY_CONTROL",
+      "causalInBasePolicy": true,
+      "contribution": "Candidate policy G directly shapes softmax policy probabilities and therefore action selection.",
+      "limitation": "Its useful task interpretation still requires comparative/ablation validation."
+    },
+    "global_access_ratio": {
+      "currentRole": "DIAGNOSTIC_WORKSPACE_INTEGRITY",
+      "causalInBasePolicy": false,
+      "contribution": "Measures verified module availability and exposes dropout/incomplete access.",
+      "limitation": "Current base policy does not yet slow, stop, or reroute based on B."
+    },
+    "selfModel": {
+      "currentRole": "INTEGRITY_AND_CAUSAL_OWNERSHIP",
+      "causalInBasePolicy": false,
+      "contribution": "Verifies factual identity/capability/authority state and prevents fabricated self claims.",
+      "limitation": "Current simulator does not use self-model consistency to optimize task policy."
+    },
+    "dreamReplay": {
+      "currentRole": "LEARNING_MODIFIER",
+      "causalInBasePolicy": "INDIRECT",
+      "contribution": "Replay can modify learned sensor/transition parameters before future prediction/policy.",
+      "limitation": "MC-G4 evidence is mixed: EVB narrowly improves noisy sensor NLL but regresses combined NLL in all tested scenarios."
+    }
+  },
+  "diagnosticAssociations": {
+    "belief_entropy_nats": {
+      "n": 40960,
+      "mean": 0.3828060606913609,
+      "variance": 0.04106370120326887,
+      "corrWithUnstableOutcome": 0.17193523117607004,
+      "corrWithObservationSurprise": 0.9714565946457404,
+      "corrWithAccessIncomplete": -0.030444280503981732,
+      "scenarioMeans": {
+        "stationary": 0.35989165599982803,
+        "changing": 0.3964909057036655,
+        "noisy": 0.4288273112173698,
+        "misleading": 0.36892877453608713,
+        "module-dropout": 0.35989165599982803
+      }
+    },
+    "precision_weighted_prediction_error": {
+      "n": 40960,
+      "mean": 1.0629678015333741,
+      "variance": 0.6869825463488436,
+      "corrWithUnstableOutcome": 0.08630227850623369,
+      "corrWithObservationSurprise": 0.940623794790336,
+      "corrWithAccessIncomplete": -0.019161473789825335,
+      "scenarioMeans": {
+        "stationary": 1.005339426655306,
+        "changing": 1.0703089554072134,
+        "noisy": 1.204001159373742,
+        "misleading": 1.02985003957527,
+        "module-dropout": 1.005339426655306
+      }
+    },
+    "valence_free_energy_rate": {
+      "n": 40960,
+      "mean": 0.000496159458543142,
+      "variance": 0.22823317000652538,
+      "corrWithUnstableOutcome": -0.030613351720379395,
+      "corrWithObservationSurprise": -0.6080261344273781,
+      "corrWithAccessIncomplete": 0.003531515498991476,
+      "scenarioMeans": {
+        "stationary": 0.0009307155562151428,
+        "changing": 0.00017554660834196838,
+        "noisy": -0.00048689598427165376,
+        "misleading": 0.0009307155562151432,
+        "module-dropout": 0.0009307155562151428
+      }
+    },
+    "belief_information_gain_nats": {
+      "n": 40960,
+      "mean": 0.16378296920826746,
+      "variance": 0.007011948692033287,
+      "corrWithUnstableOutcome": 0.1950066813214107,
+      "corrWithObservationSurprise": 0.8755743802112822,
+      "corrWithAccessIncomplete": -0.03255210521092931,
+      "scenarioMeans": {
+        "stationary": 0.15362030801731327,
+        "changing": 0.17125064148461028,
+        "noisy": 0.1828695850351934,
+        "misleading": 0.1575540034869127,
+        "module-dropout": 0.15362030801731327
+      }
+    },
+    "selected_policy_expected_free_energy": {
+      "n": 40960,
+      "mean": 1.1813947146886565,
+      "variance": 0.18189003048184452,
+      "corrWithUnstableOutcome": 0.4045571021442202,
+      "corrWithObservationSurprise": 0.31739758058844325,
+      "corrWithAccessIncomplete": -0.025741820959740508,
+      "scenarioMeans": {
+        "stationary": 1.1335093169600683,
+        "changing": 1.2859084825204585,
+        "noisy": 1.1987657521071526,
+        "misleading": 1.1552807048955411,
+        "module-dropout": 1.1335093169600683
+      }
+    },
+    "global_access_ratio": {
+      "n": 40960,
+      "mean": 0.98828125,
+      "variance": 0.0025970458984375,
+      "corrWithUnstableOutcome": 0.026299508308012455,
+      "corrWithObservationSurprise": 0.02573990293488861,
+      "corrWithAccessIncomplete": -0.970819140923115,
+      "scenarioMeans": {
+        "stationary": 1,
+        "changing": 1,
+        "noisy": 1,
+        "misleading": 1,
+        "module-dropout": 0.94140625
+      }
+    }
+  },
+  "priorReplayEvidence": {
+    "evbMetricWins": [
+      {
+        "scenario": "noisy",
+        "metric": "sensorNll",
+        "improvement": 0.006059004382021354
+      }
+    ],
+    "evbCombinedScenarioWins": [],
+    "falseRealMemoryCount": 0
+  },
+  "formulaEvidence": {
+    "mc8ExecutionState": "EXECUTED",
+    "mc8VerificationStatus": "UNVERIFIED",
+    "interpretationStatus": "NOT_PROMOTED",
+    "semanticUseInThisAudit": "NONE"
+  },
+  "conclusion": {
+    "causalToday": [
+      "selected_policy_expected_free_energy",
+      "dreamReplay (indirect through learned model)"
+    ],
+    "diagnosticToday": [
+      "belief_entropy_nats",
+      "precision_weighted_prediction_error",
+      "valence_free_energy_rate",
+      "belief_information_gain_nats",
+      "global_access_ratio",
+      "selfModel"
+    ],
+    "promotionBoundary": "Diagnostic usefulness does not grant action authority. Next tranche must run controlled policy/learning ablations against simpler baselines."
+  },
+  "digest": "5e9a0a51ce177239e2d3516675a1e1764b837b8c982532ead7f7bd37fac6d1a5"
+}

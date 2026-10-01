@@ -3,9 +3,9 @@
   "projectId": "leeway-machine-consciousness-v0",
   "authority": "Creator/Human Authority > LeeWay Standards",
   "canonicalRepository": "4citeB4U/Leeway-formula-live",
-  "phase": "MC-8",
-  "masterCheckpoint": "MC-G7_PASS_READY_FOR_MC-8",
-  "gate": "MC-G7_PASS",
+  "phase": "MC-9",
+  "masterCheckpoint": "MC-G8_PASS_MC-G9_ACTIVE",
+  "gate": "MC-G8_PASS",
   "identity": "Agent Lee non-LLM machine cognition research runtime",
   "approved": [
     "non-LLM cognition kernel",
@@ -38,19 +38,23 @@
     "canonical cognition cycle schema from the original master-plan layout remains documentation debt; qualified runtime shapes remain observed authority until repaired",
     "EVB replay improved noisy-sensor NLL narrowly but regressed combined NLL in every tested scenario; general replay benefit remains unverified and is deferred to MC-G9"
   ],
-  "nextAction": "MC-8: execute the first canonical Formula evaluation on one fresh 16-cycle cognition window using independently recomputed dimensions and the accepted MC-G6 calibration profile; preserve input/result hashes and treat output as EXECUTED/UNVERIFIED until task interpretation passes Veritas.",
+  "nextAction": "MC-G9 tranche 2: controlled ablations against simpler baselines; do not grant live behavior authority until contribution is measured.",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
     "runtimeStateAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
-    "executionState": "NOT_EXECUTED",
+    "executionState": "EXECUTED",
     "mapping": "machine-consciousness-awareness-v0",
     "calibrationProfile": "contracts/domain-adapters/machine-consciousness-awareness-calibration-v0.json",
     "authorityState": "VERIFIED",
-    "authorityReceipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G7-FORMULA-AUTHORITY-20261001.json"
+    "authorityReceipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G7-FORMULA-AUTHORITY-20261001.json",
+    "verificationStatus": "UNVERIFIED",
+    "mcG8Receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G8-FIRST-FORMULA-EXECUTION-20261001.json",
+    "mcG8InputHash": "513f612ca2076bad61eab407b884b9898185608d4fd29a64541a446ed9945bbe",
+    "mcG8ResultHash": "caf9cd55d7608052e1e9cbc3b00d1862ba24ebe5a40b47fab87110bc038d43a8"
   },
-  "evidenceState": "MC_G7_FORMULA_AUTHORITY_VERIFIED",
-  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G7-FORMULA-AUTHORITY-20261001.json",
+  "evidenceState": "MC_G8_EXECUTION_PASS_MC_G9_ACTIVE",
+  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G8-FIRST-FORMULA-EXECUTION-20261001.json",
   "learningLedger": "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md",
   "parallelResearchTracks": {
     "mathQualification": {
@@ -94,5 +98,16 @@
   },
   "publication": {
     "rapidWebDevelop": "PLANNED_NOT_DEPLOYED"
+  },
+  "liveIntegration": {
+    "plan": "docs/machine-consciousness/10-AGENT-LEE-LIVE-INTEGRATION-PLAN-v0.md",
+    "status": "PLANNED_SHADOW_NOT_ENABLED",
+    "firstAuthorityStage": "L1_OBSERVE_ONLY"
+  },
+  "mcG9": {
+    "status": "ACTIVE_TRANCHE_1_COMPLETE",
+    "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CONTRIBUTION-TRANCHE-1-20261001.json",
+    "rows": 40960,
+    "gateClosure": false
   }
 }

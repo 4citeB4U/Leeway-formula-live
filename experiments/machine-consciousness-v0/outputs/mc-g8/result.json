@@ -1,0 +1,38 @@
+{
+  "formulaId": "LEEWAY-FORMULA-v1.0",
+  "adapterId": "runtime-state-v1",
+  "decimalState": [
+    69,
+    68,
+    67,
+    65,
+    13,
+    64
+  ],
+  "base64State": [
+    "BF",
+    "BE",
+    "BD",
+    "BB",
+    "N",
+    "BA"
+  ],
+  "top10": [
+    69,
+    68,
+    67,
+    65,
+    13,
+    64,
+    60,
+    66,
+    61,
+    7
+  ],
+  "inputHash": "513f612ca2076bad61eab407b884b9898185608d4fd29a64541a446ed9945bbe",
+  "resultHash": "caf9cd55d7608052e1e9cbc3b00d1862ba24ebe5a40b47fab87110bc038d43a8",
+  "receiptPath": "/data/data/com.termux/files/home/.leeway/workstation/repos/Leeway-formula-live/runtime/canonical/receipts/leeway-formula/leeway-formula-run-20261001234252-4d5aeac3.json",
+  "evaluatedAt": "2026-10-01T23:42:52.700Z",
+  "hostTraceId": "4d5aeac3-e199-4d10-a3e3-af40dc15dd1d",
+  "requestedTraceId": "MC-G8-FIRST-COGNITION-20261001"
+}
