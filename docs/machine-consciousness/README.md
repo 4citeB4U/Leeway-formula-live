@@ -58,7 +58,13 @@ Conversation is evidence and origin context. Conversation is not runtime proof.
 6. 05-CLAIM-REGISTER.md
    VERIFIED / OBSERVED / PROPOSED / UNVERIFIED / FAILED / BLOCKED claims.
 
-7. ../MACHINE-CONSCIOUSNESS-AWARENESS-MATH-v0.md
+7. 06-AGENT-LEE-SCIENTIFIC-DOSSIER-v0.md
+   Broader Agent Lee cognition/training/memory/dream research dossier.
+
+8. 07-FAILURE-REPAIR-LEDGER-20261001.md
+   Veritas-qualified failure, repair, gain and reusable-learning record.
+
+9. ../MACHINE-CONSCIOUSNESS-AWARENESS-MATH-v0.md
    Current mathematical architecture.
 
 ## Machine-readable authority
@@ -74,23 +80,26 @@ contracts/machine-consciousness-project-state-v0.json
 MC-G0: PASS — documentation foundation.
 MC-G1: PASS — deterministic cognition simulator.
 MC-G2: PASS — supervised-test episodic memory + semantic learning.
-MC-G3: PASS — REQUALIFIED against the contract-aligned 8-module cycleStateHash workspace.
+MC-G3: PASS — contract-aligned global workspace + factual self-model.
+MC-G4: PASS — bounded dream/replay gate.
 
-Phase: MC-4 — dream/replay engineering.
+Phase: MC-5 — independent six-dimension instrumentation.
 
-Requalified MC-G3 evidence:
-- MC-1 regression: 7/7 PASS;
-- MC-2 regression: 8/8 PASS;
-- repaired MC-3: 12/12 PASS;
-- 640 worlds / 40,960 cycles;
-- workspace verification: 40,960 / 40,960;
-- self-model verification: 40,960 / 40,960;
-- factual self-model accuracy 1.0: 40,960 / 40,960;
-- operational global-access range: 0.75 to 1.0;
-- source receipt mutation failures: 0.
+MC-G4 evidence:
+- 38/38 regression + replay tests PASS after repair;
+- 4 scenario families / 512 worlds;
+- 64 cycles/world, 32 training + 32 held out;
+- false-real-memory count: 0;
+- replay-ledger failures: 0;
+- source-receipt mutation failures: 0;
+- EVB noisy-sensor NLL improvement over NONE: 0.6059004382%;
+- EVB combined-NLL scenario wins: 0;
+- aggregate non-stationary EVB combined NLL regression: 5.5397895371%;
+- final campaign digest: b94338d259554e73cc817735e33a8b36441ddfef330eeb1b9d880a8bd44a84b7.
 
-The earlier MC-G3 receipt is retained as historical evidence but superseded because its implementation did not match the higher MC-3 contract.
+Interpretation:
+MC-G4 passes exactly the master-plan requirement of at least one predeclared learning-measure improvement with zero false-real-memory increase. It does not establish that EVB replay is generally beneficial.
 
 Formula execution remains NOT_EXECUTED.
 
-Next engineering gate: MC-G4 — dream/replay with permanent SIMULATED/REPLAY provenance and comparison against no replay, random replay, recency replay and EVB replay.
+Next engineering gate: MC-G5 — independently recomputable six-dimension instrumentation with provenance-negative tests and no Formula use.

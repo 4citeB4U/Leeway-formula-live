@@ -92,9 +92,9 @@ PROPOSED.
 
 C-023
 Claim:
-EVB-prioritized replay will improve this machine cognition runtime.
+EVB-prioritized replay is generally beneficial to this machine cognition runtime.
 State:
-PROPOSED; must beat baselines.
+UNVERIFIED / PARTIALLY CONTRADICTED. MC-G4 found a narrow noisy-sensor NLL improvement but combined NLL regressed in every tested scenario. General benefit is not established.
 
 C-024
 Claim:
@@ -187,3 +187,32 @@ C-063
 Classification: VERIFIED
 Claim:
 No Formula cognition execution occurred during MC-G3 requalification.
+
+
+## MC-G4 additions
+
+C-070
+Classification: VERIFIED
+Claim:
+Dream/replay events can remain permanently provenance-marked REPLAY, hash-linked to immutable source cognition receipts, and excluded from external history.
+Evidence:
+38/38 tests, zero false-real-memory count, zero replay-ledger failures and zero source mutation failures across the 512-world campaign.
+
+C-071
+Classification: VERIFIED / BOUNDED
+Claim:
+Under repaired offline replay temporal semantics, EVB replay improved held-out noisy-sensor NLL by 0.6059004382% relative to no replay.
+Boundary:
+This is one metric in one scenario family and does not imply general replay superiority.
+
+C-072
+Classification: FAILED AS GENERAL PERFORMANCE CLAIM
+Claim:
+EVB replay improves held-out combined NLL under the current design.
+Evidence:
+zero scenario wins; aggregate non-stationary combined NLL regressed by 5.5397895371%.
+
+C-073
+Classification: VERIFIED
+Claim:
+No Formula cognition execution occurred during MC-G4.

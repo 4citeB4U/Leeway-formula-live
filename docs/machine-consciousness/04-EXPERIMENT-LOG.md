@@ -397,3 +397,62 @@ change acceptance implementation only. Preserve all measured results and explici
 
 Campaign digest:
 b94338d259554e73cc817735e33a8b36441ddfef330eeb1b9d880a8bd44a84b7.
+
+
+## E-040C — Final corrected dream/replay campaign
+
+Status:
+PASS — MC-G4, BOUNDED.
+
+Exact campaign source commit:
+0a804cb2a69d989ed7c0b0049d82395d514a8f5d
+
+Validation host:
+qualified Android workstation.
+
+Regression + replay tests:
+38/38 PASS on repaired replay engine.
+
+Campaign:
+- 4 scenario families: stationary, changing, noisy, misleading;
+- 128 worlds/scenario = 512 worlds;
+- 64 cycles/world;
+- first 32 cycles training;
+- final 32 cycles held out;
+- replay budget 12;
+- modes NONE, RANDOM, RECENCY, EVB.
+
+Integrity:
+- false-real-memory count = 0;
+- replay-ledger failures = 0;
+- source-receipt mutation failures = 0;
+- replay counterfactuals admitted to external history = 0;
+- Formula NOT_EXECUTED.
+
+Predeclared learning-measure gate:
+PASS.
+
+EVB win:
+noisy scenario / sensor NLL:
+NONE = 0.6939276910797596
+EVB  = 0.6897231801587014
+relative improvement = 0.006059004382021354 (0.6059004382%).
+
+Limitations:
+- EVB combined NLL improved in zero scenarios;
+- aggregate non-stationary EVB combined NLL regressed by 5.5397895371%;
+- EVB is therefore NOT promoted as generally superior;
+- random replay narrowly improved noisy sensor NLL;
+- recency replay improved misleading sensor NLL;
+- replay-selection/update design remains an MC-G9 ablation target.
+
+Final campaign digest:
+b94338d259554e73cc817735e33a8b36441ddfef330eeb1b9d880a8bd44a84b7.
+
+Failure/recovery history retained:
+E-040A failed because replay incorrectly advanced chronological forgetting.
+E-040B data met the master gate but campaign validator incorrectly narrowed acceptance to combined NLL.
+E-040C repaired the validator without changing the measured campaign data.
+
+Next:
+MC-5 independent six-dimension instrumentation.

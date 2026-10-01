@@ -308,3 +308,50 @@ Investigate
 -> Evidence
 
 No failure disappears from history merely because a repair succeeded.
+
+
+---
+
+## F-013 — Offline replay incorrectly advanced chronological forgetting
+
+Observation:
+The first formal MC-G4 replay campaign preserved provenance but all replay strategies worsened held-out combined NLL; EVB aggregate non-stationary combined NLL regressed 7.2880%.
+
+Diagnosis:
+MC-G4 reused the MC-G2 chronological semantic-model update. Every replay multiplied unrelated semantic counts by forgettingFactor, treating each dreamed episode as if external time had advanced.
+
+Repair:
+separate offline replay reinforcement from chronological learning. Replay may reinforce selected stored evidence but does not apply chronological forgetting merely because a memory is replayed.
+
+Retest:
+38/38 regression + replay tests PASS.
+
+Lesson:
+offline cognitive time and external environment time are distinct clocks.
+
+---
+
+## F-014 — MC-G4 validator silently narrowed the approved gate
+
+Observation:
+After the temporal repair, EVB improved noisy-sensor held-out NLL by 0.6059004382%, but the campaign still returned FAIL.
+
+Diagnosis:
+the campaign code checked only combined-NLL scenario wins. The master plan required improvement in at least one predeclared planning/learning measure; negative log likelihood was already a declared measure.
+
+Repair:
+change the validator only; do not alter replay engine or measured campaign data.
+
+Result:
+MC-G4 PASS_BOUNDED.
+
+Lesson:
+verification code must implement the declared acceptance contract exactly. A verifier may not silently strengthen, weaken or narrow a gate after results exist.
+
+---
+
+# Additional gains retained
+
+G-008 — Dream/replay provenance isolation held with false-real-memory count 0, replay-ledger failures 0 and source-receipt mutation failures 0 across the formal 512-world campaign.
+
+G-009 — The current EVB prioritizer earned only a bounded result: +0.6059004382% noisy-sensor NLL improvement. Combined NLL regressed in every tested scenario, so general replay superiority was not promoted.

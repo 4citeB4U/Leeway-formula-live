@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G4-DREAM-REPLAY-20261001",
+  "status": "PASS_BOUNDED",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "validatedSourceCommit": "0a804cb2a69d989ed7c0b0049d82395d514a8f5d",
+  "validationHost": "qualified Android workstation",
+  "gate": "MC-G4",
+  "tests": {
+    "pass": 38,
+    "fail": 0,
+    "regressionIncluded": true
+  },
+  "artifacts": {
+    "dreamReplaySha256": "37894a84634900f721ae5870aad99c9ffad7aae6070ed6d8d562dc8b9446f250",
+    "dreamReplayCampaignSha256": "21be435cbd9c896eeae02835fb2c7bdfb6d39814330f3b71462db988b002fd47",
+    "replayEventSchemaSha256": "54dbc04a21b70586b35ba11b15b468333a12dad1ef033762421fc98c25ffb109"
+  },
+  "campaign": {
+    "totalWorlds": 512,
+    "scenarioFamilies": 4,
+    "cyclesPerWorld": 64,
+    "holdoutCyclesPerWorld": 32,
+    "replayBudget": 12,
+    "modes": [
+      "NONE",
+      "RANDOM",
+      "RECENCY",
+      "EVB"
+    ],
+    "falseRealMemoryCount": 0,
+    "replayLedgerFailures": 0,
+    "sourceMutationFailures": 0,
+    "evbMetricWins": [
+      {
+        "scenario": "noisy",
+        "metric": "sensorNll",
+        "relativeImprovement": 0.006059004382021354
+      }
+    ],
+    "evbCombinedScenarioWins": [],
+    "aggregateNonStationaryCombinedRelativeToNone": -0.05539789537136291,
+    "digest": "b94338d259554e73cc817735e33a8b36441ddfef330eeb1b9d880a8bd44a84b7"
+  },
+  "failureRecovery": [
+    {
+      "stage": "E-040A",
+      "state": "FAIL",
+      "boundary": "offline replay reused chronological forgetting, causing all replay modes to worsen held-out combined NLL"
+    },
+    {
+      "stage": "temporal repair",
+      "state": "PASS_TESTS",
+      "action": "offline replay reinforcement no longer advances chronological forgetting"
+    },
+    {
+      "stage": "E-040B",
+      "state": "VALIDATOR_FALSE_FAIL",
+      "boundary": "campaign code narrowed approved gate to combined NLL only"
+    },
+    {
+      "stage": "validator repair",
+      "state": "PASS",
+      "action": "acceptance restored to master-plan wording: at least one predeclared learning measure"
+    }
+  ],
+  "provenance": {
+    "sourceEpisodes": "SIMULATED",
+    "dreamEvents": "REPLAY",
+    "counterfactualExternalHistoryAdmission": false,
+    "falseRealMemoryCount": 0
+  },
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "executionState": "NOT_EXECUTED",
+    "mutation": false
+  },
+  "limitations": [
+    "EVB improvement is narrow: noisy-sensor NLL only in this campaign",
+    "EVB combined NLL regressed in every tested scenario",
+    "general replay benefit remains unverified",
+    "replay learning still uses ORACLE_SUPERVISED_TEST_ONLY source feedback",
+    "canonical cognition cycle schema remains recorded debt"
+  ],
+  "nextGate": "MC-G5 independent six-dimension instrumentation",
+  "learningLedger": "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md"
+}

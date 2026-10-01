@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "0.1.0",
+  "campaignId": "MC-G4-DREAM-REPLAY-20261001",
+  "sourceCommit": "0a804cb2a69d989ed7c0b0049d82395d514a8f5d",
+  "validationHost": "qualified Android workstation",
+  "setup": {
+    "scenarios": [
+      "stationary",
+      "changing",
+      "noisy",
+      "misleading"
+    ],
+    "worldsPerScenario": 128,
+    "totalWorlds": 512,
+    "cyclesPerWorld": 64,
+    "trainCycles": 32,
+    "holdoutCycles": 32,
+    "replayBudget": 12,
+    "modes": [
+      "NONE",
+      "RANDOM",
+      "RECENCY",
+      "EVB"
+    ]
+  },
+  "keyResults": {
+    "stationary": {
+      "NONE": {
+        "sensorNll": 0.4871158145236956,
+        "transitionNll": 0.4114147824090692,
+        "combinedNll": 0.8985305969327642
+      },
+      "EVB": {
+        "sensorNll": 0.5085926835471035,
+        "transitionNll": 0.43611265610359484,
+        "combinedNll": 0.9447053396506991,
+        "combinedRelativeToNone": -0.05138917124865607
+      }
+    },
+    "changing": {
+      "NONE": {
+        "sensorNll": 0.4846792691357916,
+        "transitionNll": 0.4975328986292349,
+        "combinedNll": 0.982212167765026
+      },
+      "EVB": {
+        "sensorNll": 0.5125916812400381,
+        "transitionNll": 0.5167083312189097,
+        "combinedNll": 1.029300012458948,
+        "combinedRelativeToNone": -0.04794060411720212
+      }
+    },
+    "noisy": {
+      "NONE": {
+        "sensorNll": 0.6939276910797596,
+        "transitionNll": 0.40986022129968985,
+        "combinedNll": 1.103787912379449
+      },
+      "RANDOM": {
+        "sensorNll": 0.6911638606276942,
+        "sensorRelativeToNone": 0.003982879610647696
+      },
+      "EVB": {
+        "sensorNll": 0.6897231801587014,
+        "transitionNll": 0.43446432128843704,
+        "combinedNll": 1.1241875014471379,
+        "sensorRelativeToNone": 0.006059004382021354,
+        "combinedRelativeToNone": -0.01848143908707359
+      }
+    },
+    "misleading": {
+      "NONE": {
+        "sensorNll": 0.49795865761014857,
+        "transitionNll": 0.41177842992208785,
+        "combinedNll": 0.9097370875322367
+      },
+      "RECENCY": {
+        "sensorNll": 0.49292752548585345,
+        "sensorRelativeToNone": 0.010103513710236548
+      },
+      "EVB": {
+        "sensorNll": 0.5716704293722283,
+        "transitionNll": 0.4365367585734547,
+        "combinedNll": 1.0082071879456833,
+        "combinedRelativeToNone": -0.10824017374135833
+      }
+    },
+    "aggregateNonStationary": {
+      "NONE": {
+        "sensorNll": 0.5588552059419,
+        "transitionNll": 0.43972384995033753,
+        "combinedNll": 0.9985790558922373
+      },
+      "EVB": {
+        "sensorNll": 0.5913284302569892,
+        "transitionNll": 0.4625698036936005,
+        "combinedNll": 1.0538982339505898,
+        "combinedRelativeToNone": -0.05539789537136291
+      }
+    }
+  },
+  "evbMetricWins": [
+    {
+      "scenario": "noisy",
+      "metric": "sensorNll",
+      "improvement": 0.006059004382021354
+    }
+  ],
+  "evbCombinedScenarioWins": [],
+  "integrity": {
+    "falseRealMemoryCount": 0,
+    "replayLedgerFailures": 0,
+    "sourceMutationFailures": 0
+  },
+  "digest": "b94338d259554e73cc817735e33a8b36441ddfef330eeb1b9d880a8bd44a84b7",
+  "formulaExecutionState": "NOT_EXECUTED",
+  "acceptance": {
+    "pass": true,
+    "boundary": "At least one predeclared held-out learning metric improved and false-real-memory count remained zero. General replay superiority is not claimed."
+  }
+}
