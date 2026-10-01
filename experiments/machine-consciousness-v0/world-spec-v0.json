@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "0.1.0",
+  "worldId": "two-state-pomdp-v0",
+  "status": "EXPERIMENTAL_HAND_CHECKABLE",
+  "hiddenStates": [
+    "stable",
+    "unstable"
+  ],
+  "observations": [
+    "green",
+    "red"
+  ],
+  "actions": [
+    "inspect",
+    "commit"
+  ],
+  "seedLaw": "xorshift32; same seed + world index + policy yields identical trace",
+  "agentModel": {
+    "transition": {
+      "inspect": [
+        [
+          0.94,
+          0.06
+        ],
+        [
+          0.28,
+          0.72
+        ]
+      ],
+      "commit": [
+        [
+          0.74,
+          0.26
+        ],
+        [
+          0.12,
+          0.88
+        ]
+      ]
+    },
+    "sensorReliability": 0.82
+  },
+  "scenarioOverrides": {
+    "stationary": "agent model matches world",
+    "changing": "transition matrix changes after cycle 16 while agent model stays fixed",
+    "noisy": "actual sensor reliability becomes 0.60",
+    "misleading": "actual sensor reliability becomes 0.18 during cycles 10-15",
+    "module-dropout": "global access acknowledgements drop to 6/8 or 7/8 on deterministic cycles"
+  },
+  "policy": {
+    "preference": [
+      0.88,
+      0.12
+    ],
+    "gamma": 3,
+    "expectedFreeEnergyCandidate": "risk + ambiguity - 0.7 * expectedInformationGain"
+  },
+  "claimBoundary": "This is a deterministic seeded simulator, not a claim that these parameters model human consciousness."
+}

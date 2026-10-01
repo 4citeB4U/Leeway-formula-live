@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptType": "MACHINE_CONSCIOUSNESS_MC_G1_DETERMINISTIC_SIMULATOR",
+  "observedAt": "2026-10-01",
+  "status": "PASS",
+  "scope": "experiments/machine-consciousness-v0",
+  "formula": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "canonicalMutation": false,
+    "executionState": "NOT_EXECUTED",
+    "reason": "Simulator and calibration candidate remain pre-Formula evidence.",
+    "healthObserved": {
+      "status": "LEEWAY_FORMULA_V1_PASS",
+      "goldenVectorPass": true,
+      "specValid": true,
+      "kernelIntegrity": "VERIFIED_AT_STARTUP",
+      "specHash": "2f4604f143e2f7c3bc2fe315f2faa2c7d9b8b188151a0fab9f6cebea3e155f9b",
+      "specMdHash": "dd9f2f7d23dcc8076d7d3c9e1f194b596bff041e8b25dc003348c8554db7b16d"
+    }
+  },
+  "acceptance": {
+    "deterministicReplay": "PASS",
+    "probabilitiesNormalize": "PASS",
+    "predictionObservationSeparated": "PASS",
+    "actionResultSeparated": "PASS",
+    "sixMetricsFinite": "PASS",
+    "simulatedProvenancePreserved": "PASS",
+    "immutableCycleHash": "PASS",
+    "tests": "7/7"
+  },
+  "computeFunnel": {
+    "availableParallelism": 4,
+    "benchmarkCycles": 10240,
+    "workers": [
+      {
+        "workers": 1,
+        "elapsedMs": 463.816
+      },
+      {
+        "workers": 2,
+        "elapsedMs": 523.453
+      },
+      {
+        "workers": 4,
+        "elapsedMs": 616.106
+      }
+    ],
+    "selectedWorkers": 1,
+    "finding": "Parallel worker overhead exceeded benefit for this small cognition kernel on the Fold; serial execution was fastest.",
+    "earlyStop": {
+      "maxCycles": 131072,
+      "executedCycles": 24576,
+      "avoidedCycles": 106496,
+      "avoidedPct": 81.25,
+      "convergenceTolerance": 0.02,
+      "stableConsecutiveBatches": 3,
+      "batchesExecuted": 6
+    }
+  },
+  "campaign": {
+    "worlds": 768,
+    "cycles": 24576,
+    "scenarioFamilies": [
+      "stationary",
+      "changing",
+      "noisy",
+      "misleading",
+      "module-dropout"
+    ],
+    "candidateRanges": {
+      "belief_entropy_nats": [
+        0.08395538298515615,
+        0.693138875100141
+      ],
+      "precision_weighted_prediction_error": [
+        0.2909187794253438,
+        3.4368373018627056
+      ],
+      "valence_free_energy_rate": [
+        -1.2343520346419796,
+        1.0899044784793301
+      ],
+      "belief_information_gain_nats": [
+        0.03193183018717445,
+        0.2786373517579769
+      ],
+      "selected_policy_expected_free_energy": [
+        0.696881358954609,
+        2.2038682700088406
+      ],
+      "global_access_ratio": [
+        0.75,
+        1
+      ]
+    },
+    "calibrationStatus": "CANDIDATE_ONLY",
+    "nextGate": "Ablation, negative/malformed input, scenario coverage, then explicit calibration acceptance."
+  },
+  "hashes": {
+    "simulator": "456901c152088a29274ed3fc44677228169685c951f91f8d9e5b733c2c341429",
+    "campaign": "fe83eea80ef12eb461c366644dd119988b2a5b91bb9878faa51fbb468696fcfd",
+    "tests": "f2a55e03973e4e1528ccd2af63e5bd96a06bee4d6b24f12434d6b1a269580576",
+    "readme": "933555e12a0446f9c3e7ff6e33cbc0e3fab39198656ded98bddc3b8cb00529f1",
+    "computeBenchmark": "9e39d6daa11ba5e43a2e4b902c5b8634ac956e966f64c338f1a30d4b1cbfb45a",
+    "campaignSummary": "433e0db8415eeb5fe65f20e3db32b0480c2a2d6cc2da03b7fd47bdbef0662202",
+    "calibrationCandidate": "ab9a1ae777e6497e41bee9cbb815ca6510806daafd8a0922a76b0ed4bab70280",
+    "cycleSchema": "b5b549aa1f57202a2ff98456954c53037e46bbe59feb681ff9e289a90abffb56",
+    "worldSpec": "f6bd2bbba51f12b2f506de7f90cc81898c9e5f86fff9f0cf1f8bfde3ee788ae8"
+  },
+  "learningLedger": "NOT_UPDATED_SIMULATOR_GATE_ONLY"
+}

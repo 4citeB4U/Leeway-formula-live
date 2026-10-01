@@ -3,9 +3,9 @@
   "projectId": "leeway-machine-consciousness-v0",
   "authority": "Creator/Human Authority > LeeWay Standards",
   "canonicalRepository": "4citeB4U/Leeway-formula-live",
-  "phase": "MC-1",
-  "masterCheckpoint": "MC-G0_PASS_READY_FOR_MC-1A",
-  "gate": "MC-G0_PASS",
+  "phase": "MC-2",
+  "masterCheckpoint": "MC-G1_PASS_READY_FOR_MC-2",
+  "gate": "MC-G1_PASS",
   "identity": "Agent Lee non-LLM machine cognition research runtime",
   "approved": [
     "non-LLM cognition kernel",
@@ -34,11 +34,11 @@
     "claiming sentience from Formula output"
   ],
   "blockers": [
-    "six cognition dimensions are not calibrated",
-    "deterministic cognition runtime not yet implemented",
-    "Formula task execution host must be reverified before first numeric cognition evaluation"
+    "six cognition dimensions have only candidate simulator ranges; calibration is not yet accepted",
+    "learning engine has not yet been implemented or shown to improve a predeclared metric",
+    "first numeric cognition Formula evaluation remains NOT_EXECUTED pending calibration acceptance"
   ],
-  "nextAction": "MC-1A: write cycle schema and deterministic two-state partially observable world specification before runtime code.",
+  "nextAction": "MC-2: implement memory + learning baseline and compare learning vs no-learning across stationary/changing/noisy/misleading worlds.",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
@@ -46,7 +46,7 @@
     "executionState": "NOT_EXECUTED",
     "mapping": "machine-consciousness-awareness-v0"
   },
-  "evidenceState": "DOCUMENTATION_FOUNDATION_VERIFIED",
-  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-DOCUMENTATION-FOUNDATION-v0-20261001.json",
-  "learningLedger": "NOT_UPDATED; documentation qualification does not yet constitute cognition-runtime learning."
+  "evidenceState": "MC_G1_DETERMINISTIC_SIMULATOR_VERIFIED",
+  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G1-SIMULATOR-20261001.json",
+  "learningLedger": "NOT_UPDATED; simulator qualification is infrastructure evidence, not admitted learned knowledge."
 }

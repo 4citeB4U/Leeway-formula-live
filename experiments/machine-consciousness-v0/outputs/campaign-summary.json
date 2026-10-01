@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "CALIBRATION_CANDIDATE_MEASURED_NOT_FORMULA_EXECUTED",
+  "seed": 20261001,
+  "cyclesPerWorld": 32,
+  "scenarioFamilies": [
+    "stationary",
+    "changing",
+    "noisy",
+    "misleading",
+    "module-dropout"
+  ],
+  "workerBenchmark": [
+    {
+      "workers": 1,
+      "elapsedMs": 463.816,
+      "cycles": 10240,
+      "checksum": "3916.283491720|10822.882866944|18.069564397|1678.521503203|11993.332594940|10128.000000000"
+    },
+    {
+      "workers": 2,
+      "elapsedMs": 523.453,
+      "cycles": 10240,
+      "checksum": "3916.283491720|10822.882866944|18.069564397|1678.521503203|11993.332594940|10128.000000000"
+    },
+    {
+      "workers": 4,
+      "elapsedMs": 616.106,
+      "cycles": 10240,
+      "checksum": "3916.283491720|10822.882866944|18.069564397|1678.521503203|11993.332594940|10128.000000000"
+    }
+  ],
+  "selectedWorkers": 1,
+  "batchWorlds": 128,
+  "batches": [
+    {
+      "batch": 1,
+      "worldsTotal": 128,
+      "cyclesTotal": 4096,
+      "elapsedMs": 197.891,
+      "rangeDelta": null,
+      "stableRuns": 0
+    },
+    {
+      "batch": 2,
+      "worldsTotal": 256,
+      "cyclesTotal": 8192,
+      "elapsedMs": 194.427,
+      "rangeDelta": 0.004525523717339069,
+      "stableRuns": 0
+    },
+    {
+      "batch": 3,
+      "worldsTotal": 384,
+      "cyclesTotal": 12288,
+      "elapsedMs": 266.75,
+      "rangeDelta": 0.002429031547208576,
+      "stableRuns": 0
+    },
+    {
+      "batch": 4,
+      "worldsTotal": 512,
+      "cyclesTotal": 16384,
+      "elapsedMs": 240.101,
+      "rangeDelta": 0.0017002812829299886,
+      "stableRuns": 1
+    },
+    {
+      "batch": 5,
+      "worldsTotal": 640,
+      "cyclesTotal": 20480,
+      "elapsedMs": 254.48,
+      "rangeDelta": 0.003971249311168788,
+      "stableRuns": 2
+    },
+    {
+      "batch": 6,
+      "worldsTotal": 768,
+      "cyclesTotal": 24576,
+      "elapsedMs": 283.222,
+      "rangeDelta": 0.00022822764503595153,
+      "stableRuns": 3
+    }
+  ],
+  "totalWorlds": 768,
+  "totalCycles": 24576,
+  "metricStats": {
+    "belief_entropy_nats": {
+      "n": 24576,
+      "min": 0.08395203788699872,
+      "max": 0.6931471609694398,
+      "mean": 0.38272372281349587,
+      "q005": 0.08395538298515615,
+      "q01": 0.08397271829982236,
+      "q50": 0.36733479019264637,
+      "q99": 0.6929496819404473,
+      "q995": 0.693138875100141
+    },
+    "precision_weighted_prediction_error": {
+      "n": 24576,
+      "min": 0.29091523287612575,
+      "max": 3.4374274144401595,
+      "mean": 1.0585451805669315,
+      "q005": 0.2909187794253438,
+      "q01": 0.29093715942210424,
+      "q50": 0.7407296631741243,
+      "q99": 3.432486704622063,
+      "q995": 3.4368373018627056
+    },
+    "valence_free_energy_rate": {
+      "n": 24576,
+      "min": -1.2347233432087965,
+      "max": 1.093583903396773,
+      "mean": 0.0013627231448645498,
+      "q005": -1.2343520346419796,
+      "q01": -1.2316138167545336,
+      "q50": 0.033925087254275565,
+      "q99": 1.0684776980477004,
+      "q995": 1.0899044784793301
+    },
+    "belief_information_gain_nats": {
+      "n": 24576,
+      "min": 0.03193032313251695,
+      "max": 0.2786795809558192,
+      "mean": 0.16399605201508263,
+      "q005": 0.03193183018717445,
+      "q01": 0.031939640379331655,
+      "q50": 0.16825447533663093,
+      "q99": 0.2786291113503251,
+      "q995": 0.2786373517579769
+    },
+    "selected_policy_expected_free_energy": {
+      "n": 24576,
+      "min": 0.6968802453059038,
+      "max": 2.2300224053024986,
+      "mean": 1.1781150545720855,
+      "q005": 0.696881358954609,
+      "q01": 0.6968881703939851,
+      "q50": 1.0442675073030911,
+      "q99": 2.1478135882887903,
+      "q995": 2.2038682700088406
+    },
+    "global_access_ratio": {
+      "n": 24576,
+      "min": 0.75,
+      "max": 1,
+      "mean": 0.989105224609375,
+      "q005": 0.75,
+      "q01": 0.75,
+      "q50": 1,
+      "q99": 1,
+      "q995": 1
+    }
+  },
+  "convergence": {
+    "tolerance": 0.02,
+    "stableNeeded": 3,
+    "achieved": true
+  },
+  "formulaExecution": "NOT_EXECUTED",
+  "claimBoundary": "Measured simulator distributions only. Ranges are candidate calibration evidence pending Veritas, ablation and domain-adapter promotion."
+}

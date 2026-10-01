@@ -1,0 +1,44 @@
+{
+  "mappingId": "machine-consciousness-awareness-v0",
+  "status": "CANDIDATE_RANGES_FROM_SIMULATOR",
+  "provenance": {
+    "seed": 20261001,
+    "totalWorlds": 768,
+    "totalCycles": 24576,
+    "scenarioFamilies": [
+      "stationary",
+      "changing",
+      "noisy",
+      "misleading",
+      "module-dropout"
+    ]
+  },
+  "ranges": {
+    "belief_entropy_nats": [
+      0.08395538298515615,
+      0.693138875100141
+    ],
+    "precision_weighted_prediction_error": [
+      0.2909187794253438,
+      3.4368373018627056
+    ],
+    "valence_free_energy_rate": [
+      -1.2343520346419796,
+      1.0899044784793301
+    ],
+    "belief_information_gain_nats": [
+      0.03193183018717445,
+      0.2786373517579769
+    ],
+    "selected_policy_expected_free_energy": [
+      0.696881358954609,
+      2.2038682700088406
+    ],
+    "global_access_ratio": [
+      0.75,
+      1
+    ]
+  },
+  "formulaExecutionState": "NOT_EXECUTED",
+  "nextGate": "Veritas tests, ablations, malformed-input tests, then explicit authorization before runtime-state-v1 Formula evaluation."
+}

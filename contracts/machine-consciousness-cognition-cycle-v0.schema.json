@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.local/contracts/machine-consciousness/cognition-cycle-v0.schema.json",
+  "title": "LeeWay Machine Cognition Cycle v0",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "provenance",
+    "scenario",
+    "worldIndex",
+    "cycle",
+    "cognitionView",
+    "execution",
+    "metrics",
+    "auditWorldState",
+    "stateHash"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "provenance": {
+      "const": "SIMULATED"
+    },
+    "scenario": {
+      "type": "string"
+    },
+    "worldIndex": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cycle": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cognitionView": {
+      "type": "object",
+      "required": [
+        "observation",
+        "prior",
+        "posterior",
+        "prediction",
+        "policies",
+        "selectedPolicy"
+      ]
+    },
+    "execution": {
+      "type": "object",
+      "required": [
+        "requestedAction",
+        "executor",
+        "result"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "belief_entropy_nats",
+        "precision_weighted_prediction_error",
+        "valence_free_energy_rate",
+        "belief_information_gain_nats",
+        "selected_policy_expected_free_energy",
+        "global_access_ratio"
+      ]
+    },
+    "auditWorldState": {
+      "type": "object",
+      "required": [
+        "before",
+        "after",
+        "actualSensorReliability"
+      ]
+    },
+    "stateHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

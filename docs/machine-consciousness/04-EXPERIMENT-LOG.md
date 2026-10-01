@@ -133,3 +133,56 @@ false-real-memory count must remain zero.
 Collect distributions for six Formula bridge dimensions across scenario families.
 
 No Formula task execution until calibration acceptance.
+
+## Executed E-010 — Two-state hand-checkable cognition world
+
+Status:
+PASS — MC-G1 deterministic simulator gate.
+
+Implementation:
+experiments/machine-consciousness-v0/
+
+Evidence:
+- fixed seed/config exact replay;
+- posterior probabilities finite, non-negative and normalized;
+- prediction stored separately from observation;
+- requested action stored separately from result;
+- six candidate metrics finite;
+- every cycle permanently marked SIMULATED;
+- every cycle carries a SHA-256 state hash.
+
+Verification:
+7/7 Node tests PASS on the qualified Android workstation.
+
+Compute funnel:
+Android exposed four schedulable CPUs to Termux, but empirical worker benchmarking showed this small kernel was fastest with one worker:
+- 1 worker: 463.816 ms / 10,240 cycles;
+- 2 workers: 523.453 ms;
+- 4 workers: 616.106 ms.
+Checksums matched across all worker counts.
+
+Interpretation:
+parallelism is available but worker overhead exceeds benefit for this workload. The compute controller therefore selects serial execution.
+
+Calibration campaign:
+- 5 scenario families;
+- 768 simulated worlds;
+- 24,576 cognition cycles;
+- robust candidate ranges converged after 6 batches;
+- maximum campaign ceiling was 131,072 cycles;
+- convergence stopping avoided 106,496 cycles (81.25%).
+
+Formula:
+NOT_EXECUTED. Candidate metric ranges are measured simulator evidence only and are not yet an authorized domain calibration.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G1-SIMULATOR-20261001.json
+
+## Preliminary E-050 — Calibration campaign
+
+Status:
+CANDIDATE RANGES MEASURED / NOT ACCEPTED.
+
+The six awareness dimensions now have measured simulator distributions across stationary, changing, noisy, misleading and module-dropout worlds. These ranges remain candidate evidence pending ablation, malformed-input/provenance-negative testing, broader scenario coverage and explicit Veritas calibration acceptance.
+
+No canonical Formula task result is claimed.
