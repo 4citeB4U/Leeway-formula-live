@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G6-CALIBRATION-20261001",
+  "status": "PASS",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "sourceBranchHead": "4050cf2ff537fe039d48512956ab97cea734e49e",
+  "mergedImplementationCommit": "182726f232252a795e4c362a4ab4a995272957df",
+  "validationHost": "qualified Android workstation",
+  "gate": "MC-G6",
+  "tests": {
+    "pass": 54,
+    "fail": 0,
+    "regressionIncluded": true
+  },
+  "artifacts": {
+    "calibrationSha256": "8d64bd45b975b793ddabaca4d0ae124ad14611b9d428fd4e6dcfacf0aba5ac93",
+    "calibrationCampaignSha256": "6d97c0e1ece82d565517f7b1c776af403c6d120673709f9fe3bce578facb2fbc",
+    "calibrationTestsSha256": "0a14d16232d57fc97b961eb132c1853d55ad3604d0b94913e1728d2c97a90329",
+    "calibrationSchemaSha256": "fa2e8f8de0a64bf0a451c9e20e2cf9240c504173507d248a4258642598834431",
+    "localSummarySha256": "f9da1050cae4f3ee1ad4c3c9dc2f32c2293a39cbdc751567ee6357598c666fc7",
+    "localCandidateProfileSha256": "48764603233020dd2c93582f829ffb1f95610f18a939d1bd05c60b5a274f5f8b"
+  },
+  "ranges": [
+    [
+      0,
+      0.6931471805599453
+    ],
+    [
+      0.13358962336732744,
+      3.594753034238593
+    ],
+    [
+      -1.3511387098817755,
+      1.209999215547055
+    ],
+    [
+      0.019592860275377304,
+      0.29101704384536403
+    ],
+    [
+      0.62021659898203,
+      2.3068168203712855
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "campaign": {
+    "scenarioFamilies": 5,
+    "trainingWorldsPerScenario": 160,
+    "holdoutWorldsPerScenario": 40,
+    "cyclesPerWorld": 64,
+    "trainingCyclesPerScenario": 10240,
+    "trainingRows": 51200,
+    "holdoutCyclesPerScenario": 2560,
+    "holdoutRows": 12800,
+    "holdoutOverallCoverage": 1,
+    "everyScenarioDimensionCoverage": 1,
+    "outsideRangeValues": 0,
+    "runtimeStateAdapterWindows": 800,
+    "runtimeStateAdapterFailures": 0,
+    "digest": "182eb3b38a2226bee7a5b92a25bbdb39864a0ed3a698c9564168e4c4a17433f6"
+  },
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeStateAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "executionState": "NOT_EXECUTED",
+    "mutation": false
+  },
+  "nextGate": "MC-G7 Formula authority reverification",
+  "claimBoundary": "The calibration authorizes finite runtime-state-v1 mapping ranges for the candidate cognition domain. It does not constitute Formula cognition execution, a consciousness score or a sentience claim."
+}
