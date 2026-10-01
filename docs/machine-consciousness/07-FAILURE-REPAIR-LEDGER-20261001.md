@@ -355,3 +355,15 @@ verification code must implement the declared acceptance contract exactly. A ver
 G-008 — Dream/replay provenance isolation held with false-real-memory count 0, replay-ledger failures 0 and source-receipt mutation failures 0 across the formal 512-world campaign.
 
 G-009 — The current EVB prioritizer earned only a bounded result: +0.6059004382% noisy-sensor NLL improvement. Combined NLL regressed in every tested scenario, so general replay superiority was not promoted.
+
+
+---
+
+# Additional gains retained after MC-G5
+
+G-010 — The six candidate awareness dimensions are independently reproducible from lower-level cognition/workspace evidence. Across 40,960 cycles, maximum absolute discrepancy versus existing diagnostics was 0 for every dimension.
+
+G-011 — Formula-bridge instrumentation now fails closed on REPLAY provenance, tampered receipt hashes, mismatched awareness-state hashes and nonconsecutive temporal inputs.
+
+Lesson:
+derived cognition metrics become stronger evidence when they can be recomputed from immutable lower-level state instead of trusted as prefilled claims.
