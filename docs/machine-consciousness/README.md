@@ -77,37 +77,38 @@ contracts/machine-consciousness-project-state-v0.json
 
 ## Current checkpoint
 
-MC-G0: PASS — documentation foundation.
-MC-G1: PASS — deterministic cognition simulator.
-MC-G2: PASS — supervised-test episodic memory + semantic learning.
-MC-G3: PASS — contract-aligned global workspace + factual self-model.
-MC-G4: PASS — bounded dream/replay gate.
-MC-G5: PASS — independent six-dimension instrumentation.
-MC-G6: PASS — evidence-derived calibration.
-MC-G7: PASS — live Formula authority reverification.
+MC-G0: PASS — documentation foundation.  
+MC-G1: PASS — deterministic cognition simulator.  
+MC-G2: PASS — supervised-test episodic memory + semantic learning.  
+MC-G3: PASS — contract-aligned workspace + factual self-model.  
+MC-G4: PASS WITH LIMITATION — replay mechanics qualified; general replay superiority not established.  
+MC-G5: PASS — six dimensions independently recomputable.  
+MC-G6: PASS — calibration profile accepted.  
+MC-G7: PASS — canonical Formula authority reverified.  
+MC-G8: PASS — first canonical cognition Formula execution.
 
-Phase: MC-8 — first cognition Formula execution.
+MC-G8 output state:
+- runtime execution: EXECUTED;
+- verification: UNVERIFIED;
+- semantic interpretation: NOT PROMOTED;
+- 16 cycles x 6 independently recomputed dimensions;
+- accepted MC-G6 calibration;
+- input/result hashes and Formula receipt preserved.
 
-MC-G7 evidence:
-- live endpoint: LEEWAY_FORMULA_V1_PASS;
-- formula identity: LEEWAY-FORMULA-v1.0;
-- endpoint loaded=true;
-- goldenVectorPass=true;
-- specValid=true;
-- adapterRegistryPass=true;
-- kernelIntegrity=VERIFIED_AT_STARTUP;
-- deployed Formula engine SHA-256 exactly matches canonical pin;
-- runtime-state-v1 SHA-256 exactly matches canonical pin;
-- canonical input/raw adapter/formula service/spec/spec-markdown hashes all match kernel-integrity pins;
-- direct source-level Golden self-test PASS;
-- computed Golden decimal [4,50,63,59,48,69];
-- computed Golden Base64 [E,y,/,7,w,BF];
-- deployed Git working tree clean and origin points to canonical repository.
+Current phase: MC-9 — ablation and comparative evaluation.
 
-Boundary:
-Formula authority is VERIFIED. Machine-consciousness Formula execution is still NOT_EXECUTED until MC-G8.
+MC-G9 tranche 1:
+- 40,960 cognition rows audited;
+- selected-policy expected free energy is causal in the current base policy;
+- replay is indirectly causal through learned parameters;
+- H, PE, V, realized IG, B and self-model are currently diagnostic/integrity signals rather than direct policy controllers;
+- gate remains ACTIVE, not closed.
 
-Next engineering gate: MC-G8 — first measured 16x6 cognition Formula evaluation using the MC-G6 calibration profile. The result must remain EXECUTED/UNVERIFIED until its domain interpretation passes Veritas.
+Live Agent Lee integration:
+PLANNED SHADOW MODE ONLY — NOT ENABLED.
+
+Plan:
+docs/machine-consciousness/10-AGENT-LEE-LIVE-INTEGRATION-PLAN-v0.md
 
 ## Active parallel research tracks
 
