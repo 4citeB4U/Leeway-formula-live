@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.invalid/contracts/machine-consciousness/workspace-state-v0.schema.json",
+  "title": "LeeWay Machine Consciousness Workspace State v0",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "provenance",
+    "scenario",
+    "worldIndex",
+    "cycle",
+    "cognitionReceiptHash",
+    "workspaceStateHash",
+    "formulaExecutionState"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "provenance": {
+      "enum": [
+        "REAL",
+        "SIMULATED",
+        "REPLAY",
+        "TEST_FIXTURE"
+      ]
+    },
+    "scenario": {
+      "type": "string"
+    },
+    "worldIndex": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cycle": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cognitionReceiptHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "workspaceStateHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "formulaExecutionState": {
+      "const": "NOT_EXECUTED"
+    }
+  },
+  "additionalProperties": true
+}

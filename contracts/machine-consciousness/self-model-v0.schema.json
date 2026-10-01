@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.invalid/contracts/machine-consciousness/self-model-v0.schema.json",
+  "title": "LeeWay Machine Consciousness Factual Self Model v0",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "identity",
+    "runtimeClass",
+    "authority",
+    "sourceProvenance",
+    "currentWorkspaceStateHash",
+    "globalAccessRatio",
+    "formula",
+    "selfModelHash"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "identity": {
+      "const": "Agent Lee non-LLM machine cognition research runtime"
+    },
+    "runtimeClass": {
+      "const": "DETERMINISTIC_RESEARCH_SIMULATOR"
+    },
+    "authority": {
+      "type": "string"
+    },
+    "sourceProvenance": {
+      "enum": [
+        "REAL",
+        "SIMULATED",
+        "REPLAY",
+        "TEST_FIXTURE"
+      ]
+    },
+    "currentWorkspaceStateHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "globalAccessRatio": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "formula": {
+      "type": "object",
+      "required": [
+        "id",
+        "executionState"
+      ],
+      "properties": {
+        "id": {
+          "const": "LEEWAY-FORMULA-v1.0"
+        },
+        "executionState": {
+          "const": "NOT_EXECUTED"
+        }
+      },
+      "additionalProperties": false
+    },
+    "selfModelHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": true
+}
