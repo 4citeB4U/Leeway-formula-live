@@ -3,9 +3,9 @@
   "projectId": "leeway-machine-consciousness-v0",
   "authority": "Creator/Human Authority > LeeWay Standards",
   "canonicalRepository": "4citeB4U/Leeway-formula-live",
-  "phase": "MC-0",
-  "masterCheckpoint": "DOCUMENTATION_AND_ARCHITECTURE_FOUNDATION",
-  "gate": "MC-G0",
+  "phase": "MC-1",
+  "masterCheckpoint": "MC-G0_PASS_READY_FOR_MC-1A",
+  "gate": "MC-G0_PASS",
   "identity": "Agent Lee non-LLM machine cognition research runtime",
   "approved": [
     "non-LLM cognition kernel",
@@ -46,7 +46,7 @@
     "executionState": "NOT_EXECUTED",
     "mapping": "machine-consciousness-awareness-v0"
   },
-  "evidenceState": "CANDIDATE_ARCHITECTURE_DOCUMENTED",
-  "receiptState": "candidate receipt exists; documentation receipt pending post-commit validation",
-  "learningLedger": "NOT_UPDATED; no Veritas-qualified cognition runtime learning yet"
+  "evidenceState": "DOCUMENTATION_FOUNDATION_VERIFIED",
+  "receiptState": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-DOCUMENTATION-FOUNDATION-v0-20261001.json",
+  "learningLedger": "NOT_UPDATED; documentation qualification does not yet constitute cognition-runtime learning."
 }

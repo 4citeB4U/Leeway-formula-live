@@ -50,6 +50,12 @@ published scientific families exist for Bayesian uncertainty, predictive coding,
 Evidence:
 research references in mathematical architecture and candidate contract.
 
+C-005
+Claim:
+the machine-consciousness documentation foundation is complete enough to begin MC-1A.
+Evidence:
+exact committed documentation corpus re-fetched and validated on the qualified Android workstation; MC-G0 PASS; canonical Formula engine hash unchanged.
+
 ## OBSERVED
 
 C-010

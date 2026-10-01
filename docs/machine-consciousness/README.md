@@ -71,10 +71,12 @@ contracts/machine-consciousness-project-state-v0.json
 
 ## Current checkpoint
 
-Phase: MC-0 — Documentation and architecture foundation.
+MC-G0: PASS — documentation foundation verified on the qualified Android workstation.
 
-Gate: MC-G0 — Documentation corpus exists, is internally consistent, and preserves Formula authority boundaries.
+Phase: MC-1 — deterministic cognition kernel preparation.
 
-Current blocker for numeric Formula execution: six cognition dimensions are not calibrated and the live Formula host identity still requires runtime reverification before task execution is claimed.
+Next action: MC-1A — write the cycle schema and deterministic two-state partially observable world specification before runtime code.
+
+Current blocker for numeric Formula execution remains unchanged: six cognition dimensions are not calibrated and the live Formula host identity still requires runtime reverification before task execution is claimed.
 
 Next engineering gate: MC-G1 — deterministic non-LLM cognition-cycle runtime skeleton with immutable cycle receipts.

@@ -44,7 +44,7 @@ receipts/MACHINE-CONSCIOUSNESS-AWARENESS-CANDIDATE-v0-20261001.json
 
 ## E-001 — Documentation integrity repair
 Date: 2026-10-01
-State: FAIL_THEN_REPAIR_IN_PROGRESS
+State: PASS_AFTER_REPAIR
 
 Observation:
 the first human-readable math Markdown used backslash sequences that were interpreted as control characters by the generation path.
@@ -66,6 +66,20 @@ add explicit Acceptance MC-G10 criteria and rerun the entire documentation valid
 
 Acceptance:
 no unexpected C0 control characters; core equation tokens readable; all planned gate identifiers MC-G0 through MC-G10 represented where applicable.
+
+Final validation:
+PASS on exact commit fd73ebca95e45291bf4a382d54cfc5d9ec3fb333.
+
+Verified on qualified Android workstation:
+- project-state JSON parsed;
+- Formula execution remained NOT_EXECUTED;
+- origin transcript required anchors present;
+- master plan contains MC-G0 through MC-G10;
+- repaired math document contains required equation anchors and no unexpected control characters;
+- canonical Formula engine SHA-256 matched 6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e.
+
+Result:
+MC-G0 PASS.
 
 ## Planned E-010 — Two-state hand-checkable cognition world
 

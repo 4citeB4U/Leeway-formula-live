@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-DOCUMENTATION-FOUNDATION-v0-20261001",
+  "status": "PASS",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "validatedCommit": "fd73ebca95e45291bf4a382d54cfc5d9ec3fb333",
+  "validationExecutor": "qualified Android workstation",
+  "gate": "MC-G0",
+  "results": {
+    "corpusValidation": "PASS",
+    "projectStateParse": "PASS",
+    "formulaExecutionState": "NOT_EXECUTED",
+    "requiredGateMarkers": "MC-G0 through MC-G10 present",
+    "originConversationAnchors": "PASS",
+    "mathDocumentControlCharacters": "PASS",
+    "formulaKernelUnchanged": "PASS"
+  },
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "mutation": false,
+    "numericCognitionExecution": "NOT_EXECUTED"
+  },
+  "documentSha256": {
+    "docs/machine-consciousness/README.md": "989e8df34e0a1f159866b35459b7b3990f83f88b9f69701191fbd68c733a26c6",
+    "docs/machine-consciousness/00-ORIGIN-CONVERSATION-20261001.md": "e7bfdb29ce44921ee134ddca367e2ee213dd9e8aa8a40fdc1d09bd6c27efacf6",
+    "docs/machine-consciousness/01-MASTER-PLAN-v0.md": "1270918e210df5b90c98051526fc6f10e8d3bed742ed7f1d1c8f98fff81bc2e5",
+    "docs/machine-consciousness/02-RESEARCH-NOTEBOOK-v0.md": "ba6d42eb412417752483ff68a60f8647d54672e43b5ba138472db3016c525884",
+    "docs/machine-consciousness/03-DECISION-LEDGER.md": "3e5177974f371ed4d01ac52fe521d62f84bfd28d3b066ced9f7e2f3d5bf61598",
+    "docs/machine-consciousness/04-EXPERIMENT-LOG.md": "385ec76905b3397ae3ec5c0aa83745fabdc4d7ec088ee1070626255179ce3f74",
+    "docs/machine-consciousness/05-CLAIM-REGISTER.md": "8ddbf079de1f9a88073ef59e5f6bdfe02974f46cb7f9f65dad8daeb6d21e4169",
+    "docs/MACHINE-CONSCIOUSNESS-AWARENESS-MATH-v0.md": "fe20d47e2f1a5d07b3ce62b506ab74b6000247142bc60eb65f60d37a68fc92ec",
+    "contracts/machine-consciousness-project-state-v0.json": "b3b9464a035543f4a68b9fce94fda51f75fa1f08f61180250aaa28856a933b8c"
+  },
+  "validationHistory": [
+    {
+      "state": "FAIL",
+      "boundary": "master plan named MC-10 but omitted explicit MC-G10 acceptance marker"
+    },
+    {
+      "state": "REPAIR",
+      "action": "added explicit Acceptance MC-G10 and recorded failure"
+    },
+    {
+      "state": "PASS",
+      "commit": "fd73ebca95e45291bf4a382d54cfc5d9ec3fb333"
+    }
+  ],
+  "nextGate": "MC-1A cycle schema + deterministic two-state world specification",
+  "claimBoundary": "Documentation and architecture foundation only. No cognition runtime, calibrated awareness score, Formula cognition execution, sentience or phenomenal-consciousness claim is established.",
+  "learningLedger": "NOT_UPDATED"
+}
