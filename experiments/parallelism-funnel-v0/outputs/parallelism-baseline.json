@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "PARALLELISM_BASELINE_MEASURED",
+  "cpuBound": {
+    "workload": "machine-consciousness stationary simulator",
+    "worlds": 200,
+    "cyclesPerWorld": 32,
+    "results": [
+      {
+        "workers": 1,
+        "elapsedMs": 213.000573,
+        "cycles": 6400,
+        "checksum": "1bd335782d16ad78b8a58486c94fef51accb6f3296a7682b8304b350179167b7",
+        "speedup": 1,
+        "efficiency": 1
+      },
+      {
+        "workers": 2,
+        "elapsedMs": 355.049896,
+        "cycles": 6400,
+        "checksum": "1bd335782d16ad78b8a58486c94fef51accb6f3296a7682b8304b350179167b7",
+        "speedup": 0.5999172944413425,
+        "efficiency": 0.2999586472206712
+      },
+      {
+        "workers": 4,
+        "elapsedMs": 501.131614,
+        "cycles": 6400,
+        "checksum": "1bd335782d16ad78b8a58486c94fef51accb6f3296a7682b8304b350179167b7",
+        "speedup": 0.4250391854144728,
+        "efficiency": 0.1062597963536182
+      },
+      {
+        "workers": 8,
+        "elapsedMs": 719.405989,
+        "cycles": 6400,
+        "checksum": "1bd335782d16ad78b8a58486c94fef51accb6f3296a7682b8304b350179167b7",
+        "speedup": 0.2960783983687409,
+        "efficiency": 0.03700979979609261
+      },
+      {
+        "workers": 12,
+        "elapsedMs": 1097.813385,
+        "cycles": 6400,
+        "checksum": "1bd335782d16ad78b8a58486c94fef51accb6f3296a7682b8304b350179167b7",
+        "speedup": 0.19402256878112306,
+        "efficiency": 0.016168547398426922
+      },
+      {
+        "workers": 16,
+        "elapsedMs": 1394.106145,
+        "cycles": 6400,
+        "checksum": "1bd335782d16ad78b8a58486c94fef51accb6f3296a7682b8304b350179167b7",
+        "speedup": 0.15278648169218134,
+        "efficiency": 0.009549155105761334
+      },
+      {
+        "workers": 20,
+        "elapsedMs": 1534.72927,
+        "cycles": 6400,
+        "checksum": "1bd335782d16ad78b8a58486c94fef51accb6f3296a7682b8304b350179167b7",
+        "speedup": 0.13878706633385574,
+        "efficiency": 0.006939353316692787
+      }
+    ]
+  },
+  "waitHeavy": {
+    "workload": "synthetic training-orchestration proxy: 20ms wait + deterministic hash work",
+    "tasks": 200,
+    "results": [
+      {
+        "logicalWorkers": 1,
+        "elapsedMs": 4404.380624,
+        "tasks": 200,
+        "throughput": 45.40933608466441,
+        "checksum": "f3a0de215201e98eb3a65a098b80cac0fae0e77fe50c01d7f051c416021ca0aa",
+        "speedup": 1,
+        "efficiency": 1
+      },
+      {
+        "logicalWorkers": 2,
+        "elapsedMs": 2172.887812,
+        "tasks": 200,
+        "throughput": 92.04340826778038,
+        "checksum": "f3a0de215201e98eb3a65a098b80cac0fae0e77fe50c01d7f051c416021ca0aa",
+        "speedup": 2.0269710197076667,
+        "efficiency": 1.0134855098538333
+      },
+      {
+        "logicalWorkers": 4,
+        "elapsedMs": 1071.215833,
+        "tasks": 200,
+        "throughput": 186.7037377891333,
+        "checksum": "f3a0de215201e98eb3a65a098b80cac0fae0e77fe50c01d7f051c416021ca0aa",
+        "speedup": 4.111571625734177,
+        "efficiency": 1.0278929064335443
+      },
+      {
+        "logicalWorkers": 8,
+        "elapsedMs": 547.308125,
+        "tasks": 200,
+        "throughput": 365.42486921786514,
+        "checksum": "f3a0de215201e98eb3a65a098b80cac0fae0e77fe50c01d7f051c416021ca0aa",
+        "speedup": 8.047351067554498,
+        "efficiency": 1.0059188834443122
+      },
+      {
+        "logicalWorkers": 12,
+        "elapsedMs": 365.041615,
+        "tasks": 200,
+        "throughput": 547.8827393419241,
+        "checksum": "f3a0de215201e98eb3a65a098b80cac0fae0e77fe50c01d7f051c416021ca0aa",
+        "speedup": 12.065420606908067,
+        "efficiency": 1.005451717242339
+      },
+      {
+        "logicalWorkers": 16,
+        "elapsedMs": 286.426927,
+        "tasks": 200,
+        "throughput": 698.2583728938306,
+        "checksum": "f3a0de215201e98eb3a65a098b80cac0fae0e77fe50c01d7f051c416021ca0aa",
+        "speedup": 15.376978240596774,
+        "efficiency": 0.9610611400372984
+      },
+      {
+        "logicalWorkers": 20,
+        "elapsedMs": 233.197083,
+        "tasks": 200,
+        "throughput": 857.6436610058283,
+        "checksum": "f3a0de215201e98eb3a65a098b80cac0fae0e77fe50c01d7f051c416021ca0aa",
+        "speedup": 18.886945614152474,
+        "efficiency": 0.9443472807076236
+      }
+    ]
+  },
+  "goal": "Find workload/scheduler conditions where 20 logical workers outperform one without sacrificing determinism or increasing total waste.",
+  "claimBoundary": "The wait-heavy workload is a synthetic orchestration proxy, not measured QLoRA/DPO training."
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptType": "AGENT_LEE_MEMORY_COMPACTION_V0",
+  "observedAt": "2026-10-01",
+  "status": "PASS_EXACT_PROTOTYPE",
+  "records": 1024,
+  "rawBytes": 1167081,
+  "exactPackedBytes": 372727,
+  "structuralReductionPct": 68.06,
+  "rawBrotliBytes": 143528,
+  "packedBrotliBytes": 133762,
+  "extraReductionVsRawBrotliPct": 6.8,
+  "exactReconstruction": true,
+  "sourceSha256": "5f509c26b2b14e241af9ee693fc8d0696699aed43271e7f832c6bac587af2839",
+  "reconstructedSha256": "5f509c26b2b14e241af9ee693fc8d0696699aed43271e7f832c6bac587af2839",
+  "hashes": {
+    "compiler": "2ca37a3cf94bc8275dfb9a93d7ee6f444c063df1738f46102d1f27ad1028621e",
+    "memoryPack": "fbe08f1d2735fcfc7e618abd94602851cb222c4b3adfb709f29f49d73ad03f00",
+    "report": "9af5f3c8ffe5b508ba3464ebcf24235347173259ca7d68fa3bd65d01fe41e374",
+    "adapter": "665b3b014ed84892652cd789aa2e5a9445f14625653cb07e2e00ac87000e14bd"
+  },
+  "claimBoundary": "Exact structural compaction is verified on simulator cognition records. Automatic integration into all live Agent Lee memory stores is not yet verified.",
+  "formulaExecution": "NOT_EXECUTED",
+  "learningLedger": "NOT_UPDATED"
+}

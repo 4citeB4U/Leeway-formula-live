@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptType": "AGENT_LEE_MATH_QUALIFICATION_V0",
+  "observedAt": "2026-10-01",
+  "status": "PASS_MATH_ONLY",
+  "tests": "17/17",
+  "verified": [
+    "entropy boundaries",
+    "Jensen-Shannon divergence symmetry/bounds",
+    "belief stability monotonic behavior",
+    "self-model consistency behavior",
+    "information gain nonnegativity",
+    "free-energy-rate valence sign",
+    "global-access acknowledgement ratio",
+    "EVB dream priority monotonicity",
+    "bounded deliberation budget",
+    "calibrated low-end FAST path",
+    "mechanical emotion as simultaneous mixture",
+    "dream provenance preserved as SIMULATED_DREAM",
+    "dream source hash preserved",
+    "self-consistency falls under divergence"
+  ],
+  "stressCampaign": {
+    "stationaryMeanCycles": 4.802734375,
+    "misleadingMeanCycles": 5.0654296875,
+    "changingMeanCycles": 5.17333984375,
+    "moduleDropoutMeanCycles": 5.19580078125,
+    "noisyMeanCycles": 5.645263671875
+  },
+  "hashes": {
+    "cognitiveMath": "f9692e94608a5419b7f223260d70627ee9c252c7df54005ff64795a2fe03dd14",
+    "dreamSelfMath": "d7bf57a0b3612dcfc82039160e356ab7902c29eeb40aaed1bc1e526b333cdd63",
+    "mathTests": "683192b003616606dbb5df5f8a5ffb1a3cd059867ede54ba68d199e634ab4f22",
+    "dreamSelfTests": "40a2cd1beb1131ffa35c211fe22485b23a0fd1faad5187be7e9bb07ecdec530d",
+    "stressCampaign": "70f4853bd8a2a7988e0549a8f5966c0963693f5c5819d5753b3e23ac0470659a"
+  },
+  "formulaExecution": "NOT_EXECUTED",
+  "claimBoundary": "Mathematical candidate qualification on simulated states only; not yet wired into live Agent Lee response generation, skills or actions.",
+  "learningLedger": "NOT_UPDATED"
+}

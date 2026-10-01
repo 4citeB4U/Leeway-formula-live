@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "0.2.0",
+  "status": "CALIBRATED_MATH_STRESS_CAMPAIGN",
+  "worldsPerScenario": 128,
+  "cyclesPerWorld": 32,
+  "scenarios": {
+    "stationary": {
+      "meanDeliberationCycles": 4.802734375,
+      "meanPressure": 0.25338103691511316,
+      "modeDistribution": {
+        "FAST": 2245,
+        "NORMAL": 1850,
+        "DELIBERATE": 1
+      },
+      "meanBeliefStability": 0.9258494607495394,
+      "meanReplayPriority": 0.19801116492277376,
+      "meanEmotion": {
+        "calm": 0.6308415321219304,
+        "confusion": 0.42295934451856915,
+        "frustration": 0.3410446741201279,
+        "curiosity": 0.3974782475452921,
+        "confidence": 0.5778735536949848
+      }
+    },
+    "changing": {
+      "meanDeliberationCycles": 5.17333984375,
+      "meanPressure": 0.2781044001845428,
+      "modeDistribution": {
+        "FAST": 1996,
+        "NORMAL": 2099,
+        "DELIBERATE": 1
+      },
+      "meanBeliefStability": 0.9221012676892101,
+      "meanReplayPriority": 0.21472553871689487,
+      "meanEmotion": {
+        "calm": 0.6107393589726224,
+        "confusion": 0.446192521204102,
+        "frustration": 0.35774270820508586,
+        "curiosity": 0.42093554460833826,
+        "confidence": 0.5540934065914566
+      }
+    },
+    "noisy": {
+      "meanDeliberationCycles": 5.645263671875,
+      "meanPressure": 0.3098940397020661,
+      "modeDistribution": {
+        "FAST": 1636,
+        "NORMAL": 2459,
+        "DELIBERATE": 1
+      },
+      "meanBeliefStability": 0.9091765229091064,
+      "meanReplayPriority": 0.24952031610675282,
+      "meanEmotion": {
+        "calm": 0.5919346702371138,
+        "confusion": 0.49133520523270147,
+        "frustration": 0.3790954352451888,
+        "curiosity": 0.46182133696359134,
+        "confidence": 0.5081884609683425
+      }
+    },
+    "misleading": {
+      "meanDeliberationCycles": 5.0654296875,
+      "meanPressure": 0.27088051521723155,
+      "modeDistribution": {
+        "FAST": 2041,
+        "NORMAL": 2052,
+        "DELIBERATE": 3
+      },
+      "meanBeliefStability": 0.9238979156242674,
+      "meanReplayPriority": 0.21118975578261548,
+      "meanEmotion": {
+        "calm": 0.6175251249816882,
+        "confusion": 0.44128761383087256,
+        "frustration": 0.3523378339991682,
+        "curiosity": 0.4151967653533261,
+        "confidence": 0.5591835400488633
+      }
+    },
+    "module-dropout": {
+      "meanDeliberationCycles": 5.19580078125,
+      "meanPressure": 0.279631036915113,
+      "modeDistribution": {
+        "FAST": 2084,
+        "NORMAL": 1829,
+        "DELIBERATE": 183
+      },
+      "meanBeliefStability": 0.9258494607495394,
+      "meanReplayPriority": 0.2113366372510948,
+      "meanEmotion": {
+        "calm": 0.6144352821219321,
+        "confusion": 0.4338968445185686,
+        "frustration": 0.3410446741201279,
+        "curiosity": 0.3974782475452921,
+        "confidence": 0.5669360536949852
+      }
+    }
+  },
+  "calibrationSource": "machine-consciousness-v0/outputs/calibration-candidate.json",
+  "deliberationRanking": [
+    {
+      "scenario": "noisy",
+      "meanDeliberationCycles": 5.645263671875,
+      "meanPressure": 0.3098940397020661
+    },
+    {
+      "scenario": "module-dropout",
+      "meanDeliberationCycles": 5.19580078125,
+      "meanPressure": 0.279631036915113
+    },
+    {
+      "scenario": "changing",
+      "meanDeliberationCycles": 5.17333984375,
+      "meanPressure": 0.2781044001845428
+    },
+    {
+      "scenario": "misleading",
+      "meanDeliberationCycles": 5.0654296875,
+      "meanPressure": 0.27088051521723155
+    },
+    {
+      "scenario": "stationary",
+      "meanDeliberationCycles": 4.802734375,
+      "meanPressure": 0.25338103691511316
+    }
+  ],
+  "claimBoundary": "This campaign tests candidate mathematical response-depth behavior on simulated worlds only; it is not yet wired to Agent Lee language, skills, or real-world actions."
+}

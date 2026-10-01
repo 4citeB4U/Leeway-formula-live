@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "agent-lee-memory-compaction-v0",
+  "status": "CANDIDATE_CALIBRATION_REQUIRED",
+  "domain": "agent-memory-cognition",
+  "purpose": "Govern automatic exact compaction, semantic consolidation, relevance retrieval and memory tiering without allowing lossy summaries to erase source truth.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "runtimeAdapterId": "runtime-state-v1",
+    "formulaMutation": false
+  },
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "goal_relevance",
+      "unit": "ratio_0_1",
+      "direction": "higher_means_more_relevant_to_current_goal"
+    },
+    {
+      "index": 1,
+      "id": "information_gain",
+      "unit": "normalized_or_nats",
+      "direction": "higher_means_memory_changed_understanding_more"
+    },
+    {
+      "index": 2,
+      "id": "recurrence",
+      "unit": "normalized_frequency",
+      "direction": "higher_means_pattern_recurs_more"
+    },
+    {
+      "index": 3,
+      "id": "provenance_confidence",
+      "unit": "ratio_0_1",
+      "direction": "higher_means_source_and_verification_are_stronger"
+    },
+    {
+      "index": 4,
+      "id": "future_need",
+      "unit": "ratio_0_1",
+      "direction": "higher_means_memory_is_more_likely_to_matter_again"
+    },
+    {
+      "index": 5,
+      "id": "reconstruction_cost",
+      "unit": "normalized_cost",
+      "direction": "lower_means_cheaper_exact_recovery"
+    }
+  ],
+  "writePath": [
+    "hash exact event immediately",
+    "append event to immutable/raw provenance vault",
+    "assign event to 16-record compaction segment",
+    "store repeated schema/vocabulary once per segment",
+    "verify exact reconstruction SHA-256 before promoting compact representation",
+    "derive semantic capsule separately with source event hashes",
+    "use relevance/need policy to place hot, warm or cold memory",
+    "retrieve only memory that can materially alter Goal/State/Observation"
+  ],
+  "tiers": {
+    "T0": "Exact raw/provenance vault — truth source.",
+    "T1": "Exact structural Formula Memory Pack — lossless reconstructable representation.",
+    "T2": "Semantic capsule — lossy working abstraction with immutable source hashes.",
+    "T3": "Active working set — only currently relevant memory."
+  },
+  "observationWindow": {
+    "rows": 16,
+    "width": 6,
+    "rule": "16 compatible memory events or memory-management decisions under one policy/profile."
+  },
+  "measuredPrototype": {
+    "records": 1024,
+    "rawBytes": 1167081,
+    "exactPackedBytes": 372727,
+    "structuralReductionPct": 68.06,
+    "rawBrotliBytes": 143528,
+    "packedBrotliBytes": 133762,
+    "packedVsRawBrotliReductionPct": 6.8,
+    "exactByteReconstruction": true,
+    "sourceSha256": "5f509c26b2b14e241af9ee693fc8d0696699aed43271e7f832c6bac587af2839",
+    "reconstructedSha256": "5f509c26b2b14e241af9ee693fc8d0696699aed43271e7f832c6bac587af2839"
+  },
+  "automaticLaw": "Every memory write is immediately hashed/classified; exact structural compaction occurs automatically at segment closure; semantic consolidation never replaces unreconstructable truth.",
+  "calibration": {
+    "ranges": null,
+    "state": "NOT_CALIBRATED"
+  },
+  "formulaExecutionState": "NOT_EXECUTED",
+  "claimBoundary": "This prototype proves exact structural compaction on simulator cognition records. It is not yet integrated into all live Pocket/Agent Lee memory stores."
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "0.1.0",
+  "status": "EXACT_MEMORY_COMPACTION_PASS",
+  "records": 1024,
+  "rawBytes": 1167081,
+  "compactRepresentationBytes": 372727,
+  "structuralReductionPct": 68.06,
+  "rawBrotliBytes": 143528,
+  "compactBrotliBytes": 133762,
+  "physicalReductionVsRawPct": 88.54,
+  "compactVsRawBrotliPct": 6.8,
+  "sourceSha256": "5f509c26b2b14e241af9ee693fc8d0696699aed43271e7f832c6bac587af2839",
+  "reconstructedSha256": "5f509c26b2b14e241af9ee693fc8d0696699aed43271e7f832c6bac587af2839",
+  "exactByteEquality": true,
+  "laws": [
+    "Raw event truth remains reconstructable exactly.",
+    "Structural constants are stored once instead of repeated per memory event.",
+    "State/action/scenario vocabularies are dictionary encoded.",
+    "Semantic working-memory summaries are a separate lossy tier and must retain source hashes."
+  ],
+  "formulaBoundary": "This is Formula-guided representation using canonical memory/storage principles; no numeric LEEWAY-FORMULA-v1.0 evaluation is claimed."
+}

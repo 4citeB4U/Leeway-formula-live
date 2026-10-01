@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "agent-lee-parallelism-v0",
+  "status": "CANDIDATE_CALIBRATION_REQUIRED",
+  "domain": "agent-training-and-runtime-parallelism",
+  "purpose": "Separate logical worker count from physical executor count and let measured workload physics govern concurrency.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "runtimeAdapterId": "runtime-state-v1",
+    "formulaMutation": false
+  },
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "useful_throughput",
+      "unit": "tasks_per_second",
+      "direction": "higher_is_better"
+    },
+    {
+      "index": 1,
+      "id": "speedup_vs_single",
+      "unit": "ratio",
+      "direction": "higher_is_better"
+    },
+    {
+      "index": 2,
+      "id": "parallel_efficiency",
+      "unit": "speedup_per_logical_worker",
+      "direction": "higher_is_better"
+    },
+    {
+      "index": 3,
+      "id": "queue_wait_fraction",
+      "unit": "ratio_0_1",
+      "direction": "lower_is_better"
+    },
+    {
+      "index": 4,
+      "id": "scheduling_overhead_fraction",
+      "unit": "ratio_0_1",
+      "direction": "lower_is_better"
+    },
+    {
+      "index": 5,
+      "id": "memory_pressure_ratio",
+      "unit": "ratio_0_1",
+      "direction": "lower_is_better"
+    }
+  ],
+  "workerModel": {
+    "logicalWorkers": "Agent-level task lanes; may exceed physical CPU/GPU executors.",
+    "physicalExecutors": "Actual threads/processes/devices running compute.",
+    "law": "Never equate 20 logical workers with 20 OS threads."
+  },
+  "observationWindow": {
+    "rows": 16,
+    "width": 6,
+    "rule": "16 comparable workload windows under one scheduler, workload class and executor topology."
+  },
+  "measuredBaseline": {
+    "cpuBound": {
+      "workload": "machine-consciousness stationary simulator; 6,400 cycles",
+      "oneWorkerMs": 213.000573,
+      "twentyThreadsMs": 1534.72927,
+      "twentyThreadSpeedupVsOne": 0.13878706633385574,
+      "finding": "20 OS threads are substantially worse than one for this small CPU-bound kernel."
+    },
+    "waitHeavy": {
+      "workload": "synthetic training-orchestration proxy; 200 tasks; 20ms wait plus deterministic hash work",
+      "oneLogicalWorkerMs": 4404.380624,
+      "twentyLogicalWorkersMs": 233.197083,
+      "speedupVsOne": 18.886945614152474,
+      "parallelEfficiency": 0.9443472807076236,
+      "finding": "20 logical async workers substantially outperform one when latency can be overlapped."
+    }
+  },
+  "target": "Make 20 logical Agent Lee workers outperform one on real training orchestration while allowing Formula to choose the smaller physical executor pool.",
+  "calibration": {
+    "ranges": null,
+    "state": "NOT_CALIBRATED"
+  },
+  "formulaExecutionState": "NOT_EXECUTED",
+  "claimBoundary": "The 20-worker win is proven only on the synthetic wait-heavy orchestration proxy; QLoRA/DPO training has not yet been benchmarked."
+}

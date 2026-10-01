@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptType": "AGENT_LEE_PARALLELISM_BASELINE_V0",
+  "observedAt": "2026-10-01",
+  "status": "PASS_BASELINE",
+  "cpuBound": {
+    "cycles": 6400,
+    "oneWorkerMs": 213.000573,
+    "twentyThreadsMs": 1534.72927,
+    "twentyThreadSpeedup": 0.13878706633385574,
+    "checksum": "1bd335782d16ad78b8a58486c94fef51accb6f3296a7682b8304b350179167b7"
+  },
+  "waitHeavy": {
+    "tasks": 200,
+    "oneWorkerMs": 4404.380624,
+    "twentyLogicalWorkersMs": 233.197083,
+    "speedup": 18.886945614152474,
+    "parallelEfficiency": 0.9443472807076236,
+    "checksum": "f3a0de215201e98eb3a65a098b80cac0fae0e77fe50c01d7f051c416021ca0aa"
+  },
+  "law": "20 logical workers are not equivalent to 20 physical OS threads.",
+  "hashes": {
+    "benchmark": "84f7f96c2937dad668edf5bee8c7545d08bd10d08ce1a29ef49c8d55180330b6",
+    "baseline": "f0a2545f75c99fbd7985631d0f5b935c4807c2fa8c3f6f4c90d821d7ba6e4391",
+    "adapter": "f2ccd9832d1b2f682459970faea624cf5f6e4216de7f3a10e5320f888df0cd4d"
+  },
+  "claimBoundary": "20-worker gain is proven only for the synthetic wait-heavy orchestration proxy; no QLoRA/DPO gradient-training speedup is claimed.",
+  "formulaExecution": "NOT_EXECUTED",
+  "learningLedger": "NOT_UPDATED"
+}
