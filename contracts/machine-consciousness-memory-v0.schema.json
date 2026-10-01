@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.local/contracts/machine-consciousness-memory-v0.schema.json",
+  "title": "LeeWay Machine Consciousness Episodic Memory Entry v0",
+  "type": "object",
+  "required": [
+    "sequence",
+    "cycleStateHash",
+    "provenance",
+    "scenario",
+    "worldIndex",
+    "cycle",
+    "selectedPolicy",
+    "requestedAction",
+    "learningMode",
+    "feedbackClass",
+    "modelBeforeHash",
+    "modelAfterHash",
+    "previousHash",
+    "entryHash"
+  ],
+  "properties": {
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cycleStateHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "provenance": {
+      "enum": [
+        "REAL",
+        "SIMULATED",
+        "REPLAY",
+        "TEST_FIXTURE"
+      ]
+    },
+    "scenario": {
+      "type": "string"
+    },
+    "worldIndex": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cycle": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "selectedPolicy": {
+      "type": "string"
+    },
+    "requestedAction": {
+      "type": "string"
+    },
+    "observationRed": {
+      "type": "boolean"
+    },
+    "resultPreferred": {
+      "type": "boolean"
+    },
+    "learningMode": {
+      "enum": [
+        "NONE",
+        "ORACLE_SUPERVISED_TEST_ONLY"
+      ]
+    },
+    "feedbackClass": {
+      "enum": [
+        "NONE",
+        "ORACLE_SUPERVISED_TEST_ONLY"
+      ]
+    },
+    "modelBeforeHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "modelAfterHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "previousHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "entryHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

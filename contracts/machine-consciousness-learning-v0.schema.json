@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.local/contracts/machine-consciousness-learning-v0.schema.json",
+  "title": "LeeWay Machine Consciousness Semantic Learning Snapshot v0",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "sensorReliability",
+    "transitionModel",
+    "updates",
+    "priorStrength",
+    "forgettingFactor",
+    "modelHash"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "sensorReliability": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "exclusiveMaximum": 1
+    },
+    "transitionModel": {
+      "type": "object",
+      "required": [
+        "inspect",
+        "commit"
+      ],
+      "properties": {
+        "inspect": {
+          "$ref": "#/$defs/matrix2"
+        },
+        "commit": {
+          "$ref": "#/$defs/matrix2"
+        }
+      },
+      "additionalProperties": false
+    },
+    "updates": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "priorStrength": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "forgettingFactor": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 1
+    },
+    "modelHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "$defs": {
+    "prob": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "row2": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/prob"
+      }
+    },
+    "matrix2": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/row2"
+      }
+    }
+  },
+  "additionalProperties": false
+}
