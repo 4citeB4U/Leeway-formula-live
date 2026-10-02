@@ -67,6 +67,15 @@ Conversation is evidence and origin context. Conversation is not runtime proof.
 9. ../MACHINE-CONSCIOUSNESS-AWARENESS-MATH-v0.md
    Current mathematical architecture.
 
+10. 10-AGENT-LEE-LIVE-INTEGRATION-PLAN-v0.md
+    Staged path from research cognition to governed live influence.
+
+11. 11-CONSCIOUSNESS-PRISM-EXPERIMENT-PLAN-v0.md
+    Six-point balance/buoyancy hypothesis, simulation and tranche-2A evidence.
+
+12. 12-L1-PHONE-SHADOW-LIVE-TEST-20261001.md
+    First physical Android live-shadow test with persistent restart continuity and bounded deterministic questions.
+
 ## Machine-readable authority
 
 contracts/domain-adapters/machine-consciousness-awareness-v0.json
@@ -115,7 +124,23 @@ MC-G9 tranche 2A:
 Next: tranche 2B maps prism coordinates to independently measurable cognition evidence and runs causal ablations against simpler baselines.
 
 Live Agent Lee integration:
-PLANNED SHADOW MODE ONLY — NOT ENABLED.
+EXPERIMENTAL L1 PREPROMOTION SHADOW ACTIVE — OBSERVE ONLY.
+
+Live phone surface:
+http://127.0.0.1:8789/
+
+Verified in the current shadow:
+- LLM dependency = 0;
+- real local Formula health observation;
+- persistent cognition-state hashes;
+- process-restart continuity;
+- bounded prism state;
+- prediction/error;
+- deterministic small-question interface;
+- unsupported questions fail explicitly;
+- no live Agent Lee answer or action authority.
+
+Installed Agent Lee/Pocket APK presentation target was not observed on the connected host, so direct APK ingress integration remains pending.
 
 Plan:
 docs/machine-consciousness/10-AGENT-LEE-LIVE-INTEGRATION-PLAN-v0.md
