@@ -402,3 +402,34 @@ Claim:
 MC-G7 establishes Formula authority, not machine-consciousness Formula execution.
 State:
 cognition execution remains NOT_EXECUTED at gate close.
+
+
+## MC-G9 prism tranche 2A additions
+
+C-120
+Classification: VERIFIED / MATH-ONLY
+Claim:
+The six-point prism representation can preserve opposing-pair conservation, finite bounded coordinates and deterministic traces under the declared synthetic scenario set.
+Evidence:
+9/9 prism tests, 63/63 full regression tests, independent contract verifier, receipt MACHINE-CONSCIOUSNESS-MC-G9-PRISM-BUOYANCY-TRANCHE-2A-20261001.
+
+C-121
+Classification: VERIFIED / BOUNDED
+Claim:
+With provisional restoring gain K_B=0.35, the current deterministic controller converges toward the declared zero target after the tested transient shocks and after persistent-constraint pressure ends.
+Boundary:
+This establishes behavior of the simulation equations only, not usefulness for live cognition.
+
+C-122
+Classification: UNVERIFIED
+Claim:
+World/Self, Prediction/Memory and Goal/Constraint are the correct or sufficient live consciousness-position axes.
+Reason:
+No independent mapping from live cognition evidence or causal task ablation has yet been executed.
+
+C-123
+Classification: UNVERIFIED
+Claim:
+K_B=0.35 or zero equilibrium is an optimal consciousness control policy.
+Reason:
+No optimization, adaptive-equilibrium or live-task comparison has yet been performed.
