@@ -433,3 +433,37 @@ Claim:
 K_B=0.35 or zero equilibrium is an optimal consciousness control policy.
 Reason:
 No optimization, adaptive-equilibrium or live-task comparison has yet been performed.
+
+
+## L1 physical phone shadow additions
+
+C-130
+Classification: VERIFIED / LIVE SHADOW ONLY
+Claim:
+The authorized Android phone can run a deterministic non-LLM machine-consciousness shadow that observes real Formula/resource state and serves a browser-visible local interface.
+Evidence:
+Independent live-shadow receipt and real localhost probes.
+
+C-131
+Classification: VERIFIED / LIVE SHADOW ONLY
+Claim:
+The shadow preserved cognition-state continuity across an actual process stop/start with different PIDs and a prior state hash found in the persisted state journal.
+
+C-132
+Classification: VERIFIED / BOUNDED
+Claim:
+The live deterministic question surface correctly handles the declared identity/status/Formula/memory/prediction/change/activity/why/arithmetic intents and explicitly rejects unsupported questions rather than inventing answers.
+
+C-133
+Classification: UNVERIFIED
+Claim:
+The current live shadow improves Agent Lee's general conversational intelligence.
+Reason:
+The installed Agent Lee/Pocket APK presentation target was not present on the connected host and the shadow has no live answer authority.
+
+C-134
+Classification: UNVERIFIED
+Claim:
+The provisional live prism evidence mapping is causally useful for response or action selection.
+Reason:
+It has not yet passed live A/B causal ablation.
