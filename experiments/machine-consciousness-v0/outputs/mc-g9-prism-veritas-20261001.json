@@ -1,0 +1,18 @@
+{
+  "status": "PASS_MATH_ONLY_NOT_GATE_CLOSURE",
+  "checks": {
+    "contractExperimental": true,
+    "outputMathOnlyPass": true,
+    "testProcessPass": true,
+    "testMinimumMet": true,
+    "allTestsPassed": true,
+    "engineHashPinned": true,
+    "runtimeAdapterHashPinned": true,
+    "canonicalRuntimeUntouched": true,
+    "formulaNotInvoked": true,
+    "acceptedAdapterNotChanged": true,
+    "bounded": true,
+    "finite": true
+  },
+  "receiptDigest": "106cb170f46f88604e633b47c5e1a9bdab2de261c28f633b62567f740b7c4d53"
+}
