@@ -39,7 +39,7 @@
     "canonical cognition cycle schema from the original master-plan layout remains documentation debt; qualified runtime shapes remain observed authority until repaired",
     "EVB replay improved noisy-sensor NLL narrowly but regressed combined NLL in every tested scenario; general replay benefit remains unverified and is deferred to MC-G9"
   ],
-  "nextAction": "MC-G9 tranche 2B: derive prism coordinates from independently measurable cognition evidence and run controlled causal ablations against simpler baselines; do not grant live behavior authority until contribution is measured.",
+  "nextAction": "Continue MC-G9 tranche 2B with live A/B mapping: identify/install the actual Agent Lee/Pocket presentation target, attach the observe-only shadow at ingress, and measure whether cognition state improves bounded response decisions without granting action authority.",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
@@ -103,8 +103,13 @@
   },
   "liveIntegration": {
     "plan": "docs/machine-consciousness/10-AGENT-LEE-LIVE-INTEGRATION-PLAN-v0.md",
-    "status": "PLANNED_SHADOW_NOT_ENABLED",
-    "firstAuthorityStage": "L1_OBSERVE_ONLY"
+    "status": "EXPERIMENTAL_L1_PREPROMOTION_SHADOW_ACTIVE",
+    "firstAuthorityStage": "L1_OBSERVE_ONLY",
+    "url": "http://127.0.0.1:8789/",
+    "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-L1-PHONE-SHADOW-LIVE-TEST-20261001.json",
+    "llmDependency": 0,
+    "liveAnswerAuthority": "NONE",
+    "installedPresentationTargetObserved": false
   },
   "mcG9": {
     "status": "ACTIVE_TRANCHE_2A_MATH_PASS",
