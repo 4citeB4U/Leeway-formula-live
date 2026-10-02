@@ -844,3 +844,54 @@ controlled policy/learning ablations against simpler baselines.
 
 Receipt:
 receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CONTRIBUTION-TRANCHE-1-20261001.json
+
+
+## Executed E-120 — MC-G9 prism/buoyancy tranche 2A
+
+Date: 2026-10-01
+State: PASS_MATH_ONLY_NOT_GATE_CLOSURE
+
+Purpose:
+Test whether the six-point consciousness-prism hypothesis can be represented as bounded deterministic geometry with measurable disturbance and recovery before binding it to cognition evidence.
+
+Geometry:
+- World <-> Self
+- Prediction <-> Memory
+- Goal <-> Constraint
+- R=[W-S,P-M,G-K]
+- provisional restoring field F=-K_B(R-R*) with K_B=0.35
+
+Scenarios:
+balanced; world shock; prediction-memory shock; goal-constraint overload; compound shock; persistent constraint; repeated shocks; deterministic chaotic noise; impracticable saturation.
+
+
+Initial run:
+- 9/9 prism tests PASS;
+- campaign validator FAIL due to acceptance-semantics bug;
+- formulaInvoked=false and canonicalAdapterChanged=false were incorrectly treated as failed booleans.
+
+Repair:
+acceptance expression only; simulation mathematics unchanged.
+
+Retest:
+- prism tests: 9/9 PASS;
+- full regression: 63/63 PASS;
+- independent Veritas contract check: PASS;
+- Formula engine hash unchanged;
+- runtime-state adapter hash unchanged;
+- canonical Formula runtime path untouched.
+
+Campaign digest:
+900da4a641afde25ac8fb7974b0ebf3c4550af1da90c709eff45f710d13bf45c
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-PRISM-BUOYANCY-TRANCHE-2A-20261001.json
+
+
+Interpretation:
+The restoring controller reduces residual displacement under the declared synthetic disturbances and preserves bounded six-point geometry. The near-100% final-displacement reduction in one-shot scenarios is expected from comparing a restoring controller against a no-restoring state that retains displacement; it is not an intelligence metric.
+
+MC-G9 remains open.
+
+Next:
+Tranche 2B — derive each prism coordinate from independently measurable cognition evidence, then compare task/prediction/recovery outcomes against simpler baselines before any live authority.
