@@ -199,3 +199,12 @@ Belief, emotion/valuation, deliberation, replay and self-awareness mathematics m
 Status: APPROVED
 Decision:
 RapidWebDevelop publication must retain VERIFIED / OBSERVED / INFERRED / PROPOSED / UNVERIFIED / FAILED / BLOCKED / SUPERSEDED labels and source commits. Public presentation may not upgrade a research candidate into a production or consciousness claim.
+
+
+## D-029 — Prism geometry is auxiliary research, not Formula authority
+Status: APPROVED FOR EXPERIMENTATION / NOT FORMULA BINDING
+Decision:
+The six-point World/Self, Prediction/Memory, Goal/Constraint geometry may be tested as an auxiliary state-space and recovery model.
+It does not replace H/PE/V/IG/G/B, mutate LEEWAY-FORMULA-v1.0, or gain live action authority without independent cognition mapping and causal ablation.
+Reason:
+The geometry addresses spatial position, balance and recoverability that are not represented explicitly by the current sequential cognition loop, while preserving existing Formula and adapter authority.
