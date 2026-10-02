@@ -24,7 +24,8 @@
     "self-model consistency diagnostic",
     "EVB replay priority",
     "C0-C6 engineering maturity ladder",
-    "Node.js ES-module initial implementation"
+    "Node.js ES-module initial implementation",
+    "six-point prism/balance/buoyancy geometry as auxiliary research layer"
   ],
   "rejected": [
     "permanent/fixed belief representation",
@@ -38,7 +39,7 @@
     "canonical cognition cycle schema from the original master-plan layout remains documentation debt; qualified runtime shapes remain observed authority until repaired",
     "EVB replay improved noisy-sensor NLL narrowly but regressed combined NLL in every tested scenario; general replay benefit remains unverified and is deferred to MC-G9"
   ],
-  "nextAction": "MC-G9 tranche 2: controlled ablations against simpler baselines; do not grant live behavior authority until contribution is measured.",
+  "nextAction": "MC-G9 tranche 2B: derive prism coordinates from independently measurable cognition evidence and run controlled causal ablations against simpler baselines; do not grant live behavior authority until contribution is measured.",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
@@ -94,6 +95,7 @@
     "failureRepairLedger": "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md",
     "allAgentTemplate": "docs/machine-consciousness/08-LEEWAY-AGENT-REFERENCE-TEMPLATE-v0.md",
     "rapidWebDevelopPlan": "docs/machine-consciousness/09-RAPIDWEBDEVELOP-PUBLICATION-PLAN-v0.md",
+    "prismExperimentPlan": "docs/machine-consciousness/11-CONSCIOUSNESS-PRISM-EXPERIMENT-PLAN-v0.md",
     "state": "COORDINATED_ACTIVE"
   },
   "publication": {
@@ -105,9 +107,12 @@
     "firstAuthorityStage": "L1_OBSERVE_ONLY"
   },
   "mcG9": {
-    "status": "ACTIVE_TRANCHE_1_COMPLETE",
-    "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CONTRIBUTION-TRANCHE-1-20261001.json",
-    "rows": 40960,
+    "status": "ACTIVE_TRANCHE_2A_MATH_PASS",
+    "tranche1Receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CONTRIBUTION-TRANCHE-1-20261001.json",
+    "tranche1Rows": 40960,
+    "tranche2AReceipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-PRISM-BUOYANCY-TRANCHE-2A-20261001.json",
+    "tranche2ACampaignDigest": "900da4a641afde25ac8fb7974b0ebf3c4550af1da90c709eff45f710d13bf45c",
+    "tranche2ARegression": "63/63 PASS",
     "gateClosure": false
   }
 }
