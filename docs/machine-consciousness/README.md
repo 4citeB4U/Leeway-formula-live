@@ -28,7 +28,7 @@ Status: ACTIVE RESEARCH / CANDIDATE ARCHITECTURE
 
 Canonical Formula: LEEWAY-FORMULA-v1.0 — unchanged.
 Current machine-consciousness adapter: machine-consciousness-awareness-v0.
-Numeric Formula execution for this domain: NOT_EXECUTED.
+Numeric Formula execution for this domain: EXECUTED / UNVERIFIED INTERPRETATION (MC-G8).
 
 ## Documentation law
 
@@ -101,8 +101,18 @@ MC-G9 tranche 1:
 - 40,960 cognition rows audited;
 - selected-policy expected free energy is causal in the current base policy;
 - replay is indirectly causal through learned parameters;
-- H, PE, V, realized IG, B and self-model are currently diagnostic/integrity signals rather than direct policy controllers;
+- H, PE, V, realized IG, B and self-model are currently diagnostic/integrity signals rather than direct policy controllers.
+
+MC-G9 tranche 2A:
+- six-point prism/balance/buoyancy math implemented;
+- 9/9 prism tests PASS;
+- 63/63 full machine-consciousness regression tests PASS;
+- deterministic bounded recovery demonstrated under declared simulated disturbances;
+- canonical Formula engine and runtime-state adapter hashes unchanged;
+- receipt: MACHINE-CONSCIOUSNESS-MC-G9-PRISM-BUOYANCY-TRANCHE-2A-20261001;
 - gate remains ACTIVE, not closed.
+
+Next: tranche 2B maps prism coordinates to independently measurable cognition evidence and runs causal ablations against simpler baselines.
 
 Live Agent Lee integration:
 PLANNED SHADOW MODE ONLY — NOT ENABLED.
