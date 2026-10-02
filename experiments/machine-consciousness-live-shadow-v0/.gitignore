@@ -1,0 +1,6 @@
+outputs/live-shadow.pid
+outputs/live-shadow.log
+outputs/latest-state.json
+outputs/live-state.jsonl
+outputs/live-events.jsonl
+outputs/boot-sessions.jsonl
