@@ -895,3 +895,38 @@ MC-G9 remains open.
 
 Next:
 Tranche 2B — derive each prism coordinate from independently measurable cognition evidence, then compare task/prediction/recovery outcomes against simpler baselines before any live authority.
+
+
+## Executed E-130 — L1 physical Android phone shadow
+
+Date: 2026-10-01
+State: PASS_LIVE_SHADOW_ONLY / NO LIVE ANSWER AUTHORITY
+
+Host:
+authorized Android workstation / Termux.
+
+Real observations:
+- canonical Formula health endpoint;
+- system memory availability;
+- persisted prior cognition-state hash;
+- prior Formula-health prediction compared with current health.
+
+Live surface:
+http://127.0.0.1:8789/
+
+Capabilities exercised:
+identity; status; Formula status; memory continuity; prediction; state delta; activity; why/explanation; simple arithmetic; explicit unknown-intent refusal.
+
+Restart:
+controlled stop/start through live-shadow-control.sh.
+Previous PID 8294; restarted PID 8974.
+Boot journal and state journal prove continuity across process death.
+
+Independent receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-L1-PHONE-SHADOW-LIVE-TEST-20261001.json
+
+Receipt digest:
+da7d5f5d79f636d141fded6465c72786219bfb212a86b63ee2e1d82ce03292ee
+
+Boundary:
+This is a prepromotion L1 shadow test. It does not close MC-G9 and does not modify live Agent Lee answers or actions.
