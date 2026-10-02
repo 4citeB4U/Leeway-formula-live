@@ -448,3 +448,23 @@ G-015 — The six-point prism representation preserved opposing-pair conservatio
 
 Boundary:
 This is math-only simulated recovery. It does not establish that the six axes are the correct live cognition representation or that the controller improves real task behavior.
+
+
+---
+
+## F-016 — Generic status intent captured Formula-specific live question
+
+Observation:
+During the first live phone question sweep, "what is the Formula status?" returned the generic system-status answer.
+
+Diagnosis:
+The generic status matcher executed before the Formula matcher and accepted any phrase containing "status".
+
+Repair:
+Narrow only the generic status predicate so questions containing "formula" continue to the specific Formula intent.
+
+Retest:
+intent=formula; answer reported LEEWAY_FORMULA_V1_PASS and Golden vector PASS from the real local Formula health endpoint.
+
+Lesson:
+Deterministic language routing must prefer specific governed intents over broad lexical matches. Passing language through a rule engine still requires routing tests and explicit failure evidence.
