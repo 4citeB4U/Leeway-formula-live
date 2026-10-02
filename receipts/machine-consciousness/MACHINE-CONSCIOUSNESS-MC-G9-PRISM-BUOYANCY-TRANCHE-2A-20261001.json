@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "0.1.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G9-PRISM-BUOYANCY-TRANCHE-2A-20261001",
+  "gate": "MC-G9",
+  "tranche": "2A_PRISM_BUOYANCY_MATH",
+  "status": "PASS_MATH_ONLY_NOT_GATE_CLOSURE",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "repository": "4citeB4U/Leeway-formula-live",
+  "branch": "mc-g9-prism-buoyancy-tranche2",
+  "sourceBaseCommit": "94967b9c4b50bbfe959dd3b94aa38be090de83e3",
+  "tests": {
+    "exitCode": 0,
+    "testCount": 63,
+    "passCount": 63,
+    "failCount": 0
+  },
+  "canonical": {
+    "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeStateAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "canonicalRuntimeTouched": false
+  },
+  "experiment": {
+    "campaignDigest": "900da4a641afde25ac8fb7974b0ebf3c4550af1da90c709eff45f710d13bf45c",
+    "scenarios": [
+      "balanced",
+      "world-shock",
+      "prediction-memory-shock",
+      "goal-constraint-overload",
+      "compound-shock",
+      "persistent-constraint",
+      "repeated-shocks",
+      "chaotic-noise",
+      "impracticable-saturation"
+    ],
+    "acceptance": {
+      "deterministic": true,
+      "allFinite": true,
+      "allSixPointPairsBounded": true,
+      "balancedRemainsCentered": true,
+      "transientRecoveryBeatsNoRestore": true,
+      "formulaInvoked": false,
+      "canonicalAdapterChanged": false,
+      "pass": true
+    }
+  },
+  "checks": {
+    "contractExperimental": true,
+    "outputMathOnlyPass": true,
+    "testProcessPass": true,
+    "testMinimumMet": true,
+    "allTestsPassed": true,
+    "engineHashPinned": true,
+    "runtimeAdapterHashPinned": true,
+    "canonicalRuntimeUntouched": true,
+    "formulaNotInvoked": true,
+    "acceptedAdapterNotChanged": true,
+    "bounded": true,
+    "finite": true
+  },
+  "artifactSha256": {
+    "contract": "ebc574fd03deaea34c2295d885a3b11a1bc9759b729443fa5b3b507be42c8183",
+    "source": "d8be7cdb85856ec978eb4e620624d7b191599929496d52b9d7b77cc3e1c9f5a2",
+    "campaign": "f643fe95122dadfd49e05f7f8a2e0c530fed01f97feddabc9d8b0c70ad7e6106",
+    "tests": "6ea646f409b3de6977b73b44ee2adae945648650b9415373aef1ac8bca0b0177",
+    "plan": "2aa3fee8ae6e4f01164ba13c9e6d7c70f61b09b719c7b6008a6f854084629982",
+    "output": "82a6e90f44bf29ae7811a5e44e680005765ca90b918ea52fa98081ca5eda7ff6"
+  },
+  "changedPaths": [
+    "contracts/machine-consciousness-project-state-v0.json",
+    "docs/machine-consciousness/03-DECISION-LEDGER.md",
+    "docs/machine-consciousness/04-EXPERIMENT-LOG.md",
+    "docs/machine-consciousness/05-CLAIM-REGISTER.md",
+    "docs/machine-consciousness/07-FAILURE-REPAIR-LEDGER-20261001.md",
+    "docs/machine-consciousness/README.md",
+    "contracts/machine-consciousness-prism-v0.json",
+    "docs/machine-consciousness/11-CONSCIOUSNESS-PRISM-EXPERIMENT-PLAN-v0.md",
+    "experiments/machine-consciousness-v0/mc-g9-prism-buoyancy-campaign.mjs",
+    "experiments/machine-consciousness-v0/mc-g9-prism-veritas.mjs",
+    "experiments/machine-consciousness-v0/outputs/mc-g9-prism-buoyancy-summary-20261001.json",
+    "experiments/machine-consciousness-v0/outputs/mc-g9-prism-veritas-20261001.json",
+    "experiments/machine-consciousness-v0/prism-buoyancy.mjs",
+    "experiments/machine-consciousness-v0/tests/prism-buoyancy.test.mjs",
+    "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-PRISM-BUOYANCY-TRANCHE-2A-20261001.json"
+  ],
+  "formulaExecutionInThisTranche": "NOT_INVOKED",
+  "formulaInterpretationPromotion": "NONE",
+  "liveBehaviorAuthority": "NONE",
+  "claimBoundary": "This receipt verifies deterministic math/regression/hash conditions only. It does not close MC-G9 or establish subjective consciousness.",
+  "receiptDigest": "106cb170f46f88604e633b47c5e1a9bdab2de261c28f633b62567f740b7c4d53"
+}
