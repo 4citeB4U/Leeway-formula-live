@@ -422,3 +422,29 @@ G-014 — Live Formula service identity, deployed source hashes, kernel-integrit
 
 Lesson:
 service health != source authority, and latest repository commit != Formula identity. Formula authority is established by the canonical bytes/contracts plus verified live behavior and provenance.
+
+
+---
+
+## F-015 — Prism campaign validator inverted required false safeguards
+
+Observation:
+The first MC-G9 prism campaign returned FAIL even though all 9 new mathematical tests passed.
+
+Diagnosis:
+The validator required every acceptance-field value to equal true. Two safety fields were intentionally false: formulaInvoked=false and canonicalAdapterChanged=false.
+
+Repair:
+Change only the final acceptance expression so the two safeguards are explicitly required to remain false. Do not alter scenario dynamics, restoring mathematics or measured traces.
+
+Retest:
+9/9 prism tests PASS; 63/63 full machine-consciousness regression tests PASS; independent contract verifier PASS.
+
+Lesson:
+A boolean field is not automatically a success flag. Acceptance logic must preserve the semantic meaning of each field.
+
+
+G-015 — The six-point prism representation preserved opposing-pair conservation, stayed bounded under an impracticable saturation impulse, and deterministically recovered toward its declared target under the current restoring controller.
+
+Boundary:
+This is math-only simulated recovery. It does not establish that the six axes are the correct live cognition representation or that the controller improves real task behavior.
