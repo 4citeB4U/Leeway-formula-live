@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractId": "machine-consciousness-prism-v0",
+  "status": "EXPERIMENTAL_MATH_ONLY",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "project": "LeeWay Machine Consciousness",
+  "purpose": "Qualify six-point spatial balance and recovery mathematics before any cognition or Formula authority binding.",
+  "formulaBoundary": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "formulaInvokedByThisExperiment": false,
+    "canonicalAdapterChanged": false,
+    "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeStateAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "acceptedAwarenessAdapterReplaced": false
+  },
+  "geometry": {
+    "axisOrder": ["world_self", "prediction_memory", "goal_constraint"],
+    "pairs": [
+      {"axis": "world_self", "positive": "world", "negative": "self"},
+      {"axis": "prediction_memory", "positive": "prediction", "negative": "memory"},
+      {"axis": "goal_constraint", "positive": "goal", "negative": "constraint"}
+    ],
+    "axisRange": [-1, 1],
+    "pointRange": [0, 1],
+    "pairConservationRule": "positive + negative = 1",
+    "resultant": "R=[W-S,P-M,G-K]",
+    "balanceError": "B=||R-R*||",
+    "restoringField": "F=-K_B(R-R*)",
+    "recovery": "B_H=1-||R_(t+H)-R*||/(||R_t-R*||+epsilon)",
+    "defaultTarget": [0, 0, 0],
+    "defaultRestoringGain": 0.35
+  },
+  "scenarioFamilies": [
+    "balanced",
+    "world-shock",
+    "prediction-memory-shock",
+    "goal-constraint-overload",
+    "compound-shock",
+    "persistent-constraint",
+    "repeated-shocks",
+    "chaotic-noise",
+    "impracticable-saturation"
+  ],
+  "acceptance": {
+    "newMathTestsMinimum": 9,
+    "fullRegressionTestsMinimum": 63,
+    "allValuesFinite": true,
+    "allSixPointPairsBounded": true,
+    "balancedStateRemainsCentered": true,
+    "transientRecoveryBeatsNoRestoreBaseline": true,
+    "canonicalFormulaHashesUnchanged": true,
+    "formulaInvocationRequired": false
+  },
+  "claimBoundary": {
+    "allowed": [
+      "deterministic geometric simulation",
+      "bounded six-point representation",
+      "measured recovery under declared simulated disturbances"
+    ],
+    "notAuthorized": [
+      "live Agent Lee behavior control",
+      "replacement of H/PE/V/IG/G/B Formula adapter",
+      "claim that prism geometry proves consciousness",
+      "claim that simulated recovery proves biological or phenomenal consciousness",
+      "semantic interpretation of Formula output"
+    ]
+  },
+  "nextGate": "Map prism variables to independently measurable cognition evidence and run causal ablations before any live influence."
+}
