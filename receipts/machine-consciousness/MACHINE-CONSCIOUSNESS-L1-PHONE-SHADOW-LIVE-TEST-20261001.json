@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "0.1.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-L1-PHONE-SHADOW-LIVE-TEST-20261001",
+  "status": "PASS_LIVE_SHADOW_ONLY",
+  "gate": "L1_PREPROMOTION_SHADOW",
+  "mcG9GateClosure": false,
+  "authority": "OBSERVE_ONLY",
+  "host": "authorized Android workstation / Termux",
+  "url": "http://127.0.0.1:8789/",
+  "checks": {
+    "contractObserveOnly": true,
+    "llmDependencyZero": true,
+    "livePageReachable": true,
+    "stateEndpointReachable": true,
+    "formulaHealthReal": true,
+    "formulaIntentCorrect": true,
+    "memoryIntentCorrect": true,
+    "arithmeticCorrect": true,
+    "unknownFailsExplicitly": true,
+    "restartHasTwoBoots": true,
+    "latestBootContinuity": true,
+    "formulaEvaluateRouteAbsent": true,
+    "canonicalEnginePinned": true,
+    "canonicalAdapterPinned": true,
+    "authorityObserveOnly": true,
+    "finitePrism": true
+  },
+  "liveState": {
+    "stateHash": "4b678dd9f6f1d03c9c1c822063f10a09e11e9f3672eb8fbd0c5a61c64c7a5af1",
+    "priorStateHash": "1e68a600b569feb8ee8e6a86237ddcd486534799d6de28345aba4463028abee3",
+    "continuityVerified": true,
+    "classification": "STABLE_SHADOW",
+    "balance": 0.3337304592058185,
+    "formulaStatus": "LEEWAY_FORMULA_V1_PASS",
+    "availableMemoryRatio": 0.1948886538828538,
+    "predictionConfidence": 0.9355910923106283,
+    "predictionError": 0
+  },
+  "restartEvidence": {
+    "bootCount": 2,
+    "previousBoot": {
+      "pid": 8294,
+      "stateHash": "656f1137a1bac455a6758ac42307a17560367c976f476416d98a48848408678d",
+      "bootHash": "6c8c5275a3cb8dcbde374529a770a23f9d187070e8a86e89d82f17211950a3ab"
+    },
+    "lastBoot": {
+      "pid": 8974,
+      "stateHash": "23020c31f633477bb03d455d0c6bbd5c424aa5d624006393e14d3b9618920f42",
+      "priorStateHash": "f6be5372236572aa33341bcf1e13b8dbe9d307d0bfa64b9b526f6cf20cf9059d",
+      "bootHash": "bd51ce3267748f13ed136d72f53e7a5bca41d768dd99c625625b843ba7bdcde5"
+    },
+    "priorHashFoundInStateJournal": true
+  },
+  "questionEvidence": {
+    "formula": {
+      "intent": "formula",
+      "answer": "The local Formula service reports LEEWAY_FORMULA_V1_PASS. Golden vector check is passing. I did not invoke Formula evaluation for this shadow answer."
+    },
+    "memory": {
+      "intent": "memory",
+      "answer": "Yes. I verified continuity from prior state hash 151d107cbbc3. This state is chained as 8b574379300d."
+    },
+    "arithmetic": {
+      "intent": "arithmetic",
+      "answer": "102"
+    },
+    "unknown": {
+      "intent": "unknown",
+      "matched": false,
+      "answer": "I do not have a deterministic intent for that question yet. I can answer identity, status, Formula state, memory continuity, prediction, what changed, what I am doing, why, and simple arithmetic."
+    }
+  },
+  "canonical": {
+    "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeStateAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0"
+  },
+  "claimBoundary": "This proves a real phone-side observe-only deterministic cognition shadow with persistent state and bounded question handling. It does not prove general intelligence, semantic understanding, live Agent Lee integration, autonomous learning, or phenomenal consciousness.",
+  "receiptDigest": "da7d5f5d79f636d141fded6465c72786219bfb212a86b63ee2e1d82ce03292ee"
+}
