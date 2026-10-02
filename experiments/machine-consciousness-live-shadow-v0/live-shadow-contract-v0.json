@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "0.1.0",
+  "contractId": "machine-consciousness-live-shadow-v0",
+  "status": "EXPERIMENTAL_L1_PREPROMOTION_SHADOW",
+  "authority": "OBSERVE_ONLY",
+  "host": "Android / Termux",
+  "port": 8789,
+  "llmDependency": 0,
+  "formula": {
+    "healthEndpoint": "http://127.0.0.1:4001/runtime/formula/v1/health",
+    "evaluateAllowed": false,
+    "expectedFormula": "LEEWAY-FORMULA-v1.0",
+    "expectedStatus": "LEEWAY_FORMULA_V1_PASS"
+  },
+  "realObservations": [
+    "Formula live health response",
+    "system memory availability from /proc/meminfo",
+    "persistent prior cognition-state hash",
+    "prior prediction versus current Formula health"
+  ],
+  "prismEvidenceMapping": {
+    "world": "binary Formula runtime health",
+    "self": "0.6*Formula health + 0.4*memory-availability ratio",
+    "memory": "verified prior-state continuity, first cycle = 0.5",
+    "prediction": "accuracy of prior next-Formula-health prediction, first cycle = 0.5",
+    "goal": "mean(world,self,memory)",
+    "constraint": "1 - memory-availability ratio",
+    "axisOrder": ["world-self", "prediction-memory", "goal-constraint"]
+  },
+  "questionSurface": [
+    "identity",
+    "status",
+    "formula status",
+    "memory continuity",
+    "prediction",
+    "what changed",
+    "what are you doing",
+    "why",
+    "simple arithmetic"
+  ],
+  "hardBoundaries": [
+    "No live Agent Lee answer is modified",
+    "No consequential capability is called",
+    "No Formula evaluation is performed",
+    "No long-term learning is promoted",
+    "No unknown question is hallucinated",
+    "This experiment does not establish phenomenal consciousness"
+  ],
+  "acceptance": [
+    "Server starts on phone",
+    "Formula health is observed from the real local Formula service",
+    "State hashes persist across restart",
+    "Prediction error is recomputable",
+    "Prism values remain finite and bounded",
+    "Known deterministic questions return evidence-grounded answers",
+    "Unknown questions fail explicitly",
+    "One browser-visible live dashboard opens on the phone"
+  ],
+  "rollback": "Stop the live-shadow Node process. No existing Agent Lee response path is altered."
+}
