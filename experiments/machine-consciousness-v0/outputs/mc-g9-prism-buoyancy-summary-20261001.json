@@ -1,0 +1,331 @@
+{
+  "schemaVersion": "0.1.0",
+  "gate": "MC-G9",
+  "tranche": "2A_PRISM_BUOYANCY_MATH",
+  "status": "PASS_MATH_ONLY_NOT_GATE_CLOSURE",
+  "claimBoundary": "Math-only deterministic research. No Formula interpretation, live behavior authority, or phenomenal-consciousness claim.",
+  "configuration": {
+    "scenarios": [
+      "balanced",
+      "world-shock",
+      "prediction-memory-shock",
+      "goal-constraint-overload",
+      "compound-shock",
+      "persistent-constraint",
+      "repeated-shocks",
+      "chaotic-noise",
+      "impracticable-saturation"
+    ],
+    "cycles": 64,
+    "seed": 20261001,
+    "gains": {
+      "none": 0,
+      "restoring": 0.35
+    }
+  },
+  "baseline": {
+    "balanced": {
+      "cycles": 64,
+      "maxDisplacement": 0,
+      "finalDisplacement": 0,
+      "meanRecoveryStep": 0,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": -1,
+      "convergenceCycle": 0,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "f27153a0f575a0551aeb1c39910914f57879c487d5c6f641b9983d85c02ea7bd"
+    },
+    "world-shock": {
+      "cycles": 64,
+      "maxDisplacement": 0.85,
+      "finalDisplacement": 0.85,
+      "meanRecoveryStep": 1.1763923168928159e-12,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": null,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "755e90f1f93aabb53f3f2e62430ff00995b3f3b3d3740545c9bb0ec492a9cb39"
+    },
+    "prediction-memory-shock": {
+      "cycles": 64,
+      "maxDisplacement": 0.85,
+      "finalDisplacement": 0.85,
+      "meanRecoveryStep": 1.1763923168928159e-12,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": null,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "599665230f67283a8f8c63f5089363964b10eae709556dcb6b78aac53d0770f7"
+    },
+    "goal-constraint-overload": {
+      "cycles": 64,
+      "maxDisplacement": 0.85,
+      "finalDisplacement": 0.85,
+      "meanRecoveryStep": 1.1763923168928159e-12,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": null,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "62076e1e770b502e808194548851e5cbe6ad89b9315f9314a103837d4181f018"
+    },
+    "compound-shock": {
+      "cycles": 64,
+      "maxDisplacement": 1.1884864324004711,
+      "finalDisplacement": 1.1884864324004711,
+      "meanRecoveryStep": 8.414380303634061e-13,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": null,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "503770c429f0721623a185102850c41d2222046b59b20badcc6e9312626a6000"
+    },
+    "persistent-constraint": {
+      "cycles": 64,
+      "maxDisplacement": 1,
+      "finalDisplacement": 1,
+      "meanRecoveryStep": 1.3445256812667188e-12,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 31,
+      "convergenceCycle": null,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "2b7a24fbc66efa89dc402bc574765a9787f2295fc914f9df63b329e6fe7a9b66"
+    },
+    "repeated-shocks": {
+      "cycles": 64,
+      "maxDisplacement": 0.9526279441628827,
+      "finalDisplacement": 0.17320508075688779,
+      "meanRecoveryStep": 3.8924895053225686e-12,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 32,
+      "convergenceCycle": null,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "6aa74277212e379fdd04e48f624c9d78600057b58a6698a4eb280e159bd399ea"
+    },
+    "chaotic-noise": {
+      "cycles": 64,
+      "maxDisplacement": 0.6582242430664046,
+      "finalDisplacement": 0.5698092185025279,
+      "meanRecoveryStep": 3.1979974224327634e-12,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 63,
+      "convergenceCycle": null,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "6211a486f549bfbf1c5de6d20e66153076dec688546440b0f9b8bb732304da66"
+    },
+    "impracticable-saturation": {
+      "cycles": 64,
+      "maxDisplacement": 1.7320508075688772,
+      "finalDisplacement": 1.7320508075688772,
+      "meanRecoveryStep": 5.774269951075439e-13,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": null,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "405b8f6ee3189bff4c1b0fe5d8101286124d06b405f5b9b04f40b71fb88e89c6"
+    }
+  },
+  "restoring": {
+    "balanced": {
+      "cycles": 64,
+      "maxDisplacement": 0,
+      "finalDisplacement": 0,
+      "meanRecoveryStep": 0,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": -1,
+      "convergenceCycle": 0,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "f27153a0f575a0551aeb1c39910914f57879c487d5c6f641b9983d85c02ea7bd"
+    },
+    "world-shock": {
+      "cycles": 64,
+      "maxDisplacement": 0.5525,
+      "finalDisplacement": 2.8350903105890155e-11,
+      "meanRecoveryStep": 0.3507499569305213,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": 14,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "8ae543a4d5f69f3cc01dedaaeb9bca339aeae430ee19cf975ed3b6a14efce4fd"
+    },
+    "prediction-memory-shock": {
+      "cycles": 64,
+      "maxDisplacement": 0.5525,
+      "finalDisplacement": 2.8350903105890155e-11,
+      "meanRecoveryStep": 0.3507499569305213,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": 14,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "a97bb3310039880a641be80e64b54e883955450be29632b51cda05e16088413d"
+    },
+    "goal-constraint-overload": {
+      "cycles": 64,
+      "maxDisplacement": 0.5525,
+      "finalDisplacement": 2.8350903105890155e-11,
+      "meanRecoveryStep": 0.3507499569305213,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": 14,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "ec0d919af5cb450e36a6c173d3640e8e7ca8133bacc71504cad910e3ab023887"
+    },
+    "compound-shock": {
+      "cycles": 64,
+      "maxDisplacement": 0.7725161810603064,
+      "finalDisplacement": 3.964078080900096e-11,
+      "meanRecoveryStep": 0.3505384520617181,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": 15,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "c82a3d7e556b17860fc6fca9c2b57b2c9c6b7feff8d345991b0a3eb0dda1a7e4"
+    },
+    "persistent-constraint": {
+      "cycles": 64,
+      "maxDisplacement": 0.1857082772169668,
+      "finalDisplacement": 1.9145145607971138e-7,
+      "meanRecoveryStep": 0.3500001125939208,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 31,
+      "convergenceCycle": 35,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "b0a4a8d4372f1992f836ae63cb1de01e33a2290ecd2664491c3980e336813c8d"
+    },
+    "repeated-shocks": {
+      "cycles": 64,
+      "maxDisplacement": 0.49991547118110624,
+      "finalDisplacement": 7.928857876425712e-7,
+      "meanRecoveryStep": 0.3500000271904497,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 32,
+      "convergenceCycle": 38,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "323a2b551775dde06656c04654188a7e86ab9bca031116ed31c40dee99aac5e2"
+    },
+    "chaotic-noise": {
+      "cycles": 64,
+      "maxDisplacement": 0.16049257076996204,
+      "finalDisplacement": 0.10723909909527908,
+      "meanRecoveryStep": 0.3500000000047895,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 63,
+      "convergenceCycle": null,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "ecf48da3a9ea0dfa77f34b1d42a77ace50c74a24c3b95cfd0a3fd9b35679f279"
+    },
+    "impracticable-saturation": {
+      "cycles": 64,
+      "maxDisplacement": 1.1258330249197703,
+      "finalDisplacement": 5.7770828964545906e-11,
+      "meanRecoveryStep": 0.35037060979289925,
+      "positiveRecoveryFraction": 1,
+      "lastDisturbanceCycle": 8,
+      "convergenceCycle": 16,
+      "allFinite": true,
+      "allPointsValid": true,
+      "digest": "0b165a8d8cc17108c209d396f246f3c23114d1f9fdd92c39dfdcaa94a25aa06c"
+    }
+  },
+  "comparisons": {
+    "balanced": {
+      "baselineFinal": 0,
+      "restoringFinal": 0,
+      "finalDisplacementReductionPct": 0,
+      "restoringConvergenceCycle": 0,
+      "restoringMeanRecoveryStep": 0,
+      "restoringPositiveRecoveryFraction": 1
+    },
+    "world-shock": {
+      "baselineFinal": 0.85,
+      "restoringFinal": 2.8350903105890155e-11,
+      "finalDisplacementReductionPct": 99.9999999966646,
+      "restoringConvergenceCycle": 14,
+      "restoringMeanRecoveryStep": 0.3507499569305213,
+      "restoringPositiveRecoveryFraction": 1
+    },
+    "prediction-memory-shock": {
+      "baselineFinal": 0.85,
+      "restoringFinal": 2.8350903105890155e-11,
+      "finalDisplacementReductionPct": 99.9999999966646,
+      "restoringConvergenceCycle": 14,
+      "restoringMeanRecoveryStep": 0.3507499569305213,
+      "restoringPositiveRecoveryFraction": 1
+    },
+    "goal-constraint-overload": {
+      "baselineFinal": 0.85,
+      "restoringFinal": 2.8350903105890155e-11,
+      "finalDisplacementReductionPct": 99.9999999966646,
+      "restoringConvergenceCycle": 14,
+      "restoringMeanRecoveryStep": 0.3507499569305213,
+      "restoringPositiveRecoveryFraction": 1
+    },
+    "compound-shock": {
+      "baselineFinal": 1.1884864324004711,
+      "restoringFinal": 3.964078080900096e-11,
+      "finalDisplacementReductionPct": 99.9999999966646,
+      "restoringConvergenceCycle": 15,
+      "restoringMeanRecoveryStep": 0.3505384520617181,
+      "restoringPositiveRecoveryFraction": 1
+    },
+    "persistent-constraint": {
+      "baselineFinal": 1,
+      "restoringFinal": 1.9145145607971138e-7,
+      "finalDisplacementReductionPct": 99.99998085485439,
+      "restoringConvergenceCycle": 35,
+      "restoringMeanRecoveryStep": 0.3500001125939208,
+      "restoringPositiveRecoveryFraction": 1
+    },
+    "repeated-shocks": {
+      "baselineFinal": 0.17320508075688779,
+      "restoringFinal": 7.928857876425712e-7,
+      "finalDisplacementReductionPct": 99.99954222717707,
+      "restoringConvergenceCycle": 38,
+      "restoringMeanRecoveryStep": 0.3500000271904497,
+      "restoringPositiveRecoveryFraction": 1
+    },
+    "chaotic-noise": {
+      "baselineFinal": 0.5698092185025279,
+      "restoringFinal": 0.10723909909527908,
+      "finalDisplacementReductionPct": 81.17982377029527,
+      "restoringConvergenceCycle": null,
+      "restoringMeanRecoveryStep": 0.3500000000047895,
+      "restoringPositiveRecoveryFraction": 1
+    },
+    "impracticable-saturation": {
+      "baselineFinal": 1.7320508075688772,
+      "restoringFinal": 5.7770828964545906e-11,
+      "finalDisplacementReductionPct": 99.9999999966646,
+      "restoringConvergenceCycle": 16,
+      "restoringMeanRecoveryStep": 0.35037060979289925,
+      "restoringPositiveRecoveryFraction": 1
+    }
+  },
+  "acceptance": {
+    "deterministic": true,
+    "allFinite": true,
+    "allSixPointPairsBounded": true,
+    "balancedRemainsCentered": true,
+    "transientRecoveryBeatsNoRestore": true,
+    "formulaInvoked": false,
+    "canonicalAdapterChanged": false,
+    "pass": true
+  },
+  "digest": "900da4a641afde25ac8fb7974b0ebf3c4550af1da90c709eff45f710d13bf45c"
+}
