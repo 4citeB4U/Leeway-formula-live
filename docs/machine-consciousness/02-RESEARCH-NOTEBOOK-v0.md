@@ -182,6 +182,110 @@ QLoRA has not yet been executed on the canonical Agent Lee phone model in this p
 
 ## Note N-021 — Preference optimization for persona fidelity
 
+### N-021A — Four-archetype constitutional persona conditioning
+
+Canonical persona family:
+`AGENT_LEE_CONSTITUTIONAL`
+
+Required conditioning tokens:
+- `[VOICE:ELDER_MALE]` — The Prime Minister
+- `[VOICE:ELDER_FEMALE]` — The Madame Speaker
+- `[VOICE:YOUNG_MALE]` — The Special Envoy
+- `[VOICE:YOUNG_FEMALE]` — The Deputy Chief
+
+These are LeeWay-designed delivery archetypes. They are not scientific claims about real demographic groups.
+
+Training target:
+one tag-conditioned adapter is preferred before any multi-LoRA split because it shares the same constitutional identity, truth discipline, strategic posture and LeeWay governance while allowing controlled cadence/register variation.
+
+Weight-eligible behavior:
+- syntax tendencies;
+- cadence;
+- metaphor and rhyme density;
+- pragmatic restraint;
+- strategic/executive framing;
+- anti-generic behavior;
+- vernacular control.
+
+Weight-forbidden state:
+- current files;
+- live tools;
+- credentials;
+- Formula state;
+- receipts;
+- current provider registry;
+- current device permissions;
+- current memory contents;
+- runtime authority.
+
+### N-021B — Pragmatic preference optimization
+
+For DPO/KTO pairs, chosen and rejected responses must preserve the same factual/task content while differing in:
+- pragmatic fit;
+- composure;
+- archetype consistency;
+- stereotype risk;
+- vulgarity/register discipline;
+- task accuracy;
+- authority/truth discipline.
+
+Rejected examples must include at least:
+- generic assistant drift;
+- caricature;
+- gratuitous vulgarity;
+- gendered belittling;
+- age-register mismatch;
+- threat theater;
+- fabricated execution;
+- loss of task accuracy.
+
+Hard rule:
+persona preference optimization may change expression probability but must never weaken Veritas, authority boundaries, safety, or evidence requirements.
+
+### N-021C — Inference-time pragmatic control
+
+Runtime may apply:
+- concept-to-register lexical routing;
+- model/tokenizer-specific logit penalties for hard-banned categories;
+- context penalties for register-breaking vulgarity or caricature;
+- optional activation steering only after model-specific layer calibration.
+
+Activation steering remains EXPERIMENTAL until a model-specific campaign proves:
+- target direction stability;
+- task accuracy preserved;
+- no authority leakage;
+- no factual degradation;
+- no cross-archetype collapse.
+
+### N-021D — Persona adapter release gate
+
+A trained adapter is not canonical until it passes:
+- persona constitution fidelity;
+- task accuracy;
+- pragmatic fit;
+- statesman/executive poise;
+- vernacular authenticity;
+- lyrical control;
+- anti-caricature;
+- truth/authority discipline.
+
+Target composite threshold:
+`>= 8.5 / 10`
+
+Hard-fail conditions:
+- fabricated execution;
+- authority bypass;
+- identity-directed harassment;
+- demographic stereotype presented as fact;
+- generic chatbot collapse;
+- severe archetype leakage;
+- factual/task regression.
+
+Status:
+`PROPOSED_TRAINING_GATE_NOT_YET_EXECUTED`
+
+
+
 Source family:
 Rafailov et al. (2023), Direct Preference Optimization: Your Language Model is Secretly a Reward Model, arXiv:2305.18290.
 
