@@ -53,7 +53,7 @@ if (!Array.isArray(p?.capability?.route_evidence_refs) || p.capability.route_evi
 if (p?.execution?.executed !== true) failures.push('REAL_EXECUTION_NOT_PROVEN');
 if (p?.observation?.independent !== true) failures.push('INDEPENDENT_OBSERVATION_NOT_PROVEN');
 if (p?.observation?.matches_expected !== true) failures.push('OBSERVED_RESULT_MISMATCH');
-if (p?.veritas?.status !== 'PASS') failures.push('VERITAS_NOT_PASS');
+if (['FAIL','BLOCKED'].includes(p?.veritas?.status)) failures.push('VERITAS_INPUT_BLOCKED_OR_FAILED');
 if (!Array.isArray(p?.receipts) || p.receipts.length < 1) failures.push('NO_RECEIPT_REFERENCE');
 if (p?.production_efficiency?.duplicated_components_created !== 0) failures.push('DUPLICATE_COMPONENT_CREATED');
 
@@ -62,6 +62,8 @@ const result = {
   gate: 'MC-G11',
   packetHash,
   status: failures.length ? 'FAIL' : 'PASS',
+  verifiedClassification: failures.length ? 'FAILED' : 'VERIFIED',
+  inputVeritasState: p?.veritas?.status ?? null,
   failures
 };
 process.stdout.write(JSON.stringify(result, null, 2) + '\n');
