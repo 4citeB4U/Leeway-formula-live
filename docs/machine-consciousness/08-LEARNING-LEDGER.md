@@ -61,3 +61,26 @@ Intentional module dropout produced operational B down to 0.75 rather than fabri
 
 ## Formula state
 NOT_EXECUTED.
+
+
+## L-20261003-001 — Existing LeeWay capability fabric can carry non-LLM cognition into real execution
+
+Evidence state: VERIFIED / BOUNDED
+
+What was learned:
+A live non-LLM Machine Consciousness state can select a bounded policy and traverse the existing LeeWay capability authorities into a real provider operation without creating a duplicate capability registry, Tool Gateway, Device Bridge or runtime.
+
+Verified reusable pattern:
+`cognition state → capability manifold authority → Skill Orchestrator authority → Tool Gateway authority → focal execution set → existing Device Bridge MCP → independent observation → Veritas`
+
+Efficiency learning:
+Seven existing components were reused with one experiment-level glue harness and zero duplicated components. This directly supports the factory law that verified prior capability should lower the cost of the next product/integration.
+
+Important limitation:
+The verified provider was the bounded phone-local workspace file adapter. Android UI/Calculator control through this exact governed route remains a separate gate.
+
+Evidence:
+- verified packet SHA-256: fee10810d3018bfeb3ec44364b73ef8a2022af4af05a4cd3cc59df149c907deb;
+- write receipt SHA-256: a4e0225e867ff898485577d696800dfe5d1198227b229268b1ffbc4192032878;
+- read receipt SHA-256: c8b879a0426036bd1df439a1cbc519512d7f9d50a4f757e4e8478bc5a8c5a400;
+- receipt: receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11-VERIFIED-20261003.json.
