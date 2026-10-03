@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "0.1.0",
+  "proof_id": "MACHINE-CONSCIOUSNESS-MC-G11-FILE-ROUNDTRIP-20261003012802",
+  "timestamp": "2026-10-03T01:28:03.538Z",
+  "source_class": "REAL",
+  "cognition": {
+    "cycle_id": "live-shadow-current",
+    "state_hash": "90f826749fdb1997d1a0e25c8782bf212772f05822962d87ef05481d92ae25a4",
+    "continuity_verified": true,
+    "formula_status": "LEEWAY_FORMULA_V1_PASS"
+  },
+  "policy": {
+    "candidates": [
+      "NOOP",
+      "PHONE_LOCAL_FILE_ROUNDTRIP"
+    ],
+    "selected": "PHONE_LOCAL_FILE_ROUNDTRIP",
+    "action_request": {
+      "type": "PHONE_LOCAL_FILE_ROUNDTRIP",
+      "device_id": "fold6-termux-workspace",
+      "path": "mc-g11-machine-consciousness-mc-g11-file-roundtrip-20261003012802.txt"
+    },
+    "selection_rule": "Select bounded roundtrip only when live non-LLM shadow continuity is verified and Formula health is LEEWAY_FORMULA_V1_PASS."
+  },
+  "capability": {
+    "manifold_ref": "4citeB4U/LeeWay-Agent-Skills/config/leeway-capability-manifold.yaml",
+    "orchestrator_ref": "4citeB4U/LeeWay-Agent-Skills/skills/leeway-skill-orchestrator/SKILL.md",
+    "tool_gateway_ref": "4citeB4U/LeeWay-Agent-Skills/skills/leeway-tool-gateway/SKILL.md",
+    "canonical_owner": "4citeB4U/LEEWAY-DEVICE-BRIDGE",
+    "task_capability_weave": [
+      "leeway-universal-capability-kernel",
+      "leeway-skill-orchestrator",
+      "leeway-tool-gateway",
+      "leeway-device-bridge"
+    ],
+    "focal_execution_set": [
+      "device.files.write",
+      "device.files.read"
+    ],
+    "skill_authority_calls": [
+      {
+        "tool": "leeway-universal-capability-kernel",
+        "response_sha256": "d72a9668d2669eaf0b6bc59935bdb1386cf485a9d50f84440e3a28d09fe7cf01",
+        "markers_verified": [
+          "capability manifold",
+          "FOCAL_EXECUTION_SET"
+        ]
+      },
+      {
+        "tool": "leeway-skill-orchestrator",
+        "response_sha256": "edd51a621e0cc32119dea4b7b0d5cd306903e3c3fd5b0b5f39fa680d0d4ce5a8",
+        "markers_verified": [
+          "TASK_CAPABILITY_WEAVE",
+          "FOCAL_EXECUTION_SET"
+        ]
+      },
+      {
+        "tool": "leeway-tool-gateway",
+        "response_sha256": "b9018f7fa8c5d97eeed5455b2cb12ae350d634d5425cf4d0bb9a1bdf0309dccd",
+        "markers_verified": [
+          "Tool Gateway",
+          "Veritas",
+          "receipt"
+        ]
+      },
+      {
+        "tool": "leeway-device-bridge",
+        "response_sha256": "6fb336b8c195e7b6c08f7b72ff511e3847d1ebf6334c64f26cef4090958c0ad1",
+        "markers_verified": [
+          "device_open_app",
+          "device_files_read",
+          "device_files_write"
+        ]
+      }
+    ],
+    "manifold_routed": true,
+    "orchestrator_routed": true,
+    "tool_gateway_routed": true,
+    "route_evidence_refs": [
+      "skills-mcp:leeway-universal-capability-kernel:sha256:d72a9668d2669eaf0b6bc59935bdb1386cf485a9d50f84440e3a28d09fe7cf01",
+      "skills-mcp:leeway-skill-orchestrator:sha256:edd51a621e0cc32119dea4b7b0d5cd306903e3c3fd5b0b5f39fa680d0d4ce5a8",
+      "skills-mcp:leeway-tool-gateway:sha256:b9018f7fa8c5d97eeed5455b2cb12ae350d634d5425cf4d0bb9a1bdf0309dccd",
+      "skills-mcp:leeway-device-bridge:sha256:6fb336b8c195e7b6c08f7b72ff511e3847d1ebf6334c64f26cef4090958c0ad1"
+    ]
+  },
+  "execution": {
+    "provider": "4citeB4U/LEEWAY-DEVICE-BRIDGE/apps/desktop/mcp-server.mjs",
+    "request_hash": "e8570adc0dd4703af967d764754fb5021f1240b7bfb68df19fafde76a36437d0",
+    "executed": true,
+    "write_response": {
+      "ok": true,
+      "result": {
+        "created": true,
+        "bytes": 46
+      },
+      "receipt": {
+        "version": 1,
+        "id": "defc116e-66b1-475a-81b3-60a5cd03499f",
+        "time": "2026-10-03T01:28:03.493Z",
+        "deviceId": "fold6-termux-workspace",
+        "capability": "device.files.write",
+        "outcome": "PASS",
+        "argumentsHash": "aef87b838b7b675dbf00f0773342c72aa7a7d81e53e8aa758311016adee15183",
+        "resultHash": "ad8d3d24083119ca98d1b101b0bda9faa02c3c43366ce2578a529021724dbca3",
+        "error": null,
+        "previousHash": "f77d8b866f461fdc7a4e10c492fd6e12b8b55b78e81988dea6f557b068c37f9f",
+        "authority": "CONTROLLER_OBSERVATION",
+        "formula": "NOT_EVALUATED",
+        "sha256": "a4e0225e867ff898485577d696800dfe5d1198227b229268b1ffbc4192032878"
+      }
+    },
+    "read_response": {
+      "ok": true,
+      "result": {
+        "text": "LEEWAY_MC_G11_95ccec3f2c4d1051e312419fc8799386"
+      },
+      "receipt": {
+        "version": 1,
+        "id": "92aaf820-1b2d-44aa-ae0b-ec671ee034dd",
+        "time": "2026-10-03T01:28:03.504Z",
+        "deviceId": "fold6-termux-workspace",
+        "capability": "device.files.read",
+        "outcome": "PASS",
+        "argumentsHash": "358d73937c8f00b107ef7bcab7a27e3fe730fca1f1df8bf652c7fffc748666b9",
+        "resultHash": "76f40bd6935c7c6eddfd3bd7a3bc9e966d1d5a459f5fa4cc6f713c4807401f09",
+        "error": null,
+        "previousHash": "5e7aa3b6c8924456bad92d6d5627a0cf5689c0bcf9109a2ac81a93213ca58d51",
+        "authority": "CONTROLLER_OBSERVATION",
+        "formula": "NOT_EVALUATED",
+        "sha256": "c8b879a0426036bd1df439a1cbc519512d7f9d50a4f757e4e8478bc5a8c5a400"
+      }
+    },
+    "bridge_receipts_path": "/data/data/com.termux/files/home/.leeway/workstation/repos/Leeway-formula-live/experiments/machine-consciousness-v0/outputs/mc-g11/device-bridge-receipts-MACHINE-CONSCIOUSNESS-MC-G11-FILE-ROUNDTRIP-20261003012802.jsonl"
+  },
+  "observation": {
+    "independent": true,
+    "expected_sha256": "299de1cfbacff713e6a5147ac9a6477b61a39fe918e064252b8a510b1f6862bb",
+    "observed_sha256": "299de1cfbacff713e6a5147ac9a6477b61a39fe918e064252b8a510b1f6862bb",
+    "matches_expected": true,
+    "evidence_ref": "/data/data/com.termux/files/home/.leeway/workstation/repos/Leeway-formula-live/experiments/machine-consciousness-v0/outputs/mc-g11/phone-workspace/mc-g11-machine-consciousness-mc-g11-file-roundtrip-20261003012802.txt"
+  },
+  "llm_boundary": {
+    "cognition_kernel_llm_required": false,
+    "policy_selection_llm_used": false,
+    "capability_selection_llm_used": false,
+    "execution_authority_llm_used": false,
+    "result_verification_llm_used": false,
+    "learning_admission_llm_used": false
+  },
+  "production_efficiency": {
+    "reused_components_count": 7,
+    "new_glue_components_count": 1,
+    "duplicated_components_created": 0,
+    "human_interventions": 0,
+    "manual_steps": 0,
+    "elapsed_cycle_time_ms": null
+  },
+  "classification": "EXECUTED_UNVERIFIED"
+}
