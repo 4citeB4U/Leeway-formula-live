@@ -446,3 +446,27 @@ NOT YET EXECUTED.
 
 Lesson:
 mounted != executed; command exit 0 != intended result; component named != component traversed; reuse must itself be proven.
+
+
+## F-20261003-002 — MC-G11B actuation blocked by provider state, not ecosystem routing
+
+Observation:
+The governed LeeWay route was live and requalified through Agent Skills MCP and Device Bridge. A Calculator launch request reached the live native phone runtime, but the independent accessibility snapshot failed with ACCESSIBILITY_SERVICE_NOT_ACTIVE. The approved voice fallback separately returned VOICE_UNAVAILABLE.
+
+Diagnosis:
+- Device Bridge health and relay connectivity were healthy;
+- Android UI postcondition verification depends on the LeeWay Device Operator accessibility service, which is currently inactive;
+- VoiceRuntime correctly refuses system-TTS substitution and reports the canonical Voice Fabric native phone adapter as unqualified;
+- neither failure justifies creating a parallel device controller or substitute voice engine.
+
+Repair direction:
+1. restore/owner-authorize the existing LeeWay Device Operator accessibility service;
+2. rerun Calculator through the same governed route and require observed foreground/result evidence;
+3. qualify the existing LeeWay Voice Fabric native phone adapter separately rather than adding fallback TTS.
+
+Retest state:
+MC-G11A read-only path PASS / requalified.
+MC-G11B actuation BLOCKED pending existing provider authorization/qualification.
+
+Lesson:
+A healthy ecosystem route does not imply every provider is currently healthy. Capability-level provider state must remain visible and fail closed.
