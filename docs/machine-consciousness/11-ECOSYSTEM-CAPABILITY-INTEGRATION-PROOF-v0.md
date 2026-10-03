@@ -271,6 +271,15 @@ MC-G11-A proves one governed ecosystem capability. It does not generalize to all
 
 ### MC-G11-B — Android UI / Calculator
 
-Status: NOT YET EXECUTED through the same governed route.
+Status: PARTIAL EXECUTION / BLOCKED AT POSTCONDITION VERIFICATION — 2026-10-03 UTC / 2026-10-02 America/Chicago.
+
+Observed current state:
+- governed ecosystem path and native Device Bridge relay are live;
+- Calculator launch request returned LAUNCH_REQUESTED;
+- independent accessibility snapshot returned ACCESSIBILITY_SERVICE_NOT_ACTIVE;
+- therefore foreground/result verification did not pass;
+- voice fallback also remained blocked because the canonical Voice Fabric native phone adapter is not yet qualified.
+
+Do not repair this by bypassing Device Bridge or substituting system TTS. Restore the existing provider authority/qualification and rerun the same gate.
 
 The prior direct Android VIEW baseline failed and was not promoted. The next UI proof must route through the existing LeeWay capability authorities and the canonical Device Bridge/Pocket execution path, independently observe the Calculator outcome, pass Veritas, and preserve receipts.
