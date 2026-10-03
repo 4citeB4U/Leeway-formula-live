@@ -926,3 +926,37 @@ This proves one governed, real, phone-local file capability traversed existing L
 
 Receipt:
 receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11-VERIFIED-20261003.json
+
+
+## E-122 — MC-G11A live ecosystem-path requalification and MC-G11B provider-state probe
+
+Date: 2026-10-03 UTC / 2026-10-02 America/Chicago
+State: MC-G11A VERIFIED_REQUALIFICATION / MC-G11B BLOCKED_AT_PROVIDER_POSTCONDITION
+
+Requalification:
+- Agent Skills MCP protocol: 592 tools; 49 bounded capability tools; 7 device tools; PROTOCOL_VERIFIED;
+- live Device Bridge local health: PASS;
+- authority: PHONE_LOCAL_RUNTIME;
+- agent access: enabled;
+- remote relay: enabled, connected, lastEvent=AUTHENTICATED;
+- live remote capability count: 26;
+- Agent Skills device_capabilities -> loopback Device MCP gateway -> canonical RelayAdapter -> live phone returned ADAPTER_EVIDENCE_RECEIVED, executed=true, HTTP 200;
+- independent MC-G11 validator: PASS / VERIFIED;
+- all six governed LLM-use fields: false;
+- duplicate components created: 0.
+
+MC-G11B actuation probe:
+- device.apps.launch for Samsung Calculator returned LAUNCH_REQUESTED;
+- independent device.ui.snapshot returned ACCESSIBILITY_SERVICE_NOT_ACTIVE;
+- therefore foreground/postcondition verification did not pass and Calculator control was not promoted;
+- fallback voice.speak returned VOICE_UNAVAILABLE;
+- voice.status confirmed canonical LeeWay Voice Fabric authority but native phone adapter remains unqualified and fallbackAllowed=false.
+
+Interpretation:
+Lane C / Device Bridge itself is live. The current actuation blocker is provider-specific Android accessibility state, not loss of the LeeWay ecosystem route. Voice is a separate provider qualification gap.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11A-REQUALIFICATION-20261003.json
+
+Claim boundary:
+read-only capability traversal is reverified; UI actuation and voice execution remain unverified.
