@@ -1,0 +1,78 @@
+{
+  "receipt_id": "MACHINE-CONSCIOUSNESS-MC-G11A-REQUALIFICATION-20261003",
+  "timestamp_utc": "2026-10-03T02:11:07.557Z",
+  "scope": "Read-only requalification of the existing governed LeeWay ecosystem path on the authorized Android workstation",
+  "classification": "VERIFIED_REQUALIFICATION_BOUNDED",
+  "canonical_prior_proof": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11-VERIFIED-20261003.json",
+  "machine_state_hash": "b4a4ccec0b423625a42d3687e8ce3c19ffe8b71d7b4df08299e11ca1140e0fea",
+  "continuity_verified": true,
+  "formula_status": "LEEWAY_FORMULA_V1_PASS",
+  "route": [
+    "LeeWay Machine Consciousness state",
+    "LeeWay Agent Skills MCP",
+    "device_capabilities",
+    "loopback Device MCP gateway",
+    "LEEWAY-DEVICE-BRIDGE RelayAdapter",
+    "live phone Device Bridge runtime"
+  ],
+  "agent_skills_protocol": {
+    "tool_count": 592,
+    "bounded_capability_tools": 49,
+    "device_tools": 7,
+    "protocol_state": "PROTOCOL_VERIFIED"
+  },
+  "live_device_bridge": {
+    "local_health": "PASS",
+    "authority": "PHONE_LOCAL_RUNTIME",
+    "agent_access_enabled": true,
+    "remote_enabled": true,
+    "remote_connected": true,
+    "remote_last_event": "AUTHENTICATED",
+    "remote_capability_count": 26
+  },
+  "mcp_traversal": {
+    "state": "ADAPTER_EVIDENCE_RECEIVED",
+    "executed": true,
+    "upstream_http_status": 200,
+    "required_capabilities_observed": {
+      "device_health": true,
+      "device_apps_launch": true,
+      "device_ui_snapshot": true
+    }
+  },
+  "authority_hashes": {
+    "capability_manifold": "56db0b1614c5762baac9a5462df339dd6d3a1147ca0248552f7bbc113c6ba8f1",
+    "skill_orchestrator": "deeaa5b5002bca47c1fd862954da8944b63c76bd17d61dbf7803d59bc3a2cd72",
+    "tool_gateway": "d6e36e2bda0f3ae13f27c20da984cffa4dff5de63646a71dae01effdb20b7261",
+    "device_capability_tools": "1c2d883e256f227e45b92fe36b4bca0b98efb1f1ccce0856bd79d72535d2aee0",
+    "device_mcp_gateway": "3b6f94cfa13e674c1e603ab2f257f3934c7a05359237190c7870727e80d8ef4b",
+    "relay_adapter": "ddca173bbafeff7e8bb699bea605390cb2cb6c21db1b711aaac35b9c677d1593"
+  },
+  "raw_execution_evidence_sha256": "44bf4da34f2d8ab531115fc4009291d5b9c939dfee5aeab26bd99ebd759d3e97",
+  "proof_packet_sha256": "7129996987397ffe8660962daf540eec690e836cddba660b7078bf7c8c14b5ec",
+  "veritas": {
+    "validator_result": "PASS",
+    "verified_classification": "VERIFIED",
+    "failures": []
+  },
+  "llm_boundary": {
+    "cognition_kernel_llm_required": false,
+    "policy_selection_llm_used": false,
+    "capability_selection_llm_used": false,
+    "execution_authority_llm_used": false,
+    "result_verification_llm_used": false,
+    "learning_admission_llm_used": false
+  },
+  "production_efficiency": {
+    "reused_components_count": 6,
+    "new_glue_components_count": 1,
+    "duplicated_components_created": 0
+  },
+  "mc_g11_b_state": {
+    "android_app_launch_request": "EXECUTED",
+    "android_ui_postcondition_verification": "BLOCKED_ACCESSIBILITY_SERVICE_NOT_ACTIVE",
+    "voice_speak": "BLOCKED_VOICE_UNAVAILABLE",
+    "voice_status": "LEEWAY_VOICE_FABRIC_NATIVE_PHONE_ADAPTER_NOT_YET_QUALIFIED"
+  },
+  "claim_boundary": "This requalifies the existing governed read-only LeeWay capability path and live native Device Bridge connectivity. It does not promote Android UI/Calculator actuation or voice execution to VERIFIED."
+}
