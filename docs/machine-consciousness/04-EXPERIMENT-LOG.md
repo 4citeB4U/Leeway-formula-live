@@ -844,3 +844,29 @@ controlled policy/learning ablations against simpler baselines.
 
 Receipt:
 receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CONTRIBUTION-TRANCHE-1-20261001.json
+
+
+## E-120 — MC-G11 governed ecosystem integration baseline
+
+Date: 2026-10-02
+State: FAILED_BASELINE / MC-G11 NOT PASSED
+
+Observed on the authorized Android workstation:
+- the existing non-LLM physical-loop test invoked Android VIEW through a direct phone-side action;
+- activity-manager exit code = 0;
+- expected localhost browser callback was not observed;
+- observation therefore did not match prediction;
+- Formula health remained LEEWAY_FORMULA_V1_PASS but Formula evaluation was NOT_INVOKED;
+- LLM dependency = 0.
+
+Critical integration finding:
+the baseline did not traverse the existing Universal Capability Kernel, Skill Orchestrator, Tool Gateway or governed Device Bridge path. Therefore it cannot count as proof that Machine Consciousness can use the full LeeWay ecosystem.
+
+Scientific use:
+this negative result establishes the MC-G11 baseline and the first failed boundary. The next test must route the same bounded action through the existing LeeWay capability authorities and independently observe the real result.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11-BASELINE-DIRECT-ACTION-FAIL-20261002.json
+
+Claim boundary:
+executed command != observed outcome; named capability authority != proven capability routing.
