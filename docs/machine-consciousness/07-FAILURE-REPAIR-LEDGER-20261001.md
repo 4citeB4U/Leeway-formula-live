@@ -422,3 +422,27 @@ G-014 — Live Formula service identity, deployed source hashes, kernel-integrit
 
 Lesson:
 service health != source authority, and latest repository commit != Formula identity. Formula authority is established by the canonical bytes/contracts plus verified live behavior and provenance.
+
+
+## F-20261002-001 — Direct Android action was mistaken for an ecosystem-integration candidate
+
+Observation:
+The existing physical-loop source invoked Android activity manager directly. The command returned exit code 0, but the expected localhost browser callback did not arrive.
+
+Diagnosis:
+Two separate proof gaps existed:
+1. command acceptance did not establish the intended external result;
+2. the path bypassed the existing LeeWay Universal Capability Kernel, Skill Orchestrator, Tool Gateway and governed Device Bridge route, so it could not prove ecosystem capability reuse.
+
+Repair:
+- preserve the failed result as the MC-G11 baseline;
+- add an explicit MC-G11 proof protocol;
+- add machine-readable evidence fields for manifold_routed, orchestrator_routed, tool_gateway_routed and route_evidence_refs;
+- make the validator fail closed when any governed route is only named but not evidenced;
+- next test must reuse the existing Device Bridge path rather than another direct Android command.
+
+Retest state:
+NOT YET EXECUTED.
+
+Lesson:
+mounted != executed; command exit 0 != intended result; component named != component traversed; reuse must itself be proven.
