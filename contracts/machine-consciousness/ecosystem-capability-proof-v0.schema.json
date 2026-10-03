@@ -20,24 +20,56 @@
     "classification"
   ],
   "properties": {
-    "proof_id": {"type": "string", "minLength": 1},
-    "timestamp": {"type": "string", "minLength": 1},
-    "source_class": {"enum": ["REAL", "TEST_FIXTURE"]},
+    "proof_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_class": {
+      "enum": [
+        "REAL",
+        "TEST_FIXTURE"
+      ]
+    },
     "cognition": {
       "type": "object",
-      "required": ["cycle_id", "state_hash"],
+      "required": [
+        "cycle_id",
+        "state_hash"
+      ],
       "properties": {
-        "cycle_id": {"type": "string", "minLength": 1},
-        "state_hash": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}
+        "cycle_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "state_hash": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        }
       }
     },
     "policy": {
       "type": "object",
-      "required": ["candidates", "selected", "action_request"],
+      "required": [
+        "candidates",
+        "selected",
+        "action_request"
+      ],
       "properties": {
-        "candidates": {"type": "array", "minItems": 1},
-        "selected": {"type": "string", "minLength": 1},
-        "action_request": {"type": "object"}
+        "candidates": {
+          "type": "array",
+          "minItems": 1
+        },
+        "selected": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action_request": {
+          "type": "object"
+        }
       }
     },
     "capability": {
@@ -47,49 +79,139 @@
         "orchestrator_ref",
         "focal_execution_set",
         "tool_gateway_ref",
-        "canonical_owner"
+        "canonical_owner",
+        "manifold_routed",
+        "orchestrator_routed",
+        "tool_gateway_routed",
+        "route_evidence_refs"
       ],
       "properties": {
-        "manifold_ref": {"type": "string", "minLength": 1},
-        "orchestrator_ref": {"type": "string", "minLength": 1},
-        "focal_execution_set": {"type": "array", "minItems": 1},
-        "tool_gateway_ref": {"type": "string", "minLength": 1},
-        "canonical_owner": {"type": "string", "minLength": 1}
+        "manifold_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "orchestrator_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "focal_execution_set": {
+          "type": "array",
+          "minItems": 1
+        },
+        "tool_gateway_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canonical_owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "manifold_routed": {
+          "type": "boolean"
+        },
+        "orchestrator_routed": {
+          "type": "boolean"
+        },
+        "tool_gateway_routed": {
+          "type": "boolean"
+        },
+        "route_evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "execution": {
       "type": "object",
-      "required": ["provider", "request_hash", "executed", "result"],
+      "required": [
+        "provider",
+        "request_hash",
+        "executed",
+        "result"
+      ],
       "properties": {
-        "provider": {"type": "string", "minLength": 1},
-        "provider_version": {"type": ["string", "null"]},
-        "provider_hash": {"type": ["string", "null"]},
-        "request_hash": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
-        "executed": {"type": "boolean"},
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provider_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "request_hash": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "executed": {
+          "type": "boolean"
+        },
         "result": {}
       }
     },
     "observation": {
       "type": "object",
-      "required": ["independent", "matches_expected"],
+      "required": [
+        "independent",
+        "matches_expected"
+      ],
       "properties": {
-        "independent": {"type": "boolean"},
-        "matches_expected": {"type": "boolean"},
-        "evidence_ref": {"type": ["string", "null"]}
+        "independent": {
+          "type": "boolean"
+        },
+        "matches_expected": {
+          "type": "boolean"
+        },
+        "evidence_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "veritas": {
       "type": "object",
-      "required": ["status"],
+      "required": [
+        "status"
+      ],
       "properties": {
-        "status": {"enum": ["PASS", "FAIL", "BLOCKED", "NOT_EXECUTED"]},
-        "evidence_ref": {"type": ["string", "null"]},
-        "failure_boundary": {"type": ["string", "null"]}
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "BLOCKED",
+            "NOT_EXECUTED"
+          ]
+        },
+        "evidence_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "failure_boundary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "receipts": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string"
+      },
       "minItems": 1
     },
     "llm_boundary": {
@@ -104,12 +226,24 @@
         "learning_admission_llm_used"
       ],
       "properties": {
-        "cognition_kernel_llm_required": {"const": false},
-        "policy_selection_llm_used": {"const": false},
-        "capability_selection_llm_used": {"const": false},
-        "execution_authority_llm_used": {"const": false},
-        "result_verification_llm_used": {"const": false},
-        "learning_admission_llm_used": {"const": false}
+        "cognition_kernel_llm_required": {
+          "const": false
+        },
+        "policy_selection_llm_used": {
+          "const": false
+        },
+        "capability_selection_llm_used": {
+          "const": false
+        },
+        "execution_authority_llm_used": {
+          "const": false
+        },
+        "result_verification_llm_used": {
+          "const": false
+        },
+        "learning_admission_llm_used": {
+          "const": false
+        }
       }
     },
     "production_efficiency": {
@@ -122,12 +256,32 @@
         "manual_steps"
       ],
       "properties": {
-        "reused_components_count": {"type": "integer", "minimum": 0},
-        "new_glue_components_count": {"type": "integer", "minimum": 0},
-        "duplicated_components_created": {"const": 0},
-        "human_interventions": {"type": "integer", "minimum": 0},
-        "manual_steps": {"type": "integer", "minimum": 0},
-        "elapsed_cycle_time_ms": {"type": ["number", "null"], "minimum": 0}
+        "reused_components_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "new_glue_components_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duplicated_components_created": {
+          "const": 0
+        },
+        "human_interventions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "manual_steps": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "elapsed_cycle_time_ms": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
       }
     },
     "classification": {
