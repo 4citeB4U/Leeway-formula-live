@@ -248,6 +248,29 @@ No successful or failed run is undocumented.
 
 ## Current gate
 
-MC-G11 status at creation of this protocol: NOT_EXECUTED.
+### MC-G11-A — bounded ecosystem capability
 
-The next admissible state is SOURCE_IMPLEMENTED after the validator/handoff artifacts exist. A real capability run is still required before any EXECUTED or VERIFIED claim.
+Status: VERIFIED PASS — 2026-10-03 UTC / 2026-10-02 America/Chicago.
+
+Verified capability:
+phone-local bounded workspace file write/read through existing LeeWay skill authorities and existing Device Bridge MCP.
+
+Evidence:
+- receipt: `receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11-VERIFIED-20261003.json`;
+- verified packet SHA-256: `fee10810d3018bfeb3ec44364b73ef8a2022af4af05a4cd3cc59df149c907deb`;
+- Device Bridge write receipt: `a4e0225e867ff898485577d696800dfe5d1198227b229268b1ffbc4192032878`;
+- Device Bridge read receipt: `c8b879a0426036bd1df439a1cbc519512d7f9d50a4f757e4e8478bc5a8c5a400`;
+- structural MC-G11 validator: PASS;
+- governed LLM-use fields: all false.
+
+Production reuse:
+7 existing components reused; 1 experiment-level glue harness; 0 duplicated components.
+
+Claim boundary:
+MC-G11-A proves one governed ecosystem capability. It does not generalize to all LeeWay capabilities.
+
+### MC-G11-B — Android UI / Calculator
+
+Status: NOT YET EXECUTED through the same governed route.
+
+The prior direct Android VIEW baseline failed and was not promoted. The next UI proof must route through the existing LeeWay capability authorities and the canonical Device Bridge/Pocket execution path, independently observe the Calculator outcome, pass Veritas, and preserve receipts.
