@@ -402,3 +402,27 @@ Claim:
 MC-G7 establishes Formula authority, not machine-consciousness Formula execution.
 State:
 cognition execution remains NOT_EXECUTED at gate close.
+
+
+## C-20261003-001 — Governed non-LLM ecosystem capability execution
+
+Claim:
+One bounded phone-local file capability has been executed and independently verified through existing LeeWay skill authorities and the existing Device Bridge MCP while all governed LLM-use flags remained false.
+
+State:
+VERIFIED / BOUNDED.
+
+Evidence:
+- MC-G11 verified packet SHA-256: fee10810d3018bfeb3ec44364b73ef8a2022af4af05a4cd3cc59df149c907deb;
+- expected and observed payload SHA-256 matched exactly;
+- provider write/read receipts independently recomputed;
+- structural MC-G11 validator PASS.
+
+May say:
+"LeeWay Machine Consciousness has completed one verified non-LLM governed capability roundtrip through the existing LeeWay ecosystem."
+
+May not yet say:
+- it can already operate every LeeWay capability;
+- Android UI/Calculator control has passed MC-G11;
+- it has the full breadth of a large LLM;
+- it proves subjective or phenomenal consciousness.
