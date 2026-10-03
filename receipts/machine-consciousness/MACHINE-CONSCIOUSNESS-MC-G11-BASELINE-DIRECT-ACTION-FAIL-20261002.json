@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "0.1.0",
+  "proof_id": "MACHINE-CONSCIOUSNESS-MC-G11-BASELINE-DIRECT-ACTION-FAIL-20261002",
+  "timestamp": "2026-10-02",
+  "source_class": "REAL",
+  "cognition": {
+    "cycle_id": "L1A-PHYSICAL-LOOP-20261002",
+    "state_hash": "491030257476051a8794ea20f6f4bae3361d68a77c6f5e405712cc012a9567af"
+  },
+  "policy": {
+    "candidates": ["ANDROID_VIEW_LOCAL_PROOF_PAGE"],
+    "selected": "ANDROID_VIEW_LOCAL_PROOF_PAGE",
+    "action_request": {
+      "type": "ANDROID_VIEW_LOCAL_PROOF_PAGE",
+      "target": "http://127.0.0.1:8790/proof/[NONCE]"
+    }
+  },
+  "capability": {
+    "manifold_ref": "4citeB4U/LeeWay-Agent-Skills/config/leeway-capability-manifold.yaml",
+    "orchestrator_ref": "4citeB4U/LeeWay-Agent-Skills/skills/leeway-skill-orchestrator/SKILL.md",
+    "focal_execution_set": ["DIRECT_ANDROID_AM_BASELINE_ONLY"],
+    "tool_gateway_ref": "4citeB4U/LeeWay-Agent-Skills/skills/leeway-tool-gateway/SKILL.md",
+    "canonical_owner": "LEEWAY-DEVICE-BRIDGE for governed device execution; baseline did not traverse it",
+    "manifold_routed": false,
+    "orchestrator_routed": false,
+    "tool_gateway_routed": false,
+    "route_evidence_refs": []
+  },
+  "execution": {
+    "provider": "Android activity manager direct baseline",
+    "provider_version": null,
+    "provider_hash": null,
+    "request_hash": "2cb8240fb4709c45c647479ff5f672c889f7dd5c8b6d606ec3d466ec28f73d93",
+    "executed": true,
+    "result": {
+      "activity_manager_exit_code": 0,
+      "expected_browser_callback_received": false
+    }
+  },
+  "observation": {
+    "independent": true,
+    "matches_expected": false,
+    "evidence_ref": "local phone artifact: experiments/machine-consciousness-live-shadow-v0/outputs/physical-loop-20261002.json"
+  },
+  "veritas": {
+    "status": "FAIL",
+    "evidence_ref": "local phone artifact: receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-L1A-PHYSICAL-LOOP-20261002.json",
+    "failure_boundary": "Direct Android VIEW action returned exit code 0 but expected localhost browser callback was not observed; existing Capability Manifold, Skill Orchestrator, Tool Gateway and Device Bridge path were not traversed."
+  },
+  "receipts": [
+    "local phone artifact: receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-L1A-PHYSICAL-LOOP-20261002.json"
+  ],
+  "llm_boundary": {
+    "cognition_kernel_llm_required": false,
+    "policy_selection_llm_used": false,
+    "capability_selection_llm_used": false,
+    "execution_authority_llm_used": false,
+    "result_verification_llm_used": false,
+    "learning_admission_llm_used": false
+  },
+  "production_efficiency": {
+    "reused_components_count": 2,
+    "new_glue_components_count": 0,
+    "duplicated_components_created": 0,
+    "human_interventions": 0,
+    "manual_steps": 0,
+    "elapsed_cycle_time_ms": null
+  },
+  "classification": "FAILED",
+  "claim_boundary": "This is a negative MC-G11 baseline. It proves fail-closed evidence discipline and a real direct Android action attempt. It does not prove governed ecosystem capability routing."
+}
