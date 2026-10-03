@@ -870,3 +870,59 @@ receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11-BASELINE-DIRECT-ACTI
 
 Claim boundary:
 executed command != observed outcome; named capability authority != proven capability routing.
+
+
+## E-121 — MC-G11 first governed LeeWay ecosystem capability PASS
+
+Date: 2026-10-03 UTC / 2026-10-02 America/Chicago
+State: PASS — MC-G11 bounded file-capability proof
+
+Live host:
+authorized Galaxy Z Fold6 Android/Termux workstation.
+
+Cognition precondition:
+- live non-LLM shadow state hash: 90f826749fdb1997d1a0e25c8782bf212772f05822962d87ef05481d92ae25a4;
+- continuityVerified = true;
+- Formula health = LEEWAY_FORMULA_V1_PASS;
+- Formula task evaluation was not used for the Device Bridge provider receipts.
+
+Deterministic policy:
+- candidates: NOOP, PHONE_LOCAL_FILE_ROUNDTRIP;
+- selected: PHONE_LOCAL_FILE_ROUNDTRIP;
+- rule: select the bounded roundtrip only while continuity is verified and Formula health is PASS.
+
+Governed LeeWay route actually exercised:
+- LeeWay Universal Capability Kernel via Skills MCP;
+- LeeWay Skill Orchestrator via Skills MCP;
+- LeeWay Tool Gateway via Skills MCP;
+- LeeWay Device Bridge authority via Skills MCP;
+- focal execution set: device.files.write + device.files.read;
+- provider: existing LEEWAY-DEVICE-BRIDGE apps/desktop/mcp-server.mjs.
+
+Provider result:
+- write PASS;
+- read PASS;
+- expected/observed payload SHA-256 both 299de1cfbacff713e6a5147ac9a6477b61a39fe918e064252b8a510b1f6862bb;
+- Device Bridge write receipt SHA-256: a4e0225e867ff898485577d696800dfe5d1198227b229268b1ffbc4192032878;
+- Device Bridge read receipt SHA-256: c8b879a0426036bd1df439a1cbc519512d7f9d50a4f757e4e8478bc5a8c5a400.
+
+Independent Veritas:
+PASS; provider receipt hashes were recomputed, provider outcomes checked, route evidence checked, roundtrip bytes rehashed, and all six LLM-boundary fields were false.
+
+Structural MC-G11 validator:
+PASS.
+Verified packet SHA-256:
+fee10810d3018bfeb3ec44364b73ef8a2022af4af05a4cd3cc59df149c907deb.
+
+Production-efficiency evidence:
+- reused components: 7;
+- new glue components: 1;
+- duplicated components created: 0;
+- human interventions during executed roundtrip: 0;
+- manual steps inside executed roundtrip: 0.
+
+Claim boundary:
+This proves one governed, real, phone-local file capability traversed existing LeeWay skill authorities and existing Device Bridge MCP without an LLM in cognition, policy selection, capability selection, execution authority, result verification or learning admission. It does not yet prove Android UI/Calculator control through the same governed route, general natural-language understanding or phenomenal consciousness.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11-VERIFIED-20261003.json
