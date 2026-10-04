@@ -1052,3 +1052,51 @@ receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-LOD-ABLATION-TRANCHE-
 
 Next:
 production-grounded resource benchmark for LOD, plus either a separately calibrated static-spatial observation contract or restored live vehicle/map-match evidence.
+
+
+## E-132 — MC-G9 production-grounded skill-document LOD benchmark
+
+Date: 2026-10-04
+State: VERIFIED_HOST_GROUNDED_FILE_LOADING_IMPROVEMENT
+
+Storage precondition:
+The returned E: provider was independently identified as Insignia NS-PACS2B25(-C), serial 47B2500000001CE5, USB, healthy/online/writable NTFS, with 861,021,351,936 bytes free. A 22-byte write/hash/delete probe passed. E: is a host binding only; canonical identity remains <LEEWAY_ROOT>.
+
+Agent Skills source:
+fe33c00cb2a466728d996fc2a9145107ca308ab5.
+
+Inventory distinction:
+repository audit layer reports 247 skill artifacts; live filesystem contains 499 physical skills/**/SKILL.md documents totaling 1,808,502 bytes. This benchmark measures physical document-loading cost and uses the 499-document universe without redefining the semantic audit count.
+
+Matched host experiment:
+- eager control: read all 499 full documents;
+- LOD treatment: enumerate descriptors for the universe and read 5 focal full documents;
+- 60 iterations per lane;
+- separate no-profile PowerShell processes;
+- 5,000 bootstrap resamples, seed 20261004.
+
+Results:
+- full document loads: 499 -> 5, reduction 98.99799599198397%;
+- payload: 1,808,502 -> 19,463.7 mean bytes, reduction 98.92376674175644%, 95% CI [98.76796284070095%, 99.07321823992085%];
+- wall time: 15.641558333333331 -> 3.705605 ms, reduction 76.30923389453416%, 95% CI [73.40774948286793%, 77.93947254721041%];
+- CPU: 15.104166666666666 -> 5.208333333333333 ms, reduction 65.51724137931035%, 95% CI [50%, 79.62962962962963%];
+- working set reduction 5.780866618043907%;
+- peak working set reduction 4.833384115479263%;
+- OS I/O read counter remained zero in both lanes and is NON_INFORMATIVE_OS_CACHE_COUNTER_ZERO.
+
+Creator >=20% gate:
+PASS for document loads, payload bytes, wall time and CPU time. Memory metrics do not clear 20%.
+
+Failures preserved:
+the first bootstrap analyzer failed on PowerShell array precedence; a corrected attempt hit a locked failed output; final evidence was written to production-analysis-v2.json rather than overwriting failed evidence.
+
+Evidence hashes:
+- eager 664D76959F6F248F754CC4560797BC44E1D9B6BD3AB60B79AFC8299CD1B58022
+- LOD F5E74C57552525E6BF2DE9104834AD043AFAE7B73AB2B976ADF407C93EAFF7B3
+- analysis 9828BC58A9C75302C6586BB2261F837B3734580BC7E8800544EF75495D1A547F
+
+Claim boundary:
+verified host-grounded warm-cache skill-document loading improvement; not yet an end-to-end Skill Orchestrator/Universal Capability Kernel task-latency proof.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-PRODUCTION-LOD-BENCHMARK-20261004.json
