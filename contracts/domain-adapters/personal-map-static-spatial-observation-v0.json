@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "personal-map-static-spatial-observation-v0",
+  "status": "MEASUREMENT_CONTRACT_BUILT_NOT_CALIBRATED_NOT_EXECUTED",
+  "domain": "personal-maps-static-spatial-observation",
+  "purpose": "Separately measure and calibrate static spatial density/presentation pressure without mixing moving-subject or transit-route-deviation evidence into the dynamic spatial contract.",
+  "separationRule": {
+    "dynamicContract": "personal-map-spatial-density-v0",
+    "staticContract": "personal-map-static-spatial-observation-v0",
+    "prohibition": "Static and dynamic calibration rows, ranges, receipts, and promotion decisions MUST NOT be pooled or substituted for one another."
+  },
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "runtimeAdapterId": "runtime-state-v1",
+    "formulaMutation": false
+  },
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "visible_static_candidate_count",
+      "unit": "count",
+      "definition": "Source-backed static map candidates admitted by enabled non-moving layers plus rendered place candidates.",
+      "missingDataPolicy": "REQUIRED"
+    },
+    {
+      "index": 1,
+      "id": "rendered_static_label_count",
+      "unit": "count",
+      "definition": "Static business/place labels actually rendered after zoom and density admission.",
+      "missingDataPolicy": "REQUIRED_ZERO_ALLOWED"
+    },
+    {
+      "index": 2,
+      "id": "enabled_static_layer_count",
+      "unit": "count",
+      "definition": "Enabled non-moving map layers participating in the observation.",
+      "missingDataPolicy": "REQUIRED"
+    },
+    {
+      "index": 3,
+      "id": "camera_height_m",
+      "unit": "meters",
+      "definition": "Cesium camera height defining the spatial scale/zoom regime for this static observation.",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 4,
+      "id": "frame_time_ms",
+      "unit": "milliseconds",
+      "definition": "Measured P95 rendered-frame duration over the local observation window.",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 5,
+      "id": "interaction_latency_ms",
+      "unit": "milliseconds",
+      "definition": "Measured user-input to next-visible-frame latency.",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    }
+  ],
+  "observationWindow": {
+    "rows": 16,
+    "width": 6,
+    "rule": "16 consecutive complete observations under one app version, device/runtime profile, viewport regime and static-layer identity."
+  },
+  "calibration": {
+    "state": "NOT_CALIBRATED",
+    "minimumLiveTraces": 3,
+    "minimumCompleteObservations": 48,
+    "minimumDeviceProfiles": 2,
+    "requiredViewportRegimes": [
+      "street",
+      "neighborhood",
+      "city"
+    ],
+    "ranges": null,
+    "formulaExecutionState": "NOT_EXECUTED",
+    "promotionRule": "Candidate calibration requires live traces spanning at least two device profiles and all three viewport regimes. Numeric Formula execution remains blocked until Creator review explicitly promotes a calibration artifact."
+  },
+  "prohibitions": [
+    "Do not include moving-subject count, bus route deviation, aircraft motion, vessel motion, or other dynamic-state dimensions in this contract.",
+    "Do not use dynamic-contract calibration ranges for this contract.",
+    "Do not materialize all-world POIs in browser memory to increase candidate counts.",
+    "Do not convert missing evidence to zero except rendered_static_label_count where an observed zero is valid.",
+    "Do not execute Formula before separate static calibration and ablation pass."
+  ],
+  "formulaExecutionState": "NOT_EXECUTED",
+  "reason": "Static-spatial observations require their own ranges because camera scale, static candidate density and label admission are not statistically interchangeable with moving-subject and route-deviation pressure."
+}
