@@ -104,6 +104,18 @@ MC-G9 tranche 1:
 - H, PE, V, realized IG, B and self-model are currently diagnostic/integrity signals rather than direct policy controllers;
 - gate remains ACTIVE, not closed.
 
+
+MC-G9 Cesium spatial shadow tranche (2026-10-04):
+- 58/58 Machine Consciousness tests PASS;
+- LeeWay Maps/Cesium spatial context is now present in the Global Workspace and factual self-model as SHADOW_ONLY context;
+- baseline cognition policy is unchanged and deterministic;
+- headful Chrome exposed Intel hardware WebGL through ANGLE/D3D11 and was classified REAL_GPU_CANDIDATE;
+- 104 live spatial observations were captured, but zero complete 16x6 rows qualified because transit_route_deviation_m remained unavailable;
+- live spatial evidence is therefore BLOCKED, Formula semantic use is NONE, and MC-G9 remains ACTIVE.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CESIUM-SPATIAL-SHADOW-20261004.json
+
 Live Agent Lee integration:
 PLANNED SHADOW MODE ONLY — NOT ENABLED.
 
