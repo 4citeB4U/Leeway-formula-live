@@ -30,7 +30,7 @@ if(rows.length<48) throw new Error('STATIC_SPATIAL_REQUIRES_48_ROWS');
 const ranges=[]; const summaries=[];
 for(let j=0;j<6;j++){
  const values=rows.map((r)=>r[j]); const p05=percentile(values,5),p50=percentile(values,50),p95=percentile(values,95);
- const width=Math.max(1e-9,p95-p05); const lower=Math.max(0,p05-width*.1),upper=p95+width*.1;
+ const observedMin=Math.min(...values),observedMax=Math.max(...values); const width=Math.max(1e-9,observedMax-observedMin); const lower=Math.max(0,observedMin-width*.1),upper=observedMax+width*.1;
  ranges.push([lower,upper]); summaries.push({id:ORDER[j],min:Math.min(...values),p05,p50,p95,max:Math.max(...values),range:[lower,upper]});
 }
 const output={
