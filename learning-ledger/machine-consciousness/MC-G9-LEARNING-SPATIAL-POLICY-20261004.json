@@ -1,0 +1,9 @@
+{
+  "schemaVersion":"1.0.0",
+  "entryId":"MC-G9-LEARNING-SPATIAL-POLICY-20261004",
+  "state":"CANDIDATE_LEARNING_SIMULATION_VERIFIED",
+  "learnedStatement":"In the controlled Machine Consciousness simulator, spatially informed belief can improve action outcomes when a bounded spatial consequence term participates in candidate expected-free-energy policy valuation.",
+  "evidence":{"selectedLambda":2,"holdoutPolicyGainPctPoints":5.0130208333333375,"holdoutBrierRelativeChangePct":-2.538745305829704,"experimentDigest":"e9c4c8ea2c5b0eefd0373f448934685ad67c585414e9c0fb370f8e3562f8737a"},
+  "promotionBoundary":"Candidate learning only. Do not generalize to live physical spatial control until real spatial evidence qualification and live-policy validation pass.",
+  "formulaMutation":false
+}
