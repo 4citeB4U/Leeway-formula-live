@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G9-SPATIAL-CORTEX-STAGING-20261004",
+  "status": "PASS_STAGING_LIVE_TRACE_BLOCKED",
+  "gate": "MC-G9",
+  "branch": "mc-g9-spatial-cortex-v0",
+  "sourceHead": "c1e5223c2ac7e355ff94fbfb61e140957fa3a3cd",
+  "implementationHead": "6f924a12a1c5fade90826a33336a48a4edfd98d6",
+  "validationHost": "Agent-Lee Windows workstation",
+  "tests": {
+    "machineConsciousness": {"pass": 63, "fail": 0},
+    "goldenFormula": "PASS",
+    "goldenDecimal": [4,50,63,59,48,69],
+    "goldenBase64": ["E","y","/","7","w","BF"]
+  },
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "mutation": false,
+    "spatialCortexFormulaExecution": "NOT_EXECUTED",
+    "authorityBoundary": "Cesium-derived spatial state is external observation/simulation evidence, not Formula authority."
+  },
+  "spatialProvider": {
+    "repository": "4citeB4U/Leeway-Maps",
+    "sourceHead": "4fa08dce4c18be6a45404e665fc0cc55329e6a2d",
+    "mappingId": "personal-map-spatial-density-v0",
+    "gpu": {
+      "vendor": "Google Inc. (Intel)",
+      "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "webgl": "WebGL 2.0"
+    },
+    "liveObservation": {
+      "complete": false,
+      "values": [100,0,null,0,29.20000000001164,3.099999997764826],
+      "blocker": "transit_route_deviation_m is null",
+      "observedRuntimeErrors": [
+        "transit-routes: routeGeometryIndex is not defined",
+        "transit: Milwaukee County Transit System feed unavailable",
+        "transit-vehicles: TRANSITLAND_API_KEY unavailable"
+      ]
+    }
+  },
+  "hierarchicalLod": {
+    "state": "STAGED_TESTED",
+    "capabilityLevels": ["LOD0_DESCRIPTOR","LOD1_INTERFACE","LOD2_EXECUTION"],
+    "memoryShells": ["FOCUS","HORIZON","ARCHIVE"],
+    "durableEvidenceEviction": "WORKING_MEMORY_ONLY_ARCHIVE_PRESERVED",
+    "unresolvedCommitmentEviction": "BLOCKED"
+  },
+  "classification": {
+    "spatialCortexSoftwarePath": "VERIFIED",
+    "hierarchicalLodSoftwarePath": "VERIFIED",
+    "liveGpuAvailability": "OBSERVED",
+    "qualifiedSixDimensionLiveTrace": "BLOCKED",
+    "policyAuthority": "NOT_PROMOTED"
+  },
+  "claimBoundary": "This receipt proves the staged MC-G9 spatial ingestion and hierarchical LOD software paths pass regression tests and preserve the Golden Formula. It does not prove a complete live spatial Formula input, certified physical-clearance reasoning, or policy improvement."
+}
