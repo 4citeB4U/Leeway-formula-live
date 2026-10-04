@@ -470,3 +470,32 @@ MC-G11B actuation BLOCKED pending existing provider authorization/qualification.
 
 Lesson:
 A healthy ecosystem route does not imply every provider is currently healthy. Capability-level provider state must remain visible and fail closed.
+
+
+## 2026-10-04 — MC-G9 Cesium spatial shadow learning
+
+Classification: VERIFIED_BOUNDED / NO_POLICY_PROMOTION
+
+Observation:
+A real headful Chrome session on the Agent-Lee Windows workstation exposed Intel hardware WebGL through ANGLE/D3D11. The existing LeeWay Maps spatial gate produced live frame-time and interaction-latency evidence, but the Milwaukee transit route-deviation channel remained unavailable, so no complete six-dimensional spatial rows qualified.
+
+Repair / integration:
+The existing Machine Consciousness Global Workspace and factual self-model now accept one provenance-bound `spatialContext` hash. The context is produced by a new fail-closed validator over the existing `personal-map-spatial-density-v0` measurements. It is explicitly `SHADOW_ONLY`, has `policyAuthority=false`, and does not execute or reinterpret the Golden Formula.
+
+Verification:
+- 58/58 Machine Consciousness tests PASS;
+- 4/4 spatial-context tests PASS;
+- baseline policy remains deterministic with spatial context attached;
+- MC-G9 audit digest independently recomputed;
+- original and repository traces are parsed-object identical despite whitespace-normalized byte representation;
+- live evidence remains BLOCKED at `SPATIAL_16_COMPLETE_OBSERVATIONS_REQUIRED`.
+
+Reusable learning:
+1. GPU availability and spatial-data completeness are independent evidence dimensions.
+2. Missing domain measurements must block promotion rather than be synthesized as zero.
+3. Expensive spatial geometry may be computed by the existing Cesium provider and carried as compact world-model evidence without making the provider a cognition or Formula authority.
+4. A shadow context may enrich workspace/self-model state before it earns causal policy authority.
+5. Claimed waste/LLM reduction requires a controlled OFF/ON ablation; architecture alone is not performance proof.
+
+Receipt:
+`receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CESIUM-SPATIAL-SHADOW-20261004.json`
