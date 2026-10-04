@@ -17,7 +17,7 @@
     "How far do transit GPS fixes deviate from an exact known route geometry?",
     "How much label/candidate work is visible versus culled by zoom and collision rules?",
     "What frame-time and interaction-latency pressure is the current presentation causing?",
-    "What memory/GPU pressure is attributable to currently active map surfaces?"
+    "How quickly does the interface visibly respond to the user's latest map interaction?"
   ],
   "dimensions": [
     {
@@ -71,8 +71,9 @@
   "deterministicBaseline": {
     "status": "AUTHORIZED_BASELINE_NOT_FORMULA",
     "rules": [
-      "POI labels use zoom-tier admission and bounded provider results.",
-      "Transit vehicles use exact-route constrained display geometry only when route identity and geometry match; otherwise raw source GPS remains visible without pretending it is snapped.",
+      "POI labels use zoom-tier admission and bounded provider results; the global Overture PMTiles lane is staged outside browser object memory.",
+      "Bus presentation first uses Valhalla Meili road matching when a configured map-match service returns usable geometry, then exact matching mapped route geometry, otherwise raw source GPS remains visible without pretending it is snapped.",
+      "Raw provider GPS remains canonical evidence; map-matched coordinates are derived presentation state only.",
       "Continuous rendering is held only while visible motion exists.",
       "Secondary cockpit rendering is on-demand and releases its GPU context when closed.",
       "CCTV projection/coverage geometry stays off by default in Personal Maps until explicitly requested."
@@ -98,9 +99,10 @@
     "condense": "LeeWay may derive compact operational state for rendering, prioritization and continuity, but every derived state must retain source/provenance linkage."
   },
   "calibration": {
-    "state": "NOT_CALIBRATED",
+    "state": "MEASUREMENT_GATE_BUILT_LIVE_TRACES_REQUIRED",
     "ranges": null,
-    "formulaExecutionState": "NOT_EXECUTED"
+    "formulaExecutionState": "NOT_EXECUTED",
+    "promotionRule": "calibrate.mjs may emit only CANDIDATE_CALIBRATION_REVIEW_REQUIRED. Numeric Formula execution is blocked until a Creator-reviewed calibration file has status PERSONAL_MAP_SPATIAL_DENSITY_ACCEPTED_CALIBRATION."
   },
   "veritasAcceptance": [
     "The same source trace and device policy reproduce the same staged observations.",
@@ -110,5 +112,17 @@
     "Canonical Formula and runtime-state adapter hashes match authority pins."
   ],
   "formulaExecutionState": "NOT_EXECUTED",
-  "reason": "Spatial-density mapping is staged only. Calibration traces and controlled Formula-versus-baseline comparisons do not yet exist."
+  "reason": "Spatial measurement capture, Valhalla/Meili map matching, Overture asset staging, calibration tooling and the first-execution gate are built. Live real-GPU traces and baseline-vs-Formula ablation are still required before calibration promotion or numeric Formula execution.",
+  "measurementGate": {
+    "sourceRepository": "4citeB4U/Leeway-Maps",
+    "browserModule": "src/leeway/spatialMeasurementGate.js",
+    "captureScript": "scripts/qa-spatial-formula-capture.mjs",
+    "calibrationScript": "experiments/personal-map-spatial-density-v0/calibrate.mjs",
+    "firstExecutionScript": "experiments/personal-map-spatial-density-v0/first-execution.mjs",
+    "calibrationMinimum": {
+      "liveTraceCount": 3,
+      "completeObservationCount": 48,
+      "realGpuRequired": true
+    }
+  }
 }
