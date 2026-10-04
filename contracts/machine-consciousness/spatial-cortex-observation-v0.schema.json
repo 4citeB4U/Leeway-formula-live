@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.invalid/contracts/machine-consciousness/spatial-cortex-observation-v0.schema.json",
+  "title": "LeeWay Machine Consciousness Spatial Cortex Observation v0",
+  "type": "object",
+  "required": ["schemaVersion","sourceClass","mappingId","dimensionOrder","values","complete","formulaAuthority","policyAuthority"],
+  "properties": {
+    "schemaVersion": {"const":"0.1.0"},
+    "sourceClass": {"enum":["REAL_BROWSER_MEASUREMENT","TEST_FIXTURE","SIMULATED"]},
+    "mappingId": {"const":"personal-map-spatial-density-v0"},
+    "dimensionOrder": {
+      "const": ["visible_spatial_candidate_count","continuous_motion_subject_count","transit_route_deviation_m","rendered_label_count","frame_time_ms","interaction_latency_ms"]
+    },
+    "values": {
+      "type":"array","minItems":6,"maxItems":6,
+      "items":{"type":"number"}
+    },
+    "complete":{"type":"boolean"},
+    "formulaAuthority":{"const":"LEEWAY-FORMULA-v1.0_UNCHANGED"},
+    "policyAuthority":{"enum":["DIAGNOSTIC_ONLY","CANDIDATE_ABLATION","PROMOTED_AFTER_VERITAS"]}
+  },
+  "additionalProperties": true
+}
