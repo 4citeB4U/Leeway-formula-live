@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G9-LOD-ABLATION-TRANCHE-2-20261004",
+  "gate": "MC-G9",
+  "status": "PASS_FIXTURE_LEVEL_LOD_IMPROVEMENT_SPATIAL_LIVE_BLOCKED",
+  "classification": "VERIFIED_FIXTURE_LEVEL_IMPROVEMENT",
+  "formula": {
+    "id": "LEEWAY-FORMULA-v1.0",
+    "mutation": false,
+    "goldenRegression": "PASS",
+    "spatialFormulaExecution": "NOT_EXECUTED"
+  },
+  "testSuite": {"pass":66,"fail":0},
+  "lodAblation": {
+    "trials":4096,
+    "capabilities":246,
+    "seed":20261004,
+    "interfaceLoadReductionPct":99.4655702172256,
+    "interfaceBootstrap95Pct":[99.45872237042683,99.47241806402439],
+    "executionLoadReductionPct":99.59349593495935,
+    "executionBootstrap95Pct":[99.59349593495935,99.59349593495935],
+    "taskSuccessControl":1,
+    "taskSuccessTreatment":1,
+    "veritasFailures":0,
+    "authorityViolations":0,
+    "provenanceViolations":0,
+    "outputDigest":"b91c2786416167c7410c962ca08cfe6323f4352cc653c18c6aac50f34b2ee662",
+    "localPersistedFileSha256":"41A9F5D27FC6FF2775A9F88192CD0EA31E321A0EF815733A9CAEBFAA7F76038D",
+    "claimBoundary":"This proves the deterministic 246-capability fixture strongly benefits from LOD refinement. It does not yet prove equivalent production CPU, RAM, latency or energy reduction."
+  },
+  "mapsRepairEvidence": {
+    "repository":"4citeB4U/Leeway-Maps",
+    "deployedCommit":"b81109e9f2ac071027e56567497ef7c4d9e2d761",
+    "commitMessage":"Fix Personal Transit route geometry initialization",
+    "pagesWorkflowRun":37224615674,
+    "pagesWorkflowConclusion":"success",
+    "postDeployRouteLayer":{"count":100,"error":null,"source":"OpenStreetMap · mapped network"},
+    "remainingLiveSpatialBlocker":"transit_route_deviation_m remains null because live MCTS vehicle feed is unavailable and Transitland live vehicles require server TRANSITLAND_API_KEY.",
+    "semanticBoundary":"Static route geometry is not substituted for live vehicle route deviation."
+  },
+  "evidencePersistenceFailures": [
+    "First post-repair browser capture failed because debug Chrome was not running; rerun started a fresh isolated browser.",
+    "First ablation artifact persistence attempt produced no file through Tee-Object.",
+    "Second persistence attempt created an empty file; SHA-256 E3B0C442... detected the failure.",
+    "First entrypoint repair wrote literal backslash-n tokens and caused 63 PASS / 1 FAIL; repaired and full suite returned 66/66 PASS.",
+    "Platform-sensitive executable URL comparison still produced empty stdout; replaced with pathToFileURL and reverified.",
+    "Direct local git commit was blocked because no Git author identity is configured; no identity was invented. Evidence was preserved through the authorized GitHub connector."
+  ],
+  "nextAction":"Run production-grounded LOD resource benchmarks and define a separately named static-spatial observation contract or restore live vehicle/map-match evidence before spatial six-vector qualification."
+}
