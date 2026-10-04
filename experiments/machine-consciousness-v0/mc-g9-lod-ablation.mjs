@@ -58,4 +58,6 @@ export function runLodAblation({trials=4096,capabilities=246,seed=20261004}={}){
  out.digest=crypto.createHash('sha256').update(JSON.stringify(out)).digest('hex');
  return out;
 }
-if(process.argv[1] && import.meta.url === new URL(process.argv[1], 'file:///').href){\n  console.log(JSON.stringify(runLodAblation(),null,2));\n}
+if(process.argv[1] && import.meta.url === new URL(process.argv[1], 'file:///').href){
+  console.log(JSON.stringify(runLodAblation(),null,2));
+}
