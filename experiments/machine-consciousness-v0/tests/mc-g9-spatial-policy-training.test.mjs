@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+test('spatial policy training protocol predeclares train/holdout and frozen Formula authority',()=>{const s=fs.readFileSync(new URL('../mc-g9-spatial-policy-training.mjs',import.meta.url),'utf8');assert.match(s,/trainWorlds=Array\.from\(\{length:96\}/);assert.match(s,/holdoutWorlds=Array\.from\(\{length:96\}/);assert.match(s,/formulaMutation:false/);assert.match(s,/policyGainAtLeastOnePoint/);});
