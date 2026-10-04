@@ -442,7 +442,7 @@ Classification: OBSERVED / BLOCKED
 Claim:
 The Agent-Lee Windows workstation produced headful hardware-WebGL spatial telemetry using Intel/ANGLE/D3D11, but the deployed Milwaukee session produced zero complete 16x6 spatial rows because transit_route_deviation_m was unavailable.
 Evidence:
-104 LIVE_BROWSER_MEASUREMENT observations; trace SHA-256 3aba53c380e6cc6391cd014096e84e8e1d5b6be1aa523050e5898c17bba08990.
+capture summary reported 104 observations and the exported trace contains 105 records; original capture byte SHA-256 3aba53c380e6cc6391cd014096e84e8e1d5b6be1aa523050e5898c17bba08990; repository evidence is parsed-object identical with canonical object SHA-256 9b7986ed30dc5244bb32939856320bfceaceab2e4b59ded8f0cca3bf6c7eadcc.
 
 C-20261004-003
 Classification: UNVERIFIED
