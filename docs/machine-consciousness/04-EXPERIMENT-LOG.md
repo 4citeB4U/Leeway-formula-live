@@ -960,3 +960,34 @@ receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11A-REQUALIFICATION-202
 
 Claim boundary:
 read-only capability traversal is reverified; UI actuation and voice execution remain unverified.
+
+
+## E-130 — MC-G9 Cesium spatial shadow integration
+
+Date: 2026-10-04
+State: PASS_STRUCTURAL_SHADOW / LIVE_EVIDENCE_BLOCKED / MC-G9 NOT CLOSED
+
+Implementation:
+- reused LeeWay Maps/CesiumJS spatial measurement gate and existing Machine Consciousness Global Workspace;
+- added spatial-context-v0 validation/hashing and an optional spatialContext field to the existing workspace/self-model;
+- no Formula kernel, Formula adapter, policy engine, Runtime Fabric, capability registry or Agent Lee identity was duplicated or replaced.
+
+Verification:
+- 58/58 Machine Consciousness tests PASS;
+- four new spatial tests PASS;
+- same base cognition seed remains policy-deterministic with spatial context present;
+- spatial context is SHADOW_ONLY, policyAuthority=false, Formula execution=NOT_EXECUTED;
+- audit digest independently recomputed and matched 61918934e188959abc70abf27d6da49e2dafe95eff4e9be3453f1940910711d1.
+
+Live browser evidence:
+- source class LIVE_BROWSER_MEASUREMENT;
+- headful Chrome hardware renderer: Intel via ANGLE / Direct3D11 / WebGL 2.0;
+- qualification REAL_GPU_CANDIDATE;
+- 104 observations captured;
+- 0 complete rows because transit_route_deviation_m remained null while the Milwaukee transit feed/map-match evidence was unavailable.
+
+Result:
+The consciousness can now carry Cesium-derived spatial context in its Global Workspace and factual self-model without changing policy. Live 16x6 spatial evidence remains BLOCKED and no runtime-reduction or Formula-benefit claim is made.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CESIUM-SPATIAL-SHADOW-20261004.json
