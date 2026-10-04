@@ -36,9 +36,10 @@
   "blockers": [
     "autonomous learning from ordinary cognition evidence remains unverified; MC-G2 and MC-G4 learning use ORACLE_SUPERVISED_TEST_ONLY feedback",
     "canonical cognition cycle schema from the original master-plan layout remains documentation debt; qualified runtime shapes remain observed authority until repaired",
-    "EVB replay improved noisy-sensor NLL narrowly but regressed combined NLL in every tested scenario; general replay benefit remains unverified and is deferred to MC-G9"
+    "EVB replay improved noisy-sensor NLL narrowly but regressed combined NLL in every tested scenario; general replay benefit remains unverified and is deferred to MC-G9",
+    "MC-G9 spatial live evidence incomplete: 0 complete 16x6 rows from REAL_GPU_CANDIDATE trace; transit_route_deviation_m unavailable."
   ],
-  "nextAction": "MC-G9 tranche 2: controlled ablations against simpler baselines; do not grant live behavior authority until contribution is measured.",
+  "nextAction": "MC-G9 tranche 2: obtain 16 complete hardware-GPU spatial rows and run controlled spatial-context OFF/ON ablations against simpler baselines before policy promotion.",
   "formula": {
     "id": "LEEWAY-FORMULA-v1.0",
     "engineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
@@ -108,6 +109,21 @@
     "status": "ACTIVE_TRANCHE_1_COMPLETE",
     "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CONTRIBUTION-TRANCHE-1-20261001.json",
     "rows": 40960,
-    "gateClosure": false
+    "gateClosure": false,
+    "spatialShadow": {
+      "status": "PASS_STRUCTURAL_SHADOW_LIVE_EVIDENCE_BLOCKED",
+      "provider": "4citeB4U/Leeway-Maps / CesiumJS",
+      "mapping": "personal-map-spatial-density-v0",
+      "cognitiveUse": "SHADOW_ONLY",
+      "policyAuthority": false,
+      "formulaExecutionState": "NOT_EXECUTED",
+      "tests": "58/58 PASS",
+      "liveGpuQualification": "REAL_GPU_CANDIDATE",
+      "liveObservations": 104,
+      "completeRows": 0,
+      "blocker": "SPATIAL_16_COMPLETE_OBSERVATIONS_REQUIRED",
+      "auditDigest": "61918934e188959abc70abf27d6da49e2dafe95eff4e9be3453f1940910711d1",
+      "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CESIUM-SPATIAL-SHADOW-20261004.json"
+    }
   }
 }
