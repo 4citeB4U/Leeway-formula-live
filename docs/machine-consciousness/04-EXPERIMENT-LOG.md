@@ -992,3 +992,61 @@ The consciousness can now carry Cesium-derived spatial context in its Global Wor
 
 Receipt:
 receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CESIUM-SPATIAL-SHADOW-20261004.json
+
+
+## E-134 — MC-G9 spatial belief-to-policy training
+
+Date: 2026-10-04
+State: POLICY_TRAINING_CANDIDATE_PASS / SIMULATION-VERIFIED
+
+Objective:
+Train the Machine Consciousness itself at the exact failure boundary discovered by the prior spatial OFF/ON ablation: spatial context improved belief accuracy by 58.36% but did not improve preferred-state outcomes.
+
+Frozen authority:
+LEEWAY-FORMULA-v1.0, Q69/QB64 semantics, runtime-state-v1, MC-G6 calibration and Golden vector were unchanged.
+
+Training math:
+G_spatial(a) = G_base(a) + lambda * C_spatial(a | b_t)
+where the experimental spatial consequence term penalizes commit and favors inspect in proportion to the spatially informed posterior probability of instability. Lower G remains preferred by the existing policy softmax.
+
+Predeclared lambda set:
+[0,0.05,0.10,0.20,0.35,0.50,0.75,1.00,1.50,2.00]
+
+Split:
+TRAIN worlds 0..95.
+HOLDOUT worlds 96..191.
+64 cycles/world.
+Spatial observation reliability 0.90.
+
+Training selected:
+lambda = 2.
+
+Unseen HOLDOUT result:
+- spatial-ON baseline lambda=0 Brier: 0.050206641518949296
+- trained lambda=2 Brier: 0.048932022764172224
+- Brier relative change: -2.538745305829704% (improvement)
+- baseline preferred-state rate: 0.6778971354166666
+- trained preferred-state rate: 0.72802734375
+- policy gain: +5.0130208333333375 percentage points
+
+Acceptance:
+PASS. Required >=1 percentage point holdout policy gain; achieved +5.013 points. Brier was required not to regress >5%; it improved 2.539%.
+
+Canonical Formula:
+Both representative baseline and trained 16x6 cognition windows executed through LEEWAY-FORMULA-v1.0.
+Baseline result hash: a1ba6803b123ee1b5140f7731741f58e4809c2ae20291d72a794995058e141c1
+Trained result hash: 4ad4afd8cbdd8da53da9c3de8ae11fb1950e7db3b90a01c1d8f62f369cd9ef1
+Formula output changed: true.
+Post-experiment Golden vector: PASS.
+
+Regression:
+59/59 Machine Consciousness tests PASS.
+
+Experiment digest:
+e9c4c8ea2c5b0eefd0373f448934685ad67c585414e9c0fb370f8e3562f8737a
+
+Interpretation:
+The previous failure boundary is repaired in controlled simulation: better spatial belief can be converted into better policy outcome when spatial consequence enters candidate policy valuation. This is a Machine Consciousness training result, not an Agent Lee or transit result.
+
+Claim boundary:
+Simulation-verified candidate learning only. Live hardware spatial qualification remains required before promoting this rule to live physical policy authority.
