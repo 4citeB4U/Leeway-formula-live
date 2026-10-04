@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "gate": "MC-G9",
+  "experiment": "HIERARCHICAL_LOD_ABLATION",
+  "trials": 4096,
+  "capabilities": 246,
+  "seed": 20261004,
+  "metrics": {
+    "interfaceLoads": {
+      "control": {"n":4096,"mean":246,"median":246,"std":0,"p50":246,"p95":246},
+      "treatment": {"n":4096,"mean":1.314697265625,"median":1,"std":0.5549306739432848,"p50":1,"p95":2},
+      "reduction": 0.9946557021722561,
+      "reductionPct": 99.4655702172256,
+      "bootstrap95": {"low":0.9945872237042683,"high":0.9947241806402439}
+    },
+    "executionLoads": {
+      "control": {"n":4096,"mean":246,"median":246,"std":0,"p50":246,"p95":246},
+      "treatment": {"n":4096,"mean":1,"median":1,"std":0,"p50":1,"p95":1},
+      "reduction": 0.9959349593495935,
+      "reductionPct": 99.59349593495935,
+      "bootstrap95": {"low":0.9959349593495935,"high":0.9959349593495935}
+    }
+  },
+  "success": {"control":1,"treatment":1},
+  "veritasFailures": 0,
+  "authorityViolations": 0,
+  "provenanceViolations": 0,
+  "status": "VERIFIED_IMPROVEMENT",
+  "digest": "b91c2786416167c7410c962ca08cfe6323f4352cc653c18c6aac50f34b2ee662",
+  "provenance": {
+    "classification": "DETERMINISTIC_TEST_FIXTURE_ABLATION",
+    "validationHost": "Agent-Lee Windows workstation",
+    "localPersistedFileSha256": "41A9F5D27FC6FF2775A9F88192CD0EA31E321A0EF815733A9CAEBFAA7F76038D",
+    "note": "GitHub copy is normalized UTF-8 text; local file hash includes host serialization/BOM and is preserved as execution provenance."
+  }
+}
