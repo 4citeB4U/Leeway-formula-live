@@ -1000,3 +1000,55 @@ receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-SPATIAL-CORTEX-STAGIN
 
 Next:
 repair/qualify the Maps route-deviation evidence source, capture >=16 complete real-GPU observations, then run the MC-G9 spatial ablation against simpler baselines and the >=20% efficiency objective without degrading correctness or Veritas.
+
+
+## E-131 — MC-G9 hierarchical LOD ablation tranche 2
+
+Date: 2026-10-04
+State: VERIFIED_FIXTURE_LEVEL_IMPROVEMENT / PRODUCTION GENERALIZATION NOT YET VERIFIED
+
+Protocol:
+docs/machine-consciousness/12-MC-G9-SPATIAL-LOD-ABLATION-PROTOCOL-v0.md
+
+Predeclared formula:
+For positive cost metric m,
+R_m = (mean(C_m) - mean(T_m)) / mean(C_m)
+and I_m = 100 * R_m.
+
+Controlled deterministic campaign:
+- 4,096 matched trials;
+- 246 available capabilities;
+- fixed seed 20261004;
+- eager control loads all interfaces/executables;
+- LOD treatment keeps descriptors ambient and refines only intersecting capabilities.
+
+Results:
+- interface loads: 246.0 -> 1.314697265625 mean;
+- interface-load reduction: 99.4655702172256%;
+- 95% bootstrap interval: [99.45872237042683%, 99.47241806402439%];
+- execution loads: 246.0 -> 1.0 mean;
+- execution-load reduction: 99.59349593495935%;
+- 95% bootstrap interval: [99.59349593495935%, 99.59349593495935%];
+- task success: control 1.0, treatment 1.0;
+- Veritas failures: 0;
+- authority violations: 0;
+- provenance violations: 0.
+
+Classification:
+VERIFIED improvement for this deterministic fixture. This does not yet prove the same percentage reduction in production CPU, RAM, energy, latency or end-to-end task cost.
+
+Regression:
+66/66 Machine Consciousness tests PASS.
+Golden Formula PASS.
+
+Spatial provider update:
+Leeway-Maps commit b81109e9f2ac071027e56567497ef7c4d9e2d761 repaired route geometry initialization and deployed successfully through GitHub Pages workflow 37224615674. Post-deploy transit-routes loaded 100 mapped routes with error=null. The live six-vector remains blocked because transit_route_deviation_m requires live vehicle/map-match evidence; MCTS feed is unavailable and live Transitland vehicles require a server key. Static route geometry was not substituted.
+
+Failure evidence retained:
+multiple artifact/entrypoint persistence failures occurred and were repaired before result promotion; see the tranche receipt.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-LOD-ABLATION-TRANCHE-2-20261004.json
+
+Next:
+production-grounded resource benchmark for LOD, plus either a separately calibrated static-spatial observation contract or restored live vehicle/map-match evidence.
