@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "1.0.0",
+  "mappingId": "personal-map-spatial-density-v0",
+  "profileId": "personal-map-spatial-density-calibration-v0",
+  "formulaId": "LEEWAY-FORMULA-v1.0",
+  "runtimeAdapterId": "runtime-state-v1",
+  "status": "PERSONAL_MAP_SPATIAL_DENSITY_ACCEPTED_CALIBRATION",
+  "formulaExecutionState": "AUTHORIZED_FOR_FIRST_EXECUTION",
+  "dimensionOrder": [
+    "visible_spatial_candidate_count",
+    "continuous_motion_subject_count",
+    "transit_route_deviation_m",
+    "rendered_label_count",
+    "frame_time_ms",
+    "interaction_latency_ms"
+  ],
+  "ranges": [
+    [
+      342.8,
+      345.2
+    ],
+    [
+      0,
+      6.6
+    ],
+    [
+      1.8339622874899584,
+      3.1722950765073072
+    ],
+    [
+      0,
+      1.0000000000000002e-10
+    ],
+    [
+      0,
+      63.91999999999971
+    ],
+    [
+      1.3199999999254945,
+      105.48000000081956
+    ]
+  ],
+  "summaries": [
+    {
+      "id": "visible_spatial_candidate_count",
+      "min": 343,
+      "p05": 343,
+      "p50": 343,
+      "p95": 345,
+      "max": 345,
+      "range": [
+        342.8,
+        345.2
+      ]
+    },
+    {
+      "id": "continuous_motion_subject_count",
+      "min": 0,
+      "p05": 0,
+      "p50": 1,
+      "p95": 4,
+      "max": 6,
+      "range": [
+        0,
+        6.6
+      ]
+    },
+    {
+      "id": "transit_route_deviation_m",
+      "min": 1.9454900199080707,
+      "p05": 1.9454900199080707,
+      "p50": 2.5519952136246817,
+      "p95": 3.0607673440891947,
+      "max": 3.0607673440891947,
+      "range": [
+        1.8339622874899584,
+        3.1722950765073072
+      ]
+    },
+    {
+      "id": "rendered_label_count",
+      "min": 0,
+      "p05": 0,
+      "p50": 0,
+      "p95": 0,
+      "max": 0,
+      "range": [
+        0,
+        1.0000000000000002e-10
+      ]
+    },
+    {
+      "id": "frame_time_ms",
+      "min": 4.30000000000291,
+      "p05": 4.400000000001455,
+      "p50": 16.799999999995634,
+      "p95": 54.099999999998545,
+      "max": 58.5,
+      "range": [
+        0,
+        63.91999999999971
+      ]
+    },
+    {
+      "id": "interaction_latency_ms",
+      "min": 10,
+      "p05": 10,
+      "p50": 25.899999998509884,
+      "p95": 30.5,
+      "max": 96.80000000074506,
+      "range": [
+        1.3199999999254945,
+        105.48000000081956
+      ]
+    }
+  ],
+  "provenance": {
+    "liveTraceCount": 3,
+    "observationCount": 48,
+    "traces": [
+      {
+        "file": "C:\\Users\\Leona\\AppData\\Local\\Temp\\leeway-spatial-windows-real.json.trace.json",
+        "sha256": "fffe505b676f20f46065bee13c75cf94dc02f99b81219c007babae4110c147b8",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+      },
+      {
+        "file": "C:\\Users\\Leona\\AppData\\Local\\Temp\\leeway-spatial-phone-real.json.trace.json",
+        "sha256": "29f0aadb26499131c4fa3398c0f24747c2b82fd28e1a9764b141204d4448f9c3",
+        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+      },
+      {
+        "file": "C:\\Users\\Leona\\AppData\\Local\\Temp\\leeway-spatial-windows-rs075.json.trace.json",
+        "sha256": "ce6362cf022ef83c206845a5a995f8d14496bd43abd81bd1eac6a0f4ad165e85",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+      }
+    ]
+  },
+  "acceptanceRequired": [
+    "At least three real-GPU live traces from materially distinct device/runtime profiles.",
+    "Replay verifies every accepted row remains finite and inside the proposed ranges.",
+    "Deterministic baseline and Formula-selected policy are compared on the same traces.",
+    "No Formula policy may reduce evidence truth fidelity to improve performance.",
+    "Creator explicitly promotes this candidate before first numeric Formula execution."
+  ],
+  "creatorAuthorization": "2026-10-04 explicit instruction to execute all needed calibration work",
+  "acceptanceNote": "Accepted for the measured Windows Chrome, Windows Chrome resolutionScale 0.75, and Android Chrome regimes. Rendered-label dimension is zero-only because the production Google Places provider reported configured=false; any positive label count fails closed and requires recalibration."
+}
