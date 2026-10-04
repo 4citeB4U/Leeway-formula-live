@@ -1,0 +1,14 @@
+{
+  "schemaVersion":"1.0.0",
+  "receiptId":"MACHINE-CONSCIOUSNESS-MC-G9-SPATIAL-POLICY-TRAINING-20261004",
+  "gate":"MC-G9",
+  "status":"POLICY_TRAINING_CANDIDATE_PASS",
+  "classification":"SIMULATED_TRAIN_HOLDOUT_WITH_CANONICAL_FORMULA_EXECUTION",
+  "authority":{"formulaId":"LEEWAY-FORMULA-v1.0","formulaMutation":false,"goldenVectorPostTest":"PASS"},
+  "design":{"trainWorlds":[0,95],"holdoutWorlds":[96,191],"cyclesPerWorld":64,"spatialReliability":0.90,"lambdaCandidates":[0,0.05,0.10,0.20,0.35,0.50,0.75,1.0,1.5,2.0],"selectedLambda":2},
+  "holdout":{"baselineBrier":0.050206641518949296,"trainedBrier":0.048932022764172224,"brierRelativeChangePct":-2.538745305829704,"baselinePreferredRate":0.6778971354166666,"trainedPreferredRate":0.72802734375,"policyGainPctPoints":5.0130208333333375},
+  "formula":{"baselineResultHash":"a1ba6803b123ee1b5140f7731741f58e4809c2ae20291d72a794995058e141c1","trainedResultHash":"4ad4afd8cbdd8da53da9c3de8ae11fb1950e7db3b90a01c1d8f62f369cd9ef1f","outputsChanged":true},
+  "regression":{"machineConsciousnessTests":{"pass":59,"fail":0},"goldenFormula":"PASS"},
+  "experimentDigest":"e9c4c8ea2c5b0eefd0373f448934685ad67c585414e9c0fb370f8e3562f8737a",
+  "claimBoundary":"The experimental spatial belief-to-policy bridge improved policy outcomes on held-out simulated worlds while preserving/improving belief accuracy. This is not live-hardware spatial promotion and does not modify Golden Formula bytes."
+}
