@@ -1,0 +1,29 @@
+{
+  "schemaVersion":"1.0.0",
+  "receiptId":"MACHINE-CONSCIOUSNESS-MC-G9-PRODUCTION-LOD-BENCHMARK-20261004",
+  "gate":"MC-G9",
+  "status":"VERIFIED_HOST_GROUNDED_FILE_LOADING_IMPROVEMENT",
+  "formula":{"id":"LEEWAY-FORMULA-v1.0","mutation":false},
+  "agentSkills":{"commit":"fe33c00cb2a466728d996fc2a9145107ca308ab5","auditSkillArtifacts":247,"physicalSkillDocuments":499,"physicalSkillBytes":1808502},
+  "workspace":{"provider":"Insignia NS-PACS2B25(-C)","binding":"E:","nonSystem":true,"health":"Healthy","writeProbe":"PASS"},
+  "experiment":{"iterationsPerLane":60,"focalDocuments":5,"bootstrapDraws":5000,"bootstrapSeed":20261004},
+  "results":{
+    "documentLoadReductionPct":98.99799599198397,
+    "payloadReductionPct":98.92376674175644,
+    "payloadBootstrap95Pct":[98.76796284070095,99.07321823992085],
+    "wallTimeReductionPct":76.30923389453416,
+    "wallTimeBootstrap95Pct":[73.40774948286793,77.93947254721041],
+    "cpuReductionPct":65.51724137931035,
+    "cpuBootstrap95Pct":[50.0,79.62962962962963],
+    "workingSetReductionPct":5.780866618043907,
+    "peakWorkingSetReductionPct":4.833384115479263,
+    "ioReadBytes":"NON_INFORMATIVE_OS_CACHE_COUNTER_ZERO"
+  },
+  "evidenceSha256":{
+    "eager":"664D76959F6F248F754CC4560797BC44E1D9B6BD3AB60B79AFC8299CD1B58022",
+    "lod":"F5E74C57552525E6BF2DE9104834AD043AFAE7B73AB2B976ADF407C93EAFF7B3",
+    "analysis":"9828BC58A9C75302C6586BB2261F837B3734580BC7E8800544EF75495D1A547F"
+  },
+  "creator20PercentGate":"PASS_FOR_DOCUMENT_LOAD_PAYLOAD_WALL_CPU",
+  "claimBoundary":"Host-grounded warm-cache physical skill-document loading benchmark only; not yet end-to-end Skill Orchestrator task proof."
+}
