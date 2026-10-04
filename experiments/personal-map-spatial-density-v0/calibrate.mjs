@@ -77,9 +77,11 @@ for (let j = 0; j < 6; j++) {
   const p05 = percentile(values, 5);
   const p50 = percentile(values, 50);
   const p95 = percentile(values, 95);
-  const width = Math.max(1e-9, p95 - p05);
-  const lower = Math.max(0, p05 - width * 0.1);
-  const upper = p95 + width * 0.1;
+  const observedMin = Math.min(...values);
+  const observedMax = Math.max(...values);
+  const width = Math.max(1e-9, observedMax - observedMin);
+  const lower = Math.max(0, observedMin - width * 0.1);
+  const upper = observedMax + width * 0.1;
   if (!(lower < upper))
     throw new Error('SPATIAL_INVALID_RANGE_' + j);
   ranges.push([lower, upper]);

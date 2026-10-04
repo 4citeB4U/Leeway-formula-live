@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "personal-map-static-spatial-observation-v0",
+  "profileId": "personal-map-static-spatial-calibration-v0",
+  "formulaId": "LEEWAY-FORMULA-v1.0",
+  "runtimeAdapterId": "runtime-state-v1",
+  "status": "PERSONAL_MAP_STATIC_SPATIAL_ACCEPTED_CALIBRATION",
+  "formulaExecutionState": "AUTHORIZED_FOR_FIRST_EXECUTION",
+  "dimensionOrder": [
+    "visible_static_candidate_count",
+    "rendered_static_label_count",
+    "enabled_static_layer_count",
+    "camera_height_m",
+    "frame_time_ms",
+    "interaction_latency_ms"
+  ],
+  "ranges": [
+    [
+      0,
+      220
+    ],
+    [
+      0,
+      1.0000000000000002e-10
+    ],
+    [
+      0,
+      2.2
+    ],
+    [
+      0,
+      15279.999999998552
+    ],
+    [
+      0,
+      9.35
+    ],
+    [
+      0,
+      5.719999999180436
+    ]
+  ],
+  "summaries": [
+    {
+      "id": "visible_static_candidate_count",
+      "min": 0,
+      "p05": 0,
+      "p50": 0,
+      "p95": 200,
+      "max": 200,
+      "range": [
+        0,
+        220
+      ]
+    },
+    {
+      "id": "rendered_static_label_count",
+      "min": 0,
+      "p05": 0,
+      "p50": 0,
+      "p95": 0,
+      "max": 0,
+      "range": [
+        0,
+        1.0000000000000002e-10
+      ]
+    },
+    {
+      "id": "enabled_static_layer_count",
+      "min": 0,
+      "p05": 0,
+      "p50": 0,
+      "p95": 2,
+      "max": 2,
+      "range": [
+        0,
+        2.2
+      ]
+    },
+    {
+      "id": "camera_height_m",
+      "min": 1200.0000000008756,
+      "p05": 1200.0000000008756,
+      "p50": 5000.000000000319,
+      "p95": 13999.999999998763,
+      "max": 13999.999999998763,
+      "range": [
+        0,
+        15279.999999998552
+      ]
+    },
+    {
+      "id": "frame_time_ms",
+      "min": 0,
+      "p05": 0,
+      "p50": 0,
+      "p95": 8.400000000001455,
+      "max": 8.5,
+      "range": [
+        0,
+        9.35
+      ]
+    },
+    {
+      "id": "interaction_latency_ms",
+      "min": 0,
+      "p05": 0,
+      "p50": 0,
+      "p95": 5.199999999254942,
+      "max": 5.199999999254942,
+      "range": [
+        0,
+        5.719999999180436
+      ]
+    }
+  ],
+  "provenance": {
+    "liveTraceCount": 6,
+    "observationCount": 96,
+    "deviceProfileCount": 2,
+    "viewportRegimes": [
+      "street",
+      "neighborhood",
+      "city"
+    ],
+    "traces": [
+      {
+        "file": "C:\\Users\\Leona\\AppData\\Local\\Temp\\static-windows-street.json",
+        "sha256": "64ff56f4280ed048d9d04748d52b17f682d2a2778591baeabb2b21d15b77143b",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "viewportRegime": "street",
+        "deviceProfile": "windows"
+      },
+      {
+        "file": "C:\\Users\\Leona\\AppData\\Local\\Temp\\static-windows-neighborhood.json",
+        "sha256": "d634bd9ea185ef6797339cf360a9a780ef3dabdb828a5d75e3ab902fb9fe511d",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "viewportRegime": "neighborhood",
+        "deviceProfile": "windows"
+      },
+      {
+        "file": "C:\\Users\\Leona\\AppData\\Local\\Temp\\static-windows-city.json",
+        "sha256": "3c51a23528f531d4b580a2508d2aca465263ecb5a372c88599bf7065f18d0f15",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "viewportRegime": "city",
+        "deviceProfile": "windows"
+      },
+      {
+        "file": "C:\\Users\\Leona\\AppData\\Local\\Temp\\static-phone-street.json",
+        "sha256": "84c14e5d54059abdec9361354ee6614908a0ae36d92168f8b9a22fdc463b1506",
+        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "viewportRegime": "street",
+        "deviceProfile": "phone"
+      },
+      {
+        "file": "C:\\Users\\Leona\\AppData\\Local\\Temp\\static-phone-neighborhood.json",
+        "sha256": "8a697c0ae4f81359d004c07b0a371bcdd64f08a8e29542b1798795eff0f5e57a",
+        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "viewportRegime": "neighborhood",
+        "deviceProfile": "phone"
+      },
+      {
+        "file": "C:\\Users\\Leona\\AppData\\Local\\Temp\\static-phone-city.json",
+        "sha256": "3fe23da4aeb8608b79bd30a241104e4e06a1276f2e3763886d8bbf2145bd6278",
+        "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+        "viewportRegime": "city",
+        "deviceProfile": "phone"
+      }
+    ]
+  },
+  "separationRule": "Do not combine these ranges with personal-map-spatial-density-v0 dynamic ranges.",
+  "creatorAuthorization": "2026-10-04 explicit instruction to execute all needed calibration work",
+  "coverageLimit": "ZERO_LABEL_FALLBACK_REGIME_ONLY",
+  "acceptanceNote": "Accepted for current production static regime across Windows and Android at street/neighborhood/city heights. Business/place labels were observed as zero because the production Google Places provider reported configured=false. Positive rendered labels are outside this profile and require a new static calibration."
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "gate": "Personal Maps spatial calibration first execution",
+  "executedAt": "2026-10-04",
+  "canonicalFormula": "LEEWAY-FORMULA-v1.0",
+  "runtimeAdapter": "runtime-state-v1",
+  "dynamic": {
+    "contract": "personal-map-spatial-density-v0",
+    "calibration": "personal-map-spatial-density-calibration-v0",
+    "liveTraceCount": 3,
+    "observationCount": 48,
+    "status": "EXECUTED_UNVERIFIED_POLICY",
+    "inputHash": "22bce2b47605b5c9befd5459deda460fe1d4b3676b36b5cb7ae5a43a0aff2926",
+    "resultHash": "f8419030de5b8df13bf24dd639265e0dae6e135724978c096fa88da482a37ada",
+    "decimalState": [
+      63,
+      0,
+      13,
+      16,
+      42,
+      35
+    ],
+    "base64State": [
+      "/",
+      "A",
+      "N",
+      "Q",
+      "q",
+      "j"
+    ],
+    "receiptSha256": "b6031a609cf73d1c1c649f9a95773f36b41d4386066fe358a78b4e0ba4c91aed"
+  },
+  "static": {
+    "contract": "personal-map-static-spatial-observation-v0",
+    "calibration": "personal-map-static-spatial-calibration-v0",
+    "liveTraceCount": 6,
+    "observationCount": 96,
+    "deviceProfileCount": 2,
+    "viewportRegimes": [
+      "street",
+      "neighborhood",
+      "city"
+    ],
+    "coverageLimit": "ZERO_LABEL_FALLBACK_REGIME_ONLY",
+    "status": "EXECUTED_UNVERIFIED_POLICY",
+    "inputHash": "d2b7c17d957ce738fc0e57917f2ed8e77f25258798f42f5fe78b703d13aa4234",
+    "resultHash": "879baa7f4a149d5933e1ef422078e42c8c9c4a539aca0ba994f15188bba74c09",
+    "decimalState": [
+      63,
+      0,
+      69,
+      68,
+      67,
+      66
+    ],
+    "base64State": [
+      "/",
+      "A",
+      "BF",
+      "BE",
+      "BD",
+      "BC"
+    ],
+    "receiptSha256": "ed2cede978caebfddde837076f60756cd3eb5bd5d2b6d87f7f9fbc8bafe3db9e"
+  },
+  "providerEvidence": {
+    "googlePlacesConfigured": false,
+    "consequence": "Rendered business/place label count remained zero. Positive label counts fail outside the accepted static profile and require a new calibration."
+  },
+  "claimBoundary": "Calibration ranges and first numeric Formula execution are proven for the captured regimes. Formula-selected runtime policy usefulness is not promoted until a deterministic baseline-vs-policy ablation exists."
+}
