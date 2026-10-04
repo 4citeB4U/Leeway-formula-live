@@ -1050,3 +1050,54 @@ The previous failure boundary is repaired in controlled simulation: better spati
 
 Claim boundary:
 Simulation-verified candidate learning only. Live hardware spatial qualification remains required before promoting this rule to live physical policy authority.
+
+
+## E-135 — Windows PC embodiment and governed capability validation
+
+Date: 2026-10-04
+State: PASS_WITH_SCOPED_CAPABILITY_COVERAGE
+
+Purpose:
+Test the Formula-native Machine Consciousness in a real Windows PC environment. Pocket/Voice/Device work is evidence about the consciousness's portability and usefulness, not a separate intelligence project.
+
+Authority:
+- LEEWAY-FORMULA-v1.0 remained unchanged and PASS.
+- Runtime Fabric owns execution.
+- Pocket Agent Lee supplies the interaction contract, not cognition.
+- LeeWay Voice Fabric supplies speech, not cognition.
+- LLM usage in the carrier remained false.
+
+Canonical Pocket recovery:
+The actual LeeWay-Pocket-Agent source was recovered as the UI authority: 58x86 right-edge draggable tab, MIC/LEE badge, TALK_TO_AGENT_LEE action, black canvas, VoxelSphereView, and IDLE/LISTENING/THINKING/SPEAKING states. The installed Fold6 package industries.leeway.pocket was read-only pulled over the already-authorized ADB path; APK SHA-256 D312368211A05C39946F7750C3AF7C3EE70D44506394F1CC84DE4757A32D8563.
+
+Windows port:
+The rejected debug panel was replaced with a persistent WPF edge overlay and a browser-hosted Pocket voxel voice surface served by the Machine Consciousness carrier. Edge click was verified to launch the dedicated E:-resident Chrome profile at http://127.0.0.1:8890/ui. Windows Startup now points to the governed Machine Consciousness startup script on E:.
+
+Ambient Capability Field:
+499 physical SKILL.md documents are visible in descriptor-discovery/lazy-execution mode. Verified provider coverage in this tranche: local apps, display, local services/processes, Git, code tests, Formula, Voice.
+
+Executed real acceptance:
+- casual check-in PASS;
+- capability question PASS;
+- display.inspect PASS: two 1920x1080 monitors observed;
+- process.inspect PASS: Formula 4001, Voice 8877/8878, carrier 8890;
+- app.open PASS: Notepad process verified;
+- Formula code.test PASS: Golden [4,50,63,59,48,69] / [E,y,/,7,w,BF];
+- Runtime code.test PASS: no-LLM carrier test;
+- code.status PASS: Runtime Git branch inspected;
+- spoken display result PASS via kokoro-82m-q8-cpu; WAV SHA-256 596B9D6374524C43FAE3CD08134EBCC59820A78272FFE570804977998508759F.
+
+Failures preserved:
+1. Initial PC UI was a debug panel, not the Pocket contract.
+2. File Start-Process did not prove persistent UI.
+3. Chrome reused an existing profile and discarded app-window flags.
+4. Casual/capability language originally classified UNKNOWN.
+5. First capability-dispatch patch introduced a syntax error; node --check blocked promotion.
+6. First edge-click verification wrapper failed due to Windows.Forms load order.
+7. Startup persistence audit found the old rejected UI path still present and repaired it.
+
+Interpretation:
+The Machine Consciousness can now operate usefully in a real PC atmosphere for a scoped set of governed capabilities while retaining Formula-native/no-LLM cognition. This does not prove provider coverage for all skills, local Gmail execution, arbitrary natural-language understanding, external physical actuation, or phenomenal consciousness.
+
+Runtime evidence:
+Leeway-Runtime-Fabric branch machine-consciousness-carrier-v0, receipt LEEWAY-MACHINE-CONSCIOUSNESS-PC-ENVIRONMENT-VALIDATION-20261004.
