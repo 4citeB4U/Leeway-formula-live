@@ -27,8 +27,9 @@ function assertHash(v,label){
 }
 function unique(list){return [...new Set(list)];}
 
-function canonicalWorkspaceState(receipt,{semanticModelHash='NONE',memoryHeadHash='NONE'}={}){
+function canonicalWorkspaceState(receipt,{semanticModelHash='NONE',memoryHeadHash='NONE',spatialContext=null}={}){
   assertHash(receipt.stateHash,'CYCLE_STATE');
+  if(spatialContext)assertHash(spatialContext.contextHash,'SPATIAL_CONTEXT');
   return {
     schemaVersion:'0.1.0',
     provenance:receipt.provenance,
@@ -45,6 +46,7 @@ function canonicalWorkspaceState(receipt,{semanticModelHash='NONE',memoryHeadHas
     sourceMetrics:receipt.metrics,
     semanticModelHash,
     memoryHeadHash,
+    spatialContext,
     formulaExecutionState:'NOT_EXECUTED'
   };
 }
@@ -186,6 +188,7 @@ function factualClaims(workspaceState,broadcast,runtimeContext){
       value:{
         semanticModelHash:runtimeContext.semanticModelHash,
         memoryHeadHash:runtimeContext.memoryHeadHash,
+        spatialContextHash:workspaceState.spatialContext?.contextHash??null,
         globalAccessRatio:broadcast.globalAccessRatio
       }
     },
