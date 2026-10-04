@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "personal-map-spatial-density-v0",
+  "status": "PROPOSED_NOT_CALIBRATED_NOT_EXECUTED",
+  "domain": "personal-maps-spatial-density-and-motion",
+  "purpose": "Stage measured map-density, transit-motion, and interaction pressure into runtime-state-v1 so LeeWay can later select bounded rendering and acquisition policies without modifying the canonical Formula.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "canonicalEngineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeAdapterId": "runtime-state-v1",
+    "canonicalRuntimeAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "formulaMutation": false
+  },
+  "questions": [
+    "How dense is the visible spatial context right now?",
+    "How many source-backed moving subjects require continuous interpolation?",
+    "How far do transit GPS fixes deviate from an exact known route geometry?",
+    "How much label/candidate work is visible versus culled by zoom and collision rules?",
+    "What frame-time and interaction-latency pressure is the current presentation causing?",
+    "What memory/GPU pressure is attributable to currently active map surfaces?"
+  ],
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "visible_spatial_candidate_count",
+      "unit": "count",
+      "definition": "source-backed POI, transit, aircraft, CCTV and other candidates admitted into the current viewport before final collision culling",
+      "missingDataPolicy": "REQUIRED"
+    },
+    {
+      "index": 1,
+      "id": "continuous_motion_subject_count",
+      "unit": "count",
+      "definition": "subjects currently requiring continuous interpolation or animation rather than static request-render updates",
+      "missingDataPolicy": "ZERO_ONLY_WHEN_COUNTED"
+    },
+    {
+      "index": 2,
+      "id": "transit_route_deviation_m",
+      "unit": "meters",
+      "definition": "measured distance from a transit GPS fix to the exact matching mapped/published route geometry when that route identity is known",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 3,
+      "id": "rendered_label_count",
+      "unit": "count",
+      "definition": "labels actually painted after zoom, priority, and collision admission",
+      "missingDataPolicy": "REQUIRED"
+    },
+    {
+      "index": 4,
+      "id": "frame_time_ms",
+      "unit": "milliseconds",
+      "definition": "measured rendered-frame duration over the observation window",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 5,
+      "id": "interaction_latency_ms",
+      "unit": "milliseconds",
+      "definition": "measured time from a user gesture to the corresponding visible or state response",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    }
+  ],
+  "observationWindow": {
+    "rows": 16,
+    "width": 6,
+    "rule": "16 consecutive observations under the same app version, device policy, viewport class and enabled-layer identity"
+  },
+  "deterministicBaseline": {
+    "status": "AUTHORIZED_BASELINE_NOT_FORMULA",
+    "rules": [
+      "POI labels use zoom-tier admission and bounded provider results.",
+      "Transit vehicles use exact-route constrained display geometry only when route identity and geometry match; otherwise raw source GPS remains visible without pretending it is snapped.",
+      "Continuous rendering is held only while visible motion exists.",
+      "Secondary cockpit rendering is on-demand and releases its GPU context when closed.",
+      "CCTV projection/coverage geometry stays off by default in Personal Maps until explicitly requested."
+    ]
+  },
+  "futurePolicyOutputs": [
+    "poi_density_tier",
+    "transit_animation_budget",
+    "label_budget",
+    "secondary_viewport_budget",
+    "polling_priority",
+    "render_resolution_policy"
+  ],
+  "prohibitions": [
+    "Do not use Formula to invent business locations, transit routes, GPS fixes, CCTV frames, or provider availability.",
+    "Do not snap a transit vehicle to an unrelated route merely because it is nearby.",
+    "Do not promote mapped or scheduled evidence to LIVE.",
+    "Do not execute Formula until calibrated ranges, replay traces, and ablation against the deterministic baseline exist.",
+    "Do not discard canonical provider evidence after creating a condensed LeeWay operational state."
+  ],
+  "canonicalEvidenceRule": {
+    "preserve": "Original provider evidence and timestamps remain authoritative and auditable.",
+    "condense": "LeeWay may derive compact operational state for rendering, prioritization and continuity, but every derived state must retain source/provenance linkage."
+  },
+  "calibration": {
+    "state": "NOT_CALIBRATED",
+    "ranges": null,
+    "formulaExecutionState": "NOT_EXECUTED"
+  },
+  "veritasAcceptance": [
+    "The same source trace and device policy reproduce the same staged observations.",
+    "Route-constrained transit presentation never changes the stored raw GPS evidence.",
+    "POI density never causes all-world business records to be materialized in the browser at once.",
+    "Formula-selected policies must beat or equal deterministic baseline frame time and interaction latency without reducing truth fidelity.",
+    "Canonical Formula and runtime-state adapter hashes match authority pins."
+  ],
+  "formulaExecutionState": "NOT_EXECUTED",
+  "reason": "Spatial-density mapping is staged only. Calibration traces and controlled Formula-versus-baseline comparisons do not yet exist."
+}
