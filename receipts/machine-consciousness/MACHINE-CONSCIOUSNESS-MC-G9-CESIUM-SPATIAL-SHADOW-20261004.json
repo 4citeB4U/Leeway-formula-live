@@ -40,10 +40,17 @@
     "gpuVendor": "Google Inc. (Intel)",
     "gpuRenderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
     "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
-    "observations": 104,
     "complete16x6Rows": 0,
     "blocker": "SPATIAL_16_COMPLETE_OBSERVATIONS_REQUIRED",
-    "observedCause": "Milwaukee transit route-deviation evidence unavailable in the deployed public session; transit_route_deviation_m remained null."
+    "observedCause": "Milwaukee transit route-deviation evidence unavailable in the deployed public session; transit_route_deviation_m remained null.",
+    "sourceCaptureBytesSha256": "3aba53c380e6cc6391cd014096e84e8e1d5b6be1aa523050e5898c17bba08990",
+    "repositoryCopyBytesSha256": "ab2ee78bb2a2e76c2b73d9d3e44c8ef3674779db9022d93a9764a00f938f8df2",
+    "semanticObjectSha256": "9b7986ed30dc5244bb32939856320bfceaceab2e4b59ded8f0cca3bf6c7eadcc",
+    "semanticObjectEquality": true,
+    "captureReportedObservations": 104,
+    "rawObservationRecords": 105,
+    "repositoryEvidencePath": "experiments/machine-consciousness-v0/outputs/mc-g9-cesium-spatial-live-trace-20261004.json",
+    "preservationBoundary": "Repository evidence is parsed-object identical to the original live capture; transport normalized JSON whitespace, so byte hashes differ and both are preserved."
   },
   "veritas": {
     "structural": "PASS",
