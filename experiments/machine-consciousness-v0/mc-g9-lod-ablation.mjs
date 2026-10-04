@@ -10,6 +10,7 @@ WHEN = MC-G9 tranche 2
 HOW = Fixed-seed task fixtures -> eager control and LOD treatment -> matched cost statistics
 */
 import crypto from 'node:crypto';
+import {pathToFileURL} from 'node:url';
 import {selectCapabilityLod} from './hierarchical-lod.mjs';
 
 function rng32(seed){let x=(seed>>>0)||0x9e3779b9;return()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return(x>>>0)/4294967296}}
@@ -58,6 +59,6 @@ export function runLodAblation({trials=4096,capabilities=246,seed=20261004}={}){
  out.digest=crypto.createHash('sha256').update(JSON.stringify(out)).digest('hex');
  return out;
 }
-if(process.argv[1] && import.meta.url === new URL(process.argv[1], 'file:///').href){
+if(process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href){
   console.log(JSON.stringify(runLodAblation(),null,2));
 }
