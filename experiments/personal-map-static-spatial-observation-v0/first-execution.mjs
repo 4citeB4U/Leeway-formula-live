@@ -15,10 +15,10 @@ if (!tracePath)
 
 const calibration = JSON.parse(fs.readFileSync(calibrationPath, 'utf8'));
 if (
-  calibration.status !== 'PERSONAL_MAP_STATIC_SPATIAL_DENSITY_ACCEPTED_CALIBRATION'
+  calibration.status !== 'PERSONAL_MAP_STATIC_SPATIAL_ACCEPTED_CALIBRATION'
 )
   throw new Error('STATIC_SPATIAL_CALIBRATION_NOT_ACCEPTED');
-if (calibration.mappingId !== 'personal-map-static-spatial-observation-v0')
+if (calibration.contractId !== 'personal-map-static-spatial-observation-v0')
   throw new Error('STATIC_SPATIAL_MAPPING_MISMATCH');
 if (!Array.isArray(calibration.ranges) || calibration.ranges.length !== 6)
   throw new Error('STATIC_SPATIAL_CALIBRATION_RANGES_INVALID');
