@@ -960,3 +960,43 @@ receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G11A-REQUALIFICATION-202
 
 Claim boundary:
 read-only capability traversal is reverified; UI actuation and voice execution remain unverified.
+
+
+## E-130 — MC-G9 spatial cortex + hierarchical LOD staging
+
+Date: 2026-10-04
+State: PASS_STAGING / LIVE SIX-DIMENSION TRACE BLOCKED
+
+Authority:
+- LEEWAY-FORMULA-v1.0 unchanged.
+- Cesium/LeeWay Maps is an external spatial observation/simulation provider, not Formula authority.
+- No spatial state has been promoted to live policy authority.
+
+Implementation:
+- added provenance-bound spatial observation contract;
+- added deterministic spatial ingestion/comparison lane;
+- added three-level capability LOD selector;
+- added Focus/Horizon/Archive memory-shell paging rules;
+- added explicit protection for unresolved commitments and durable evidence.
+
+Validation on Agent-Lee Windows workstation:
+- Machine Consciousness tests: 63/63 PASS.
+- Golden Formula vector: PASS [4,50,63,59,48,69] / [E,y,/,7,w,BF].
+- hardware-backed browser rendering observed: WebGL 2.0, ANGLE Intel Graphics, Direct3D11.
+
+Live LeeWay Maps observation:
+- visible spatial candidates = 100;
+- moving subjects = 0;
+- transit route deviation = null;
+- rendered labels = 0;
+- p95 frame time = 29.20000000001164 ms;
+- interaction latency = 3.099999997764826 ms.
+
+Fail-closed boundary:
+the live observation is incomplete because transit_route_deviation_m is null. Current deployed runtime also reports transit-routes `routeGeometryIndex is not defined`; canonical source contains the declaration, so this is retained as a Maps deployment/cache/runtime mismatch until independently isolated. No zero substitution and no Formula execution were permitted.
+
+Receipt:
+receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-SPATIAL-CORTEX-STAGING-20261004.json
+
+Next:
+repair/qualify the Maps route-deviation evidence source, capture >=16 complete real-GPU observations, then run the MC-G9 spatial ablation against simpler baselines and the >=20% efficiency objective without degrading correctness or Veritas.
