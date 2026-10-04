@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "gate": "MC-G9",
+  "tranche": "CESIUM_SPATIAL_SHADOW_V0",
+  "status": "PASS_STRUCTURAL_SHADOW_NOT_GATE_CLOSURE",
+  "provider": "4citeB4U/Leeway-Maps / CesiumJS",
+  "mappingId": "personal-map-spatial-density-v0",
+  "structural": {
+    "stateRows": 16,
+    "width": 6,
+    "cognitiveUse": "SHADOW_ONLY",
+    "policyAuthority": false,
+    "formulaExecutionState": "NOT_EXECUTED",
+    "workspaceContextHash": "ea63e3783e7d4960436d511f38c862630bb1873d079c347190d7d2f91bfddf6f",
+    "baselinePolicyDeterministic": true
+  },
+  "liveEvidence": {
+    "state": "BLOCKED_LIVE_EVIDENCE",
+    "qualification": "REAL_GPU_CANDIDATE",
+    "gpu": {
+      "available": true,
+      "vendor": "Google Inc. (Intel)",
+      "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+    },
+    "completeObservationCount": 0,
+    "totalObservationCount": 104,
+    "failure": "SPATIAL_16_COMPLETE_OBSERVATIONS_REQUIRED"
+  },
+  "structuralFailures": [],
+  "blockers": ["SPATIAL_16_COMPLETE_OBSERVATIONS_REQUIRED"],
+  "runtimeReductionClaim": "NOT_MEASURED",
+  "policyContributionClaim": "NOT_MEASURED",
+  "formulaSemanticUse": "NONE",
+  "nextAction": "Capture 16 complete hardware-GPU spatial rows, then compare spatial-context ON/OFF for prediction quality, redundant derivation, routing cost and resource pressure before any policy promotion.",
+  "claimBoundary": "This tranche proves shadow world-model plumbing and fail-closed provenance only. It does not prove runtime speedup, Formula benefit, policy improvement, sentience or live action authority.",
+  "digest": "61918934e188959abc70abf27d6da49e2dafe95eff4e9be3453f1940910711d1"
+}
