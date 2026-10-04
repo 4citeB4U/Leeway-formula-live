@@ -983,7 +983,8 @@ Live browser evidence:
 - source class LIVE_BROWSER_MEASUREMENT;
 - headful Chrome hardware renderer: Intel via ANGLE / Direct3D11 / WebGL 2.0;
 - qualification REAL_GPU_CANDIDATE;
-- 104 observations captured;
+- capture summary reported 104 observations; the exported trace contains 105 records because one sampling tick landed during export;
+- parsed-object equality between source capture and repository evidence is VERIFIED (canonical object SHA-256 9b7986ed30dc5244bb32939856320bfceaceab2e4b59ded8f0cca3bf6c7eadcc); JSON whitespace normalization changed the repository file byte hash, so source and repository byte hashes are recorded separately;
 - 0 complete rows because transit_route_deviation_m remained null while the Milwaukee transit feed/map-match evidence was unavailable.
 
 Result:
