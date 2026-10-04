@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.invalid/contracts/machine-consciousness/spatial-context-v0.schema.json",
+  "title": "LeeWay Machine Consciousness Spatial Context v0",
+  "type": "object",
+  "required": ["schemaVersion","state","sourceClass","mappingId","dimensionOrder","stateRows","summary","sourceTraceHash","contextHash","cognitiveUse","policyAuthority","formulaExecutionState"],
+  "properties": {
+    "schemaVersion": { "const": "0.1.0" },
+    "state": { "enum": ["REAL_SPATIAL_CONTEXT_READY","TEST_SPATIAL_CONTEXT_READY","SIMULATED_SPATIAL_CONTEXT_READY"] },
+    "sourceClass": { "enum": ["REAL","SIMULATED","TEST_FIXTURE"] },
+    "mappingId": { "const": "personal-map-spatial-density-v0" },
+    "qualification": { "type": ["string","null"] },
+    "dimensionOrder": { "type": "array", "minItems": 6, "maxItems": 6, "items": { "type": "string" } },
+    "stateRows": {
+      "type": "array", "minItems": 16, "maxItems": 16,
+      "items": { "type": "array", "minItems": 6, "maxItems": 6, "items": { "type": "number" } }
+    },
+    "summary": { "type": "object" },
+    "sourceTraceHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "contextHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "cognitiveUse": { "const": "SHADOW_ONLY" },
+    "policyAuthority": { "const": false },
+    "formulaExecutionState": { "const": "NOT_EXECUTED" }
+  },
+  "additionalProperties": true
+}

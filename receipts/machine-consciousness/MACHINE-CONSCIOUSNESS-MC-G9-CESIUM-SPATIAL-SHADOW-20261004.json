@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "MACHINE-CONSCIOUSNESS-MC-G9-CESIUM-SPATIAL-SHADOW-20261004",
+  "status": "PASS_STRUCTURAL_SHADOW_LIVE_EVIDENCE_BLOCKED",
+  "gate": "MC-G9",
+  "tranche": "CESIUM_SPATIAL_SHADOW_V0",
+  "sourceBranch": "mc-g9-cesium-spatial-shadow-20261004",
+  "sourceBaseCommit": "c1e5223c2ac7e355ff94fbfb61e140957fa3a3cd",
+  "testedSourceCommit": "2c81be064afbd85433894d5c01ae92053a7aec2b",
+  "validationHost": "Agent-Lee Windows workstation",
+  "nodeVersion": "24.15.0",
+  "formula": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "canonicalEngineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "formulaMutation": false,
+    "spatialFormulaExecutionState": "NOT_EXECUTED",
+    "semanticUse": "NONE"
+  },
+  "implementation": {
+    "spatialContextSha256": "85f0ecd92dae927bef9158413ecc886f576720cd0a1c655ecdfd169bfac5f0b6",
+    "workspaceSelfModelSha256": "16b6dd0d5ebb001cd8e6b4f0b50776ad8d759f8c90337ecb2e46db4670afd862",
+    "auditHarnessSha256": "ed1653025ae72ec696ac18a23f4aad3b267a4e730341ceb3c920eace73cc3de4",
+    "auditOutputSha256": "c67fc56207a87b108f7e68e514f5a965c7693ad1c5460e920163c55383ca2d53",
+    "auditDigest": "61918934e188959abc70abf27d6da49e2dafe95eff4e9be3453f1940910711d1"
+  },
+  "tests": {
+    "machineConsciousnessTotal": 58,
+    "passed": 58,
+    "failed": 0,
+    "spatialTests": 4,
+    "auditDigestRecomputed": true,
+    "baselinePolicyDeterministic": true,
+    "spatialPolicyAuthority": false
+  },
+  "liveEvidence": {
+    "traceSha256": "3aba53c380e6cc6391cd014096e84e8e1d5b6be1aa523050e5898c17bba08990",
+    "provenance": "LIVE_BROWSER_MEASUREMENT",
+    "mappingId": "personal-map-spatial-density-v0",
+    "gpuQualification": "REAL_GPU_CANDIDATE",
+    "gpuVendor": "Google Inc. (Intel)",
+    "gpuRenderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "webglVersion": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "complete16x6Rows": 0,
+    "blocker": "SPATIAL_16_COMPLETE_OBSERVATIONS_REQUIRED",
+    "observedCause": "Milwaukee transit route-deviation evidence unavailable in the deployed public session; transit_route_deviation_m remained null.",
+    "sourceCaptureBytesSha256": "3aba53c380e6cc6391cd014096e84e8e1d5b6be1aa523050e5898c17bba08990",
+    "repositoryCopyBytesSha256": "ab2ee78bb2a2e76c2b73d9d3e44c8ef3674779db9022d93a9764a00f938f8df2",
+    "semanticObjectSha256": "9b7986ed30dc5244bb32939856320bfceaceab2e4b59ded8f0cca3bf6c7eadcc",
+    "semanticObjectEquality": true,
+    "captureReportedObservations": 104,
+    "rawObservationRecords": 105,
+    "repositoryEvidencePath": "experiments/machine-consciousness-v0/outputs/mc-g9-cesium-spatial-live-trace-20261004.json",
+    "preservationBoundary": "Repository evidence is parsed-object identical to the original live capture; transport normalized JSON whitespace, so byte hashes differ and both are preserved."
+  },
+  "veritas": {
+    "structural": "PASS",
+    "liveSpatialEvidence": "BLOCKED",
+    "gateClosure": false,
+    "policyPromotion": false,
+    "runtimeReductionClaim": "NOT_MEASURED"
+  },
+  "claimBoundary": "Cesium-derived spatial context is now accepted into the Machine Consciousness Global Workspace/self-model only as SHADOW_ONLY context. The real GPU provider was observed, but live spatial evidence is incomplete and no spatial policy or Formula interpretation is promoted.",
+  "nextAction": "Obtain 16 complete REAL_GPU_CANDIDATE rows and run controlled spatial-context OFF/ON ablation before any causal or policy promotion."
+}

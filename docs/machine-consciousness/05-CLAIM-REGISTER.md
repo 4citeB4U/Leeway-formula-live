@@ -426,3 +426,27 @@ May not yet say:
 - Android UI/Calculator control has passed MC-G11;
 - it has the full breadth of a large LLM;
 - it proves subjective or phenomenal consciousness.
+
+
+## MC-G9 Cesium spatial-shadow additions — 2026-10-04
+
+C-20261004-001
+Classification: VERIFIED / STRUCTURAL
+Claim:
+A provenance-bound LeeWay Maps/Cesium spatial context can enter the Machine Consciousness Global Workspace and factual self-model without changing the underlying cognition cycle policy or gaining Formula/policy authority.
+Evidence:
+58/58 tests PASS; spatial-context-v0 tests 4/4 PASS; MC-G9 spatial audit digest 61918934e188959abc70abf27d6da49e2dafe95eff4e9be3453f1940910711d1.
+
+C-20261004-002
+Classification: OBSERVED / BLOCKED
+Claim:
+The Agent-Lee Windows workstation produced headful hardware-WebGL spatial telemetry using Intel/ANGLE/D3D11, but the deployed Milwaukee session produced zero complete 16x6 spatial rows because transit_route_deviation_m was unavailable.
+Evidence:
+capture summary reported 104 observations and the exported trace contains 105 records; original capture byte SHA-256 3aba53c380e6cc6391cd014096e84e8e1d5b6be1aa523050e5898c17bba08990; repository evidence is parsed-object identical with canonical object SHA-256 9b7986ed30dc5244bb32939856320bfceaceab2e4b59ded8f0cca3bf6c7eadcc.
+
+C-20261004-003
+Classification: UNVERIFIED
+Claim:
+Cesium spatial context reduces runtime waste, LLM effort, prediction error or total cognition cost by a material amount.
+Reason:
+The shadow lane has not yet received 16 complete live GPU rows and no spatial OFF/ON comparative ablation has been completed.
