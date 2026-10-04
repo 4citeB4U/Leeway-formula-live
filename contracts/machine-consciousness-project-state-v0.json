@@ -119,11 +119,14 @@
       "formulaExecutionState": "NOT_EXECUTED",
       "tests": "58/58 PASS",
       "liveGpuQualification": "REAL_GPU_CANDIDATE",
-      "liveObservations": 104,
       "completeRows": 0,
       "blocker": "SPATIAL_16_COMPLETE_OBSERVATIONS_REQUIRED",
       "auditDigest": "61918934e188959abc70abf27d6da49e2dafe95eff4e9be3453f1940910711d1",
-      "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CESIUM-SPATIAL-SHADOW-20261004.json"
+      "receipt": "receipts/machine-consciousness/MACHINE-CONSCIOUSNESS-MC-G9-CESIUM-SPATIAL-SHADOW-20261004.json",
+      "captureReportedObservations": 104,
+      "rawObservationRecords": 105,
+      "sourceTraceBytesSha256": "3aba53c380e6cc6391cd014096e84e8e1d5b6be1aa523050e5898c17bba08990",
+      "semanticTraceSha256": "9b7986ed30dc5244bb32939856320bfceaceab2e4b59ded8f0cca3bf6c7eadcc"
     }
   }
 }
