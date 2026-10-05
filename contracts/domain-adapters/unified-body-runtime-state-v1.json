@@ -1,0 +1,20 @@
+{
+  "schemaVersion":"1.0.0",
+  "mappingId":"unified-body-runtime-state-v1",
+  "status":"CANDIDATE_CALIBRATION_REQUIRED",
+  "domain":"device-body-routing",
+  "sourceAuthority":"4citeB4U/Leeway-Runtime-Fabric + 4citeB4U/LEEWAY-DEVICE-BRIDGE",
+  "evaluatorAdapterId":"runtime-state-v1",
+  "dimensions":[
+    {"index":0,"id":"target_reachability_ms","unit":"ms","direction":"lower_is_better"},
+    {"index":1,"id":"authorization_confidence","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":2,"id":"evidence_freshness_ms","unit":"ms","direction":"lower_is_better"},
+    {"index":3,"id":"provider_health","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":4,"id":"failover_pressure","unit":"ratio_0_1","direction":"lower_is_better"},
+    {"index":5,"id":"cross_body_delivery_integrity","unit":"ratio_0_1","direction":"higher_is_better"}
+  ],
+  "observationWindow":{"rows":16,"rule":"16 consecutive completed or terminated cross-body routing attempts under the same body/provider policy profile"},
+  "requiredEvidence":["origin deviceBrainId","target deviceBrainId","device identity authority","transport provider and locator","transport-is-identity=false assertion","authorization result","provider health","request/result timestamps","provider receipt","delivery result"],
+  "rangePolicy":"MUST_BE_CALIBRATED_AND_VERSIONED_BEFORE_NUMERIC_TASK_EVALUATION",
+  "currentBoundary":"This contract fixes semantic dimensions only. Numeric ranges are intentionally absent; Formula numeric evaluation remains NOT_EXECUTED until calibration passes."
+}
