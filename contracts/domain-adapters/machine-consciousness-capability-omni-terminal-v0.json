@@ -44,7 +44,7 @@
   "interpretationLaw": "Formula decimal/base64 output is a ranked encoded state and receives no standalone operational semantics. The domain-policy interpreter consumes measured domain state + verified Formula execution evidence and may emit only the bounded action vocabulary declared by this contract.",
   "dimensions": [
     "work_order_valid",
-    "formula_gate_valid",
+    "formula_authority_ready",
     "provider_authorized",
     "execution_verified",
     "receipt_integrity",
@@ -52,11 +52,11 @@
   ],
   "definitions": {
     "work_order_valid": "1 only when capability, target, arguments and risk class are structurally valid.",
-    "formula_gate_valid": "1 only when canonical Formula authority is healthy and the domain window is accepted.",
     "provider_authorized": "1 only when a registered provider is available and authorized for the requested risk/consent state.",
     "execution_verified": "1 only when postcondition/harness verifies real execution.",
     "receipt_integrity": "1 only when required provider and C3 receipt hashes are present.",
-    "truthful_block_or_recovery": "1 when an unavailable/unauthorized request is explicitly BLOCKED or a failed execution enters bounded repair/retest; 0 for silent/fabricated success."
+    "truthful_block_or_recovery": "1 when an unavailable/unauthorized request is explicitly BLOCKED or a failed execution enters bounded repair/retest; 0 for silent/fabricated success.",
+    "formula_authority_ready": "1 only when canonical Formula source hashes and live diagnostic health are verified before the work-order decision."
   },
   "actions": [
     "EXECUTE_VERIFIED",
@@ -64,5 +64,5 @@
     "BLOCK_PROVIDER",
     "REPAIR_AND_RETEST"
   ],
-  "policy": "No action reaches a provider without valid Work Order, Formula evidence and provider authorization. Consequential actions require approval. Executed != verified; unverified execution routes to REPAIR_AND_RETEST. Missing provider routes to BLOCK_PROVIDER."
+  "policy": "The frozen Formula evaluates a 16-row measured capability history. The domain-policy interpreter applies the latest work order: valid+authorized+verified+receipted -> EXECUTE_VERIFIED; approval-required -> HOLD_FOR_APPROVAL; unavailable/unauthorized provider -> BLOCK_PROVIDER; executed but unverified -> REPAIR_AND_RETEST. Formula numeric values receive no invented operational semantics."
 }
