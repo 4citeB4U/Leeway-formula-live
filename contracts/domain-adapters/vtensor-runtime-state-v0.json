@@ -1,0 +1,73 @@
+{
+  "mappingId": "vtensor-runtime-state-v0",
+  "version": "0.1.0",
+  "domain": "LeeWay V-TENSOR",
+  "status": "CANDIDATE_UNCALIBRATED",
+  "formulaId": "LEEWAY-FORMULA-v1.0",
+  "runtimeAdapter": "runtime-state-v1",
+  "dimensions": [
+    {
+      "key": "Q",
+      "name": "working_set_hit_ratio",
+      "unit": "ratio",
+      "direction": "higher_is_better"
+    },
+    {
+      "key": "V",
+      "name": "physical_vram_pressure",
+      "unit": "ratio",
+      "direction": "lower_is_better"
+    },
+    {
+      "key": "H",
+      "name": "transfer_throughput",
+      "unit": "bytes_per_second",
+      "direction": "higher_is_better"
+    },
+    {
+      "key": "R",
+      "name": "transfer_wait",
+      "unit": "microseconds",
+      "direction": "lower_is_better"
+    },
+    {
+      "key": "S",
+      "name": "block_integrity",
+      "unit": "ratio",
+      "direction": "higher_is_better"
+    },
+    {
+      "key": "L",
+      "name": "lineage_and_sync_completeness",
+      "unit": "ratio",
+      "direction": "higher_is_better"
+    }
+  ],
+  "window": {
+    "rows": 16,
+    "width": 6
+  },
+  "calibration": {
+    "state": "NOT_CALIBRATED",
+    "ranges": null,
+    "evidence": []
+  },
+  "provenanceRequirements": [
+    "blockId",
+    "tensorId",
+    "sourceHash",
+    "hardwareIdentity",
+    "runtimeIdentity",
+    "observationTimestamp"
+  ],
+  "authorizationClass": "CANDIDATE_RESEARCH_ONLY",
+  "veritasAcceptance": [
+    "16 complete measured rows",
+    "hardware identity captured",
+    "physical tier independently observed",
+    "finite calibrated ranges",
+    "Golden Formula self-test PASS"
+  ],
+  "executionState": "NOT_EXECUTED",
+  "truthBoundary": "Host RAM and NVMe backing capacity MUST NOT be reported as physical VRAM."
+}
