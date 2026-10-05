@@ -1,0 +1,20 @@
+{
+  "schemaVersion":"1.0.0",
+  "mappingId":"omni-terminal-runtime-state-v1",
+  "status":"CANDIDATE_CALIBRATION_REQUIRED",
+  "domain":"command-device-execution",
+  "sourceAuthority":"4citeB4U/Leeway-Runtime-Fabric + 4citeB4U/LEEWAY-DEVICE-BRIDGE",
+  "evaluatorAdapterId":"runtime-state-v1",
+  "dimensions":[
+    {"index":0,"id":"command_plan_latency_ms","unit":"ms","direction":"lower_is_better"},
+    {"index":1,"id":"capability_availability","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":2,"id":"authorization_confidence","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":3,"id":"provider_health","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":4,"id":"rollback_or_fallback_pressure","unit":"ratio_0_1","direction":"lower_is_better"},
+    {"index":5,"id":"execution_verification_integrity","unit":"ratio_0_1","direction":"higher_is_better"}
+  ],
+  "observationWindow":{"rows":16,"rule":"16 consecutive command work orders under the same capability/provider/authority profile"},
+  "requiredEvidence":["workOrderId","logical capability","authority tier","human-confirmation state when required","target identity","selected provider","provider health","pre-gate result","execution result","post-gate/Veritas result","receipt hash"],
+  "rangePolicy":"MUST_BE_CALIBRATED_AND_VERSIONED_BEFORE_NUMERIC_TASK_EVALUATION",
+  "currentBoundary":"Semantic mapping only. Domain policy may block/route deterministically before Formula calibration; it must report Formula numeric state NOT_EXECUTED until calibrated ranges exist."
+}
