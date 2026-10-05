@@ -1,0 +1,20 @@
+{
+  "schemaVersion":"1.0.0",
+  "mappingId":"unified-body-routing-state-v1",
+  "status":"CANDIDATE_CALIBRATION_REQUIRED",
+  "domain":"device-body-routing",
+  "sourceAuthority":"4citeB4U/LEEWAY-DEVICE-BRIDGE + 4citeB4U/Leeway-Runtime-Fabric",
+  "evaluatorAdapterId":"runtime-state-v1",
+  "dimensions":[
+    {"index":0,"id":"identity_confidence","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":1,"id":"authorization_integrity","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":2,"id":"provider_health","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":3,"id":"transport_cost","unit":"normalized_cost","direction":"lower_is_better"},
+    {"index":4,"id":"evidence_freshness","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":5,"id":"fallback_loss","unit":"ratio_0_1","direction":"lower_is_better"}
+  ],
+  "observationWindow":{"rows":16,"rule":"16 consecutive completed routing decisions under the same body/provider policy and evidence schema"},
+  "rangePolicy":"MUST_BE_CALIBRATED_AND_VERSIONED_BEFORE_NUMERIC_TASK_EVALUATION",
+  "requiredEvidence":["deviceBrainId","identity authority","authorization state","selected provider","transport locator","provider health","evidence timestamp","fallback outcome","receipt hash"],
+  "currentBoundary":"Semantic dimensions and deterministic policy are defined. Numeric Formula evaluation remains NOT_EXECUTED until a calibrated observation range is approved."
+}
