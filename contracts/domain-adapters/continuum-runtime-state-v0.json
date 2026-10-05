@@ -1,0 +1,71 @@
+{
+  "mappingId": "continuum-runtime-state-v0",
+  "version": "0.1.0",
+  "domain": "LeeWay Continuum",
+  "status": "CANDIDATE_UNCALIBRATED",
+  "formulaId": "LEEWAY-FORMULA-v1.0",
+  "runtimeAdapter": "runtime-state-v1",
+  "dimensions": [
+    {
+      "key": "Q",
+      "name": "query_service_quality",
+      "unit": "ratio",
+      "direction": "higher_is_better"
+    },
+    {
+      "key": "V",
+      "name": "provenance_validity",
+      "unit": "ratio",
+      "direction": "higher_is_better"
+    },
+    {
+      "key": "H",
+      "name": "provider_health",
+      "unit": "ratio",
+      "direction": "higher_is_better"
+    },
+    {
+      "key": "R",
+      "name": "retrieval_latency",
+      "unit": "milliseconds",
+      "direction": "lower_is_better"
+    },
+    {
+      "key": "S",
+      "name": "state_consistency",
+      "unit": "ratio",
+      "direction": "higher_is_better"
+    },
+    {
+      "key": "L",
+      "name": "lineage_completeness",
+      "unit": "ratio",
+      "direction": "higher_is_better"
+    }
+  ],
+  "window": {
+    "rows": 16,
+    "width": 6
+  },
+  "calibration": {
+    "state": "NOT_CALIBRATED",
+    "ranges": null,
+    "evidence": []
+  },
+  "provenanceRequirements": [
+    "cellId",
+    "providerRef",
+    "sourceHash",
+    "observationTimestamp",
+    "measurementMethod"
+  ],
+  "authorizationClass": "CANDIDATE_RESEARCH_ONLY",
+  "veritasAcceptance": [
+    "16 complete measured rows",
+    "finite calibrated ranges",
+    "provenance complete",
+    "Golden Formula self-test PASS",
+    "domain interpretation reviewed"
+  ],
+  "executionState": "NOT_EXECUTED"
+}
