@@ -1,0 +1,21 @@
+{
+  "schemaVersion":"0.1.0",
+  "mappingId":"device-actuation-state-v0",
+  "status":"CANDIDATE_CALIBRATION_REQUIRED",
+  "domain":"leeway-device-actuation",
+  "purpose":"Map measured closed-loop device actuation evidence into runtime-state-v1 without duplicating Formula mathematics.",
+  "formulaAuthority":{"formulaId":"LEEWAY-FORMULA-v1.0","runtimeAdapterId":"runtime-state-v1","formulaMutation":false},
+  "executionAuthority":"4citeB4U/LEEWAY-DEVICE-BRIDGE",
+  "dimensions":[
+    {"index":0,"id":"transport_integrity","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":1,"id":"authorization_integrity","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":2,"id":"readback_convergence","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":3,"id":"latency_margin","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":4,"id":"failsafe_readiness","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":5,"id":"provider_health","unit":"ratio_0_1","direction":"higher_is_better"}
+  ],
+  "observationWindow":{"rows":16,"width":6,"rule":"16 comparable observations under one device class, capability, provider, authority policy and calibrated timeout regime."},
+  "calibration":{"ranges":null,"state":"NOT_CALIBRATED","timingLaw":"No universal timeout is canonical until measured for the actual device/provider path."},
+  "formulaExecutionState":"NOT_EXECUTED",
+  "claimBoundary":"Provider ACK, API success, simulation, wrapper presence and test fixtures do not prove physical actuation. Fresh authoritative read-back is required for physical promotion."
+}
