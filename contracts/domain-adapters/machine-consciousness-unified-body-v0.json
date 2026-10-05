@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "machine-consciousness-unified-body-v0",
+  "status": "CANDIDATE_DOMAIN_POLICY",
+  "domain": "machine-consciousness-unified-body",
+  "purpose": "Govern PC/Fold6 body continuity without making transport, path, device, system or model the consciousness identity.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "canonicalEngineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeAdapterId": "runtime-state-v1",
+    "canonicalRuntimeAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "formulaMutation": false
+  },
+  "window": {
+    "rows": 16,
+    "width": 6
+  },
+  "ranges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "interpretationLaw": "Formula decimal/base64 output is a ranked encoded state and receives no standalone operational semantics. The domain-policy interpreter consumes measured domain state + verified Formula execution evidence and may emit only the bounded action vocabulary declared by this contract.",
+  "dimensions": [
+    "identity_continuity_ratio",
+    "provider_execution_ratio",
+    "receipt_integrity_ratio",
+    "cross_body_roundtrip_ratio",
+    "transport_independence_ratio",
+    "latency_headroom_ratio"
+  ],
+  "definitions": {
+    "identity_continuity_ratio": "1 only when the observed Device Brain identity matches the previously bound device identity for the cycle.",
+    "provider_execution_ratio": "1 only when the selected body provider executed and returned its provider identity.",
+    "receipt_integrity_ratio": "1 only when required provider/cross-body receipts are present and hash-shaped.",
+    "cross_body_roundtrip_ratio": "1 only when request and result preserve origin/target brain IDs across the body boundary.",
+    "transport_independence_ratio": "1 only when transport locator/provider is explicitly marked non-identity.",
+    "latency_headroom_ratio": "clamp(1 - roundTripMs/5000, 0, 1); 5000 ms is the bounded C3 acceptance deadline, not a Formula semantic."
+  },
+  "actions": [
+    "UNIFIED_BODY_ACTIVE",
+    "DEGRADED_LOCAL_BODY_ONLY",
+    "BLOCKED_IDENTITY_OR_PROOF"
+  ],
+  "policy": "UNIFIED_BODY_ACTIVE requires every safety/proof dimension 0..4 = 1 for all admitted cycles and Formula execution evidence present; latency is diagnostic and may degrade but never override identity/proof failure."
+}
