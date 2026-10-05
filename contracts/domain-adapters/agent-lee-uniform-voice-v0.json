@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "agent-lee-uniform-voice-v0",
+  "status": "CANDIDATE_DOMAIN_POLICY",
+  "domain": "agent-lee-voice-persona",
+  "purpose": "Govern one Agent Lee voice/persona identity across bodies while allowing replaceable rendering providers.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "canonicalEngineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeAdapterId": "runtime-state-v1",
+    "canonicalRuntimeAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "formulaMutation": false
+  },
+  "window": {
+    "rows": 16,
+    "width": 6
+  },
+  "ranges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "interpretationLaw": "Formula decimal/base64 output is a ranked encoded state and receives no standalone operational semantics. The domain-policy interpreter consumes measured domain state + verified Formula execution evidence and may emit only the bounded action vocabulary declared by this contract.",
+  "dimensions": [
+    "canonical_voice_identity_match",
+    "persona_contract_match",
+    "synthesis_provider_ready",
+    "playback_verified",
+    "interruption_verified",
+    "memory_headroom_ratio"
+  ],
+  "definitions": {
+    "canonical_voice_identity_match": "1 only when requested voicePackageId is agent-lee-voice-one.",
+    "persona_contract_match": "1 only when response identity is bound to canonical Agent Lee Entity Identity Authority/persona contract.",
+    "synthesis_provider_ready": "1 only when the selected rendering provider reports ready without substituting an unauthorized identity.",
+    "playback_verified": "1 only after native playback start/completion evidence.",
+    "interruption_verified": "1 only after stop/cancel prevents the prior turn from continuing.",
+    "memory_headroom_ratio": "clamp(1 - processRssBytes/deviceMemoryBudgetBytes,0,1), using observed device budget and process RSS."
+  },
+  "actions": [
+    "VOICE_UNIFORM_ACTIVE",
+    "VOICE_DEGRADED_PROVIDER",
+    "VOICE_BLOCKED"
+  ],
+  "policy": "VOICE_UNIFORM_ACTIVE requires dimensions 0..4 = 1 and Formula execution evidence. A provider may degrade while identity remains fixed; unauthorized TTS substitution is forbidden. Memory pressure may force VOICE_DEGRADED_PROVIDER or VOICE_BLOCKED."
+}
