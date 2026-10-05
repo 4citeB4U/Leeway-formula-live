@@ -1,0 +1,20 @@
+{
+  "schemaVersion":"1.0.0",
+  "mappingId":"omni-terminal-command-state-v1",
+  "status":"CANDIDATE_CALIBRATION_REQUIRED",
+  "domain":"capability-command-execution",
+  "sourceAuthority":"4citeB4U/Leeway-Runtime-Fabric + 4citeB4U/LEEWAY-DEVICE-BRIDGE",
+  "evaluatorAdapterId":"runtime-state-v1",
+  "dimensions":[
+    {"index":0,"id":"target_identity_confidence","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":1,"id":"authorization_integrity","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":2,"id":"provider_readiness","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":3,"id":"execution_risk","unit":"ratio_0_1","direction":"lower_is_better"},
+    {"index":4,"id":"rollback_fallback_coverage","unit":"ratio_0_1","direction":"higher_is_better"},
+    {"index":5,"id":"verification_integrity","unit":"ratio_0_1","direction":"higher_is_better"}
+  ],
+  "observationWindow":{"rows":16,"rule":"16 consecutive command work orders for the same capability/provider policy class"},
+  "rangePolicy":"MUST_BE_CALIBRATED_AND_VERSIONED_BEFORE_NUMERIC_TASK_EVALUATION",
+  "requiredEvidence":["workOrderId","capability","authorityTier","target identity","human confirmation when required","provider state","execution receipt","verification receipt","rollback/fallback state"],
+  "currentBoundary":"Semantic dimensions and deterministic policy are defined. Numeric Formula evaluation remains NOT_EXECUTED until calibrated."
+}
