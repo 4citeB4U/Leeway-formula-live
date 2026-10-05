@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "machine-consciousness-capability-omni-terminal-v0",
+  "status": "CANDIDATE_DOMAIN_POLICY",
+  "domain": "machine-consciousness-capability-routing",
+  "purpose": "Govern Work Order to Command Plan to provider execution across Host Commander, Device Authority and other LeeWay capabilities.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "canonicalEngineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeAdapterId": "runtime-state-v1",
+    "canonicalRuntimeAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "formulaMutation": false
+  },
+  "window": {
+    "rows": 16,
+    "width": 6
+  },
+  "ranges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "interpretationLaw": "Formula decimal/base64 output is a ranked encoded state and receives no standalone operational semantics. The domain-policy interpreter consumes measured domain state + verified Formula execution evidence and may emit only the bounded action vocabulary declared by this contract.",
+  "dimensions": [
+    "work_order_valid",
+    "formula_gate_valid",
+    "provider_authorized",
+    "execution_verified",
+    "receipt_integrity",
+    "truthful_block_or_recovery"
+  ],
+  "definitions": {
+    "work_order_valid": "1 only when capability, target, arguments and risk class are structurally valid.",
+    "formula_gate_valid": "1 only when canonical Formula authority is healthy and the domain window is accepted.",
+    "provider_authorized": "1 only when a registered provider is available and authorized for the requested risk/consent state.",
+    "execution_verified": "1 only when postcondition/harness verifies real execution.",
+    "receipt_integrity": "1 only when required provider and C3 receipt hashes are present.",
+    "truthful_block_or_recovery": "1 when an unavailable/unauthorized request is explicitly BLOCKED or a failed execution enters bounded repair/retest; 0 for silent/fabricated success."
+  },
+  "actions": [
+    "EXECUTE_VERIFIED",
+    "HOLD_FOR_APPROVAL",
+    "BLOCK_PROVIDER",
+    "REPAIR_AND_RETEST"
+  ],
+  "policy": "No action reaches a provider without valid Work Order, Formula evidence and provider authorization. Consequential actions require approval. Executed != verified; unverified execution routes to REPAIR_AND_RETEST. Missing provider routes to BLOCK_PROVIDER."
+}
