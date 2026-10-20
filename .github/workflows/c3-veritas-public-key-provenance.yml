@@ -1,0 +1,63 @@
+name: LeeWay C3 Veritas public signer key provenance (Sigstore)
+on:
+  push:
+    branches:
+      - 'review/c3-veritas-public-enrollment-20261020'
+    paths:
+      - '.github/workflows/c3-veritas-public-key-provenance.yml'
+      - 'authority/c3-veritas-root-public-proposal.json'
+      - 'scripts/c3-verify-veritas-public-key-proposal.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
+jobs:
+  attest-public-key-proposal:
+    name: Verify separate public keys and attest proposal via GitHub OIDC
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify exact scope, key separation and absence of authority claims
+        run: |
+          node scripts/c3-verify-veritas-public-key-proposal.mjs authority/c3-veritas-root-public-proposal.json
+          sha256sum authority/c3-veritas-root-public-proposal.json
+      - name: Sign public proposal provenance with Sigstore
+        id: provenance
+        uses: actions/attest@v4
+        with:
+          subject-path: authority/c3-veritas-root-public-proposal.json
+      - name: Verify externally signed workflow identity and source pin
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in 1 2 3 4; do
+            if gh attestation verify authority/c3-veritas-root-public-proposal.json \
+              --repo 4citeB4U/Leeway-formula-live \
+              --signer-workflow 4citeB4U/Leeway-formula-live/.github/workflows/c3-veritas-public-key-provenance.yml \
+              --source-ref "${GITHUB_REF}" \
+              --source-digest "${GITHUB_SHA}" \
+              --cert-oidc-issuer https://token.actions.githubusercontent.com \
+              --deny-self-hosted-runners \
+              --format json > verified-public-veritas-provenance.json; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "Public Veritas provenance verification FAILED CLOSED" >&2
+          exit 1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: c3-veritas-public-key-provenance
+          path: |
+            authority/c3-veritas-root-public-proposal.json
+            verified-public-veritas-provenance.json
+            ${{ steps.provenance.outputs.bundle-path }}
+          if-no-files-found: error
+          retention-days: 90
