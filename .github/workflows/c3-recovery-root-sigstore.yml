@@ -1,0 +1,75 @@
+name: LeeWay C3 public recovery root provenance (Sigstore)
+run-name: C3 public provenance ${{ github.ref_name }}
+on:
+  push:
+    branches:
+      - main
+      - 'review/c3-sigstore-provenance-*'
+    paths:
+      - '.github/workflows/c3-recovery-root-sigstore.yml'
+      - 'authority/c3-recovery-root-public-provenance.json'
+      - 'scripts/c3-verify-public-root-provenance.mjs'
+      - 'tests/c3-public-root-provenance.test.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
+concurrency:
+  group: c3-root-public-provenance-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sigstore-public-provenance:
+    name: Verify and attest public recovery-root evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout source pinned to this workflow run
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify public owner and issuer signatures, scope, and source pins
+        run: |
+          node --test tests/c3-public-root-provenance.test.mjs
+          node scripts/c3-verify-public-root-provenance.mjs \
+            authority/c3-recovery-root-public-provenance.json \
+            dist/c3-recovery-root-public-provenance.json
+          sha256sum dist/c3-recovery-root-public-provenance.json
+      - name: Issue Sigstore signed SLSA provenance using GitHub Actions OIDC
+        id: provenance
+        uses: actions/attest@v4
+        with:
+          subject-path: dist/c3-recovery-root-public-provenance.json
+      - name: Verify attestation's certificate-bound workflow identity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in 1 2 3 4; do
+            if gh attestation verify dist/c3-recovery-root-public-provenance.json \
+              --repo 4citeB4U/Leeway-formula-live \
+              --signer-workflow 4citeB4U/Leeway-formula-live/.github/workflows/c3-recovery-root-sigstore.yml \
+              --source-ref "${GITHUB_REF}" \
+              --cert-oidc-issuer https://token.actions.githubusercontent.com \
+              --deny-self-hosted-runners \
+              --format json > dist/verified-provenance.json; then
+              echo "Certificate-bound Sigstore attestation verified for ${GITHUB_REF}"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "C3 Sigstore verification failed closed" >&2
+          exit 1
+      - name: Upload public evidence and verified attestation bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: c3-sigstore-public-root-provenance
+          retention-days: 90
+          path: |
+            dist/c3-recovery-root-public-provenance.json
+            dist/verified-provenance.json
+            ${{ steps.provenance.outputs.bundle-path }}
+          if-no-files-found: error
