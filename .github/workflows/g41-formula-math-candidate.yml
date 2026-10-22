@@ -1,0 +1,47 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.FORMULA.G41.MATH_EXTENSION_CI
+# TAG: LEEWAY.G41.SHADOW_SPATIAL_MATH_REGRESSION
+# 5WH:
+# WHAT: Run self-contained mathematical compatibility and frozen Formula v1 golden tests on every candidate PR.
+# WHY: The added Cesium/Three-derived mathematics must not silently mutate canonical formula semantics.
+# WHO: Creator-authorized LeeWay engineering; CI is NOT independently signed production Veritas.
+# WHERE: Leeway-formula-live/.github/workflows/g41-formula-math-candidate.yml
+# WHEN: 2026-10-22
+# HOW: Node 22 and 24, pure math plus original golden vector; optional original libraries skipped when absent.
+# LICENSE: MIT
+name: G41 Formula Additive Spatial Math Candidate
+on:
+  pull_request:
+    paths:
+      - 'runtime/canonical/leeway-formula/experimental-v2/**'
+      - 'docs/math-engine/**'
+      - '.github/workflows/g41-formula-math-candidate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'runtime/canonical/leeway-formula/experimental-v2/**'
+      - '.github/workflows/g41-formula-math-candidate.yml'
+permissions:
+  contents: read
+jobs:
+  shadow-math-candidate:
+    name: G41 mathematical extension Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22', '24']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Golden v1 frozen plus G41 shape, projection and shadow mathematical tests
+        run: |
+          node --test runtime/canonical/leeway-formula/experimental-v2/tests/*.test.mjs
+      - name: Confirm original frozen Formula module and adapter are unchanged by this PR
+        run: |
+          git diff --exit-code origin/${{ github.base_ref || 'main' }} -- runtime/canonical/leeway-formula/v1 || exit 1
