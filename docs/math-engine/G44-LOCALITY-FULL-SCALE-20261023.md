@@ -93,3 +93,35 @@ require separate qualification.
 
 This is scalable **bounded-memory computation**, not infinite capacity,
 lossless 25,600:1 compression, proof of energy savings or NVIDIA superiority.
+
+
+## Independent GitHub full-size archive + locality + Formula proof
+
+The new GitHub Actions job **G44 Complete 800 MiB Synthetic Macro Proof**
+executed successfully on Node 24 (2026-10-23). Workflow run
+[39993822265](https://github.com/4citeB4U/Leeway-formula-live/actions/runs/39993822265),
+job 120552056245. Its complete integrated path used the **same**
+6,400-tile synthetic generator for G43 exact archive and G44
+locality-preserving fold, independently replayed G43's local archive,
+compared five locality output cells against an analytic reference, then
+applied a source-explicit candidate 512×6 projection through the
+unchanged canonical Formula v1 evaluator **in shadow mode**.
+
+- Combined archived-source/locality/replay/Formula elapsed time: **8,229.165259 ms**
+  on the GitHub Linux runner, excluding normal job setup.
+- Independently checked working-state SHA-256:
+  \`8af604e3994487997366aba235478eb239e3d73019d4aea03ddd5aa7c1e940cc\`.
+  This is **identical** to the separate isolated Node 22 G44 locality test.
+- Original exact archive source readback: **PASS**.
+- Original local unsigned hash chain and canonical source hash: **PASS**.
+- Five independent reduced-cell analytical references: **PASS**.
+- Real original \`LEEWAY-FORMULA-v1.0\` shadow evaluation: **PASS**.
+- Protected production authority, real Cesium/Three observations,
+  approved Q/V/H/R/S/L mapping, LDWMD, Veritas, Continuum,
+  Receipt and Learning Ledger: **NOT PERFORMED**.
+
+The isolated source-simulator and GitHub runner are **not the owner's
+Agent-Lee laptop**; direct cross-machine speed rankings are unwarranted.
+This proof does close the G44 *synthetic full-sized combined pipeline*
+gate while leaving the real-world precision, provider and protected
+production gates open.
