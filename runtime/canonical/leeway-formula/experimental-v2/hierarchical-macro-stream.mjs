@@ -94,11 +94,13 @@ const validateArchiveDir=folder=>{
 export function ingestHierarchicalMacroTensor({
  shape,tiles,archiveDir,maxTileCount=10000,
  maxStoredBytes=64*1024*1024,capacityBytes=128*1024,
- verifyUniqueReadback=true
+ verifyUniqueReadback=true,onCanonicalTile=null
 }={}){
  const {count,bytes,denominator}=sourceShape(shape,maxTileCount);
  if(!tiles||typeof tiles[Symbol.iterator]!=='function')
   fail('G43_CANONICAL_CHUNK_ITERATOR_REQUIRED');
+ if(onCanonicalTile!==null&&typeof onCanonicalTile!=='function')
+  fail('G44_TILE_CONSUMER_MUST_BE_FUNCTION');
  if(capacityBytes!==INPUT_BYTES||!Number.isSafeInteger(maxStoredBytes)||maxStoredBytes<INPUT_BYTES)
   fail('G43_EXPLICIT_CAPACITY_LIMIT_INVALID');
  validateArchiveDir(archiveDir);
@@ -154,6 +156,10 @@ export function ingestHierarchicalMacroTensor({
    contributions.get(hash).count++;
    const nextRoot=ledgerStep(root,entry);
    fs.writeSync(fd,JSON.stringify({...entry,previousChainHash:root,chainHash:nextRoot})+'\n');
+   if(onCanonicalTile)onCanonicalTile({
+    seq,coord:Object.freeze([...expected]),rawSha256:hash,
+    data:Float32Array.from(tile.data)
+   });
    root=nextRoot;seq++;
    if((seq&127)===0)peakRss=Math.max(peakRss,process.memoryUsage().rss);
   }
