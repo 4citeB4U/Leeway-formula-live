@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "mobile-map-runtime-performance-v0",
+  "status": "PROPOSED_NOT_CALIBRATED_NOT_EXECUTED",
+  "domain": "cross-platform-mobile-map-runtime",
+  "purpose": "Stage measured mobile rendering and interaction pressure into runtime-state-v1 without modifying LEEWAY-FORMULA-v1.0. The mapping is for adaptive policy research only until calibrated and verified.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "canonicalEngineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeAdapterId": "runtime-state-v1",
+    "canonicalRuntimeAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "formulaMutation": false
+  },
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "frame_time_ms",
+      "unit": "milliseconds",
+      "definition": "measured rendered-frame duration over the active observation window",
+      "role": "render pressure and jank",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 1,
+      "id": "main_thread_long_task_ms",
+      "unit": "milliseconds",
+      "definition": "measured long-task duration attributable to the application during the observation window",
+      "role": "UI responsiveness pressure",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 2,
+      "id": "gpu_render_scale_ratio",
+      "unit": "ratio_0_1",
+      "definition": "active Cesium/browser render scale relative to nominal 1.0",
+      "role": "current graphics workload policy",
+      "missingDataPolicy": "REQUIRED"
+    },
+    {
+      "index": 3,
+      "id": "moving_subject_count",
+      "unit": "count",
+      "definition": "number of simultaneously animated map subjects requiring continuous visual updates",
+      "role": "animation workload",
+      "missingDataPolicy": "ZERO_ONLY_WHEN_COUNTED"
+    },
+    {
+      "index": 4,
+      "id": "active_live_layer_count",
+      "unit": "count",
+      "definition": "number of enabled source-backed live layers contributing polling, decoding, rendering or animation",
+      "role": "data/render workload breadth",
+      "missingDataPolicy": "ZERO_ONLY_WHEN_COUNTED"
+    },
+    {
+      "index": 5,
+      "id": "interaction_latency_ms",
+      "unit": "milliseconds",
+      "definition": "measured time from user interaction to corresponding visible/state response",
+      "role": "end-to-end usability",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    }
+  ],
+  "observationWindow": {
+    "rows": 16,
+    "width": 6,
+    "rule": "16 consecutive completed runtime observations under the same device class, app version, render policy and map workload identity"
+  },
+  "deterministicBaseline": {
+    "status": "AUTHORIZED_BASELINE_NOT_FORMULA",
+    "rule": "Before Formula calibration, apply conservative capability-based policies using viewport, standardized browser hardware hints, render scale, and feature cost. Never claim Formula optimized the device unless the canonical evaluator actually executes."
+  },
+  "crossPlatformBoundary": {
+    "web": "WebGPU or WebGL are browser graphics APIs to the device GPU; they are not a second physical GPU.",
+    "androidNative": "Native GPU compute/render may use platform graphics/compute APIs when a native package owns the workload.",
+    "appleNative": "Apple devices use integrated Apple GPUs; native workloads use Metal. Browser WebGPU, where available, is a web API layered over the platform graphics stack.",
+    "coordinationRule": "Do not double-submit the same visual workload through native GPU and WebGPU and call that additive GPU capacity. Separate workloads only when synchronization cost and power impact are measured."
+  },
+  "prohibitions": [
+    "Do not infer GPU model or memory when the browser does not expose it.",
+    "Do not claim PWA installation grants native GPU privileges.",
+    "Do not claim WebGPU and the phone GPU are two independent GPUs.",
+    "Do not execute Formula before calibration ranges and performance contribution tests exist."
+  ],
+  "calibration": {
+    "state": "NOT_CALIBRATED",
+    "ranges": null,
+    "formulaExecutionState": "NOT_EXECUTED"
+  },
+  "veritasAcceptance": [
+    "Frame time and interaction latency are measured, not estimated.",
+    "The same trace and policy reproduce the same staged rows.",
+    "Adaptive policies never change factual map truth states.",
+    "Performance reductions do not disable safety-critical or journey-critical evidence silently.",
+    "Canonical Formula and runtime-state adapter hashes match authority pins.",
+    "Ablation demonstrates any Formula-selected policy outperforms the deterministic baseline before promotion."
+  ],
+  "formulaExecutionState": "NOT_EXECUTED",
+  "reason": "Performance mapping has been staged only. Mobile calibration and controlled baseline comparison have not been completed."
+}

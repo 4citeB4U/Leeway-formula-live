@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "0.1.0",
+  "mappingId": "logistics-trip-continuity-v0",
+  "status": "PROPOSED_NOT_CALIBRATED_NOT_EXECUTED",
+  "domain": "multimodal-logistics-and-personal-navigation",
+  "purpose": "Stage measured multimodal journey continuity into the existing runtime-state-v1 Formula adapter without modifying LEEWAY-FORMULA-v1.0. This contract does not authorize Formula execution until ranges are calibrated and Veritas accepts the mapping.",
+  "formulaAuthority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "canonicalEngineSha256": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtimeAdapterId": "runtime-state-v1",
+    "canonicalRuntimeAdapterSha256": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "formulaMutation": false
+  },
+  "dimensions": [
+    {
+      "index": 0,
+      "id": "connection_slack_seconds",
+      "unit": "seconds",
+      "definition": "authoritative next-leg departure minus max(now, authoritative current-leg arrival) minus required transfer time",
+      "role": "time margin for the next connection",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 1,
+      "id": "live_observation_age_seconds",
+      "unit": "seconds",
+      "definition": "now minus timestamp of the newest source-reported moving-asset observation",
+      "role": "freshness of bus/train/air/marine tracking evidence",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 2,
+      "id": "distance_to_transfer_meters",
+      "unit": "meters",
+      "definition": "geodesic or route-network distance from the currently tracked subject/user position to the next transfer point",
+      "role": "spatial progress toward the connection",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 3,
+      "id": "schedule_deviation_seconds",
+      "unit": "seconds",
+      "definition": "source-published predicted or actual event time minus source-published scheduled event time",
+      "role": "early/late condition without inferring ETA from position alone",
+      "missingDataPolicy": "BLOCKED_NOT_ZERO"
+    },
+    {
+      "index": 4,
+      "id": "active_disruption_count",
+      "unit": "count",
+      "definition": "number of source-backed active alerts, closures, cancellations or service disruptions relevant to the current and next journey legs",
+      "role": "external operational pressure on the journey",
+      "missingDataPolicy": "ZERO_ONLY_WHEN_AUTHORITATIVE_SOURCE_REPORTS_NONE"
+    },
+    {
+      "index": 5,
+      "id": "evidence_coverage_ratio",
+      "unit": "ratio_0_1",
+      "definition": "authoritative required journey fields currently present divided by required journey fields for the evaluated decision",
+      "role": "how much of the connection decision is supported by source-backed evidence",
+      "missingDataPolicy": "COMPUTE_FROM_DECLARED_REQUIRED_FIELDS"
+    }
+  ],
+  "observationWindow": {
+    "rows": 16,
+    "width": 6,
+    "rule": "16 consecutive journey observations for the same itinerary identity, transfer sequence, source authorities and calibration profile"
+  },
+  "truthStates": [
+    "LIVE",
+    "PREDICTED",
+    "SCHEDULED",
+    "MAPPED",
+    "SIMULATED",
+    "STALE",
+    "UNAVAILABLE"
+  ],
+  "prohibitions": [
+    "Do not infer transit arrival time from GPS position alone.",
+    "Do not infer aircraft gate, terminal, departure or arrival schedule from ADS-B position alone.",
+    "Do not infer vessel berth or port schedule from AIS position alone.",
+    "Do not promote mapped geometry or simulation to live evidence.",
+    "Do not call LEEWAY-FORMULA-v1.0 until calibrated ranges and the task mapping are verified."
+  ],
+  "deterministicBaseline": {
+    "status": "AUTHORIZED_BASELINE_NOT_FORMULA",
+    "rule": "Connection state may be computed directly from authoritative arrival/departure timestamps and minimum transfer time while Formula mapping remains unverified.",
+    "states": ["UNKNOWN", "GOOD", "WATCH", "TIGHT", "MISSED"]
+  },
+  "calibration": {
+    "state": "NOT_CALIBRATED",
+    "ranges": null,
+    "formulaExecutionState": "NOT_EXECUTED"
+  },
+  "veritasAcceptance": [
+    "Every timestamp carries source, retrieval time and truth state.",
+    "Every moving subject identity remains stable across updates.",
+    "GPS position alone never becomes ETA.",
+    "Connection slack reproduces exactly from the same timestamps and transfer rule.",
+    "Stale observations remain visibly stale.",
+    "All six dimensions have measured calibration ranges before Formula use.",
+    "Canonical Formula engine and runtime-state adapter hashes match authority pins.",
+    "A Formula result is not presented as route, schedule, safety or factual-world proof by itself."
+  ],
+  "formulaExecutionState": "NOT_EXECUTED",
+  "reason": "Domain mapping is newly staged for multimodal journey continuity. Calibration, Formula execution and Veritas contribution testing have not occurred."
+}
