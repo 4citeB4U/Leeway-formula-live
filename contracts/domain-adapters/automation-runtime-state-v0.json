@@ -1,0 +1,80 @@
+{
+  "schemaVersion":"0.1.0",
+  "mappingId":"automation-runtime-state-v0",
+  "status":"CANDIDATE_CALIBRATION_REQUIRED",
+  "domain":"leeway-automation-runtime",
+  "purpose":"Map measured automation runtime evidence into the canonical runtime-state-v1 Formula input without embedding a second Formula engine in Runtime Fabric.",
+  "formulaAuthority":{
+    "formulaId":"LEEWAY-FORMULA-v1.0",
+    "runtimeAdapterId":"runtime-state-v1",
+    "formulaMutation":false
+  },
+  "dimensions":[
+    {
+      "index":0,
+      "id":"trigger_integrity",
+      "unit":"ratio_0_1",
+      "direction":"higher_is_better",
+      "evidence":"typed event identity, source binding, freshness, de-duplication and replay state"
+    },
+    {
+      "index":1,
+      "id":"guard_determinism",
+      "unit":"ratio_0_1",
+      "direction":"higher_is_better",
+      "evidence":"deterministic ECA predicate resolution without ambiguous callback-only semantics"
+    },
+    {
+      "index":2,
+      "id":"authority_integrity",
+      "unit":"ratio_0_1",
+      "direction":"higher_is_better",
+      "evidence":"owner authority, policy admission, capability scope and Formula decision provenance"
+    },
+    {
+      "index":3,
+      "id":"schedule_queue_stability",
+      "unit":"ratio_0_1",
+      "direction":"higher_is_better",
+      "evidence":"due-time drift, queue wait, duplicate suppression, lease/recovery and backlog behavior"
+    },
+    {
+      "index":4,
+      "id":"execution_verification",
+      "unit":"ratio_0_1",
+      "direction":"higher_is_better",
+      "evidence":"handler/workflow completion plus required post-state/Veritas evidence"
+    },
+    {
+      "index":5,
+      "id":"recovery_provider_health",
+      "unit":"ratio_0_1",
+      "direction":"higher_is_better",
+      "evidence":"retry/failover health, provider availability and recovery/fail-safe readiness"
+    }
+  ],
+  "observationWindow":{
+    "rows":16,
+    "width":6,
+    "rule":"16 comparable automation windows under one workload class, trigger type, authority policy and runtime topology."
+  },
+  "candidateEventClasses":[
+    "schedule",
+    "condition",
+    "device",
+    "webhook",
+    "runtime",
+    "provider",
+    "calendar",
+    "filesystem",
+    "git",
+    "telemetry"
+  ],
+  "calibration":{
+    "ranges":null,
+    "state":"NOT_CALIBRATED",
+    "timingLaw":"No universal 10ms, 20ms, 50ms or other deadline is canonical until measured for the workload/platform path."
+  },
+  "formulaExecutionState":"NOT_EXECUTED",
+  "claimBoundary":"This adapter defines the observation surface only. It does not define or locally compute F8, and it does not promote simulated triggers or mocked device success to live automation proof."
+}
