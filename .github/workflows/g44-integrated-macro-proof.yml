@@ -1,0 +1,45 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.FORMULA.G44.INTEGRATED_MACRO_MATH_CI
+# TAG: LEEWAY.G44.INDEPENDENT_RUNNER_800M_CROSS_MODULE_TEST
+# 5WH:
+# WHAT: Execute complete synthetic 640x320x64x16 exact archival, 3D locality reduction and Formula shadow on GitHub.
+# WHY: Laptop run and isolated locality test alone do not verify combined 800MiB source replay.
+# WHO: Creator-authorized LeeWay engineering; GitHub CI is not independent production Veritas.
+# WHERE: Leeway-formula-live/.github/workflows/g44-integrated-macro-proof.yml
+# WHEN: 2026-10-23
+# HOW: Node 24 CPU run with strict source/observations/replay/Formula assertions, no private credentials.
+# LICENSE: MIT
+name: G44 Complete 800 MiB Synthetic Macro Proof
+on:
+  pull_request:
+    paths:
+      - 'runtime/canonical/leeway-formula/experimental-v2/**'
+      - '.github/workflows/g44-integrated-macro-proof.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  complete-hierarchical-math-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify complete 800 MiB logical input through real G43 archive, G44 locality and original Formula shadow
+        run: |
+          node --max-old-space-size=256 runtime/canonical/leeway-formula/experimental-v2/run-g44-archived-locality-shadow.mjs > "$RUNNER_TEMP/g44-proof.json"
+          node -e "
+          const r=require(process.env.RUNNER_TEMP+'/g44-proof.json');
+          if(r.sourceLogicalBytes!==838860800||r.sourceTileCount!==6400
+             ||!r.originalArchiveReadbackPassed||!r.originalArchiveSourceDigestMatched
+             ||!r.originalArchiveLocalHashChainMatched||r.independentVoxelReferencesChecked!==5
+             ||r.maxAbsoluteError>1e-11||!r.originalFormulaShadowExecuted
+             ||r.originalFormulaId!=='LEEWAY-FORMULA-v1.0'||r.productionAccepted!==false)
+             process.exit(1);
+          console.log('G44 actual archived synthetic 800 MiB 6400-tile source, locality, replay and original Formula shadow PASS');
+          console.log('Elapsed ms:',r.totalArchiveLocalityReplayFormulaMs);
+          console.log('Working-state digest:',r.localityWorkspaceSha256);
+          console.log('Actual protected production approval: false');
+          "
