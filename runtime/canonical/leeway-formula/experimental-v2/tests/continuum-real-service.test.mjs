@@ -51,3 +51,35 @@ test('original Continuum service: admitted archive, restart, read and receipt',a
     {...context,capabilities:['continuum.read']}),/CONTINUUM_CAPABILITY_DENIED/);
  }finally{rmSync(dir,{recursive:true,force:true})}
 });
+
+test('application-facing durable Continuum adapter routes compressed archive through canonical service',async t=>{
+ const modulePath=process.env.LEEWAY_CONTINUUM_SERVICE_MODULE;
+ const adapterPath=process.env.LEEWAY_CONTINUUM_DURABLE_ADAPTER_MODULE;
+ if(!modulePath||!adapterPath){t.skip('Explicit canonical modules required');return}
+ const {createContinuumService}=await import(pathToFileURL(modulePath).href);
+ const {createDurableContinuumProvider}=await import(pathToFileURL(adapterPath).href);
+ const dir=mkdtempSync(join(tmpdir(),'leeway-continuum-public-adapter-')),databasePath=join(dir,'isolated.sqlite');
+ const binding={databasePath,ownerId:'test-owner',bodyId:'test-device'};
+ const context={ownerId:'test-owner',bodyId:'test-device',actorId:'test-worker',capabilities:['continuum.initialize','continuum.write','continuum.read']};
+ const gate=async request=>({state:'ADMITTED',scope:'TEST_ONLY',requestHash:request.requestHash,
+  ownerId:request.ownerId,bodyId:request.bodyId,capability:request.capability});
+ const make=()=>createDurableContinuumProvider({service:createContinuumService({
+  binding,allowTestOnlyGate:true,governancePreGate:gate}),views:[{id:'knowledge',universeId:'test-universe'}]});
+ try{
+  const app=make();
+  await app.initialize(context);
+  const original=new Uint8Array(270000).fill(83);
+  const stored=await ingestCompressedContinuumFile({service:app,input:{
+    bytes:original,viewId:'knowledge',collection:'knowledge',title:'canonical app route',
+    source:{kind:'test',id:'public-adapter'}},context,sha256,compress,decompress});
+  assert.equal(stored.verifiedReadback,true);
+  const resumed=make();
+  assert.deepEqual(await readCompressedContinuumFile({service:resumed,recordId:stored.recordId,context,sha256,decompress,maxOutputBytes:original.length}),original);
+  const list=resumed.list({viewId:'knowledge'},context);
+  assert.equal(list.records.length,1);
+  assert.equal(list.records[0].viewId,'knowledge');
+  assert.equal(resumed.getReceipt(stored.receiptId,context).scope,'TEST_ONLY');
+  await assert.rejects(resumed.ingestFile({
+    bytes:new Uint8Array([1]),viewId:'not-mapped',collection:'knowledge',title:'deny',mimeType:'application/octet-stream',source:{kind:'test',id:'deny'}},context),/CONTINUUM_VIEW_PROVIDER_UNBOUND/);
+ }finally{rmSync(dir,{recursive:true,force:true})}
+});
