@@ -1,0 +1,17 @@
+/* LEEWAY HEADER — DO NOT REMOVE
+ REGION: LEEWAY.FORMULA.HARDWARE; TAG: H08_H09_INDEPENDENT_ORACLES
+ WHAT: Independently test H-08 allocation and H-09 pressure/recovery invariants.
+ WHY: A source function does not prove mathematical role.
+ WHO: LeeWay creator-authorized qualification candidate; WHERE: Formula tests.
+ WHEN: 2026-10-25; HOW: separate arithmetic oracles, boundary and property sweeps.
+ AUTHORITY: TEST_EVIDENCE_ONLY; LICENSE: Existing LeeWay repository terms. */
+import test from 'node:test';import assert from 'node:assert/strict';
+import {executeH08,executeH09} from '../h08-h09-standalone-kernels.mjs';
+// These oracles do not import the candidate implementation's internal helper logic.
+const h08Oracle=(capacity,reserved,used,requested,partial)=>{let free=capacity-reserved-used;let granted=0;for(let i=0;i<requested&&i<free;i++)granted++;return requested===0?0:(granted===requested||partial&&granted>0?granted:0)};
+const h09Oracle=(capacity,reserved,used,hi,lo,limit)=>{const alarm=BigInt(used+reserved)*1000n>=BigInt(hi)*BigInt(capacity);if(!alarm)return 0;const target=Number(BigInt(lo)*BigInt(capacity)/1000n);let needed=Math.max(0,used-Math.max(0,target-reserved));return Math.min(needed,limit)};
+test('H08 deterministic full and partial admission with invariants',()=>{for(let capacity=0;capacity<=20;capacity++)for(let reserved=0;reserved<=capacity;reserved++)for(let used=0;used<=capacity-reserved;used++)for(let requested=0;requested<=22;requested++)for(const allowPartial of [false,true]){const a=executeH08({capacity,reserved,used,requested,allowPartial});assert.equal(a.allocation,h08Oracle(capacity,reserved,used,requested,allowPartial));assert.ok(a.remaining>=0);assert.equal(a.remaining+a.allocation,capacity-reserved-used)}});
+test('H08 rejects invalid accounting and nonintegral input',()=>{assert.throws(()=>executeH08({capacity:4,used:5,requested:1}),/INVALID_ACCOUNTING/);assert.throws(()=>executeH08({capacity:4.5,requested:1}),/INTEGER/);assert.throws(()=>executeH08({capacity:4,requested:1,allowPartial:'yes'}),/POLICY_INVALID/)});
+test('H09 independently derives reclaim and monotonic postcondition',()=>{for(let capacity=1;capacity<=35;capacity++)for(let reserved=0;reserved<=capacity;reserved++)for(let used=0;used<=capacity-reserved;used++)for(let limit=0;limit<=6;limit++){const a=executeH09({capacity,reserved,used,highPermille:800,lowPermille:600,maxReclaim:limit});const oracle=h09Oracle(capacity,reserved,used,800,600,limit);assert.equal(a.reclaim,oracle);assert.equal(a.nextUsed,used-oracle);assert.ok(a.nextUsed>=0&&a.nextUsed<=used);assert.ok(a.remainingCapacity>=0)}});
+test('H09 threshold equality, zero recovery, large precision',()=>{assert.equal(executeH09({capacity:10,used:9,maxReclaim:1}).overloaded,true);assert.equal(executeH09({capacity:10,used:8,maxReclaim:1}).overloaded,false);const cap=Number.MAX_SAFE_INTEGER;const a=executeH09({capacity:cap,used:cap,highPermille:1000,lowPermille:999,maxReclaim:10000});assert.equal(a.overloaded,true);assert.equal(a.reclaim,10000)});
+test('H09 fail closed on invalid thresholds and accounting',()=>{assert.throws(()=>executeH09({capacity:0,used:0}),/MUST_BE_POSITIVE/);assert.throws(()=>executeH09({capacity:10,used:11}),/INVALID_PRESSURE_POLICY/);assert.throws(()=>executeH09({capacity:10,used:2,lowPermille:900,highPermille:900}),/INVALID_PRESSURE_POLICY/)});
