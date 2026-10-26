@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "1.0.0",
+  "gate": "MC-G9",
+  "experiment": "SPATIAL_BELIEF_TO_POLICY_TRAINING",
+  "authority": {
+    "formulaId": "LEEWAY-FORMULA-v1.0",
+    "formulaMutation": false
+  },
+  "design": {
+    "cycles": 64,
+    "seed": 20261004,
+    "spatialReliability": 0.9,
+    "lambdas": [
+      0,
+      0.05,
+      0.1,
+      0.2,
+      0.35,
+      0.5,
+      0.75,
+      1,
+      1.5,
+      2
+    ],
+    "trainWorlds": [
+      0,
+      95
+    ],
+    "holdoutWorlds": [
+      96,
+      191
+    ]
+  },
+  "train": [
+    {
+      "lambda": 2,
+      "brier": 0.046086618629020804,
+      "preferredRate": 0.7263997395833334
+    },
+    {
+      "lambda": 1.5,
+      "brier": 0.04637169103940036,
+      "preferredRate": 0.72412109375
+    },
+    {
+      "lambda": 1,
+      "brier": 0.046443506808858864,
+      "preferredRate": 0.7180989583333334
+    },
+    {
+      "lambda": 0.75,
+      "brier": 0.04663826624458083,
+      "preferredRate": 0.7164713541666666
+    },
+    {
+      "lambda": 0.5,
+      "brier": 0.04678228883322069,
+      "preferredRate": 0.7112630208333334
+    },
+    {
+      "lambda": 0.35,
+      "brier": 0.04750880155195857,
+      "preferredRate": 0.7076822916666666
+    },
+    {
+      "lambda": 0.2,
+      "brier": 0.048045588520716144,
+      "preferredRate": 0.7019856770833334
+    },
+    {
+      "lambda": 0.1,
+      "brier": 0.04817036254428309,
+      "preferredRate": 0.6888020833333334
+    },
+    {
+      "lambda": 0.05,
+      "brier": 0.04855531595543214,
+      "preferredRate": 0.6827799479166666
+    },
+    {
+      "lambda": 0,
+      "brier": 0.04863485669710187,
+      "preferredRate": 0.67626953125
+    }
+  ],
+  "selectedLambda": 2,
+  "holdout": {
+    "baseline": {
+      "lambda": 0,
+      "brier": 0.050206641518949296,
+      "preferredRate": 0.6778971354166666
+    },
+    "trained": {
+      "lambda": 2,
+      "brier": 0.048932022764172224,
+      "preferredRate": 0.72802734375
+    },
+    "policyGainPctPoints": 5.0130208333333375,
+    "brierRelativeChangePct": -2.538745305829704
+  },
+  "formula": {
+    "baseline": {
+      "formulaId": "LEEWAY-FORMULA-v1.0",
+      "adapterId": "runtime-state-v1",
+      "decimalState": [
+        69,
+        68,
+        67,
+        5,
+        49,
+        3
+      ],
+      "base64State": [
+        "BF",
+        "BE",
+        "BD",
+        "F",
+        "x",
+        "D"
+      ],
+      "top10": [
+        69,
+        68,
+        67,
+        5,
+        49,
+        3,
+        1,
+        62,
+        2,
+        0
+      ],
+      "inputHash": "c9675fced590ba0a7e3d2764834cd98c511d82ab9255c5d50bcf2539ad362946",
+      "resultHash": "a1ba6803b123ee1b5140f7731741f58e4809c2ae20291d72a794995058e141c1",
+      "receiptPath": "C:\\Users\\Leona\\.codex\\leeway\\Leeway-formula-live\\runtime\\canonical\\receipts\\leeway-formula\\leeway-formula-run-20261004200321-deb2492b.json",
+      "evaluatedAt": "2026-10-04T20:03:21.706Z",
+      "hostTraceId": "deb2492b-7799-4685-8638-565f53939515",
+      "requestedTraceId": "MC-G9-SPATIAL-POLICY-BASELINE"
+    },
+    "trained": {
+      "formulaId": "LEEWAY-FORMULA-v1.0",
+      "adapterId": "runtime-state-v1",
+      "decimalState": [
+        69,
+        68,
+        1,
+        6,
+        67,
+        2
+      ],
+      "base64State": [
+        "BF",
+        "BE",
+        "B",
+        "G",
+        "BD",
+        "C"
+      ],
+      "top10": [
+        69,
+        68,
+        1,
+        6,
+        67,
+        2,
+        0,
+        16,
+        5,
+        62
+      ],
+      "inputHash": "e0e2a96c2e0e1b1c9b64e76dba5454fd71343f3cc8cf904cf4bd25fba25a7b91",
+      "resultHash": "4ad4afd8cbdd8da53da9c3de8ae11fb1950e7db3b90a01c1d8f62f369cd9ef1f",
+      "receiptPath": "C:\\Users\\Leona\\.codex\\leeway\\Leeway-formula-live\\runtime\\canonical\\receipts\\leeway-formula\\leeway-formula-run-20261004200321-9c8464fd.json",
+      "evaluatedAt": "2026-10-04T20:03:21.717Z",
+      "hostTraceId": "9c8464fd-16be-4581-97e0-c5f1fcfced6b",
+      "requestedTraceId": "MC-G9-SPATIAL-POLICY-TRAINED"
+    }
+  },
+  "acceptance": {
+    "trainHoldoutSeparated": true,
+    "selectedLambda": 2,
+    "holdoutPolicyGainPctPoints": 5.0130208333333375,
+    "holdoutBrierRelativeChangePct": -2.538745305829704,
+    "policyGainAtLeastOnePoint": true,
+    "brierRegressionWithinFivePct": true,
+    "formulaExecuted": true,
+    "formulaOutputsChanged": true,
+    "pass": true
+  },
+  "classification": "POLICY_TRAINING_CANDIDATE_PASS",
+  "claimBoundary": "Training modifies only experimental candidate-policy valuation in the simulator. Golden Formula bytes and canonical adapter are unchanged. Live hardware spatial qualification remains a separate evidence gate.",
+  "digest": "e9c4c8ea2c5b0eefd0373f448934685ad67c585414e9c0fb370f8e3562f8737a"
+}
