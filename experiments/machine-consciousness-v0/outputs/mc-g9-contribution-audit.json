@@ -69,7 +69,7 @@
       "variance": 0.04106370120326887,
       "corrWithUnstableOutcome": 0.17193523117607004,
       "corrWithObservationSurprise": 0.9714565946457404,
-      "corrWithAccessIncomplete": -0.030444280503981732,
+      "corrWithAccessIncomplete": -0.03044428050398172,
       "scenarioMeans": {
         "stationary": 0.35989165599982803,
         "changing": 0.3964909057036655,
@@ -95,17 +95,17 @@
     },
     "valence_free_energy_rate": {
       "n": 40960,
-      "mean": 0.000496159458543142,
+      "mean": 0.0004961594585431432,
       "variance": 0.22823317000652538,
       "corrWithUnstableOutcome": -0.030613351720379395,
       "corrWithObservationSurprise": -0.6080261344273781,
       "corrWithAccessIncomplete": 0.003531515498991476,
       "scenarioMeans": {
-        "stationary": 0.0009307155562151428,
-        "changing": 0.00017554660834196838,
-        "noisy": -0.00048689598427165376,
-        "misleading": 0.0009307155562151432,
-        "module-dropout": 0.0009307155562151428
+        "stationary": 0.0009307155562151441,
+        "changing": 0.00017554660834196697,
+        "noisy": -0.000486895984271654,
+        "misleading": 0.0009307155562151436,
+        "module-dropout": 0.0009307155562151441
       }
     },
     "belief_information_gain_nats": {
@@ -129,7 +129,7 @@
       "variance": 0.18189003048184452,
       "corrWithUnstableOutcome": 0.4045571021442202,
       "corrWithObservationSurprise": 0.31739758058844325,
-      "corrWithAccessIncomplete": -0.025741820959740508,
+      "corrWithAccessIncomplete": -0.025741820959740515,
       "scenarioMeans": {
         "stationary": 1.1335093169600683,
         "changing": 1.2859084825204585,
@@ -186,5 +186,5 @@
     ],
     "promotionBoundary": "Diagnostic usefulness does not grant action authority. Next tranche must run controlled policy/learning ablations against simpler baselines."
   },
-  "digest": "5e9a0a51ce177239e2d3516675a1e1764b837b8c982532ead7f7bd37fac6d1a5"
+  "digest": "6b1d6f9ae5145cbb7ca3b10bed250e4592e7c40c6be92d2191b51b992274f9e1"
 }

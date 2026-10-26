@@ -68,7 +68,7 @@
         1
       ]
     ],
-    "calibrationFileSha256": "f1db397640c240d75f3ef7985941b5cec051f616ed5cbfe35aa5cd5b50e5d05a"
+    "calibrationFileSha256": "bda1d6b148f706c327c9c6aff28989944af7aa0875b621d66d044cbed0f66577"
   },
   "authority": {
     "health": {
@@ -96,7 +96,7 @@
       ],
       "specHash": "2f4604f143e2f7c3bc2fe315f2faa2c7d9b8b188151a0fab9f6cebea3e155f9b",
       "specMdHash": "dd9f2f7d23dcc8076d7d3c9e1f194b596bff041e8b25dc003348c8554db7b16d",
-      "timestamp": "2026-10-01T23:42:52.638Z",
+      "timestamp": "2026-10-04T20:00:31.242Z",
       "hostScope": "formula-only",
       "kernelIntegrity": "VERIFIED_AT_STARTUP"
     },
@@ -139,15 +139,15 @@
     ],
     "inputHash": "513f612ca2076bad61eab407b884b9898185608d4fd29a64541a446ed9945bbe",
     "resultHash": "caf9cd55d7608052e1e9cbc3b00d1862ba24ebe5a40b47fab87110bc038d43a8",
-    "receiptPath": "/data/data/com.termux/files/home/.leeway/workstation/repos/Leeway-formula-live/runtime/canonical/receipts/leeway-formula/leeway-formula-run-20261001234252-4d5aeac3.json",
-    "evaluatedAt": "2026-10-01T23:42:52.700Z",
-    "hostTraceId": "4d5aeac3-e199-4d10-a3e3-af40dc15dd1d",
+    "receiptPath": "C:\\Users\\Leona\\.codex\\leeway\\Leeway-formula-live\\runtime\\canonical\\receipts\\leeway-formula\\leeway-formula-run-20261004200031-9ad029c0.json",
+    "evaluatedAt": "2026-10-04T20:00:31.252Z",
+    "hostTraceId": "9ad029c0-5986-4aea-a5e4-75dab61f85ab",
     "requestedTraceId": "MC-G8-FIRST-COGNITION-20261001"
   },
   "receiptVerification": {
     "exists": true,
-    "path": "/data/data/com.termux/files/home/.leeway/workstation/repos/Leeway-formula-live/runtime/canonical/receipts/leeway-formula/leeway-formula-run-20261001234252-4d5aeac3.json",
-    "sha256": "21bdd93ce4680553137dca4c0b65e9a57c8dab28844627394a9acf444fd3451c"
+    "path": "C:\\Users\\Leona\\.codex\\leeway\\Leeway-formula-live\\runtime\\canonical\\receipts\\leeway-formula\\leeway-formula-run-20261004200031-9ad029c0.json",
+    "sha256": "496351cfd41af7be3cd5d8925ec08f8672bdb06fbdd7f3afa04ee4306298a1ea"
   },
   "acceptance": {
     "exactly16Cycles": true,

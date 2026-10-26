@@ -1,0 +1,97 @@
+{
+  "worlds": 128,
+  "cycles": 64,
+  "spatialReliability": 0.9,
+  "off": {
+    "brier": 0.11507056651515558,
+    "preferredRate": 0.68115234375
+  },
+  "on": {
+    "brier": 0.04791044248670661,
+    "preferredRate": 0.6806640625
+  },
+  "brierImprovementPct": 58.36429424339675,
+  "preferredRateDeltaPctPoints": -0.048828125,
+  "formula": {
+    "off": {
+      "formulaId": "LEEWAY-FORMULA-v1.0",
+      "adapterId": "runtime-state-v1",
+      "decimalState": [
+        69,
+        64,
+        61,
+        63,
+        66,
+        17
+      ],
+      "base64State": [
+        "BF",
+        "BA",
+        "9",
+        "/",
+        "BC",
+        "R"
+      ],
+      "top10": [
+        69,
+        64,
+        61,
+        63,
+        66,
+        17,
+        12,
+        65,
+        60,
+        68
+      ],
+      "inputHash": "b9a4f2daa0567cf4d86606222451cbe1a72ae87e13cffcce37ec33cfa46af88e",
+      "resultHash": "ba2603d4b9bcd902a19cebf713fc944a0adf297632cc18b8289bf361451c4819",
+      "receiptPath": "C:\\Users\\Leona\\.codex\\leeway\\Leeway-formula-live\\runtime\\canonical\\receipts\\leeway-formula\\leeway-formula-run-20261004200105-7b37084a.json",
+      "evaluatedAt": "2026-10-04T20:01:05.716Z",
+      "hostTraceId": "7b37084a-b97f-4838-90b7-d43537415e89",
+      "requestedTraceId": "MC-G9-SPATIAL-OFF"
+    },
+    "on": {
+      "formulaId": "LEEWAY-FORMULA-v1.0",
+      "adapterId": "runtime-state-v1",
+      "decimalState": [
+        69,
+        66,
+        67,
+        64,
+        3,
+        0
+      ],
+      "base64State": [
+        "BF",
+        "BC",
+        "BD",
+        "BA",
+        "D",
+        "A"
+      ],
+      "top10": [
+        69,
+        66,
+        67,
+        64,
+        3,
+        0,
+        58,
+        53,
+        60,
+        68
+      ],
+      "inputHash": "57085355219d65c9eb2433c7f9371464a1f9af92a87ac9f4a49b0ce6a9d6368f",
+      "resultHash": "731f72c02cca8c6c7631ede62a79ac1403c4a08411ddeace1c28e90548a8499f",
+      "receiptPath": "C:\\Users\\Leona\\.codex\\leeway\\Leeway-formula-live\\runtime\\canonical\\receipts\\leeway-formula\\leeway-formula-run-20261004200105-17e20487.json",
+      "evaluatedAt": "2026-10-04T20:01:05.726Z",
+      "hostTraceId": "17e20487-190d-4a2a-a82e-01832fdf1275",
+      "requestedTraceId": "MC-G9-SPATIAL-ON"
+    }
+  },
+  "formulaOutputChanged": true,
+  "classification": "SIMULATED_CAUSAL_SPATIAL_ABLATION_WITH_CANONICAL_FORMULA_EXECUTION",
+  "claimBoundary": "Proves causal mathematical value of an additional reliable spatial observation in the Machine Consciousness simulator and executes both 16x6 cognition windows through canonical LEEWAY-FORMULA-v1.0. Does not substitute for live hardware-GPU spatial qualification.",
+  "digest": "c9c2fe5bf08557770fde65a8f42b2a1d954ffee3640b7bb35d134c146d91a129"
+}
