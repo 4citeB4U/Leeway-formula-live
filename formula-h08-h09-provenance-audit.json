@@ -1,0 +1,80 @@
+{
+  "schema": "leeway.formula.h08-h09.provenance-audit.v1",
+  "kind": "AUDIT_ONLY",
+  "files": [
+    {
+      "file": "LeeWay-Edge-GPU/core/hybrid.dispatcher.js",
+      "sha256": "0a029d69f4648ec76889c3b6b529422f330439dd503aa1f01ddb8c10c95b84f1",
+      "bytes": 10941,
+      "designationMatches": 0
+    },
+    {
+      "file": "LeeWay-Edge-GPU/core/inference-contract.mjs",
+      "sha256": "b130d8de81ca307eda4cbc144ab6af11811f074cc9832d04485c162b2cf3ec7c",
+      "bytes": 8405,
+      "designationMatches": 0
+    },
+    {
+      "file": "LeeWay-Edge-GPU/core/state-window-statistics.mjs",
+      "sha256": "1f30113e04e56f67315e6a26c6a998734e47e72234f3d3985558b295dc8b27d8",
+      "bytes": 3175,
+      "designationMatches": 0
+    },
+    {
+      "file": "LeeWay-Edge-GPU/L2_Controller_VRM/mosfet.regulator.ts",
+      "sha256": "67cd380c1c0c1a8eb7e86f8b1c923178e91ca0dd1e8cf8c3925e18e8603785dd",
+      "bytes": 974,
+      "designationMatches": 0
+    },
+    {
+      "file": "LeeWay-Edge-GPU/contracts/g19-diagnostics-projection.mjs",
+      "sha256": "7a0a9b3ca12b8f2d9fbb990625098e16fa4bbd7244b3bbf99eafd4b9acf23b59",
+      "bytes": 3532,
+      "designationMatches": 0
+    },
+    {
+      "file": "runtime-c3-clean-formula-20261007/automation-runtime/failure-recovery.mjs",
+      "sha256": "2c032682d0857ab85ec8ca068fd2f151453d33d43dceee4f3fec86d91dd22b92",
+      "bytes": 233,
+      "designationMatches": 0
+    },
+    {
+      "file": "ldwmd-gpu-admission-g1/adapters/edge-gpu/runtime.mjs",
+      "sha256": "693a9fe0b81afbfe4c91f81c36ba2b4b8299b4ebf4d7217de7d24e29c907d9b4",
+      "bytes": 2956,
+      "designationMatches": 0
+    }
+  ],
+  "authorityDocuments": [
+    {
+      "file": "LeeWay-Edge-GPU/contracts/application-runtime-contract.json",
+      "exists": false
+    },
+    {
+      "file": "LeeWay-Edge-GPU/contracts/execution-node-contract.v1.json",
+      "exists": false
+    },
+    {
+      "file": "ldwmd-gpu-admission-g1/contracts/execution-node-contract.v1.json",
+      "exists": true,
+      "sha256": "6105516a07cb0c2bbf534da7102aa27ac1190b5996970439224295ed3ec35c32",
+      "designations": 0
+    }
+  ],
+  "findings": [
+    {
+      "equation": "H-08",
+      "existingCapability": "Authenticated LDWMD memory admission / resource budget consumer",
+      "directFormalDesignationEstablished": false,
+      "classification": "PARTIALLY_BUILT_OR_MISSING_CANONICAL_BINDING",
+      "required": "Approved H-08 mathematical contract and signed authority record with exact source path/digest; per-equation executable proof"
+    },
+    {
+      "equation": "H-09",
+      "existingCapability": "Typed GPU failure handling / bounded fallback with post-verification gates",
+      "directFormalDesignationEstablished": false,
+      "classification": "PARTIALLY_BUILT_OR_MISSING_CANONICAL_BINDING",
+      "required": "Approved H-09 pressure-recovery mathematical contract and signed authority record with exact source path/digest; per-equation executable proof"
+    }
+  ]
+}

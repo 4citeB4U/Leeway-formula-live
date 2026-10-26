@@ -1,0 +1,99 @@
+{
+  "schema": "leeway.formula.f3-f8-source-audit.v1",
+  "kind": "AUDIT_ONLY",
+  "root": "E:\\LeeWay-Work\\runtime-c3-clean-formula-20261007",
+  "sources": [
+    {
+      "path": "provider-fabric/provider-binder.mjs",
+      "sha256": "8f0e96841e16c569d8d90abf8ff9a8296413c537c9b972ebc99736ae1dac2fa3",
+      "bytes": 2927
+    },
+    {
+      "path": "provider-fabric/provider-router.mjs",
+      "sha256": "0259f89ddfe3eab5efd8df5b19f5ecf508f9c7854f9c9b9362641accfbb7f4c9",
+      "bytes": 3863
+    },
+    {
+      "path": "provider-fabric/provider-fallback-policy.mjs",
+      "sha256": "cdc82069610403a092730bdea5b7cec9132ffa9f8fcbde23a63ba7f59f1ff369",
+      "bytes": 787
+    },
+    {
+      "path": "provider-fabric/provider-readiness-gate.mjs",
+      "sha256": "b2871dd4666df19919342c1f0845a5333621334a77f0791508e0e85d4a6e8b79",
+      "bytes": 6418
+    },
+    {
+      "path": "automation-runtime/job-queue.mjs",
+      "sha256": "e2d81357c51b39746d773048e40ad1e156fb2c9e2703ac0942ccfa7d856a41b5",
+      "bytes": 12030
+    },
+    {
+      "path": "automation-runtime/scheduler.mjs",
+      "sha256": "91a9cc194aefa9a2bf9bdcb38d86aeae28d2715bfaa8f3757a78d4671aad40d5",
+      "bytes": 974
+    },
+    {
+      "path": "automation-runtime/trigger-router.mjs",
+      "sha256": "b18d69f49b1e34c5749cee1584a5f3011c9ccad61533535ebbeef50a07b5cffc",
+      "bytes": 214
+    },
+    {
+      "path": "automation-runtime/workflow-engine.mjs",
+      "sha256": "c78eef7003e2e45b05b9e1ae820341b1a632e020b972b1bdaba5e404cd999903",
+      "bytes": 441
+    },
+    {
+      "path": "automation-runtime/approval-gate.mjs",
+      "sha256": "5af4fd6000f8d9646634965e78063d4e5a7d286e5180803045d5d6c565c62201",
+      "bytes": 1766
+    },
+    {
+      "path": "automation-runtime/veritas/VeritasGate.OwnerLocalHostRead.v1.psm1",
+      "sha256": "56fcde33384e7ffbd60ffed1db7a1c9c673ef10a44ec353c85b6ed50e87d31af",
+      "bytes": 12751
+    }
+  ],
+  "findings": [
+    {
+      "equations": [
+        "F3-01",
+        "F3-02",
+        "F3-03"
+      ],
+      "source": "provider-fabric/provider-binder.mjs",
+      "observed": "Provider candidate selection uses IDs/categories/capabilities and declared priority; exact seven-component lexicographic formula not established",
+      "status": "SOURCE_PRESENT_EQUATION_EQUIVALENCE_OPEN"
+    },
+    {
+      "equations": [
+        "F4-01",
+        "F4-02",
+        "F4-03",
+        "F4-04"
+      ],
+      "source": "automation-runtime/veritas/VeritasGate.OwnerLocalHostRead.v1.psm1",
+      "observed": "Original host Veritas module located, independently enrolled provider not qualified",
+      "status": "SOURCE_PRESENT_EQUATION_EQUIVALENCE_OPEN"
+    },
+    {
+      "equations": [
+        "F7-01",
+        "F7-02"
+      ],
+      "source": "automation-runtime/job-queue.mjs",
+      "observed": "Original persistent queue has verified non-serializable-task fail-closed check; lexicographic priority formula not qualified",
+      "status": "NEGATIVE_BOUNDARY_PASS_EQUATION_EQUIVALENCE_OPEN"
+    },
+    {
+      "equations": [
+        "F8-01",
+        "F8-02",
+        "F8-03"
+      ],
+      "source": "automation-runtime/scheduler.mjs",
+      "observed": "Original scheduler and trigger validation fail closed on missing fields; exact firing product and signed dispatch unqualified",
+      "status": "NEGATIVE_BOUNDARY_PASS_EQUATION_EQUIVALENCE_OPEN"
+    }
+  ]
+}
