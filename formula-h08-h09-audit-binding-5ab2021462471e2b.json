@@ -1,0 +1,58 @@
+{
+  "schema": "leeway.formula.h08-h09.audit-binding.v1",
+  "authority": "AUDIT_CANDIDATE_ONLY",
+  "sourceHashes": {
+    "LeeWay-Edge-GPU/core/hybrid.dispatcher.js": "0a029d69f4648ec76889c3b6b529422f330439dd503aa1f01ddb8c10c95b84f1",
+    "LeeWay-Edge-GPU/core/inference-contract.mjs": "b130d8de81ca307eda4cbc144ab6af11811f074cc9832d04485c162b2cf3ec7c",
+    "LeeWay-Edge-GPU/contracts/g19-diagnostics-projection.mjs": "7a0a9b3ca12b8f2d9fbb990625098e16fa4bbd7244b3bbf99eafd4b9acf23b59",
+    "LeeWay-Edge-GPU/contracts/g19-diagnostics-projection.test.mjs": "4521363b53f7a40f60ebee64d839f902f977710a75850ee2a4fc95a049ac5e7c",
+    "LeeWay-Edge-GPU/contracts/g19-gpu-veritas-gate.test.mjs": "ae45cac67b5b37e81770555d491678aa7fd54ae673f32c5cdb17727fb63a4004",
+    "ldwmd-gpu-admission-g1/provider.registry.json": "cdcb1e9f78cae76b3aff2c2cf1b66aaba7c65ace3770b7dfd6345f29ffc846f3",
+    "ldwmd-gpu-admission-g1/hardware-intelligence/provider-registry.json": "dcb00557abf902ec90be67137bd7635ae5b32f29aa2e05293ef8d1a577349af4",
+    "LeeWay-Edge-GPU/evidence-staging/native-gpu-readiness-g19/authority-source-map.json": "18555eaf3a6911eb0bdf0d5379b974511977c6a24dbf1ed31e0f10a9af8d7fa0",
+    "ldwmd-gpu-admission-g1/adapters/edge-gpu/runtime.mjs": "693a9fe0b81afbfe4c91f81c36ba2b4b8299b4ebf4d7217de7d24e29c907d9b4"
+  },
+  "registries": {
+    "providerRegistryId": "LEEWAY_PROVIDER_REGISTRY",
+    "providerRegistryCanonicalFlag": true,
+    "hasMemoryCategory": true,
+    "hasEdgeGpuCategory": true,
+    "hardwareRegistryNature": "DEVICE_VENDOR_IDENTIFICATION_NOT_EQUATION_AUTHORITY",
+    "hardwareVendorEntries": 29
+  },
+  "verifiedTestExecution": {
+    "testFiles": [
+      "LeeWay-Edge-GPU/contracts/g19-diagnostics-projection.test.mjs",
+      "LeeWay-Edge-GPU/contracts/g19-gpu-veritas-gate.test.mjs"
+    ],
+    "observedPass": 22,
+    "observedFail": 0,
+    "observedSkip": 0
+  },
+  "equations": [
+    {
+      "id": "H-08",
+      "candidateSource": "LeeWay-Edge-GPU/core/inference-contract.mjs",
+      "supportingSource": "LeeWay-Edge-GPU/contracts/g19-diagnostics-projection.mjs",
+      "observedScope": "LDWMD lease and memory-budget admission checks; reject unverified allocation evidence",
+      "status": "RELATED_IMPLEMENTATION_AND_TEST_EVIDENCE",
+      "exactStandaloneKernelCertified": false,
+      "canonicalDesignationPresent": false
+    },
+    {
+      "id": "H-09",
+      "candidateSource": "LeeWay-Edge-GPU/core/hybrid.dispatcher.js",
+      "supportingSource": "LeeWay-Edge-GPU/contracts/g19-gpu-veritas-gate.test.mjs",
+      "observedScope": "Typed GPU failure recovery and authorized dispatch; fail-closed evidence tests",
+      "status": "RELATED_IMPLEMENTATION_AND_TEST_EVIDENCE",
+      "exactStandaloneKernelCertified": false,
+      "canonicalDesignationPresent": false
+    }
+  ],
+  "unresolved": [
+    "approved H-08/H-09 math contracts",
+    "authority-signed equation-to-source pin",
+    "actual H-08 allocation mathematical end-to-end oracle",
+    "actual H-09 pressure recovery mathematical end-to-end oracle"
+  ]
+}

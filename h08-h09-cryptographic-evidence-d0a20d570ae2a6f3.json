@@ -1,0 +1,82 @@
+{
+  "schema": "leeway.h08-h09.cryptographic-integrity-evidence.v1",
+  "authority": "LEEWAY_AUDIT_INTEGRITY_ONLY",
+  "sourceHashAlgorithm": "SHA-256",
+  "pinnedArtifacts": [
+    {
+      "path": "E:\\LeeWay-Work\\LeeWay-Edge-GPU\\core\\hybrid.dispatcher.js",
+      "sha256": "0a029d69f4648ec76889c3b6b529422f330439dd503aa1f01ddb8c10c95b84f1"
+    },
+    {
+      "path": "E:\\LeeWay-Work\\LeeWay-Edge-GPU\\core\\inference-contract.mjs",
+      "sha256": "b130d8de81ca307eda4cbc144ab6af11811f074cc9832d04485c162b2cf3ec7c"
+    },
+    {
+      "path": "E:\\LeeWay-Work\\ldwmd-gpu-admission-g1\\automation-runtime\\src\\vtensor\\vram-database.mjs",
+      "sha256": "fd174d307de28c29c57a222d1b20f6d09bf9af73b60de8ce30a9330b5faf0aae"
+    },
+    {
+      "path": "E:\\LeeWay-Work\\LeeWay-Edge-GPU\\tests\\virtual-gpu\\tensor-unit.test.mjs",
+      "sha256": "394542f769c7eea1b21e3cf6227f8f4eac7d0217eef6df232ebf7c6ed358013b"
+    },
+    {
+      "path": "E:\\LeeWay-Work\\LeeWay-Edge-GPU\\tests\\virtual-gpu\\governed-inference.test.mjs",
+      "sha256": "3742d41a0d60a834e0de4d9f11271f7acbfae896e783a9b822dc64d40527fe96"
+    },
+    {
+      "path": "E:\\LeeWay-Work\\formula-storage-g42-verification-20261024\\formula-h08-original-ldwmd.test.mjs",
+      "sha256": "659a1aaf31b6e6fe937dac73c0678106012a443e883f8245535ed469e761ad85"
+    },
+    {
+      "path": "E:\\LeeWay-Work\\formula-storage-g42-verification-20261024\\formula-h09-recovery-transition.test.mjs",
+      "sha256": "6902963db13fed41acc601710c75db947e347476486c5886acf73a4ed2a3ef20"
+    },
+    {
+      "path": "E:\\LeeWay-Work\\formula-storage-g42-verification-20261024\\formula-h08-h09-audit-binding-5ab2021462471e2b.json",
+      "sha256": "5ab2021462471e2bdb7e8fe3b9f303d00c821ba2020b4bfb9c3ac62d9457e27c"
+    },
+    {
+      "path": "E:\\LeeWay-Work\\formula-storage-g42-verification-20261024\\formula-i-h-evidence-v2-254872a10f4b68b7.json",
+      "sha256": "254872a10f4b68b7a1777b7b04a72ed8aa61313068c6dbeb6793fb1fd0619f33"
+    },
+    {
+      "path": "E:\\LeeWay-Work\\formula-storage-g42-verification-20261024\\h08-h09-browser-acceptance\\acceptance.json",
+      "sha256": "fac958660b23551c768dda2651f89dce4065f37f1896144acc17fefdec6a9093"
+    }
+  ],
+  "observations": [
+    {
+      "scope": "ORIGINAL_LDWMD_MOCK_ADAPTER",
+      "status": "PASS",
+      "tests": 1
+    },
+    {
+      "scope": "ORIGINAL_HYBRID_DISPATCH_SYNTHETIC_RECOVERY",
+      "status": "PASS",
+      "tests": 3
+    },
+    {
+      "scope": "GPU_ORIGINAL_REGRESSION_NODE",
+      "status": "PASS",
+      "tests": 66
+    },
+    {
+      "scope": "GPU_BROWSER_COMPONENT_ACCEPTANCE",
+      "status": "PASS",
+      "tests": 47,
+      "reportedAdapter": {
+        "vendor": "intel",
+        "architecture": "xe-lpg",
+        "device": "",
+        "description": "",
+        "isFallbackAdapter": false
+      }
+    }
+  ],
+  "verifiedClaim": "EVIDENCE_FILES_AND_CURRENT_SOURCES_HASH_PINNED",
+  "notVerified": [
+    "PRODUCTION_CRYPTOGRAPHIC_ISSUER_SIGNATURE",
+    "H08_H09_APPROVED_CANONICAL_FORMULA_SOURCE_DESIGNATION",
+    "PRODUCTION_FULL_CHAIN_EXECUTION"
+  ]
+}

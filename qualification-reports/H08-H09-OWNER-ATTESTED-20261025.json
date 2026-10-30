@@ -1,0 +1,24 @@
+{
+    "schema":  "leeway.formula.h08-h09.owner-attested-qualification.v1",
+    "date":  "2026-10-25",
+    "owner":  "LeeWay Industries / Creator authorization provided in conversation",
+    "authority":  "OWNER_APPROVED_ENGINEERING_EVIDENCE",
+    "equations":  [
+                      "H-08",
+                      "H-09"
+                  ],
+    "source":  "runtime/canonical/leeway-formula/v1/h08-h09-standalone-kernels.mjs",
+    "sourceSha256":  "538c19c41f3555567aa54ee74996d79c7bed4ca8b35f92df8c4f42f1fc14debe",
+    "independentOracleTest":  "runtime/canonical/leeway-formula/v1/tests/h08-h09-independent-oracle.test.mjs",
+    "testSha256":  "7d7d1d77b26d5d6ed59456c7f7794c8c4a34de476bbb4369fde4688edf60a51f",
+    "observedTests":  5,
+    "observedPassed":  5,
+    "observedFailed":  0,
+    "githubCommit":  "9a74f19bb52d0e084d3f2f339ad2f2b4dd612fa5",
+    "ownerAttestation":  "Owner explicitly authorizes, attests and accepts completed H-08/H-09 engineering work",
+    "engineeringState":  "OWNER_APPROVED_EXECUTABLE_TESTED",
+    "cryptographicSignatureStatus":  "NOT_PERFORMED",
+    "independentVeritasStatus":  "NOT_VERIFIED",
+    "canonicalFormulaV1Engine":  "UNCHANGED",
+    "productionAdmission":  "PENDING_CRYPTOGRAPHIC_PROVIDER_ENROLLMENT"
+}

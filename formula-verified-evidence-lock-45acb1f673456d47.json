@@ -1,0 +1,64 @@
+{
+  "schema": "leeway.formula.verified-evidence-lock.v1",
+  "authority": "AUDIT_ONLY",
+  "createdAt": "2026-10-25T21:28:01.504Z",
+  "scope": "Agent-Lee checkout, frozen Formula v1, witnessed Node.js test execution",
+  "sourceHashes": {
+    "runtime/canonical/leeway-formula/v1/leeway-formula-v1.mjs": "6502791bba909d7481db3a204f3cbf67b1dc06a4b76a73c797d709408341d63e",
+    "runtime/canonical/leeway-formula/v1/canonical-input.mjs": "4087fc14a9f1f44eb46d9d6417156176794e2acc72ee9bf481f21a5d0abe5236",
+    "runtime/canonical/leeway-formula/v1/adapters/raw-base64-v1.mjs": "2c8b477abad73a0b8519127b20e500bc857f6d26a2722634f23637d4eeac6215",
+    "runtime/canonical/leeway-formula/v1/formula-service.mjs": "59c74a850cfbacab4408d73538c824d25687ae0fbd12f07ab5d3622661b7b1ec",
+    "runtime/canonical/leeway-formula/v1/adapters/runtime-state-v1.mjs": "3264d0a97a76246b31c5ca759b5993188cbae10422eb153ac395e3fb5e2470e0",
+    "runtime/canonical/leeway-formula/v1/base64-codec.mjs": "3d66c4a42a29733901564c8502ddf23b2398ca94860f80a9bc1611816794276d",
+    "runtime/canonical/leeway-formula/v1/rational.mjs": "5d36ff407256ddc2858b2e6747ea1091b99a8d787b7b840d912a6c9968c35264",
+    "formula-sf1-independent-oracles.mjs": "cd37ab764b93b6a5caeffaedd74958dedd6c1ce9c9b132d740d0cbd0c46f41ee",
+    "runtime/canonical/leeway-formula/v1/tests/golden-vector-v1.mjs": "5c9dc6d3489ca29d078bc64b8cd1346e7933e8454e0e07a3b185dc0e8697d25d",
+    "runtime/canonical/leeway-formula/v1/tests/reproducibility-v1.mjs": "0835d6d06f74bd88ac5c15e355be1880c02063e6a70210b0442a08797b1c01a7",
+    "docs/reference/LeeWay-Formula-Mathematical-Engineering-Textbook-v2.html": "77e7aed7d4487655953873a90b085ef2e085647b539fbfbc512ab24584b65934"
+  },
+  "observed": {
+    "run": "2026-10-25",
+    "nodeTestFiles": 3,
+    "nodeTests": 8,
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "goldenDecimal": [
+      4,
+      50,
+      63,
+      59,
+      48,
+      69
+    ],
+    "goldenBase64": [
+      "E",
+      "y",
+      "/",
+      "7",
+      "w",
+      "BF"
+    ],
+    "independentOracleAreas": [
+      "all 70 states positional Base64 and inverse",
+      "invalid-code rejection",
+      "canonical 16x6 validation",
+      "rational arithmetic exactness and division-by-zero rejection",
+      "frozen golden output",
+      "repeatability"
+    ],
+    "historicalBroaderRun": {
+      "passed": 139,
+      "skipped": 8,
+      "failed": 0
+    }
+  },
+  "evidenceStatus": "VERIFIED_POSITIVE_TEST_EVIDENCE",
+  "equationCertificationStatus": "NOT_EQUIVALENT_TO_196_INDIVIDUAL_CERTIFICATES",
+  "exclusions": [
+    "No production issuance",
+    "No independent custodian signature",
+    "No ledger admission",
+    "Skipped tests are not passes"
+  ]
+}
