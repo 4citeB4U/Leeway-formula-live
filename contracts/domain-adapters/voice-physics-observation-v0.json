@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "mappingId": "voice-physics-observation-v0",
+  "status": "EXPERIMENTAL_MEASUREMENT_ONLY",
+  "domain": "speech-audio-physics",
+  "sourceAuthority": "Creator-authorized LeeWay Formula research",
+  "evaluatorAdapterId": "runtime-state-v1",
+  "equationModule": "runtime/canonical/leeway-formula/experimental-v2/voice-physics-math.mjs",
+  "dimensions": [
+    { "id": "pressure_rms", "unit": "Pa", "direction": "measurement" },
+    { "id": "acoustic_energy_density", "unit": "J/m^3", "direction": "measurement" },
+    { "id": "propagation_delay", "unit": "ms", "direction": "lower_is_better" },
+    { "id": "echo_residual", "unit": "ratio", "direction": "lower_is_better" },
+    { "id": "thermal_noise_voltage", "unit": "V_rms", "direction": "measurement" },
+    { "id": "cmos_power", "unit": "W", "direction": "lower_is_better" },
+    { "id": "channel_capacity", "unit": "bit/s", "direction": "measurement" }
+  ],
+  "requiredEvidence": [
+    "calibrated pressure or microphone transfer function",
+    "aligned microphone and predicted-echo samples",
+    "distance and medium assumptions",
+    "temperature, resistance, bandwidth, and electrical parameters",
+    "provider timestamps and playback/interruption events"
+  ],
+  "formulaBoundary": "The equations produce physical observations only. They do not choose speech, interrupt a user, authorize an action, or certify a result.",
+  "promotionGate": "Independent dimensional review, source calibration, held-out voice telemetry, matched shadow comparison, Veritas review, and explicit owner authorization.",
+  "currentClaim": "No numeric task evaluation or active adapter registration is claimed. The unchanged canonical LEEWAY-FORMULA-v1.0 kernel may consume a separately calibrated six-column shadow projection only."
+}
