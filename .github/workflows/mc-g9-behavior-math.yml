@@ -1,0 +1,31 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.FORMULA.MACHINE_CONSCIOUSNESS.MC_G9.CI
+# TAG: LEEWAY.FORMULA.MC_G9_BEHAVIOR_MATH_CI_V1
+# WHO: Formula research source verifier
+# WHAT: Verify sleep/dream, private thought and flow candidate boundaries.
+# WHY: Preserve simulation provenance and original authorization contracts.
+# WHERE: GitHub Actions, 2026-11-04
+# HOW: Node 22 tests, no secrets, no runtime action, no Formulas issued.
+# AUTHORITY: SOURCE_TEST_ONLY
+name: MC-G9 Behavioral Candidate Mathematics
+on:
+  pull_request:
+    paths:
+      - "experiments/machine-consciousness-v0/behavioral-mode-measurement.mjs"
+      - "experiments/machine-consciousness-v0/tests/behavioral-mode-measurement.test.mjs"
+      - "docs/machine-consciousness/13-BEHAVIORAL-SLEEP-DREAM-INNER-THOUGHT-20261104.md"
+      - ".github/workflows/mc-g9-behavior-math.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-source-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check experiments/machine-consciousness-v0/behavioral-mode-measurement.mjs
+      - run: node --test experiments/machine-consciousness-v0/tests/behavioral-mode-measurement.test.mjs

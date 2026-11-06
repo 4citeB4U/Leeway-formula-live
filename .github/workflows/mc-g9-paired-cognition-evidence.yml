@@ -1,0 +1,32 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.FORMULA.MACHINE_CONSCIOUSNESS.MC_G9.CI
+# TAG: LEEWAY.FORMULA.MC_G9_PAIRED_ABLATION_SOURCE_TEST_V1
+# WHAT: Test evidence matching without claiming Formula cognition improvement.
+# WHO: Original LeeWay Formula owner.
+# WHY: Block false causal claims and protect research provenance.
+# WHERE: GitHub Actions.
+# WHEN: 2026-11-04.
+# HOW: Node native deterministic source test, no credentials or authority writes.
+# AUTHORITY: SOURCE_TEST_ONLY
+name: MC-G9 Paired Cognition Evidence
+on:
+  pull_request:
+    paths:
+      - "experiments/machine-consciousness-v0/mc-g9-paired-ablation-audit.mjs"
+      - "experiments/machine-consciousness-v0/tests/mc-g9-paired-ablation-audit.test.mjs"
+      - "docs/machine-consciousness/12-FORMULA-COGNITIVE-CAUSAL-PROOF-20261104.md"
+      - ".github/workflows/mc-g9-paired-cognition-evidence.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check experiments/machine-consciousness-v0/mc-g9-paired-ablation-audit.mjs
+      - run: node --test experiments/machine-consciousness-v0/tests/mc-g9-paired-ablation-audit.test.mjs
