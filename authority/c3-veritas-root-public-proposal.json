@@ -1,0 +1,16 @@
+{
+  "schema": "leeway.c3.b8.independent-veritas-root-public-proposal.v1",
+  "createdAt": "2026-10-20T22:10:30.258Z",
+  "ledgerId": "LEEWAY_RECEIPT_LEDGER_LIVE",
+  "scope": "LEDGER_RECOVERY_23_RECORDS",
+  "capability": "INDEPENDENT_VERITAS_SIGNED_B8_DECISION",
+  "verifierProviderId": "LEEWAY_C3_VERITAS_SEPARATE_SIGNER_V1",
+  "ownerRootSpkiSha256": "1842abc132174be8bf2a4a50e0a98e92a7b9e0d03fd4d76258729d24f01c61d9",
+  "independentRootSpkiSha256": "98260467ad8bce597bb6dd154d221ae815003992b3e1a8125276ca7f58cfbe76",
+  "independentVerifierSpkiSha256": "dfffe5a7aa915341fa24737fb35c3a9fde9d04268555f81ff22ed3be312c1aac",
+  "independentRootPublicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAkwNc3P5SJufmniwIcunEvEOHzXqoGicqoR3NPgZhssE=\n-----END PUBLIC KEY-----\n",
+  "independentVerifierPublicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAXUgD1d59tkeyxwj4tuMHkAPsNwNuje75pPcv+hMdplA=\n-----END PUBLIC KEY-----\n",
+  "externalEnrollmentReceiptId": null,
+  "externalCustodyVerified": false,
+  "productionRecoveryB8Authorized": false
+}
