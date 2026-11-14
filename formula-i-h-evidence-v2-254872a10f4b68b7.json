@@ -1,0 +1,261 @@
+{
+  "schema": "leeway.formula.i-h.evidence.v2",
+  "parentSha256": "05c8c8dff14ce08c03c60224046c6d11a66c49928122b18fd3649cee315d4761",
+  "total": 22,
+  "evidenceMapped": 20,
+  "open": 2,
+  "rows": [
+    {
+      "equationId": "I-01",
+      "evidence": {
+        "kind": "PURE_ORACLE_OR_SHAPE_CHECK",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-01 and H-02 normalized",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-02",
+      "evidence": {
+        "kind": "PURE_ORACLE_OR_SHAPE_CHECK",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-02,I-03,H-01,H-03",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-03",
+      "evidence": {
+        "kind": "PURE_ORACLE_OR_SHAPE_CHECK",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-02,I-03,H-01,H-03",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-04",
+      "evidence": {
+        "kind": "FROZEN_KERNEL_CALL_PLUS_ORACLE",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-04,H-04,I-13",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-05",
+      "evidence": {
+        "kind": "STRUCTURAL_ORACLE_ONLY",
+        "file": "formula-i-h-remaining-states.test.mjs",
+        "sha256": "22a748dcbe37a0fa86bdbf5f2df7da295a4f18c99fc120e3b6abe8e429b56e75",
+        "assertion": "I-05 six distinct subsystem",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-06",
+      "evidence": {
+        "kind": "PURE_ORACLE_OR_SHAPE_CHECK",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-06 independent",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-07",
+      "evidence": {
+        "kind": "STRUCTURAL_ORACLE_ONLY",
+        "file": "formula-i-h-remaining-states.test.mjs",
+        "sha256": "22a748dcbe37a0fa86bdbf5f2df7da295a4f18c99fc120e3b6abe8e429b56e75",
+        "assertion": "I-07 documented six-field",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-08",
+      "evidence": {
+        "kind": "STRUCTURAL_ORACLE_ONLY",
+        "file": "formula-i-h-remaining-states.test.mjs",
+        "sha256": "22a748dcbe37a0fa86bdbf5f2df7da295a4f18c99fc120e3b6abe8e429b56e75",
+        "assertion": "I-08 documented six-field",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-09",
+      "evidence": {
+        "kind": "STRUCTURAL_ORACLE_ONLY",
+        "file": "formula-i-h-remaining-states.test.mjs",
+        "sha256": "22a748dcbe37a0fa86bdbf5f2df7da295a4f18c99fc120e3b6abe8e429b56e75",
+        "assertion": "I-09 documented six-field",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-10",
+      "evidence": {
+        "kind": "STRUCTURAL_ORACLE_ONLY",
+        "file": "formula-i-h-remaining-states.test.mjs",
+        "sha256": "22a748dcbe37a0fa86bdbf5f2df7da295a4f18c99fc120e3b6abe8e429b56e75",
+        "assertion": "I-10 documented six-field",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-11",
+      "evidence": {
+        "kind": "STRUCTURAL_ORACLE_ONLY",
+        "file": "formula-i-h-remaining-states.test.mjs",
+        "sha256": "22a748dcbe37a0fa86bdbf5f2df7da295a4f18c99fc120e3b6abe8e429b56e75",
+        "assertion": "I-11 documented six-field",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-12",
+      "evidence": {
+        "kind": "STRUCTURAL_ORACLE_ONLY",
+        "file": "formula-i-h-remaining-states.test.mjs",
+        "sha256": "22a748dcbe37a0fa86bdbf5f2df7da295a4f18c99fc120e3b6abe8e429b56e75",
+        "assertion": "I-12 documented six-field",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "I-13",
+      "evidence": {
+        "kind": "FROZEN_KERNEL_CALL_PLUS_ORACLE",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-04,H-04,I-13",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "H-01",
+      "evidence": {
+        "kind": "PURE_ORACLE_OR_SHAPE_CHECK",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-02,I-03,H-01,H-03",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "H-02",
+      "evidence": {
+        "kind": "PURE_ORACLE_OR_SHAPE_CHECK",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-01 and H-02 normalized",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "H-03",
+      "evidence": {
+        "kind": "PURE_ORACLE_OR_SHAPE_CHECK",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-02,I-03,H-01,H-03",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "H-04",
+      "evidence": {
+        "kind": "FROZEN_KERNEL_CALL_PLUS_ORACLE",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "I-04,H-04,I-13",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "H-05",
+      "evidence": {
+        "kind": "PURE_ORACLE_OR_SHAPE_CHECK",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "H-05,H-06 placement",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "H-06",
+      "evidence": {
+        "kind": "PURE_ORACLE_OR_SHAPE_CHECK",
+        "file": "formula-i-h-contract-tests.mjs",
+        "sha256": "00661d9f927201ddf55cdb466bd680b59c06ed73371485fea36c499faa2e9fc5",
+        "assertion": "H-05,H-06 placement",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "H-07",
+      "evidence": {
+        "kind": "STRUCTURAL_ORACLE_ONLY",
+        "file": "formula-i-h-remaining-states.test.mjs",
+        "sha256": "22a748dcbe37a0fa86bdbf5f2df7da295a4f18c99fc120e3b6abe8e429b56e75",
+        "assertion": "H-07 global node",
+        "result": "PASS_WITNESSED"
+      },
+      "classification": "PARTIAL_POSITIVE_EVIDENCE",
+      "productionCertified": false
+    },
+    {
+      "equationId": "H-08",
+      "evidence": null,
+      "classification": "DIRECT_EQUATION_TEST_OPEN",
+      "productionCertified": false
+    },
+    {
+      "equationId": "H-09",
+      "evidence": null,
+      "classification": "DIRECT_EQUATION_TEST_OPEN",
+      "productionCertified": false
+    }
+  ]
+}

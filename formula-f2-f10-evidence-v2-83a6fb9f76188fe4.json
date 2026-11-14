@@ -1,0 +1,519 @@
+{
+  "schema": "leeway.formula.f2-f10.equation-evidence.v2",
+  "priorSha256": "4ba55983c9e80b1bf02e393fd3246c35068819ad83280ce53b5e4826ab96befe",
+  "mathOracleMapped": 33,
+  "independentlyCertified": 0,
+  "rows": [
+    {
+      "id": "F2-01",
+      "family": "F2",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F2-01,02,03 Boolean product gate",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f2-f5-runtime-boundary-tests.mjs",
+        "module": "approval-gate.mjs",
+        "sourceSha256": "996410cc4dd001ea1d747029b8cabdd56211acc504ff8881f6a24b7612b4ce4f",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F2-02",
+      "family": "F2",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F2-01,02,03 Boolean product gate",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f2-f5-runtime-boundary-tests.mjs",
+        "module": "approval-gate.mjs",
+        "sourceSha256": "996410cc4dd001ea1d747029b8cabdd56211acc504ff8881f6a24b7612b4ce4f",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F2-03",
+      "family": "F2",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F2-01,02,03 Boolean product gate",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f2-f5-runtime-boundary-tests.mjs",
+        "module": "approval-gate.mjs",
+        "sourceSha256": "996410cc4dd001ea1d747029b8cabdd56211acc504ff8881f6a24b7612b4ce4f",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F3-01",
+      "family": "F3",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F3-01..03 seven-dimensional",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F3-02",
+      "family": "F3",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F3-01..03 seven-dimensional",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F3-03",
+      "family": "F3",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F3-01..03 seven-dimensional",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F4-01",
+      "family": "F4",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F4-01 mandatory",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F4-02",
+      "family": "F4",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F4-02 weighted",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F4-03",
+      "family": "F4",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-eight-oracles.mjs",
+        "sourceSha256": "ef7387920d2dfc53ee3cd1894f6927d866fbba987df19b0c8f15d04eed2a7bd3",
+        "assertion": "F4-03 Veritas Q69 weighted score quantization",
+        "observed": "PASS_WITNESSED",
+        "scope": "PURE_ORACLE_ONLY",
+        "limitations": []
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F4-04",
+      "family": "F4",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-eight-oracles.mjs",
+        "sourceSha256": "ef7387920d2dfc53ee3cd1894f6927d866fbba987df19b0c8f15d04eed2a7bd3",
+        "assertion": "F4-04 three-way Veritas PASS/REPAIR/FAIL cases",
+        "observed": "PASS_WITNESSED",
+        "scope": "PURE_ORACLE_ONLY",
+        "limitations": [
+          "F4-04 incomplete gate-pass below-threshold case"
+        ]
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F5-01",
+      "family": "F5",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-eight-oracles.mjs",
+        "sourceSha256": "ef7387920d2dfc53ee3cd1894f6927d866fbba987df19b0c8f15d04eed2a7bd3",
+        "assertion": "F5-01 recovery vector assigns lexicographic dimensions and negatives",
+        "observed": "PASS_WITNESSED",
+        "scope": "PURE_ORACLE_ONLY",
+        "limitations": []
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f2-f5-runtime-boundary-tests.mjs",
+        "module": "failure-recovery.mjs",
+        "sourceSha256": "996410cc4dd001ea1d747029b8cabdd56211acc504ff8881f6a24b7612b4ce4f",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F5-02",
+      "family": "F5",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-eight-oracles.mjs",
+        "sourceSha256": "ef7387920d2dfc53ee3cd1894f6927d866fbba987df19b0c8f15d04eed2a7bd3",
+        "assertion": "F5-02 highest recovery priority wins deterministic tie",
+        "observed": "PASS_WITNESSED",
+        "scope": "PURE_ORACLE_ONLY",
+        "limitations": []
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f2-f5-runtime-boundary-tests.mjs",
+        "module": "failure-recovery.mjs",
+        "sourceSha256": "996410cc4dd001ea1d747029b8cabdd56211acc504ff8881f6a24b7612b4ce4f",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F6-01",
+      "family": "F6",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F6-01..06 allocation",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F6-02",
+      "family": "F6",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F6-01..06 allocation",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F6-03",
+      "family": "F6",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F6-01..06 allocation",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F6-04",
+      "family": "F6",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F6-01..06 allocation",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F6-05",
+      "family": "F6",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F6-01..06 allocation",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F6-06",
+      "family": "F6",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F6-01..06 allocation",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F7-01",
+      "family": "F7",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F7-01..02 queue",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f3-f4-f7-f8-runtime-boundaries.mjs",
+        "module": "job-queue.mjs",
+        "sourceSha256": "1c8cd02088b66b849755ed64f6337c06631461044773853e37c54a550cc0e007",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F7-02",
+      "family": "F7",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F7-01..02 queue",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f3-f4-f7-f8-runtime-boundaries.mjs",
+        "module": "job-queue.mjs",
+        "sourceSha256": "1c8cd02088b66b849755ed64f6337c06631461044773853e37c54a550cc0e007",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F7-03",
+      "family": "F7",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-eight-oracles.mjs",
+        "sourceSha256": "ef7387920d2dfc53ee3cd1894f6927d866fbba987df19b0c8f15d04eed2a7bd3",
+        "assertion": "F7-03 Little law arithmetic on positive rates",
+        "observed": "PASS_WITNESSED",
+        "scope": "PURE_ORACLE_ONLY",
+        "limitations": [
+          "F7-03 arithmetic identity only"
+        ]
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f3-f4-f7-f8-runtime-boundaries.mjs",
+        "module": "job-queue.mjs",
+        "sourceSha256": "1c8cd02088b66b849755ed64f6337c06631461044773853e37c54a550cc0e007",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F7-04",
+      "family": "F7",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-eight-oracles.mjs",
+        "sourceSha256": "ef7387920d2dfc53ee3cd1894f6927d866fbba987df19b0c8f15d04eed2a7bd3",
+        "assertion": "F7-04 queue saturation ratio under positive service capacity",
+        "observed": "PASS_WITNESSED",
+        "scope": "PURE_ORACLE_ONLY",
+        "limitations": [
+          "F7-04 ratio examples only"
+        ]
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f3-f4-f7-f8-runtime-boundaries.mjs",
+        "module": "job-queue.mjs",
+        "sourceSha256": "1c8cd02088b66b849755ed64f6337c06631461044773853e37c54a550cc0e007",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F8-01",
+      "family": "F8",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F8-01..03 binary",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f3-f4-f7-f8-runtime-boundaries.mjs",
+        "module": "scheduler.mjs",
+        "sourceSha256": "1c8cd02088b66b849755ed64f6337c06631461044773853e37c54a550cc0e007",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F8-02",
+      "family": "F8",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F8-01..03 binary",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f3-f4-f7-f8-runtime-boundaries.mjs",
+        "module": "scheduler.mjs",
+        "sourceSha256": "1c8cd02088b66b849755ed64f6337c06631461044773853e37c54a550cc0e007",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F8-03",
+      "family": "F8",
+      "mathematicalOracle": {
+        "source": "formula-f3-f4-f7-f8-math-contract-tests.mjs",
+        "sourceSha256": "653195928b5a3263a9b37cd13e0257370bea48a331f29afe719f2e7159de4c88",
+        "assertion": "F8-01..03 binary",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": {
+        "source": "formula-f3-f4-f7-f8-runtime-boundaries.mjs",
+        "module": "scheduler.mjs",
+        "sourceSha256": "1c8cd02088b66b849755ed64f6337c06631461044773853e37c54a550cc0e007",
+        "relation": "FAMILY_LEVEL_BEHAVIOR_NOT_EXACT_EQUATION_PROOF"
+      },
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F9-01",
+      "family": "F9",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F9-01,04 consensus",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F9-02",
+      "family": "F9",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-eight-oracles.mjs",
+        "sourceSha256": "ef7387920d2dfc53ee3cd1894f6927d866fbba987df19b0c8f15d04eed2a7bd3",
+        "assertion": "F9-02 consensus ranking vector and deterministic ID",
+        "observed": "PASS_WITNESSED",
+        "scope": "PURE_ORACLE_ONLY",
+        "limitations": []
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F9-03",
+      "family": "F9",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-eight-oracles.mjs",
+        "sourceSha256": "ef7387920d2dfc53ee3cd1894f6927d866fbba987df19b0c8f15d04eed2a7bd3",
+        "assertion": "F9-03 consensus argmax ranks votes then Veritas and stable ID",
+        "observed": "PASS_WITNESSED",
+        "scope": "PURE_ORACLE_ONLY",
+        "limitations": []
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F9-04",
+      "family": "F9",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F9-01,04 consensus",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F10-01",
+      "family": "F10",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F10-01..04 confidence",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F10-02",
+      "family": "F10",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F10-01..04 confidence",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F10-03",
+      "family": "F10",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F10-01..04 confidence",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    },
+    {
+      "id": "F10-04",
+      "family": "F10",
+      "mathematicalOracle": {
+        "source": "formula-f2-f10-math-closure-tests.mjs",
+        "sourceSha256": "dcb2920603d22708a7d18e6a31380ac8796908428c7448ff0133a8c65c60c526",
+        "assertion": "F10-01..04 confidence",
+        "observed": "PASS_WITNESSED"
+      },
+      "relatedRuntimeTest": null,
+      "classification": "MATHEMATICAL_ORACLE_VERIFIED_RUNTIME_EQUIVALENCE_OPEN",
+      "independentlyCertified": false
+    }
+  ]
+}

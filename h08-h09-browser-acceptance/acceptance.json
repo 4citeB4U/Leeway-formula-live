@@ -1,0 +1,835 @@
+{
+  "schema": "leeway.gpu.local-acceptance.v1",
+  "observedAt": "2026-10-25T22:28:26.534Z",
+  "mode": "REPAIRED",
+  "classification": "LOCAL_COMPONENT_ACCEPTANCE_NOT_C3",
+  "hostPlatform": "win32",
+  "node": "v24.15.0",
+  "browser": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "gitHead": "df5196f15df0843b30e6368724f9cf1756447f9f",
+  "systemGpu": {
+    "devices": [
+      {
+        "vendorId": 32902,
+        "deviceId": 32103,
+        "subSysId": 2148865962,
+        "revision": 6,
+        "vendorString": "",
+        "deviceString": "Intel(R) Graphics",
+        "driverVendor": "Intel",
+        "driverVersion": "32.0.101.8724"
+      },
+      {
+        "vendorId": 4318,
+        "deviceId": 11609,
+        "subSysId": 2148865962,
+        "revision": 161,
+        "vendorString": "",
+        "deviceString": "NVIDIA GeForce RTX 5060 Laptop GPU",
+        "driverVendor": "",
+        "driverVersion": "32.0.15.9201"
+      },
+      {
+        "vendorId": 5140,
+        "deviceId": 140,
+        "subSysId": 0,
+        "revision": 0,
+        "vendorString": "",
+        "deviceString": "Microsoft Basic Render Driver",
+        "driverVendor": "",
+        "driverVersion": "10.0.26100.9711"
+      }
+    ],
+    "auxAttributes": {
+      "amdSwitchable": false,
+      "bgra8OverlaySupport": "SCALING",
+      "canSupportThreadedTextureMailbox": false,
+      "directComposition": true,
+      "directMLFeatureLevel": "Not supported",
+      "directRenderingVersion": "",
+      "displayType": "ANGLE_D3D11",
+      "dx12FeatureLevel": "Not supported",
+      "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multiview_multisample GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_external_wrap_modes GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_NV_EGL_stream_consumer_external GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_depth24 GL_OES_depth32 GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OVR_multiview GL_OVR_multiview2 ",
+      "glImplementationParts": "(gl=egl-angle,angle=d3d11)",
+      "glRenderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.101.8724)",
+      "glResetNotificationStrategy": 33362,
+      "glVendor": "Google Inc. (Intel)",
+      "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.28973 git hash: 3b89d84e9d59)",
+      "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_d3d_share_handle_client_buffer EGL_ANGLE_d3d_texture_client_buffer EGL_ANGLE_surface_d3d_texture_2d_share_handle EGL_ANGLE_query_surface_pointer EGL_ANGLE_window_fixed_size EGL_ANGLE_keyed_mutex EGL_ANGLE_surface_orientation EGL_ANGLE_direct_composition EGL_NV_post_sub_buffer EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_NV_stream_consumer_gltexture_yuv EGL_ANGLE_stream_producer_d3d_texture EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_CHROMIUM_sync_control EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_image_d3d11_texture EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_ANGLE_memory_usage_report ",
+      "glWsVendor": "Google Inc. (Intel)",
+      "glWsVersion": "1.5 (ANGLE 2.1.28973 git hash: 3b89d84e9d59)",
+      "inProcessGpu": false,
+      "initializationTime": 0.398239,
+      "isAsan": false,
+      "isClangCoverage": false,
+      "jpegDecodeAcceleratorSupported": false,
+      "maxMsaaSamples": "8",
+      "nv12OverlaySupport": "SCALING",
+      "optimus": false,
+      "p010OverlaySupport": "SOFTWARE",
+      "passthroughCmdDecoder": true,
+      "pixelShaderVersion": "5.0",
+      "processCrashCount": 0,
+      "rgb10a2OverlaySupport": "SOFTWARE",
+      "sandboxed": true,
+      "skiaBackendType": "GaneshGL",
+      "subpixelFontRendering": true,
+      "supportsD3dSharedImages": false,
+      "supportsDirectML": false,
+      "supportsDx12": false,
+      "supportsOverlays": true,
+      "supportsVulkan": false,
+      "targetCpuBits": 64,
+      "vertexShaderVersion": "5.0",
+      "visibilityCallbackCallCount": 0,
+      "vulkanVersion": "Not supported",
+      "yuy2OverlaySupport": "SCALING"
+    },
+    "featureStatus": {
+      "2d_canvas": "enabled",
+      "direct_rendering_display_compositor": "disabled_off_ok",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "opengl": "enabled_on",
+      "rasterization": "enabled",
+      "raw_draw": "disabled_off_ok",
+      "skia_graphite": "disabled_off",
+      "trees_in_viz": "disabled_off",
+      "video_decode": "enabled",
+      "video_encode": "enabled",
+      "webgl": "enabled",
+      "webgpu": "enabled",
+      "webnn": "disabled_off"
+    },
+    "driverBugWorkarounds": [
+      "d3d12_encode_packed_format_dpb_sizing",
+      "disable_d3d12_h264_encoder_non_reference_frames",
+      "disable_direct_composition_sw_video_overlays",
+      "disable_sharing_nv12_from_d3d11_to_d3d12",
+      "disable_vp_auto_hdr",
+      "enable_webgl_timer_query_extensions",
+      "exit_on_context_lost",
+      "force_dcomp_triple_buffer_video_swap_chain",
+      "max_msaa_sample_count_4",
+      "msaa_is_slow",
+      "no_downscaled_overlay_promotion",
+      "supports_two_yuv_hardware_overlays",
+      "disabled_extension_GL_KHR_blend_equation_advanced",
+      "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+    ],
+    "videoDecoding": [],
+    "videoEncoding": []
+  },
+  "browserTests": {
+    "adapter": {
+      "vendor": "intel",
+      "architecture": "xe-lpg",
+      "device": "",
+      "description": "",
+      "isFallbackAdapter": false
+    },
+    "tests": [
+      {
+        "name": "MATMUL_SHADER_COMPILES",
+        "status": "PASS",
+        "ms": 1.5999999940395355,
+        "evidence": {
+          "messages": []
+        }
+      },
+      {
+        "name": "BUFFER_POOL_ISOLATES_DEVICES",
+        "status": "PASS",
+        "ms": 0.20000000298023224,
+        "evidence": {
+          "distinct": true
+        }
+      },
+      {
+        "name": "PIPELINE_CACHE_ISOLATES_DEVICES",
+        "status": "PASS",
+        "ms": 0.10000000149011612,
+        "evidence": {
+          "distinct": true
+        }
+      },
+      {
+        "name": "PIPELINE_CACHE_BINDS_SHADER_CONTENT",
+        "status": "PASS",
+        "ms": 0,
+        "evidence": null
+      },
+      {
+        "name": "ASYNC_DENIAL_PREVENTS_EXECUTION",
+        "status": "PASS",
+        "ms": 0.19999999552965164,
+        "evidence": null
+      },
+      {
+        "name": "NON_BOOLEAN_APPROVAL_DENIED",
+        "status": "PASS",
+        "ms": 0,
+        "evidence": null
+      },
+      {
+        "name": "NO_REFERENCE_CANNOT_CLAIM_VERIFIED",
+        "status": "PASS",
+        "ms": 0.10000000149011612,
+        "evidence": null
+      },
+      {
+        "name": "GPU_CPU_READBACK_1",
+        "status": "PASS",
+        "ms": 120.20000000298023,
+        "evidence": {
+          "size": 1,
+          "values": 1,
+          "maxAbsoluteError": 0,
+          "dispatchReadbackMs": 109.80000000447035,
+          "reference": "existing CPU worker"
+        }
+      },
+      {
+        "name": "GPU_CPU_READBACK_7",
+        "status": "PASS",
+        "ms": 12.199999995529652,
+        "evidence": {
+          "size": 7,
+          "values": 49,
+          "maxAbsoluteError": 0,
+          "dispatchReadbackMs": 3.7999999970197678,
+          "reference": "existing CPU worker"
+        }
+      },
+      {
+        "name": "GPU_CPU_READBACK_8",
+        "status": "PASS",
+        "ms": 12.800000004470348,
+        "evidence": {
+          "size": 8,
+          "values": 64,
+          "maxAbsoluteError": 0,
+          "dispatchReadbackMs": 4.300000004470348,
+          "reference": "existing CPU worker"
+        }
+      },
+      {
+        "name": "GPU_CPU_READBACK_9",
+        "status": "PASS",
+        "ms": 10.199999995529652,
+        "evidence": {
+          "size": 9,
+          "values": 81,
+          "maxAbsoluteError": 0,
+          "dispatchReadbackMs": 2.899999998509884,
+          "reference": "existing CPU worker"
+        }
+      },
+      {
+        "name": "GPU_CPU_READBACK_17",
+        "status": "PASS",
+        "ms": 12.300000004470348,
+        "evidence": {
+          "size": 17,
+          "values": 289,
+          "maxAbsoluteError": 0,
+          "dispatchReadbackMs": 3.2000000029802322,
+          "reference": "existing CPU worker"
+        }
+      },
+      {
+        "name": "GPU_CPU_READBACK_32",
+        "status": "PASS",
+        "ms": 20.600000001490116,
+        "evidence": {
+          "size": 32,
+          "values": 1024,
+          "maxAbsoluteError": 0,
+          "dispatchReadbackMs": 4.100000001490116,
+          "reference": "existing CPU worker"
+        }
+      },
+      {
+        "name": "GPU_CPU_READBACK_64",
+        "status": "PASS",
+        "ms": 17.5,
+        "evidence": {
+          "size": 64,
+          "values": 4096,
+          "maxAbsoluteError": 0,
+          "dispatchReadbackMs": 5.299999997019768,
+          "reference": "existing CPU worker"
+        }
+      },
+      {
+        "name": "MALFORMED_INPUT_DENIED",
+        "status": "PASS",
+        "ms": 0.19999999552965164,
+        "evidence": "MATMUL_INPUT_SHAPE_INVALID"
+      },
+      {
+        "name": "NONFINITE_INPUT_DENIED",
+        "status": "PASS",
+        "ms": 0,
+        "evidence": "MATMUL_NON_FINITE_INPUT"
+      },
+      {
+        "name": "VERIFIED_RESULT_HAS_REAL_SHA256",
+        "status": "PASS",
+        "ms": 0.5,
+        "evidence": {
+          "sha256": "8e628779e6a74ee0b36991c10158f63cafec7d340ad4e075592502c8708524dd"
+        }
+      },
+      {
+        "name": "REFERENCE_MISMATCH_REJECTED",
+        "status": "PASS",
+        "ms": 0.10000000149011612,
+        "evidence": null
+      },
+      {
+        "name": "APPROVAL_EXCEPTION_PREVENTS_EXECUTION",
+        "status": "PASS",
+        "ms": 0.10000000149011612,
+        "evidence": null
+      },
+      {
+        "name": "ASYNC_APPROVAL_EXECUTES_ONCE",
+        "status": "PASS",
+        "ms": 0,
+        "evidence": null
+      },
+      {
+        "name": "PREPARED_INPUT_SNAPSHOT_ISOLATED",
+        "status": "PASS",
+        "ms": 3.600000001490116,
+        "evidence": {
+          "actual": 6
+        }
+      },
+      {
+        "name": "CONCURRENT_DISPATCHES_REMAIN_CORRECT",
+        "status": "PASS",
+        "ms": 13.799999997019768,
+        "evidence": {
+          "verifiedSizes": [
+            8,
+            17
+          ]
+        }
+      },
+      {
+        "name": "BUFFER_LEASES_RETURNED_AFTER_EXECUTION",
+        "status": "PASS",
+        "ms": 0,
+        "evidence": {
+          "buffers": 22,
+          "allocatedBytes": 67312,
+          "leasedBytes": 0,
+          "idleBytes": 67312
+        }
+      },
+      {
+        "name": "TENSOR_FIXED_SHADER_COMPILES",
+        "status": "PASS",
+        "ms": 0.5999999940395355,
+        "evidence": {
+          "kernel": "tile8_fused_bias_relu",
+          "hardwareInstructions": "NOT_CLAIMED"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_1_1_1_identity",
+        "status": "PASS",
+        "ms": 25.600000001490116,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 1,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 1,
+          "k": 1,
+          "n": 1,
+          "activation": "identity",
+          "dispatchReadbackMs": 25.100000001490116,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_1_1_1_relu",
+        "status": "PASS",
+        "ms": 5.300000004470348,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 1,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 1,
+          "k": 1,
+          "n": 1,
+          "activation": "relu",
+          "dispatchReadbackMs": 5.300000004470348,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_3_5_7_identity",
+        "status": "PASS",
+        "ms": 3.100000001490116,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 21,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 3,
+          "k": 5,
+          "n": 7,
+          "activation": "identity",
+          "dispatchReadbackMs": 2.9000000059604645,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_3_5_7_relu",
+        "status": "PASS",
+        "ms": 3.8000000044703484,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 21,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 3,
+          "k": 5,
+          "n": 7,
+          "activation": "relu",
+          "dispatchReadbackMs": 3.7000000029802322,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_9_7_17_identity",
+        "status": "PASS",
+        "ms": 5.0999999940395355,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 153,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 9,
+          "k": 7,
+          "n": 17,
+          "activation": "identity",
+          "dispatchReadbackMs": 5.0999999940395355,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_9_7_17_relu",
+        "status": "PASS",
+        "ms": 4.4000000059604645,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 153,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 9,
+          "k": 7,
+          "n": 17,
+          "activation": "relu",
+          "dispatchReadbackMs": 4.300000004470348,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_17_19_5_identity",
+        "status": "PASS",
+        "ms": 4.0999999940395355,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 85,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 17,
+          "k": 19,
+          "n": 5,
+          "activation": "identity",
+          "dispatchReadbackMs": 4.0999999940395355,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_17_19_5_relu",
+        "status": "PASS",
+        "ms": 3.5,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 85,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 17,
+          "k": 19,
+          "n": 5,
+          "activation": "relu",
+          "dispatchReadbackMs": 3.399999998509884,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_32_16_48_identity",
+        "status": "PASS",
+        "ms": 4.300000004470348,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 1536,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 32,
+          "k": 16,
+          "n": 48,
+          "activation": "identity",
+          "dispatchReadbackMs": 4,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_32_16_48_relu",
+        "status": "PASS",
+        "ms": 3.399999998509884,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 1536,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 32,
+          "k": 16,
+          "n": 48,
+          "activation": "relu",
+          "dispatchReadbackMs": 3.1999999955296516,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_64_64_64_identity",
+        "status": "PASS",
+        "ms": 5,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 4096,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 64,
+          "k": 64,
+          "n": 64,
+          "activation": "identity",
+          "dispatchReadbackMs": 3.7999999970197678,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_GPU_64_64_64_relu",
+        "status": "PASS",
+        "ms": 3.600000001490116,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 4096,
+          "mismatches": 0,
+          "maxAbsoluteError": 0,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001,
+          "m": 64,
+          "k": 64,
+          "n": 64,
+          "activation": "relu",
+          "dispatchReadbackMs": 3.100000001490116,
+          "submissions": 1,
+          "measurement": "HOST_INTERVAL_NOT_GPU_TIMESTAMP",
+          "backend": "REAL_WEBGPU"
+        }
+      },
+      {
+        "name": "TENSOR_HYBRID_SUCCESS_CHECKED_AND_HASHED",
+        "status": "PASS",
+        "ms": 3.6999999955296516,
+        "evidence": {
+          "backend": "WEBGPU",
+          "sha256": "2a31cde1d4323027b95b7c6083ef2d908b26f891447883e787756a1bc73878ed",
+          "attempts": [
+            {
+              "backend": "WEBGPU",
+              "state": "EXECUTED",
+              "hostMs": 2.899999998509884
+            }
+          ],
+          "verification": {
+            "valid": true,
+            "method": "SCALAR_CPU_REFERENCE",
+            "values": 153,
+            "mismatches": 0,
+            "maxAbsoluteError": 0,
+            "absoluteTolerance": 0.0001,
+            "relativeTolerance": 0.0001
+          }
+        }
+      },
+      {
+        "name": "TENSOR_REAL_DEVICE_RELEASE_RECOVERS_TO_CPU",
+        "status": "PASS",
+        "ms": 22.200000002980232,
+        "evidence": {
+          "fault": "INTENTIONAL_RELEASE_OF_TEST_OWNED_GPUDEVICE",
+          "systemDriverChanged": false,
+          "lossReason": "destroyed",
+          "backend": "CPU",
+          "attempts": [
+            {
+              "backend": "WEBGPU",
+              "state": "FAILED",
+              "code": "GPU_DEVICE_LOST",
+              "hostMs": 0.30000000447034836
+            },
+            {
+              "backend": "CPU",
+              "state": "EXECUTED",
+              "hostMs": 8.600000001490116
+            }
+          ],
+          "verification": {
+            "valid": true,
+            "method": "SCALAR_CPU_REFERENCE",
+            "values": 85,
+            "mismatches": 0,
+            "maxAbsoluteError": 0,
+            "absoluteTolerance": 0.0001,
+            "relativeTolerance": 0.0001
+          }
+        }
+      },
+      {
+        "name": "TENSOR_NO_DEVICE_RECOVERS_TO_CPU_WORKER",
+        "status": "PASS",
+        "ms": 9.399999998509884,
+        "evidence": {
+          "backend": "CPU",
+          "verification": {
+            "valid": true,
+            "method": "SCALAR_CPU_REFERENCE",
+            "values": 21,
+            "mismatches": 0,
+            "maxAbsoluteError": 0,
+            "absoluteTolerance": 0.0001,
+            "relativeTolerance": 0.0001
+          }
+        }
+      },
+      {
+        "name": "TENSOR_EXPLICIT_MEMORY_BUDGET_RECOVERS_WITHOUT_OVERSUBSCRIPTION",
+        "status": "PASS",
+        "ms": 8.399999998509884,
+        "evidence": {
+          "backend": "CPU",
+          "reason": "GPU_BUDGET_EXCEEDED",
+          "policy": "CALLER_BYTE_BUDGET_NOT_PHYSICAL_VRAM_MEASUREMENT"
+        }
+      },
+      {
+        "name": "TENSOR_DENIED_ADMISSION_STARTS_NO_CPU_WORKER",
+        "status": "PASS",
+        "ms": 0.10000000149011612,
+        "evidence": null
+      },
+      {
+        "name": "TENSOR_CPU_WORKER_CANCELLED",
+        "status": "PASS",
+        "ms": 4.800000004470348,
+        "evidence": {
+          "workerTermination": "CODE_PATH_EXECUTED_AFTER_ABORT",
+          "inputDiscarded": true
+        }
+      },
+      {
+        "name": "TENSOR_INVALID_DATA_NEVER_FALLS_BACK",
+        "status": "PASS",
+        "ms": 0.19999999552965164,
+        "evidence": null
+      },
+      {
+        "name": "TENSOR_REFERENCE_MISMATCH_NEVER_FALLS_BACK",
+        "status": "PASS",
+        "ms": 3.7000000029802322,
+        "evidence": null
+      },
+      {
+        "name": "TENSOR_NONBINARY_FLOATS_MATCH_REFERENCE_TOLERANCE",
+        "status": "PASS",
+        "ms": 3.899999998509884,
+        "evidence": {
+          "valid": true,
+          "method": "SCALAR_CPU_REFERENCE",
+          "values": 143,
+          "mismatches": 0,
+          "maxAbsoluteError": 2.9802322387695312e-8,
+          "absoluteTolerance": 0.0001,
+          "relativeTolerance": 0.0001
+        }
+      },
+      {
+        "name": "TENSOR_ALL_GPU_LEASES_RETURNED",
+        "status": "PASS",
+        "ms": 0.10000000149011612,
+        "evidence": {
+          "beforeRelease": {
+            "buffers": 43,
+            "allocatedBytes": 86692,
+            "leasedBytes": 0,
+            "idleBytes": 86692
+          },
+          "afterRelease": {
+            "buffers": 0,
+            "allocatedBytes": 0,
+            "leasedBytes": 0,
+            "idleBytes": 0
+          }
+        }
+      },
+      {
+        "name": "NO_UNCAPTURED_GPU_ERRORS",
+        "status": "PASS",
+        "ms": 0,
+        "evidence": null
+      }
+    ],
+    "uncaptured": [],
+    "scope": "GPU module qualification; not a system graphics-driver qualification",
+    "formula": "NOT_EXECUTED",
+    "ldwmd": "NOT_BOUND"
+  },
+  "formulaExecution": "NOT_EXECUTED_BY_GPU_TEST",
+  "ldwmdBinding": "UNVERIFIED",
+  "driverInstalled": false,
+  "cloudUsed": false,
+  "learningLedger": "NOT_UPDATED",
+  "sourceHashes": {
+    "core/economic.engine.js": "b89f72b6283343b36215e4ec4c268793c8b5aacb8caa436309c49c895953ddf6",
+    "core/evolution.engine.js": "0def598091050865587178241b66303ed58982d39d6d38be6354dad795856e27",
+    "core/federation.engine.js": "9b8447cba9f09abbfa9575fbf3e66ffba8f1dcea0308a60d6ea661c108111496",
+    "core/gpu.bootstrap.js": "cfc22a8e00326f653b6ba43e8c51f86bd1319c804622ce90e9734055b489b33e",
+    "core/gpu.capabilities.js": "ec43fe91d787031a325b5021eca9d3f0640624ab332d870744c7a34a114020df",
+    "core/graph.engine.js": "c1301c4ad4ea8ab5130c799c5278274308ee195551d3902e145427e810815546",
+    "core/hybrid.dispatcher.js": "0a029d69f4648ec76889c3b6b529422f330439dd503aa1f01ddb8c10c95b84f1",
+    "core/identity.engine.js": "6ae0e522fc388f32092732009e51a163c58d359474edd72e214a4f6e16060c21",
+    "core/inference-contract.mjs": "b130d8de81ca307eda4cbc144ab6af11811f074cc9832d04485c162b2cf3ec7c",
+    "core/layer.engine.js": "72806b1dc4a7c2f206c58640584729a7092365bf9b4d9057950f788b3cdac713",
+    "core/ldcc.engine.js": "57aed6e867ace1ae739f00d0b1aa43d430f1cf3713b4a0b2c11c7e6e13c6d143",
+    "core/quad.pipeline.js": "5b3814d952c1a2d0bb5846ceb639d7f8696923240fa330838dcaeec6e4a08a7f",
+    "core/scene-transform-reuse.mjs": "c17d03f33e1531990c446bb49bd4f5dd76142a1602bdce239396957198c24e8b",
+    "core/state-window-statistics.mjs": "1f30113e04e56f67315e6a26c6a998734e47e72234f3d3985558b295dc8b27d8",
+    "core/state.engine.js": "608b05498d03789677b12461e727eacd385a26cd87bc10e4ae59f4e21d863aea",
+    "core/transformer-inference.mjs": "6f152a547a2976bb54a6c9ba5a221578647c158b91adaa880cba127ab7e03739",
+    "core/trust.engine.js": "a398618b4addfb35b861da79b7050fd4b0ece763fd305c0b2b1a1f8c3811873c",
+    "buffers/buffer.pool.js": "4f00b355e366e70ee219c992240cdcea681cc899b694d7390a86c25512f19be5",
+    "pipeline/pipeline.cache.js": "47f477eff8671cb30ae34d909c5d5168be90bd2bebfb456c21f536b5baa77675",
+    "dispatch/compute.dispatch.js": "4fb8b8e9d4411b5d5488cf91101e707912572720fa84ce13753ec107ba59644b",
+    "dispatch/model-ops.mjs": "96f0ed339ecdb30a964a97485d77336e30d8cebfe8da7050765366b430c6ee2b",
+    "dispatch/tensor-contract.mjs": "d400d61e30effb4b51ff34328d5a329b958657d988ea500266755ce1bcbf54d4",
+    "dispatch/tensor.dispatch.mjs": "d895ece96cd55eabacbb5c535be464b844a6e9449b954f60c7245fb4098e80bc",
+    "shaders/matmul.wgsl.js": "b3159a76df1542befddc4659dcf0594b9d28bc0fabff9305d2f7e1e0be369c57",
+    "shaders/model-operators.wgsl.mjs": "18415d3ba509a8d6f361ea7a2f14feeac1b9e8f67291845fa214c6a04a3bf5fb",
+    "shaders/quantized-weights.wgsl.mjs": "2abf3d29780346852d246dffd1a1717e80c019067d09fa630a57854a2ce9d4ef",
+    "shaders/tensor-gemm.wgsl.js": "d223e689901e4f45cb2c86c0a56d57156185d36f22f7133bad64dc45c968f16b",
+    "fallback/cpu.engine.js": "169988ade1df2640abcbc8b3e2663f4f0437b9727446b3a50f67f49193d1637f",
+    "fallback/cpu.worker.js": "1979c85797187038517e839dcd6778aeb17bc10d4acc71ef967f044bfad1721c",
+    "fallback/node-cpu.engine.mjs": "e8804f6f708261d2e1d5a0b1e35f1d36f63570cb908a1e305da949d90378d81c",
+    "fallback/node-cpu.worker.mjs": "65a40378caa4a03a0664582e21718d95c9a6321fc88fba8dc07fa30e919712cf",
+    "fallback/tensor-reference.mjs": "d07c5384f208494a00eea3054d1522b6879ea68d244deff2254c487c25670fbf",
+    "control/gpu.controller.bridge.js": "26f8d765b58ea682a8f534a0fb78a1a83111c19c51a09afedb0c6f45c0880e96",
+    "tests/virtual-gpu/adapter-selection-check.mjs": "7d38bf7aeb013775d8a28500f6aaa8a4e10bc5c738cce38223c9130c10d4c420",
+    "tests/virtual-gpu/application-benchmark.mjs": "3a11584d1fa6cbfe37aad9718d26efa83c7d5e39e7138c3442d613d6ac1d7a51",
+    "tests/virtual-gpu/application-exercise.mjs": "cb159468a9f245781097e5151ce036aabfa2ef72b0f278c8d78c43136079fa08",
+    "tests/virtual-gpu/application-stage-attribution.mjs": "a6693342ceb9bcd714b299a5ffe9c36c34e17a4f6d3cc32a6f80620e9de76c1e",
+    "tests/virtual-gpu/audit-nvidia-challenge.mjs": "aae8f9593589c09cdee1b6242204779e0b7774670e7b89f4ec692686ea3832c4",
+    "tests/virtual-gpu/browser-tests.js": "42cf2596904098e81f394383f9aa1f4134a7e39fc31696b2923d5acc44737ea7",
+    "tests/virtual-gpu/formula-binding-check.mjs": "48f1599f2816e4f25661c878fb1bec6aaacdd822abbe24786570de422efc002e",
+    "tests/virtual-gpu/governed-inference.test.mjs": "3742d41a0d60a834e0de4d9f11271f7acbfae896e783a9b822dc64d40527fe96",
+    "tests/virtual-gpu/inference-readiness.mjs": "1228d907f9e5043592c702579143876a63b9495327ef1127b7c6d1be4a5071b3",
+    "tests/virtual-gpu/inspect-gguf-models.mjs": "6a7b2968287a7c38c4ae820273a9095b786a0d2771cdab8d2422ebe36649f79c",
+    "tests/virtual-gpu/ldwmd-hardware-check.mjs": "686571a090dacd4716d84be4f6056a51ff9b0679606faeccb2a40d3504d0954e",
+    "tests/virtual-gpu/lee-only-inference.mjs": "76a83c30ea3f518d9601435a4155be62c7513f58e49a3a0700632578e5f9f6e4",
+    "tests/virtual-gpu/local-acceptance.mjs": "d03996aabd2fa97944e4bd5633c9886d5a89ee7e01eede7eed422b3df66a0e38",
+    "tests/virtual-gpu/local-model-native-control.mjs": "67ece0f68e4f4613ae35b33645be8089a733c3ee435421535d9dd91fb7a78837",
+    "tests/virtual-gpu/local-model-smoke.mjs": "6e7ae20960182604b1617010ef35bdba4c719eb0bc0937de9a064643361e1c21",
+    "tests/virtual-gpu/model-browser-tests.mjs": "65db4f8e48c87d14e6f4e75e8e68c2f9fcc21a3f0baa36d43059a5f3827e7f62",
+    "tests/virtual-gpu/quantized-reference.mjs": "7fc07615992a8be7d8155f80b4f97a14e06cff3b2c9ae1ea9d98d74de8aaa54f",
+    "tests/virtual-gpu/run-nvidia-challenge.mjs": "62add630a325cd4e22bd8ab1566da11652dbc16a9861e090e22eaa65c9e6b363",
+    "tests/virtual-gpu/software-cpu-host.test.mjs": "9bfc1cc39b4b27b1e356f843190f2e042a525eaa59c044f0393723393a05118e",
+    "tests/virtual-gpu/software-only-acceptance.mjs": "90c6c640d280bfd58809a4d53ad95880ea3e1feba3454f7fec4ac0870c0a7236",
+    "tests/virtual-gpu/software-square-locality.test.mjs": "d43a0a1fc85b9e76871458d0d2602f6c9ce07697575ac57bc0085b412638cd6c",
+    "tests/virtual-gpu/source-check.mjs": "baf1ced65de4d105f7f71276c9401c8da5b001378761698cd058e8ac1079587a",
+    "tests/virtual-gpu/state-statistics-check.mjs": "94fd553dfadd3e0c52c9916d214cb69ed3db9138b2810596af5ad3ad9fa39bfb",
+    "tests/virtual-gpu/summarize-adapter-comparison.mjs": "0573eb427be2b85f0e920478b5af231346a34e7bceaaca008a93644cabfecab9",
+    "tests/virtual-gpu/summarize-application-benchmark.mjs": "79c65a8588830788d08cfe5bac4078abd538bb0510b10772d1bd1601d9cae049",
+    "tests/virtual-gpu/tensor-browser-tests.js": "d02219f1ffcf7a608778945e47f0f754891330e84b2ca3b566dd0716a4caf553",
+    "tests/virtual-gpu/tensor-unit.test.mjs": "394542f769c7eea1b21e3cf6227f8f4eac7d0217eef6df232ebf7c6ed358013b",
+    "tests/virtual-gpu/windows-adapter-qualification.mjs": "66ec307ec6c626bbd8b1ec5891c101334c52fe4bd5485458aac7b1d25cab0e87",
+    "tests/virtual-gpu/windows-driver-toolchain.mjs": "bd3414297c02f23a442c9bda911a112c398ec20ef92f1bcdca53572a05cf0f94",
+    "tests/virtual-gpu/windows-native-readiness.mjs": "b7c80728bca88f9d360912e0e1a32d37161fab63fbea24829230962dd663d79b"
+  },
+  "outcome": "PASS_LOCAL_COMPONENT_TESTS",
+  "passCount": 47,
+  "testCount": 47
+}
