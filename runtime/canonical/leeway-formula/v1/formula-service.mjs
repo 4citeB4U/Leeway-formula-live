@@ -5,6 +5,7 @@ import * as engine from './leeway-formula-v1.mjs';
 import * as codec from './base64-codec.mjs';
 import { listAdapters, getAdapter } from './adapters/adapter-registry.mjs';
 import { writeFormulaReceipt, listFormulaReceipts, hashFile } from './formula-receipts.mjs';
+import { createG3EvidenceBundle as createUnsignedG3EvidenceBundle } from './g3-evidence-bundle.mjs';
 
 const MODULE_DIR = path.dirname(fileURLToPath(import.meta.url));
 const SPEC_PATH = path.resolve(MODULE_DIR, '..', '..', 'standards', 'formulas', 'LEEWAY-FORMULA-v1.0.spec.json');
@@ -133,4 +134,29 @@ export function last() {
 
 export function receipts() {
   return listFormulaReceipts();
+}
+
+/**
+ * Bridges a completed local Formula evaluation into an unsigned G3 bundle.
+ * The caller supplies the observed execution facts; Formula supplies only the
+ * last matching canonical evaluation. This endpoint never advances G4.
+ */
+export function createG3EvidenceBundle({ requestId, producer, target, observation, formulaExecution } = {}) {
+  if (!lastResult) throw new Error('G3_FORMULA_EXECUTION_REQUIRED');
+  if (!formulaExecution || formulaExecution.inputHash !== lastResult.inputHash || formulaExecution.resultHash !== lastResult.resultHash) {
+    throw new Error('G3_FORMULA_EXECUTION_MISMATCH');
+  }
+  return createUnsignedG3EvidenceBundle({
+    requestId,
+    producer,
+    target,
+    observation,
+    formulaResult: {
+      formulaId: lastResult.formulaId,
+      inputHash: lastResult.inputHash,
+      resultHash: lastResult.resultHash,
+      decimalState: lastResult.decimalState,
+      base64State: lastResult.base64State
+    }
+  });
 }

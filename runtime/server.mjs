@@ -44,8 +44,11 @@ const server = http.createServer(async (req, res) => {
       const readers = { health: () => ({ ...formula.health(), hostScope: 'formula-only', kernelIntegrity: 'VERIFIED_AT_STARTUP' }), spec: formula.spec, adapters: () => ({ adapters: formula.adapters() }), last: formula.last, receipts: () => ({ receipts: formula.receipts() }) };
       if (Object.hasOwn(readers, route)) return send(res, 200, readers[route]());
     }
-    if (req.method === 'POST' && ['evaluate', 'encode'].includes(route)) {
+    if (req.method === 'POST' && ['evaluate', 'encode', 'g3-evidence-bundles'].includes(route)) {
       const input = await body(req);
+      if (route === 'g3-evidence-bundles') {
+        return send(res, 202, formula.createG3EvidenceBundle(input));
+      }
       if (route === 'encode') {
         if (!Array.isArray(input?.decimals) || input.decimals.length !== 6 || !input.decimals.every(x => Number.isInteger(x) && x >= 0 && x <= 69)) throw new Error('Six integers in 0..69 required');
         return send(res, 200, formula.encode(input));
