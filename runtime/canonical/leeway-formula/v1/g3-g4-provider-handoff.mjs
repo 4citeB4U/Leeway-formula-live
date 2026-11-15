@@ -1,157 +1,61 @@
 /*
 LEEWAY HEADER — DO NOT REMOVE
-WHO: LeeWay Formula, Device Bridge, and separately governed authority providers.
-WHAT: Typed G3 evidence handoff and conditional G4 transition client.
-WHEN: 2026-11-15; after Formula-bound G3 observation and before any G4 claim.
+WHO: Formula consumers and independently configured authority services.
+WHAT: Signature-checked G3 handoff with explicit Receipt and Ledger GET readbacks.
+WHEN: 2026-11-15.
 WHERE: runtime/canonical/leeway-formula/v1/g3-g4-provider-handoff.mjs.
-HOW: Validate the unsigned G3 bundle, call explicitly bound providers, verify the
-     independent Veritas signature, then require Receipt and Ledger readbacks.
-WHY: Keep the road alive for evidence while refusing an unproven G4 promotion.
+HOW: Pin all three keys, correlate every request, verify hashes and preserve partial progress.
+WHY: Replace the prior POST-only handoff that overstated readback verification.
 */
-import { createHash, verify } from 'node:crypto';
-import { canonicalJson } from './g3-evidence-bundle.mjs';
-
-const HEX_256 = /^[a-f0-9]{64}$/i;
-const ABSOLUTE_ENDPOINT = /^(https:|http:\/\/(localhost|127\.0\.0\.1|\[::1\])(?::\d+)?\/)/i;
-
-/** @typedef {{ endpoint: string, publicKeySpki?: string }} ProviderBinding */
-/** @typedef {{ veritas?: ProviderBinding, receipt?: ProviderBinding, learningLedger?: ProviderBinding }} ProviderBindings */
-
-function fail(code) { throw new Error(code); }
-function isObject(value) { return Boolean(value) && typeof value === 'object' && !Array.isArray(value); }
-function isSha256(value) { return typeof value === 'string' && HEX_256.test(value); }
-function digest(value) { return createHash('sha256').update(value).digest('hex'); }
-
-function validateEndpoint(binding, name, needsKey = false) {
-  if (!isObject(binding) || typeof binding.endpoint !== 'string' || !ABSOLUTE_ENDPOINT.test(binding.endpoint)) return null;
-  if (needsKey && (typeof binding.publicKeySpki !== 'string' || !binding.publicKeySpki.includes('BEGIN PUBLIC KEY'))) return null;
-  return Object.freeze({ endpoint: binding.endpoint, ...(needsKey ? { publicKeySpki: binding.publicKeySpki } : {}) });
+import {createHash,createPublicKey,verify} from 'node:crypto';
+import {canonicalJson} from './g3-evidence-bundle.mjs';
+const hash=x=>createHash('sha256').update(canonicalJson(x)).digest('hex');
+const hex=x=>typeof x==='string'&&/^[a-f0-9]{64}$/.test(x);
+function signed(record,key){
+  if(!record||typeof record.signature!=='string'||!/^[A-Za-z0-9+/]+={0,2}$/.test(record.signature))throw Error('SIGNATURE_REQUIRED');
+  const {signature,...body}=record,k=createPublicKey(key);
+  if(k.asymmetricKeyType!=='ed25519'||!verify(null,Buffer.from(canonicalJson(body)),k,Buffer.from(signature,'base64')))throw Error('SIGNATURE_INVALID');
 }
-
-function providerAvailability(bindings = {}) {
-  return Object.freeze({
-    veritas: Boolean(validateEndpoint(bindings.veritas, 'veritas', true)),
-    receipt: Boolean(validateEndpoint(bindings.receipt, 'receipt')),
-    learningLedger: Boolean(validateEndpoint(bindings.learningLedger, 'learningLedger'))
-  });
+function binding(x){
+  if(!x?.endpoint||!x.publicKeySpki)throw Error('G4_PROVIDER_BINDING_INCOMPLETE');
+  const url=new URL(x.endpoint);
+  if(url.username||url.password||url.search||url.hash||!(url.protocol==='https:'||(url.protocol==='http:'&&['127.0.0.1','localhost','[::1]'].includes(url.hostname))))throw Error('G4_PROVIDER_URL_INVALID');
+  if(createPublicKey(x.publicKeySpki).asymmetricKeyType!=='ed25519')throw Error('G4_PROVIDER_KEY_INVALID');
+  return x;
 }
-
-function validateG3Bundle(bundle) {
-  if (!isObject(bundle) || bundle.schema !== 'leeway.g3-evidence-bundle.v1' || bundle.grade !== 'G3_OBSERVED_LOCAL') fail('G4_G3_BUNDLE_INVALID');
-  if (bundle.attestationState !== 'PENDING_INDEPENDENT_VERITAS' || bundle.receiptState !== 'NOT_CREATED' || bundle.learningLedgerState !== 'NOT_ADMITTED') fail('G4_G3_AUTHORITY_STATE_INVALID');
-  const { bundleSha256, ...unsigned } = bundle;
-  if (!isSha256(bundleSha256) || digest(canonicalJson(unsigned)) !== bundleSha256) fail('G4_G3_BUNDLE_HASH_INVALID');
-  return bundle;
-}
-
-function pending(bundle, availability, reason) {
-  return Object.freeze({
-    schema: 'leeway.g4-transition-result.v1',
-    status: 'G4_NOT_TRANSITIONED',
-    reason,
-    grade: 'G3_OBSERVED_LOCAL',
-    requestId: bundle.requestId,
-    bundleSha256: bundle.bundleSha256,
-    providerAvailability: availability,
-    attestationState: 'PENDING_INDEPENDENT_VERITAS',
-    receiptState: 'NOT_CREATED',
-    learningLedgerState: 'NOT_ADMITTED'
-  });
-}
-
-async function postJson(fetchImpl, endpoint, body) {
-  let response;
-  try {
-    response = await fetchImpl(endpoint, {
-      method: 'POST',
-      headers: { accept: 'application/json', 'content-type': 'application/json' },
-      body: JSON.stringify(body),
-      signal: AbortSignal.timeout(10_000)
-    });
-  } catch {
-    return { ok: false, reason: 'PROVIDER_TRANSPORT_UNAVAILABLE' };
-  }
-  if (!response.ok) return { ok: false, reason: `PROVIDER_HTTP_${response.status}` };
-  try { return { ok: true, body: await response.json() }; }
-  catch { return { ok: false, reason: 'PROVIDER_RESPONSE_INVALID_JSON' }; }
-}
-
-function signedAttestationBody(attestation) {
-  const { signature, ...body } = attestation;
-  return body;
-}
-
-function validateAttestation(attestation, bundle, publicKeySpki) {
-  if (!isObject(attestation) || attestation.schema !== 'leeway.veritas.attestation.v1' || attestation.requestId !== bundle.requestId || attestation.bundleSha256 !== bundle.bundleSha256 || attestation.verdict !== 'PASS' || typeof attestation.signature !== 'string') return null;
-  const signed = Buffer.from(canonicalJson(signedAttestationBody(attestation)), 'utf8');
-  let signature;
-  try { signature = Buffer.from(attestation.signature, 'base64'); }
-  catch { return null; }
-  try {
-    if (!verify(null, signed, publicKeySpki, signature)) return null;
-  } catch { return null; }
-  return Object.freeze(attestation);
-}
-
-function validateReceipt(receipt, bundle, attestation) {
-  if (!isObject(receipt) || receipt.schema !== 'leeway.receipt-authority.receipt.v1' || typeof receipt.receiptId !== 'string' || !isSha256(receipt.receiptHash) || receipt.bundleSha256 !== bundle.bundleSha256 || receipt.veritasAttestationSha256 !== digest(canonicalJson(attestation))) return null;
-  return Object.freeze(receipt);
-}
-
-function validateLedgerAdmission(admission, bundle, receipt) {
-  if (!isObject(admission) || admission.schema !== 'leeway.learning-ledger.admission.v1' || typeof admission.admissionId !== 'string' || admission.state !== 'ADMITTED' || admission.bundleSha256 !== bundle.bundleSha256 || admission.receiptHash !== receipt.receiptHash) return null;
-  return Object.freeze(admission);
-}
-
-/**
- * Performs a live authority handoff only when all three endpoints are explicitly
- * bound. An unbound or failing provider preserves G3 and returns its exact stage;
- * it never turns a missing provider into a fabricated G4 refusal or approval.
- *
- * @param {{ bundle: object, bindings: ProviderBindings, fetchImpl?: typeof fetch }} input
- */
-export async function transitionG3ToG4({ bundle, bindings, fetchImpl = fetch } = {}) {
-  const accepted = validateG3Bundle(bundle);
-  const availability = providerAvailability(bindings);
-  if (!availability.veritas || !availability.receipt || !availability.learningLedger) return pending(accepted, availability, 'G4_PROVIDER_BINDING_INCOMPLETE');
-  if (typeof fetchImpl !== 'function') return pending(accepted, availability, 'G4_FETCH_UNAVAILABLE');
-
-  const veritas = validateEndpoint(bindings.veritas, 'veritas', true);
-  const receiptAuthority = validateEndpoint(bindings.receipt, 'receipt');
-  const ledger = validateEndpoint(bindings.learningLedger, 'learningLedger');
-  const veritasResponse = await postJson(fetchImpl, veritas.endpoint, {
-    schema: 'leeway.veritas.attestation-request.v1', evidenceBundle: accepted
-  });
-  if (!veritasResponse.ok) return pending(accepted, availability, `G4_VERITAS_${veritasResponse.reason}`);
-  const attestation = validateAttestation(veritasResponse.body, accepted, veritas.publicKeySpki);
-  if (!attestation) return pending(accepted, availability, 'G4_VERITAS_ATTESTATION_REJECTED');
-
-  const receiptResponse = await postJson(fetchImpl, receiptAuthority.endpoint, {
-    schema: 'leeway.receipt-authority.append-request.v1', evidenceBundle: accepted, veritasAttestation: attestation
-  });
-  if (!receiptResponse.ok) return pending(accepted, availability, `G4_RECEIPT_${receiptResponse.reason}`);
-  const receipt = validateReceipt(receiptResponse.body, accepted, attestation);
-  if (!receipt) return pending(accepted, availability, 'G4_RECEIPT_READBACK_REJECTED');
-
-  const ledgerResponse = await postJson(fetchImpl, ledger.endpoint, {
-    schema: 'leeway.learning-ledger.admission-request.v1', evidenceBundle: accepted, receipt
-  });
-  if (!ledgerResponse.ok) return pending(accepted, availability, `G4_LEDGER_${ledgerResponse.reason}`);
-  const admission = validateLedgerAdmission(ledgerResponse.body, accepted, receipt);
-  if (!admission) return pending(accepted, availability, 'G4_LEDGER_READBACK_REJECTED');
-
-  return Object.freeze({
-    schema: 'leeway.g4-transition-result.v1',
-    status: 'G4_TRANSITIONED',
-    grade: 'G4_INDEPENDENTLY_ATTESTED',
-    requestId: accepted.requestId,
-    bundleSha256: accepted.bundleSha256,
-    providerAvailability: availability,
-    attestationState: 'INDEPENDENT_VERITAS_PASS',
-    receiptState: 'READBACK_CONFIRMED',
-    learningLedgerState: 'ADMITTED',
-    attestation,
-    receipt,
-    admission
-  });
+export async function transitionG3ToG4({bundle,bindings,fetchImpl=fetch}={}){
+  const state={schema:'leeway.g4-transition-result.v1',status:'G4_NOT_TRANSITIONED',grade:'G3_OBSERVED_LOCAL',requestId:bundle?.requestId,bundleSha256:bundle?.bundleSha256,attestationState:'PENDING_INDEPENDENT_VERITAS',receiptState:'NOT_CREATED',learningLedgerState:'NOT_ADMITTED'};
+  let stage='BINDING';
+  try{
+    const {bundleSha256,...unsigned}=bundle||{};
+    if(bundle?.schema!=='leeway.g3-evidence-bundle.v1'||bundle.grade!=='G3_OBSERVED_LOCAL'||!hex(bundleSha256)||hash(unsigned)!==bundleSha256)throw Error('G3_BUNDLE_INVALID');
+    const v=binding(bindings?.veritas),r=binding(bindings?.receipt),l=binding(bindings?.learningLedger);
+    const request=async(endpoint,body)=>{
+      const res=await fetchImpl(endpoint,{method:body?'POST':'GET',headers:{accept:'application/json',...(body?{'content-type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{}),redirect:'error',signal:AbortSignal.timeout(10000)});
+      if(!res.ok)throw Error(`HTTP_${res.status}`);
+      const raw=await res.text();if(Buffer.byteLength(raw)>524288)throw Error('RESPONSE_TOO_LARGE');return JSON.parse(raw);
+    };
+    const correlate=x=>{if(x.requestId!==bundle.requestId||x.bundleSha256!==bundle.bundleSha256)throw Error('REQUEST_BINDING_MISMATCH');};
+    stage='VERITAS';
+    const attestation=await request(v.endpoint,{evidenceBundle:bundle});signed(attestation,v.publicKeySpki);correlate(attestation);
+    if(attestation.schema!=='leeway.veritas.attestation.v1'||attestation.verdict!=='PASS')throw Error('ATTESTATION_REJECTED');
+    state.attestation=attestation;state.attestationState='INDEPENDENT_VERITAS_PASS';
+    stage='RECEIPT';
+    const receipt=await request(r.endpoint,{schema:'leeway.receipt-authority.append-request.v1',evidenceBundle:bundle,veritasAttestation:attestation});
+    state.receipt=receipt;state.receiptState='APPENDED_READBACK_PENDING';
+    if(!/^ra-[a-f0-9-]{36}$/i.test(receipt.receiptId))throw Error('RECEIPT_ID_INVALID');
+    const rb=await request(new URL(`/v1/receipts/${receipt.receiptId}`,r.endpoint).href);
+    signed(rb,r.publicKeySpki);correlate(rb);
+    const {signature,receiptHash,...receiptBody}=rb;
+    if(rb.schema!=='leeway.receipt-authority.receipt.v1'||!hex(receiptHash)||hash(receiptBody)!==receiptHash||rb.veritasAttestationSha256!==hash(attestation)||canonicalJson(rb.veritasAttestation)!==canonicalJson(attestation)||canonicalJson(rb)!==canonicalJson(receipt))throw Error('RECEIPT_READBACK_REJECTED');
+    state.receipt=rb;state.receiptState='READBACK_CONFIRMED';
+    stage='LEDGER';
+    const admission=await request(l.endpoint,{evidenceBundle:bundle,receipt:rb});
+    state.admission=admission;state.learningLedgerState='ADMITTED_READBACK_PENDING';
+    if(!/^ll-[a-f0-9-]{36}$/i.test(admission.admissionId))throw Error('ADMISSION_ID_INVALID');
+    const lb=await request(new URL(`/v1/ledger/${admission.admissionId}`,l.endpoint).href);signed(lb,l.publicKeySpki);correlate(lb);
+    if(lb.schema!=='leeway.learning-ledger.admission.v1'||lb.state!=='ADMITTED'||lb.receiptId!==rb.receiptId||lb.receiptHash!==rb.receiptHash||canonicalJson(lb)!==canonicalJson(admission))throw Error('LEDGER_READBACK_REJECTED');
+    state.admission=lb;state.learningLedgerState='ADMITTED';state.status='G4_TRANSITIONED';state.grade='G4_INDEPENDENTLY_ATTESTED';
+  }catch(e){state.reason=`G4_${stage}_${/^[A-Z0-9_]+$/.test(e.message)?e.message:'PROVIDER_RESPONSE_REJECTED'}`;}
+  return Object.freeze(state);
 }

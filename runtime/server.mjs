@@ -41,6 +41,7 @@ const server = http.createServer(async (req, res) => {
     if (!req.url.startsWith(prefix)) return send(res, 404, { error: 'Unknown route' });
     const route = req.url.slice(prefix.length);
     if (req.method === 'GET') {
+      if (/^executions\/[a-f0-9-]{36}$/.test(route)) return send(res, 200, formula.execution(route.slice(11)));
       const readers = { health: () => ({ ...formula.health(), hostScope: 'formula-only', kernelIntegrity: 'VERIFIED_AT_STARTUP' }), spec: formula.spec, adapters: () => ({ adapters: formula.adapters() }), last: formula.last, receipts: () => ({ receipts: formula.receipts() }) };
       if (Object.hasOwn(readers, route)) return send(res, 200, readers[route]());
     }

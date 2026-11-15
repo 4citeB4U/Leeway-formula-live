@@ -12,6 +12,7 @@ const SPEC_PATH = path.resolve(MODULE_DIR, '..', '..', 'standards', 'formulas', 
 const SPEC_MD_PATH = path.resolve(MODULE_DIR, '..', '..', 'standards', 'formulas', 'LEEWAY-FORMULA-v1.0.md');
 
 let lastResult = null;
+const executions = new Map();
 
 function specValid() {
   const specOk = fs.existsSync(SPEC_PATH) && fs.existsSync(SPEC_MD_PATH);
@@ -107,6 +108,8 @@ export function evaluate({ adapterId, input, caller, traceId }) {
     receiptPath,
     evaluatedAt: timestamp
   };
+  if (traceId) executions.set(traceId, lastResult);
+  if (executions.size > 256) executions.delete(executions.keys().next().value);
   return {
     formulaId: result.formulaId,
     adapterId,
@@ -136,14 +139,21 @@ export function receipts() {
   return listFormulaReceipts();
 }
 
+export function execution(id) {
+  const record = executions.get(id);
+  if (!record) throw new Error('FORMULA_EXECUTION_NOT_FOUND');
+  return record;
+}
+
 /**
  * Bridges a completed local Formula evaluation into an unsigned G3 bundle.
  * The caller supplies the observed execution facts; Formula supplies only the
  * last matching canonical evaluation. This endpoint never advances G4.
  */
 export function createG3EvidenceBundle({ requestId, producer, target, observation, formulaExecution } = {}) {
-  if (!lastResult) throw new Error('G3_FORMULA_EXECUTION_REQUIRED');
-  if (!formulaExecution || formulaExecution.inputHash !== lastResult.inputHash || formulaExecution.resultHash !== lastResult.resultHash) {
+  const matched = formulaExecution?.executionId ? execution(formulaExecution.executionId) : lastResult;
+  if (!matched) throw new Error('G3_FORMULA_EXECUTION_REQUIRED');
+  if (!formulaExecution || formulaExecution.inputHash !== matched.inputHash || formulaExecution.resultHash !== matched.resultHash) {
     throw new Error('G3_FORMULA_EXECUTION_MISMATCH');
   }
   return createUnsignedG3EvidenceBundle({
@@ -152,11 +162,12 @@ export function createG3EvidenceBundle({ requestId, producer, target, observatio
     target,
     observation,
     formulaResult: {
-      formulaId: lastResult.formulaId,
-      inputHash: lastResult.inputHash,
-      resultHash: lastResult.resultHash,
-      decimalState: lastResult.decimalState,
-      base64State: lastResult.base64State
+      formulaId: matched.formulaId,
+      executionId: matched.traceId,
+      inputHash: matched.inputHash,
+      resultHash: matched.resultHash,
+      decimalState: matched.decimalState,
+      base64State: matched.base64State
     }
   });
 }

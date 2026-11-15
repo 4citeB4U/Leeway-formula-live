@@ -62,6 +62,7 @@ function validateFormulaResult(formulaResult) {
   if (!isPlainObject(formulaResult)) fail('G3_FORMULA_RESULT_REQUIRED');
   return Object.freeze({
     formulaId: requiredText(formulaResult.formulaId, 'G3_FORMULA_ID_REQUIRED'),
+    ...(formulaResult.executionId ? { executionId: requiredText(formulaResult.executionId, 'G3_FORMULA_EXECUTION_ID_REQUIRED') } : {}),
     inputHash: requireSha256(formulaResult.inputHash, 'G3_FORMULA_INPUT_HASH_INVALID'),
     resultHash: requireSha256(formulaResult.resultHash, 'G3_FORMULA_RESULT_HASH_INVALID'),
     decimalState: Array.isArray(formulaResult.decimalState) ? [...formulaResult.decimalState] : fail('G3_FORMULA_DECIMAL_STATE_REQUIRED'),
@@ -79,6 +80,7 @@ function validateObservation(observation) {
     commandSha256: requireSha256(observation.commandSha256, 'G3_COMMAND_HASH_INVALID'),
     stdoutSha256: requireSha256(observation.stdoutSha256, 'G3_STDOUT_HASH_INVALID'),
     exitCode: observation.exitCode,
+    operationKind: observation.operationKind === 'READ' ? 'READ' : 'MUTATE',
     observedAt: requiredText(observation.observedAt, 'G3_OBSERVED_AT_REQUIRED')
   });
 }
@@ -94,7 +96,8 @@ export function createLayer7AcceptanceVector({ requestId, formulaResult, observa
   if (typeof requestId !== 'string' || !UUID.test(requestId)) fail('G3_REQUEST_ID_INVALID');
   const formula = validateFormulaResult(formulaResult);
   const observed = validateObservation(observation);
-  const structuralReady = observed.exitCode === 0 && observed.preStateSha256 !== observed.postStateSha256;
+  const structuralReady = observed.exitCode === 0 && (observed.operationKind === 'READ'
+    ? observed.preStateSha256 === observed.postStateSha256 : observed.preStateSha256 !== observed.postStateSha256);
   return Object.freeze({
     schema: 'leeway.formula.layer7.acceptance-vector.v1',
     requestId,
@@ -105,6 +108,7 @@ export function createLayer7AcceptanceVector({ requestId, formulaResult, observa
       commandSha256: observed.commandSha256,
       stdoutSha256: observed.stdoutSha256,
       exitCode: observed.exitCode,
+      operationKind: observed.operationKind,
       observedAt: observed.observedAt
     },
     structuralReadyForIndependentVeritas: structuralReady,
