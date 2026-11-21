@@ -21,6 +21,8 @@ on:
       - 'runtime/canonical/leeway-formula/experimental-v2/retained-hardware-qualification.v1.mjs'
       - 'runtime/canonical/leeway-formula/experimental-v2/real-cpu-representation-ab.v1.mjs'
       - 'runtime/canonical/leeway-formula/experimental-v2/tests/retained-pc-real-cpu-qualification.v1.test.mjs'
+      - 'runtime/canonical/leeway-formula/experimental-v2/windows-native-diagnostics-formula-bridge.v1.mjs'
+      - 'runtime/canonical/leeway-formula/experimental-v2/tests/windows-native-diagnostics-formula-bridge.v1.test.mjs'
       - '.github/workflows/formula-hardware-bridge-candidate.yml'
   workflow_dispatch:
 permissions:
@@ -43,6 +45,8 @@ jobs:
           node --check runtime/canonical/leeway-formula/experimental-v2/retained-hardware-qualification.v1.mjs
           node --check runtime/canonical/leeway-formula/experimental-v2/real-cpu-representation-ab.v1.mjs
           node --check runtime/canonical/leeway-formula/experimental-v2/tests/retained-pc-real-cpu-qualification.v1.test.mjs
+          node --check runtime/canonical/leeway-formula/experimental-v2/windows-native-diagnostics-formula-bridge.v1.mjs
+          node --check runtime/canonical/leeway-formula/experimental-v2/tests/windows-native-diagnostics-formula-bridge.v1.test.mjs
           git diff --exit-code origin/main -- runtime/canonical/leeway-formula/v1
       - name: Source tests and golden v1 with raw log and source SHA
         shell: bash
@@ -55,16 +59,19 @@ jobs:
           bridge=$?
           node --test --test-reporter=tap runtime/canonical/leeway-formula/experimental-v2/tests/retained-pc-real-cpu-qualification.v1.test.mjs > .source-evidence/retained-hardware-tests.tap 2>&1
           retained=$?
+          node --test --test-reporter=tap runtime/canonical/leeway-formula/experimental-v2/tests/windows-native-diagnostics-formula-bridge.v1.test.mjs > .source-evidence/windows-native-mapping-tests.tap 2>&1
+          windowsMap=$?
           node runtime/canonical/leeway-formula/experimental-v2/real-cpu-representation-ab.v1.mjs > .source-evidence/measured-ci-cpu-ab.json 2> .source-evidence/measured-ci-cpu-ab.stderr
           physicalCpu=$?
-          sha256sum .source-evidence/golden.txt .source-evidence/bridge-tests.tap .source-evidence/retained-hardware-tests.tap .source-evidence/measured-ci-cpu-ab.json .source-evidence/measured-ci-cpu-ab.stderr > .source-evidence/output.sha256
-          printf '{"schema":"leeway.formula.hardware-bridges.reproducible-science.v1","commit":"%s","goldenExitCode":%d,"source11ExitCode":%d,"retainedHardwareExitCode":%d,"realCiCpuABExitCode":%d,"userPcPrimaryNewCpuExecuted":false,"ciHostCpuMeasured":true,"physicalPcieTransferMeasured":false,"productionQualified":false,"independentVeritasCertified":false}\n' "${GITHUB_SHA}" "${golden}" "${bridge}" "${retained}" "${physicalCpu}" > .source-evidence/status.json
+          sha256sum .source-evidence/golden.txt .source-evidence/bridge-tests.tap .source-evidence/retained-hardware-tests.tap .source-evidence/windows-native-mapping-tests.tap .source-evidence/measured-ci-cpu-ab.json .source-evidence/measured-ci-cpu-ab.stderr > .source-evidence/output.sha256
+          printf '{"schema":"leeway.formula.hardware-bridges.reproducible-science.v1","commit":"%s","goldenExitCode":%d,"source11ExitCode":%d,"retainedHardwareExitCode":%d,"windowsNativeAdapterExitCode":%d,"realCiCpuABExitCode":%d,"userPcPrimaryNewCpuExecuted":false,"ciHostCpuMeasured":true,"physicalPcieTransferMeasured":false,"productionQualified":false,"independentVeritasCertified":false}\n' "${GITHUB_SHA}" "${golden}" "${bridge}" "${retained}" "${windowsMap}" "${physicalCpu}" > .source-evidence/status.json
           cat .source-evidence/golden.txt
           cat .source-evidence/bridge-tests.tap
           cat .source-evidence/retained-hardware-tests.tap
+          cat .source-evidence/windows-native-mapping-tests.tap
           cat .source-evidence/measured-ci-cpu-ab.json
           cat .source-evidence/measured-ci-cpu-ab.stderr
-          if [ "$golden" -ne 0 ] || [ "$bridge" -ne 0 ] || [ "$retained" -ne 0 ] || [ "$physicalCpu" -ne 0 ]; then exit 1; fi
+          if [ "$golden" -ne 0 ] || [ "$bridge" -ne 0 ] || [ "$retained" -ne 0 ] || [ "$windowsMap" -ne 0 ] || [ "$physicalCpu" -ne 0 ]; then exit 1; fi
       - name: Preserve original test evidence on PASS or FAIL
         if: always()
         uses: actions/upload-artifact@v4
