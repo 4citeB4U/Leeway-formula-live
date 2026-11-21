@@ -1,0 +1,60 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.FORMULA.HARDWARE_BRIDGES.CI
+# TAG: LEEWAY.FORMULA.MULTI_BRIDGE.SOURCE_CI.V1
+# 5WH:
+# WHAT = Retest eight hardware-aware bridge candidates against original Formula golden vectors.
+# WHY = Guard immutable mathematical kernel and record actual negative/positive source results.
+# WHO = Original Formula source owner; bounded outside supporting contributor, not Agent Lee.
+# WHERE = .github/workflows/formula-hardware-bridge-candidate.yml.
+# WHEN = 2026-11-21.
+# HOW = Node source tests and golden, original output with SHA-256, retained on pass/fail.
+# LICENSE = Existing Formula repository terms.
+# AUTHORITY = SOURCE_CI_ONLY; NO PHYSICAL HARDWARE OR CANONICAL RECEIPT.
+name: Formula Hardware Bridges V1 Source Validation
+on:
+  pull_request:
+    paths:
+      - 'runtime/canonical/leeway-formula/experimental-v2/hardware-formula-bridges.v1.mjs'
+      - 'runtime/canonical/leeway-formula/experimental-v2/tests/hardware-formula-bridges.v1.test.mjs'
+      - 'docs/architecture/FORMULA-HARDWARE-MULTI-BRIDGE-V1.md'
+      - '.github/workflows/formula-hardware-bridge-candidate.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  candidate-bridges:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and original immutable Formula
+        run: |
+          node --check runtime/canonical/leeway-formula/experimental-v2/hardware-formula-bridges.v1.mjs
+          node --check runtime/canonical/leeway-formula/experimental-v2/tests/hardware-formula-bridges.v1.test.mjs
+          git diff --exit-code origin/main -- runtime/canonical/leeway-formula/v1
+      - name: Source tests and golden v1 with raw log and source SHA
+        shell: bash
+        run: |
+          mkdir -p .source-evidence
+          set +e
+          node runtime/canonical/leeway-formula/v1/tests/golden-vector-v1.mjs > .source-evidence/golden.txt 2>&1
+          golden=$?
+          node --test --test-reporter=tap runtime/canonical/leeway-formula/experimental-v2/tests/hardware-formula-bridges.v1.test.mjs > .source-evidence/bridge-tests.tap 2>&1
+          bridge=$?
+          sha256sum .source-evidence/golden.txt .source-evidence/bridge-tests.tap > .source-evidence/output.sha256
+          printf '{"schema":"leeway.formula.hardware-bridges.source-test.v1","commit":"%s","goldenExitCode":%d,"bridgeExitCode":%d,"productionQualified":false,"physicalHardwareExecuted":false,"diagnosticsManufacturerAuthenticated":false}\n' "${GITHUB_SHA}" "${golden}" "${bridge}" > .source-evidence/status.json
+          cat .source-evidence/golden.txt
+          cat .source-evidence/bridge-tests.tap
+          if [ "$golden" -ne 0 ] || [ "$bridge" -ne 0 ]; then exit 1; fi
+      - name: Preserve original test evidence on PASS or FAIL
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: formula-hardware-bridges-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .source-evidence/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 90
