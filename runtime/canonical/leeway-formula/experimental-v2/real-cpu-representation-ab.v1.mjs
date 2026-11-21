@@ -20,6 +20,15 @@ import {resolve} from 'node:path';
 import {deflateRawSync,inflateRawSync} from 'node:zlib';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const median=a=>{const b=[...a].sort((x,y)=>x-y);return b[Math.floor(b.length/2)];};
+function sampledShannonEntropyBitsPerByte(bytes){
+ // Deterministic, bounded, stratified sample. Prediction, NOT a compressed-size proof.
+ const count=Math.min(8192,bytes.length);if(!count)return 0;
+ const histogram=new Uint32Array(256);
+ for(let i=0;i<count;i++)histogram[bytes[Math.floor(i*bytes.length/count)]]++;
+ let h=0;
+ for(const n of histogram){if(n>0){const p=n/count;h-=p*Math.log2(p);}}
+ return h;
+}
 function runCase(name,chunks,rounds=7){
  const input=Buffer.concat(chunks), expectedHash=sha(input);
  const paired=[],order=[];let mismatch=false;
@@ -27,30 +36,37 @@ function runCase(name,chunks,rounds=7){
   const outcomes={};
   for(const mode of (i%2===0?['RAW','FORMULA_EXACT_CANDIDATE']:['FORMULA_EXACT_CANDIDATE','RAW'])){
    const before=process.cpuUsage(),t=performance.now();
-   let encoded,decoded,representation='RAW',attemptedCompressionBytes=null;
+   let encoded,decoded,representation='RAW',attemptedCompressionBytes=null,preflightEntropyBitsPerByte=null;
    if(mode==='RAW'){
      // Raw 16-block transfer capsule without compression.
      encoded=Buffer.concat(chunks.map(b=>Buffer.from(b)));
      decoded=encoded;
    }else{
      const original=Buffer.concat(chunks);
-     const compressed=deflateRawSync(original,{level:1});
-     attemptedCompressionBytes=compressed.length;
-     if(compressed.length<original.length){
-       representation='LOSSLESS_DEFLATE';
-       encoded=compressed;
-       decoded=inflateRawSync(encoded);
+     preflightEntropyBitsPerByte=sampledShannonEntropyBitsPerByte(original);
+     if(preflightEntropyBitsPerByte>=7.90){
+       // High-entropy data: choose raw, no zlib attempt. Exactness is guaranteed.
+       representation='RAW_ENTROPY_PREFLIGHT_FALLBACK';
+       encoded=original;decoded=encoded;
      }else{
-       representation='RAW_INCOMPRESSIBLE_FALLBACK';
-       encoded=original;
-       decoded=encoded;
+       const compressed=deflateRawSync(original,{level:1});
+       attemptedCompressionBytes=compressed.length;
+       if(compressed.length<original.length){
+         representation='LOSSLESS_DEFLATE';
+         encoded=compressed;
+         decoded=inflateRawSync(encoded);
+       }else{
+         representation='RAW_AFTER_COMPRESSION_ATTEMPT';
+         encoded=original;
+         decoded=encoded;
+       }
      }
    }
    const wallMs=performance.now()-t,cpu=process.cpuUsage(before);
    const hash=sha(decoded);
    if(hash!==expectedHash||decoded.length!==input.length||!decoded.equals(input))mismatch=true;
    outcomes[mode]={representation,encodedBytes:encoded.length,originalBytes:input.length,
-    attemptedCompressionBytes,wallMs,cpuUserMs:cpu.user/1000,cpuSystemMs:cpu.system/1000,
+    attemptedCompressionBytes,preflightEntropyBitsPerByte,wallMs,cpuUserMs:cpu.user/1000,cpuSystemMs:cpu.system/1000,
     restoredSha256:hash,exactReconstruction:hash===expectedHash&&decoded.equals(input)};
    }
    paired.push(outcomes);order.push(i%2===0?'RAW_FIRST':'CANDIDATE_FIRST');
@@ -63,6 +79,7 @@ function runCase(name,chunks,rounds=7){
     medianCpuUserMs:median(raw.map(x=>x.cpuUserMs)),medianCpuSystemMs:median(raw.map(x=>x.cpuSystemMs))},
   formulaCandidate:{representation:cand[0].representation,payloadBytes:cand[0].encodedBytes,
     attemptedCompressionBytes:cand[0].attemptedCompressionBytes,
+    preflightEntropyBitsPerByte:cand[0].preflightEntropyBitsPerByte,
     medianWallMs:median(cand.map(x=>x.wallMs)),
     medianCpuUserMs:median(cand.map(x=>x.cpuUserMs)),
     medianCpuSystemMs:median(cand.map(x=>x.cpuSystemMs))},
