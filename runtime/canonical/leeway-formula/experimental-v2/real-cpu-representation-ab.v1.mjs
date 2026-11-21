@@ -12,7 +12,7 @@ HOW = Paired raw vs bounded exact deflate, 16 chunks, seven rounds, byte/hash ch
 LICENSE = Existing Formula repository terms.
 AUTHORITY = RESEARCH_CPU_BENCHMARK_ONLY. No real PCIe, user PC, native Device Bridge, Formula policy grant, Veritas or Receipt Authority.
 */
-import {createHash,randomBytes} from 'node:crypto';
+import {createHash} from 'node:crypto';
 import {cpus,arch,platform,totalmem} from 'node:os';
 import {performance} from 'node:perf_hooks';
 import {pathToFileURL} from 'node:url';
@@ -74,7 +74,7 @@ function runCase(name,chunks,rounds=7){
  const raw=paired.map(p=>p.RAW),cand=paired.map(p=>p.FORMULA_EXACT_CANDIDATE);
  return {
   dataset:name,sourceContentSha256:expectedHash,chunkCount:chunks.length,inputBytes:input.length,
-  rounds,order,allExactReconstruction:!mismatch,
+  rounds,order,rawPairedMeasurements:paired,allExactReconstruction:!mismatch,
   baseline:{payloadBytes:raw[0].encodedBytes,medianWallMs:median(raw.map(x=>x.wallMs)),
     medianCpuUserMs:median(raw.map(x=>x.cpuUserMs)),medianCpuSystemMs:median(raw.map(x=>x.cpuSystemMs))},
   formulaCandidate:{representation:cand[0].representation,payloadBytes:cand[0].encodedBytes,
@@ -96,7 +96,11 @@ export function executeRealCpuRepresentationAB(){
  const cpu=cpus();
  const size=32768,count=16;
  const redundant=Array.from({length:count},(_,i)=>Buffer.alloc(size,i%4===0?0x53:0x53));
- const random=Buffer.from(randomBytes(size*count));
+ const random=Buffer.alloc(size*count);
+ for(let i=0;i<random.length;i+=32){
+   const digest=createHash('sha256').update('leeway.formula.cpu-ab-high-entropy-deterministic.v1:'+i).digest();
+   digest.copy(random,i);
+ }
  const highEntropy=Array.from({length:count},(_,i)=>random.subarray(i*size,(i+1)*size));
  const cases=[runCase('REDUNDANT_REPEATABLE_BYTES',redundant),runCase('HIGH_ENTROPY_RANDOM_BYTES',highEntropy)];
  if(cases.some(c=>!c.allExactReconstruction))throw Error('FORMULA_EXACT_ROUNDTRIP_FAILED');
@@ -106,7 +110,8 @@ export function executeRealCpuRepresentationAB(){
   executionEnvironment:process.env.GITHUB_ACTIONS==='true'?'GITHUB_ACTIONS_RUNNER':'OTHER_NODE_HOST',
   executionHost:{platform:platform(),architecture:arch(),cpuModel:cpu[0]?.model??'UNKNOWN',
     logicalProcessors:cpu.length,totalRamBytes:totalmem(),node:process.version},
-  comparedPolicy:'RAW_TRANSFER_CAPSULE_VS_EXACT_COMPRESSION_WITH_RAW_FALLBACK',
+  comparedPolicy:'RAW_TRANSFER_CAPSULE_VS_ENTROPY_PREFLIGHT_EXACT_DEFLATE_WITH_RAW_FALLBACK',
+  highEntropyDataGenerator:'DETERMINISTIC_SHA256_COUNTER_SEED_IN_SOURCE_CODE_NOT_CRYPTOGRAPHIC_NONCE',
   sampleCount:16,physicalPcieTransferMeasured:false,
   nativeUserPcExecuted:false,userPhysicalGpuUsed:false,
   sourceResultClassification:'PHYSICAL_CPU_EXECUTION_ONLY_NOT_LEEWAY_GPU_PRODUCTION',
