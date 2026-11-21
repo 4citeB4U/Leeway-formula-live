@@ -95,9 +95,11 @@ export function projectNativeWindowsDiagnosticsToFormula({
  // original CPU instructions or memory copies. Deliberately do not create
  // a PCIE_BUS Formula component from this information.
  if(observedPcieEndpointCount===null)missing.push('pcieDevices');
- const fresh=[record.cpu,record.memoryModules,record.networkAdapters,record.cpuPerformance,record.pcieDevices]
-  .filter(x=>x&&Number.isSafeInteger(x.capturedAtMs)&&
-    x.state==='OBSERVED'&&nowMs-x.capturedAtMs<=maxAgeMs&&x.capturedAtMs<=nowMs+3000);
+ const fresh=Object.entries(originalSources).map(([field,source])=>({field,value:record[field],source}))
+  .filter(({value,source})=>value?.source===source&&value.state==='OBSERVED'&&
+    Number.isSafeInteger(value.capturedAtMs)&&nowMs-value.capturedAtMs<=maxAgeMs&&
+    value.capturedAtMs<=nowMs+3000)
+  .map(({value})=>value);
  if(!fresh.length)fail('FORMULA_WINDOWS_DIAGNOSTICS_NO_CURRENT_NATIVE_SOURCE');
  const actualObservationTime=Math.max(...fresh.map(x=>x.capturedAtMs));
  const snapshot={
