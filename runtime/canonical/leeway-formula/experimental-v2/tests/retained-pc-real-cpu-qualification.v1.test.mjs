@@ -75,4 +75,11 @@ test('a real running CPU completes exact reversible packing while physical PCIe 
   assert.equal(c.physicalPcieTransferMeasured,false);
   assert.equal(c.measuredHostCpuExecution,true);
  }
+ const compressible=r.cases.find(c=>c.dataset==='REDUNDANT_REPEATABLE_BYTES');
+ const highEntropy=r.cases.find(c=>c.dataset==='HIGH_ENTROPY_RANDOM_BYTES');
+ assert.equal(compressible.formulaCandidate.representation,'LOSSLESS_DEFLATE');
+ assert.ok(compressible.percentPayloadBytesReduced>90);
+ assert.equal(highEntropy.formulaCandidate.representation,'RAW_ENTROPY_PREFLIGHT_FALLBACK');
+ assert.equal(highEntropy.formulaCandidate.attemptedCompressionBytes,null);
+ assert.equal(highEntropy.percentPayloadBytesReduced,0);
 });
