@@ -95,10 +95,15 @@ export function projectNativeWindowsDiagnosticsToFormula({
  // original CPU instructions or memory copies. Deliberately do not create
  // a PCIE_BUS Formula component from this information.
  if(observedPcieEndpointCount===null)missing.push('pcieDevices');
+ const fresh=[record.cpu,record.memoryModules,record.networkAdapters,record.cpuPerformance,record.pcieDevices]
+  .filter(x=>x&&Number.isSafeInteger(x.capturedAtMs)&&
+    x.state==='OBSERVED'&&nowMs-x.capturedAtMs<=maxAgeMs&&x.capturedAtMs<=nowMs+3000);
+ if(!fresh.length)fail('FORMULA_WINDOWS_DIAGNOSTICS_NO_CURRENT_NATIVE_SOURCE');
+ const actualObservationTime=Math.max(...fresh.map(x=>x.capturedAtMs));
  const snapshot={
   schema:'leeway.diagnostics.hardware-map.v1.candidate',
   authority:'DEVICE_BRIDGE_DIAGNOSTICS_OBSERVATION',
-  deviceId,observationId,observedAt:new Date(nowMs).toISOString(),
+  deviceId,observationId,observedAt:new Date(actualObservationTime).toISOString(),
   sourceSha256,components
  };
  const map=inspectHardwareFormulaBridgeMap(snapshot);
@@ -119,7 +124,7 @@ export function projectNativeWindowsDiagnosticsToFormula({
   bridgeReadiness:Object.freeze(map.bridges.map(x=>Object.freeze({
     bridgeId:x.bridgeId,
     observedComponentCount:x.compatibleComponents.length,
-    16x6:'MISSING',
+    window16x6:'MISSING',
     state:x.status
   }))),
   projection:map
