@@ -17,7 +17,7 @@ import {strict as assert} from 'node:assert';
 import test from 'node:test';
 import {qualifyRetainedHardwareForFormula} from '../retained-hardware-qualification.v1.mjs';
 import {executeRealCpuRepresentationAB} from '../real-cpu-representation-ab.v1.mjs';
-const record=JSON.parse(readFileSync(new URL('../../../../docs/evidence/pc-primary-retained-hardware-20261121.v1.json',import.meta.url),'utf8'));
+const record=JSON.parse(readFileSync(new URL('../../../../../docs/evidence/pc-primary-retained-hardware-20261121.v1.json',import.meta.url),'utf8'));
 
 test('real PC hardware record has original retained Bridge hash/date, not a newly invented live readback',()=>{
  assert.equal(record.schema,'leeway.formula.pc-retained-hardware-evidence.v1');
