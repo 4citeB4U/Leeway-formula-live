@@ -1,0 +1,54 @@
+{
+  "_header": {
+    "tag": "LEEWAY.FORMULA.PC_PRIMARY.RETAINED_HARDWARE.EVIDENCE.V1",
+    "fiveWOneH": {
+      "what": "Minimal derived PC hardware inventory readback for Formula bridge readiness",
+      "why": "Use actual owner-scoped device observations rather than synthetic hardware",
+      "who": "Creator owner / outside support contributor (not Agent Lee)",
+      "where": "docs/evidence/pc-primary-retained-hardware-20261121.v1.json",
+      "when": "2026-11-21",
+      "how": "Bounded authenticated Device Bridge workspace file read and source hash custody; no host code execution"
+    },
+    "authority": "RETAINED_DIAGNOSTICS_ONLY_NOT_LIVE_FORMULA_OR_VERITAS"
+  },
+  "schema": "leeway.formula.pc-retained-hardware-evidence.v1",
+  "bodyId": "pc-primary",
+  "origin": "OWNER_SCOPED_BRIDGE_BOUNDED_FILE_READ",
+  "sourceReport": {
+    "reportId": "LEEWAY_REPORT::DEVICE::SYSTEM_HEALTH",
+    "logicalPath": "pc-consciousness-live/runtime/adapters/edge-device/reports/device-system-health-report.json",
+    "contentSha256": "dec65d739e412d59d81895ec6ebee8b669d711a12604bcca0ba969eaf1377ad8",
+    "bridgeObservationReceiptId": "6abc19bc-3957-4d40-bd1f-f9b7a1d8fb49",
+    "originalGeneratedAt": "2026-10-04T23:55:37.693Z",
+    "readbackDate": "2026-11-21",
+    "readbackAuthority": "EXECUTED_NOT_INDEPENDENTLY_VERIFIED"
+  },
+  "actualRetainedObservations": {
+    "cpu": {
+      "model": "Intel(R) Core(TM) Ultra 9 275HX",
+      "logicalProcessors": 24,
+      "averageSpeedMHz": 3072
+    },
+    "ram": {
+      "totalMemoryGb": 31.43,
+      "freeMemoryGbAtSourceCapture": 0.72
+    },
+    "storage": {
+      "volumeCount": 2
+    },
+    "network": {
+      "observedPhysicalPcieNic": "Realtek PCIe GbE Family Controller",
+      "historicalReportedEthernetLinkSpeed": "1 Gbps"
+    },
+    "missingCurrentCpuUtilizationSamples": true,
+    "missingPciePhysicalTransferCounters": true,
+    "missingCacheMissCounters": true,
+    "missingCpuThermalReadings": true,
+    "missingSixChannelSixteenObservationWindows": true
+  },
+  "formulaExecutionOnPc": "NOT_EXECUTED",
+  "currentDeviceMeasurementOnPc": "BLOCKED_EXECUTION_TOOL_NOT_REGISTERED",
+  "productionAuthority": "NOT_CONFERRED",
+  "userPhysicalGpuAsLeewayProvider": false,
+  "noPrivateSerialsMacOrLocalAbsolutePathsIncluded": true
+}
