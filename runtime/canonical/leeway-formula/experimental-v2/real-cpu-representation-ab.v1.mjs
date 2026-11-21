@@ -15,6 +15,8 @@ AUTHORITY = RESEARCH_CPU_BENCHMARK_ONLY. No real PCIe, user PC, native Device Br
 import {createHash,randomBytes} from 'node:crypto';
 import {cpus,arch,platform,totalmem} from 'node:os';
 import {performance} from 'node:perf_hooks';
+import {pathToFileURL} from 'node:url';
+import {resolve} from 'node:path';
 import {deflateRawSync,inflateRawSync} from 'node:zlib';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const median=a=>{const b=[...a].sort((x,y)=>x-y);return b[Math.floor(b.length/2)];};
@@ -65,7 +67,8 @@ function runCase(name,chunks,rounds=7){
     medianCpuUserMs:median(cand.map(x=>x.cpuUserMs)),
     medianCpuSystemMs:median(cand.map(x=>x.cpuSystemMs))},
   percentPayloadBytesReduced:100*(1-cand[0].encodedBytes/raw[0].encodedBytes),
-  wallTimeReduced:false,candidatePolicyQualified:false,
+  wallTimeReductionPct:100*(1-median(cand.map(x=>x.wallMs))/median(raw.map(x=>x.wallMs))),
+  candidatePolicyQualified:false,
   physicalPcieTransferMeasured:false,
   ownerPcPrimaryCpuExecuted:false,
   measuredHostCpuExecution:true,
@@ -94,6 +97,6 @@ export function executeRealCpuRepresentationAB(){
   independentlyVeritasCertified:false,canonicalReceiptAuthorityIssued:false
  };
 }
-if(process.argv[1]&&import.meta.url===new URL('file://'+process.argv[1]).href){
+if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
  console.log(JSON.stringify(executeRealCpuRepresentationAB(),null,2));
 }
