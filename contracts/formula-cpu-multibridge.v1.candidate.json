@@ -1,0 +1,224 @@
+{
+  "_header": {
+    "LEEWAY_HEADER": "DO NOT REMOVE",
+    "REGION": "LEEWAY.FORMULA.MULTIBRIDGE.CONTRACT",
+    "TAG": "LEEWAY.FORMULA.CPU.MULTIBRIDGE.V1.CANDIDATE",
+    "WHAT": "Enumerate typed candidate Formula CPU flow bridges with no execution authority",
+    "WHY": "Keep one canonical Formula while measuring all host-CPU supporting pathways",
+    "WHO": "Creator/Formula owner, outside supporting contributor not Agent Lee",
+    "WHERE": "contracts/formula-cpu-multibridge.v1.candidate.json",
+    "WHEN": "2026-11-21",
+    "HOW": "Require exact six-channel per-bridge observations, provenance and unverified native return",
+    "LICENSE": "Existing repository terms; no new grant",
+    "STATUS": "SOURCE_CANDIDATE_ONLY"
+  },
+  "schema": "leeway.formula.cpu-multibridge.v1.candidate",
+  "state": "SOURCE_CANDIDATE_NOT_CALIBRATED",
+  "canonicalFormula": "LEEWAY-FORMULA-v1.0",
+  "originalFormulaEvaluator": "runtime/canonical/leeway-formula/v1/leeway-formula-v1.mjs",
+  "formulaAuthorityDuplicated": false,
+  "bridgeCount": 9,
+  "creatorGpuComponents": 21,
+  "creatorGpuComponentsStatus": "SEPARATE_LOGICAL_INVENTORY_PENDING",
+  "computingSubstrate": "QUALIFIED_HOST_CPU_AND_RAM",
+  "externalGraphicsGpuComputeProviderAllowed": false,
+  "pcieRequiredForCpuInstructionExecution": false,
+  "bridgeAuthority": {
+    "canIssueFormulaDecision": false,
+    "canExecuteHostCommands": false,
+    "canIssueVeritasDecision": false,
+    "canIssueReceipt": false,
+    "canGrantDevicePermission": false,
+    "canEstablishProductionHardwareEvidence": false
+  },
+  "observationStates": [
+    "OBSERVED",
+    "NOT_OBSERVED"
+  ],
+  "metricRequirements": {
+    "exactSixChannelsPerObservedBridge": true,
+    "missingNeverTreatedAsZero": true,
+    "nonNegativeFiniteOnly": true,
+    "observedProvenanceRequired": true,
+    "unobservedMetricObjectMustBeEmpty": true
+  },
+  "originalAuthoritativeOwners": {
+    "formula": "Leeway-formula-live",
+    "workplane": "Leeway-Runtime-Fabric",
+    "native": "LEEWAY-DEVICE-BRIDGE",
+    "physical": "HOST_OS_CPU",
+    "evidence": "LEEWAY-VERITAS_AND_RECEIPT_AUTHORITY",
+    "state": "LeeWay-Continuum"
+  },
+  "bridgeDefinitions": [
+    {
+      "id": "FB-01",
+      "name": "CPU_WORKLOAD",
+      "purpose": "Instruction and workload preparation",
+      "metrics": [
+        "instructions",
+        "cycles",
+        "retiredInstructions",
+        "branchMisses",
+        "batchItems",
+        "prepLatencyUs"
+      ],
+      "position": "PRE_OR_OBSERVATION",
+      "physicalPcieEvidenceRequiredForProduction": false,
+      "physicalHardwareBottleneckMayRemain": true
+    },
+    {
+      "id": "FB-02",
+      "name": "SCHEDULER",
+      "purpose": "Scheduler and core placement",
+      "metrics": [
+        "runnableThreads",
+        "runQueueDepth",
+        "contextSwitches",
+        "migrations",
+        "cpuUtilizationPct",
+        "queueLatencyUs"
+      ],
+      "position": "PRE_OR_OBSERVATION",
+      "physicalPcieEvidenceRequiredForProduction": false,
+      "physicalHardwareBottleneckMayRemain": true
+    },
+    {
+      "id": "FB-03",
+      "name": "CACHE_LOCALITY",
+      "purpose": "Cache hierarchy and locality",
+      "metrics": [
+        "l1Misses",
+        "llcMisses",
+        "cacheMissRatePct",
+        "workingSetBytes",
+        "localityScore",
+        "stallCycles"
+      ],
+      "position": "PRE_OR_OBSERVATION",
+      "physicalPcieEvidenceRequiredForProduction": false,
+      "physicalHardwareBottleneckMayRemain": true
+    },
+    {
+      "id": "FB-04",
+      "name": "RAM_NUMA",
+      "purpose": "RAM NUMA and paging",
+      "metrics": [
+        "rssBytes",
+        "majorPageFaults",
+        "minorPageFaults",
+        "numaRemoteAccesses",
+        "memoryBandwidthBytesPerSec",
+        "allocationLatencyUs"
+      ],
+      "position": "PRE_OR_OBSERVATION",
+      "physicalPcieEvidenceRequiredForProduction": false,
+      "physicalHardwareBottleneckMayRemain": true
+    },
+    {
+      "id": "FB-05",
+      "name": "PCIE_IO",
+      "purpose": "Optional physical PCIe peripheral I/O",
+      "metrics": [
+        "transferredBytes",
+        "transfers",
+        "syncWaitUs",
+        "linkBandwidthBytesPerSec",
+        "queueDepth",
+        "measuredLatencyUs"
+      ],
+      "position": "PRE_OR_OBSERVATION",
+      "physicalPcieEvidenceRequiredForProduction": true,
+      "physicalHardwareBottleneckMayRemain": true
+    },
+    {
+      "id": "FB-06",
+      "name": "STORAGE_IO",
+      "purpose": "Storage filesystem I/O",
+      "metrics": [
+        "bytesRead",
+        "bytesWritten",
+        "readOps",
+        "writeOps",
+        "fsyncLatencyUs",
+        "ioQueueDepth"
+      ],
+      "position": "PRE_OR_OBSERVATION",
+      "physicalPcieEvidenceRequiredForProduction": false,
+      "physicalHardwareBottleneckMayRemain": true
+    },
+    {
+      "id": "FB-07",
+      "name": "NETWORK_IPC",
+      "purpose": "Network and IPC",
+      "metrics": [
+        "bytesSent",
+        "bytesReceived",
+        "messages",
+        "retryCount",
+        "roundTripUs",
+        "ipcQueueDepth"
+      ],
+      "position": "PRE_OR_OBSERVATION",
+      "physicalPcieEvidenceRequiredForProduction": false,
+      "physicalHardwareBottleneckMayRemain": true
+    },
+    {
+      "id": "FB-08",
+      "name": "POWER_THERMAL",
+      "purpose": "Power and thermal state",
+      "metrics": [
+        "cpuFreqMHz",
+        "thermalC",
+        "powerMilliwatts",
+        "throttleEvents",
+        "packageUtilizationPct",
+        "activeCores"
+      ],
+      "position": "PRE_OR_OBSERVATION",
+      "physicalPcieEvidenceRequiredForProduction": false,
+      "physicalHardwareBottleneckMayRemain": true
+    },
+    {
+      "id": "FB-09",
+      "name": "CPU_RETURN",
+      "purpose": "Native host CPU result capture",
+      "metrics": [
+        "outputBytes",
+        "elapsedUs",
+        "outputChunks",
+        "errors",
+        "retries",
+        "verificationLatencyUs"
+      ],
+      "position": "RETURN",
+      "physicalPcieEvidenceRequiredForProduction": false,
+      "physicalHardwareBottleneckMayRemain": true
+    }
+  ],
+  "sourceAcceptance": [
+    "FBR-01",
+    "FBR-02",
+    "FBR-07"
+  ],
+  "physicalAcceptancePending": [
+    "FBR-03",
+    "FBR-04",
+    "FBR-05",
+    "FBR-06",
+    "FBR-08",
+    "FBR-09",
+    "FBR-10"
+  ],
+  "nativeCpuProofMustOriginateFromQualifiedOsAdapter": true,
+  "formulaInputCalibrationStatus": "UNAPPROVED_REQUIRES_ORIGINAL_FORMULA_OWNER",
+  "notQualifiedBySource": [
+    "CPU_HARDWARE_EXECUTION",
+    "PCIE_DMA_TRANSFER",
+    "FORMULA_PRODUCTION_DECISION",
+    "VERITAS_SIGNATURE",
+    "CANONICAL_RECEIPT",
+    "ZERO_DEVICE_CONTINUITY"
+  ],
+  "adversarialGeminiReview": "REQUEST_PENDING_NOT_PERFORMED"
+}
