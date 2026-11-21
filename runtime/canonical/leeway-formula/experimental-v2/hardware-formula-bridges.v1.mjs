@@ -59,11 +59,14 @@ export const HARDWARE_FORMULA_BRIDGES=Object.freeze([
 ]);
 const byId=new Map(HARDWARE_FORMULA_BRIDGES.map(x=>[x.id,x]));
 function requireId(x,code){if(typeof x!=='string'||!ID.test(x))fail(code);}
-function requireTime(x,code){if(typeof x!=='string'||!/^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d+)?Z$/.test(x)||!Number.isFinite(Date.parse(x)))fail(code);}
+function requireTime(x,code){if(typeof x!=='string'||!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?Z$/.test(x)||!Number.isFinite(Date.parse(x)))fail(code);}
 function component(c){
  if(!c||typeof c!=='object'||Array.isArray(c))fail('FORMULA_HARDWARE_COMPONENT_INVALID');
- for(const key of ['componentId','kind','manufacturer','model','observationSource'])
+ for(const key of ['componentId','kind','observationSource'])
   requireId(c[key],'FORMULA_HARDWARE_COMPONENT_IDENTITY_UNVERIFIED');
+ for(const key of ['manufacturer','model'])
+  if(typeof c[key]!=='string'||c[key].trim().length===0||c[key].length>160||/[\x00-\x1f\x7f]/.test(c[key]))
+   fail('FORMULA_HARDWARE_COMPONENT_IDENTITY_UNVERIFIED');
  if(!HEX.test(c.sourceSha256||''))fail('FORMULA_HARDWARE_COMPONENT_SOURCE_HASH_REQUIRED');
  return Object.freeze({componentId:c.componentId,kind:c.kind,manufacturer:c.manufacturer,
   model:c.model,observationSource:c.observationSource,sourceSha256:c.sourceSha256});
