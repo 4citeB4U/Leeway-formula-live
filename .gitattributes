@@ -1,2 +1,3 @@
 # Recovered authority is byte-preserved so historical SHA-256 pins survive checkout.
 runtime/canonical/** -text
+MEMORY.md -text
