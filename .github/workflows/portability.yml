@@ -14,6 +14,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Audit Formula runtime dependencies
+        run: npm audit --prefix runtime --package-lock-only --ignore-scripts --audit-level=low
       - run: npm ci --ignore-scripts --prefix runtime
       - run: node runtime/canonical/leeway-formula/v1/tests/golden-vector-v1.mjs
       - run: node runtime/canonical/leeway-formula/v1/tests/reproducibility-v1.mjs
