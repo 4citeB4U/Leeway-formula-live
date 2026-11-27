@@ -1,15 +1,21 @@
-# LeeWay Memory Authority Contract
-
-<!-- LEEWAY HEADER — DO NOT REMOVE
+<!--
+LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.MEMORY.AUTHORITY
 TAG: LEEWAY.MEMORY.AUTHORITY.v1
-WHAT: Define one portable memory, continuity, onboarding, engineering-loop, and Agent Lee delivery contract.
-WHY: Keep every LeeWay runtime governed by the same memory law instead of local copies or historical receipts.
-WHO: Creator/Human Authority, LeeWay Standards, authorized LeeWay runtimes.
-WHERE: Every active LeeWay authority boundary contains this exact contract.
-WHEN: 2026-11-22.
-HOW: Load, hash, validate, and receipt this contract before substantive work.
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
+WHAT = Define one portable memory, continuity, onboarding, engineering-loop, and Agent Lee delivery contract.
+WHY = Keep every LeeWay runtime governed by the same memory law instead of local copies or historical receipts.
+WHO = Creator/Human Authority, LeeWay Standards, authorized LeeWay runtimes.
+WHERE = Every active LeeWay authority boundary contains this exact contract.
+WHEN = 2026-11-22.
+HOW = Load, hash, validate, and receipt this contract before substantive work.
+LICENSE: Not asserted; repository license decision pending.
 -->
+
+# LeeWay Memory Authority Contract
+
+
 
 ## Contract identity
 

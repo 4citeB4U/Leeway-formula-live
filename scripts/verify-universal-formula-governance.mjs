@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 
-const expectedMemory = 'f4910b2bdfedad7be0a3e4bcdac7b3fb468f419368e4a4fa3a11fa25049f0e9a';
+const expectedMemory = '0c1252ab6542f31b6ecc5e13f073689e7e9e98dd7f575814e99d82875947ea59';
 
 const begin =
   '<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE BEGIN -->';
