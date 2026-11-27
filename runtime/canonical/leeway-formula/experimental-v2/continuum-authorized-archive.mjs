@@ -26,7 +26,7 @@ export async function ingestCompressedContinuumFile({service,input,context,sha25
  if(checked.length!==original.length)fail('LEEWAY_ARCHIVE_PRECOMMIT_MISMATCH');
  const result=await service.ingestFile({...input,bytes:archive,mimeType:'application/vnd.leeway.compressed-archive+json',
   source:{...input.source,codec:'leeway.continuum.compressed-archive.v1',originalSha256:obj.manifest.originalSha256}},context);
- const returned=service.getContent(result.recordId,context);
+ const returned=await service.getContent(result.recordId,context);
  const verified=await decodeUniversalObject(unseal(returned.bytes),{sha256,decompress,maxOutputBytes:original.length});
  if(verified.length!==original.length||await sha256(verified)!==obj.manifest.originalSha256||returned.record?.contentSha256!==await sha256(archive))fail('LEEWAY_CONTINUUM_ARCHIVE_READBACK_INVALID');
  return {recordId:result.recordId,sourceSha256:obj.manifest.originalSha256,
@@ -35,7 +35,7 @@ export async function ingestCompressedContinuumFile({service,input,context,sha25
 }
 export async function readCompressedContinuumFile({service,recordId,context,sha256,decompress,maxOutputBytes=32*1024*1024}={}){
  if(typeof service?.getContent!=='function')fail('LEEWAY_CONTINUUM_SERVICE_UNBOUND');
- const result=service.getContent(recordId,context);
+ const result=await service.getContent(recordId,context);
  if(result.record?.mimeType!=='application/vnd.leeway.compressed-archive+json')fail('LEEWAY_ARCHIVE_RECORD_TYPE_MISMATCH');
  return decodeUniversalObject(unseal(result.bytes),{sha256,decompress,maxOutputBytes});
 }

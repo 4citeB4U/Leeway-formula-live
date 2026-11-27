@@ -66,3 +66,73 @@ test('owner retention fields pass unchanged to canonical service',async()=>{
  assert.equal(records.size,1);
  await assert.rejects(ingestCompressedContinuumFile({service:app,input:{...input,requestId:undefined},context,sha256,compress,decompress}),/OWNER_PREFLIGHT_REQUIRED/);
 });
+
+
+test('async canonical host readback preserves exact archive content',async()=>{
+ const records=new Map();
+ let writes=0;
+
+ const original=new TextEncoder().encode(
+  'LeeWay asynchronous storage regression. '.repeat(4000)
+ );
+
+ const context={
+  capabilities:['continuum.write','continuum.read']
+ };
+
+ const service={
+  async ingestFile(input,ctx){
+   assert.ok(ctx.capabilities.includes('continuum.write'));
+   writes++;
+
+   const recordId='async-regression-'+writes;
+   const bytes=new Uint8Array(input.bytes);
+
+   records.set(recordId,{
+    bytes,
+    record:{
+     recordId,
+     mimeType:input.mimeType,
+     contentSha256:await sha256(bytes)
+    }
+   });
+
+   return {recordId};
+  },
+
+  async getContent(id,ctx){
+   assert.ok(ctx.capabilities.includes('continuum.read'));
+   const item=records.get(id);
+   assert.ok(item);
+   return structuredClone(item);
+  }
+ };
+
+ const imported=await ingestCompressedContinuumFile({
+  service,
+  input:{
+   bytes:original,
+   title:'async-regression.txt',
+   universeId:'test',
+   collection:'test',
+   source:{kind:'test',id:'async-regression'}
+  },
+  context,
+  sha256,
+  compress,
+  decompress
+ });
+
+ assert.equal(imported.verifiedReadback,true);
+ assert.equal(writes,1);
+
+ const restored=await readCompressedContinuumFile({
+  service,
+  recordId:imported.recordId,
+  context,
+  sha256,
+  decompress
+ });
+
+ assert.deepEqual(restored,original);
+});
